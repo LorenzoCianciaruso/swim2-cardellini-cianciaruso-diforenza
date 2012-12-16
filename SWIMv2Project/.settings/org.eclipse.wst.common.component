@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="SWIMv2Project">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="SWIMv2EJB.jar" deploy-path="/" handle="module:/resource/SWIMv2EJB/SWIMv2EJB">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="SWIMv2Web.war" deploy-path="/" handle="module:/resource/SWIMv2Web/SWIMv2Web">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="SWIMv2ApplicationClient.jar" deploy-path="/" handle="module:/resource/SWIMv2ApplicationClient/SWIMv2ApplicationClient">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>
