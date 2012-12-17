@@ -9,7 +9,16 @@
 </head>
 <body>
 	<h1>Benvenuti in SWIMv2</h1>
-	
+	<br></br>
+	<br></br>
+	<form method="post" action="login">
+		Username: <input name="userName" /><br />
+		Password:  <input name="password" /><br />
+		<input type="radio" name="kindOfUser" value="registeredUser">Registered User</input>
+		<input type="radio" name="kindOfUser" value="admin">Administrator</input>
+		<br></br>
+		<input type="submit" value="Submit" />
+	</form>
 	PS: Difo muori
 </body>
 </html>
