@@ -6,12 +6,12 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>ServletTest</display-name>
-    <servlet-name>ServletTest</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletTest</servlet-class>
+    <display-name>ServletLogin</display-name>
+    <servlet-name>ServletLogin</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletLogin</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ServletTest</servlet-name>
-    <url-pattern>/ServletTest</url-pattern>
+    <servlet-name>ServletLogin</servlet-name>
+    <url-pattern>/login</url-pattern>
   </servlet-mapping>
 </web-app>
