@@ -5,18 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>SWIMv2 HomePage</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<h1>Benvenuti in SWIMv2</h1>
-	<br>
-	<br>
-	<form method="post" action="login">
-		Username: <input name="userName" /><br>
-		Password:  <input name="password" type="password" /><br>
-		<br>
-		<input type="submit" value="Submit" />
-	</form>
-	PS: Difo muori
+	<%
+		String userName = request.getParameter("userName");
+		String password = request.getParameter("password");
+	%>
+	Ciao <%=userName %>, la tua password è <%=password %>!!
 </body>
 </html>
