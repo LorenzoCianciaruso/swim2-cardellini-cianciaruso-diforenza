@@ -13,10 +13,10 @@
 	<br>
 	
 	<form method="post" action="login">
-		Username: <input name="userName" /><br>
+		Email: <input name="email" /><br>
 		Password:  <input name="password" type="password" /><br>
 		<br>
-		<input type="submit" value="Login" /> or 
+		<input type="submit" value="Log In" /> or 
 	</form>
 
 	<form method="post" action="RegistrationPage.jsp">
