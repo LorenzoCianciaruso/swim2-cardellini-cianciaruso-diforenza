@@ -11,14 +11,15 @@
 	<form method="post" action="registration">
 		Name: <input name="name" /><br>
 		Surname:<input name="surname" /><br>
-		Date of Birth: <input name="dateOfBirth" /><br>
+		Date of Birth: (gg/mm/aaaa) <input name="dateOfBirth" /><br>
 		Gender: <input type="radio" name="Gender" value="m" />M
 				<input type="radio" name="Gender" value="f" />F<br>
 		City: <input name="city" /><br>
 		Email: <input name="email" /><br>
-		Username: <input name="username" /><br>
 		Password: <input name="password" type="password"/><br>
-		Abilities: <input type="checkbox" name="abilities" value="imbianchino">Imbianchino<br>
+		Confim Password: <input name="password" type="password"/><br>
+		Abilities: <br>
+				   <input type="checkbox" name="abilities" value="imbianchino">Imbianchino<br>
 				   <input type="checkbox" name="abilities" value="muratore">Muratore<br>
 				   <input type="checkbox" name="abilities" value="idraulico">Idraulico<br>
 				   <input type="checkbox" name="abilities" value="Informatico">Informatico<br>
