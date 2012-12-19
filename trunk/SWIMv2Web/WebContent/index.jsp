@@ -16,7 +16,7 @@
 		Username: <input name="userName" /><br>
 		Password:  <input name="password" type="password" /><br>
 		<br>
-		<input type="submit" value="Login" />
+		<input type="submit" value="Login" /> or 
 	</form>
 
 	<form method="post" action="RegistrationPage.jsp">
