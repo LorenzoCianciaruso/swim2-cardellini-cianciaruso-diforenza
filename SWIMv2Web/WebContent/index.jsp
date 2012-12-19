@@ -5,17 +5,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>SWIMv2 HomePage</title>
+<title>SWIMv2</title>
 </head>
 <body>
 	<h1>Benvenuti in SWIMv2</h1>
 	<br>
 	<br>
+	
 	<form method="post" action="login">
 		Username: <input name="userName" /><br>
 		Password:  <input name="password" type="password" /><br>
 		<br>
-		<input type="submit" value="Submit" />
+		<input type="submit" value="Login" />
+	</form>
+
+	<form method="post" action="RegistrationPage.jsp">
+		<input type="submit" value="Register" />
 	</form>
 	PS: Difo muori
 </body>
