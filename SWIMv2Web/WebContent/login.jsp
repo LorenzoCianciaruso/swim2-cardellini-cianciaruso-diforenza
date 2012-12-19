@@ -5,13 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>User Profile Page</title>
+<title>Login</title>
 </head>
 <body>
-	<%
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-	%>
-	Ciao! la tua email è <%=email %>, la tua password è <%=password %>!!
+	You have to log in!
+	<br>
+	<form method="post" action="login" />
+		Email: <input name="username" /><br>
+		Password: <input name="password" /><br>
+		<input type="submit" value="LogIn" />
+	</form>
 </body>
 </html>

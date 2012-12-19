@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Registration Forom</title>
+<title>Registration Form</title>
 </head>
 <body>
 	<form method="post" action="registration">
@@ -16,6 +16,7 @@
 				<input type="radio" name="Gender" value="f" />F<br>
 		City: <input name="city" /><br>
 		Email: <input name="email" /><br>
+		Telephone: <input name="phone" /><br>
 		Password: <input name="password" type="password"/><br>
 		Confim Password: <input name="password" type="password"/><br>
 		Abilities: <br>
