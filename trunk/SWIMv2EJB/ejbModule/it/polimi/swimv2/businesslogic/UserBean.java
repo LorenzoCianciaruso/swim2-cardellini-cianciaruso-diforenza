@@ -5,13 +5,16 @@ import java.util.List;
 import it.polimi.swimv2.business.IUser;
 import it.polimi.swimv2.entities.User;
 
+import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 
-@Stateless
+@Stateless(mappedName="UserBean")
+@Remote(IUser.class)
 public class UserBean implements IUser {
 	@PersistenceContext(unitName = "SWIMv2DB")
     private EntityManager entityManager;
@@ -41,13 +44,16 @@ public class UserBean implements IUser {
 
 	@Override
 	public User findUserByLogin(User user) {
-		
-		User u1 = entityManager.find(User.class, user.getEmail());
-		User u2 = entityManager.find(User.class, user.getPassword());
-		if(u1.equals(u2)){
-			return u1;
+
+		//SELECT * FROM User WHERE email = 'email' and password = 'password'
+		String q = "SELECT u FROM User u WHERE email = '"+user.getEmail()+"' and password = '"+user.getPassword()+"'";
+		Query query = entityManager.createQuery(q);
+		try{
+			User u = (User) query.getSingleResult();
+			return u;
+		}catch (NoResultException e) {
+			return null;
 		}
-		return null;
 	}
 
 }
