@@ -11,14 +11,13 @@
 	<h1>Benvenuti in SWIMv2</h1>
 	<br>
 	<br>
-	
 	<form method="post" action="login">
 		Email: <input name="email" /><br>
 		Password:  <input name="password" type="password" /><br>
 		<br>
-		<input type="submit" value="Log In" /> or 
+		<input type="submit" value="Log In" />
 	</form>
-
+	or
 	<form method="post" action="RegistrationPage.jsp">
 		<input type="submit" value="Register" />
 	</form>

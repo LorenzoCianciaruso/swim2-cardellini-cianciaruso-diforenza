@@ -13,5 +13,9 @@
 		String password = request.getParameter("password");
 	%>
 	Ciao! la tua email è <%=email %>, la tua password è <%=password %>!!
+	<br>
+	<form method="post" action="index.jsp" >
+		<input type="submit" value="Log Out" />
+	</form>
 </body>
 </html>
