@@ -25,7 +25,7 @@ public class ServletLogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		IUser bean = doLookup();
-		
+
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		
