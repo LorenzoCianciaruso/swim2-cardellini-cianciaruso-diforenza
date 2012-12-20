@@ -10,10 +10,6 @@
 <body>
 	<form method="post" action="registration">
 		Name: <input name="name" /><br>
-		Surname:<input name="surname" /><br>
-		Date of Birth: (gg/mm/aaaa) <input name="dateOfBirth" /><br>
-		Gender: <input type="radio" name="Gender" value="m" />M
-				<input type="radio" name="Gender" value="f" />F<br>
 		City: <input name="city" /><br>
 		Email: <input name="email" /><br>
 		Telephone: <input name="phone" /><br>
