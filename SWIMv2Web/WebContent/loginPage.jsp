@@ -10,10 +10,8 @@
 <body>
 	You have to log in!
 	<br>
-	<form method="post" action="login" />
-		Email: <input name="username" /><br>
-		Password: <input name="password" /><br>
-		<input type="submit" value="LogIn" />
+	<form method="post" action="index.jsp" />
+		<input type="submit" value="Go to the Homepage" />
 	</form>
 </body>
 </html>

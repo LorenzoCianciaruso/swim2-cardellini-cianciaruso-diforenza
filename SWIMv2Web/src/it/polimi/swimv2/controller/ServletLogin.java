@@ -35,8 +35,8 @@ public class ServletLogin extends HttpServlet {
 		
 		User u2 = bean.findUserByLogin(u);
 		
-		if(u2.equals(null)){
-			response.encodeRedirectURL("login.jsp");
+		if(u2 == null){
+			response.sendRedirect(response.encodeRedirectURL("loginPage.jsp"));
 		}else{
 			request.setAttribute("email", email);
 			request.setAttribute("password", password);
@@ -57,7 +57,7 @@ public class ServletLogin extends HttpServlet {
             // 1. Obtaining Context
             context = it.polimi.swimv2.clientutility.JNDILookupClass.getInitialContext();
             // 2. Lookup and cast
-            bean = (IUser) context.lookup(LOOKUP_STRING);
+            bean = (IUser) context.lookup(/*LOOKUP_STRING*/"UserBean");
  
         } catch (NamingException e) {
             e.printStackTrace();
