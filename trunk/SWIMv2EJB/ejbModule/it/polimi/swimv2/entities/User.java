@@ -13,6 +13,7 @@ public class User implements Serializable {
 	
 	public User(){}
 	
+	//atributes
 	@Id
 	private int id;
 	private String email;
@@ -58,6 +59,8 @@ public class User implements Serializable {
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
+	
+	//gen hashcode
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -66,6 +69,7 @@ public class User implements Serializable {
 		return result;
 	}
 	
+	//return true if given object is equal to user
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

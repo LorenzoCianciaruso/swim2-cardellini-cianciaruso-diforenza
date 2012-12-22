@@ -21,19 +21,22 @@ public class UserBean implements IUser {
 
     public UserBean() {}
 
-	@Override
+	//save user in the database
+    @Override
 	public void saveUser(User user) {
 		entityManager.persist(user);
 	}
 
-	@Override
+	//find user that correspond to the id of given user
+    @Override
 	public User findUser(User user) {
 
 		User u = entityManager.find(User.class, user.getId());
 		return u;
 	}
 
-	@Override
+	//get all users
+    @Override
 	public List<User> retrieveAllUsers() {
 		
 		String q = "SELECT u from " + User.class.getName() + " u";
@@ -42,7 +45,8 @@ public class UserBean implements IUser {
         return usersList;
 	}
 
-	@Override
+	//select user by email and password (login info)
+    @Override
 	public User findUserByLogin(User user) {
 
 		//SELECT * FROM User WHERE email = 'email' and password = 'password'
