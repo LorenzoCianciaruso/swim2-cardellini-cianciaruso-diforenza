@@ -36,7 +36,7 @@ public class ServletLogin extends HttpServlet {
 		//if login fail redirect to error page
 		//TODO rinominare pagina errore
 		if(u2 == null){
-			response.sendRedirect(response.encodeRedirectURL("loginPage.jsp"));
+			response.sendRedirect(response.encodeRedirectURL("loginFail.jsp"));
 		}
 		//if login is successful redirect to user page
 		else{
