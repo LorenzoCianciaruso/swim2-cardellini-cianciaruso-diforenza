@@ -1,7 +1,5 @@
 package it.polimi.swimv2.controller;
 
-
-
 import it.polimi.swimv2.business.IUser;
 import it.polimi.swimv2.entities.User;
 
@@ -17,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-
+//manage login
 public class ServletLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String LOOKUP_STRING = "UserBean/remote";
@@ -25,7 +23,7 @@ public class ServletLogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		IUser bean = doLookup();
-
+		//get login information from login page
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		
@@ -35,9 +33,13 @@ public class ServletLogin extends HttpServlet {
 		
 		User u2 = bean.findUserByLogin(u);
 		
+		//if login fail redirect to error page
+		//TODO rinominare pagina errore
 		if(u2 == null){
 			response.sendRedirect(response.encodeRedirectURL("loginPage.jsp"));
-		}else{
+		}
+		//if login is successful redirect to user page
+		else{
 			request.setAttribute("email", email);
 			request.setAttribute("password", password);
 			forward(request, response, "/profile.jsp");
