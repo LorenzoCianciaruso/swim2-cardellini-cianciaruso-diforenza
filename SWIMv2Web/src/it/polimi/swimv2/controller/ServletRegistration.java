@@ -45,7 +45,6 @@ public class ServletRegistration extends HttpServlet {
 	private IUser doLookup() {
 		Context context = null;
 		IUser bean = null;
-		//TODO verifica se mail duplicata
 		try {
             // 1. Obtaining Context
             context = it.polimi.swimv2.clientutility.JNDILookupClass.getInitialContext();
