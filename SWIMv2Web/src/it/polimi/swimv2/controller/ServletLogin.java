@@ -48,10 +48,7 @@ public class ServletLogin extends HttpServlet {
 			request.setAttribute("user", u2);
 			forward(request, response, "/profile.jsp");
 		}
-		
-		
-		
-		
+
 		
 	}
 	
