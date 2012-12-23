@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 //manage login
@@ -40,8 +41,11 @@ public class ServletLogin extends HttpServlet {
 		}
 		//if login is successful redirect to user page
 		else{
-			request.setAttribute("email", email);
-			request.setAttribute("password", password);
+			HttpSession session = request.getSession(true);
+			int id = u2.getId();
+			session.setAttribute("id", id);
+			
+			request.setAttribute("user", u2);
 			forward(request, response, "/profile.jsp");
 		}
 		
