@@ -60,4 +60,5 @@ public class UserBean implements IUser {
 		}
 	}
 
+
 }
