@@ -34,7 +34,7 @@ public class ServletLogin extends HttpServlet {
 		User u2 = bean.findUserByLogin(u);
 		
 		//if login fail redirect to error page
-		//TODO rinominare pagina errore
+		
 		if(u2 == null){
 			response.sendRedirect(response.encodeRedirectURL("loginFail.jsp"));
 		}
@@ -54,7 +54,7 @@ public class ServletLogin extends HttpServlet {
 	private IUser doLookup() {
 		Context context = null;
 		IUser bean = null;
-		
+		//TODO verifica se email duplicata
 		try {
             // 1. Obtaining Context
             context = it.polimi.swimv2.clientutility.JNDILookupClass.getInitialContext();
