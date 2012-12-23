@@ -13,23 +13,28 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
+//This class manages the search tab in the profile.jsp
 public class ServletSearch extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		//Call a session bean
 		IUser bean = JNDILookupClass.doLookup();
 		
+		//get info from request
 		String searchName = request.getParameter("search");
 		
+		//create a user with that name
 		User userToSearch = new User();
 		userToSearch.setName(searchName);
 		
+		//call Bean's method to find an user using the name
 		List<User> listOfUsersFound = bean.findUserByName(userToSearch);
 		
+		//Forward to a page that shows the results
 		request.setAttribute("listOfUsers", listOfUsersFound);
 		ServletContext sc = getServletContext(); 
 		RequestDispatcher rd = sc.getRequestDispatcher("/SearchResultPage.jsp"); 

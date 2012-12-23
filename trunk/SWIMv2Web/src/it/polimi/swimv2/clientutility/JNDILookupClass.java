@@ -7,7 +7,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-
+//This is an utility class that is called to create a Session bean
 public class JNDILookupClass {
     /*location of JBoss JNDI Service provider the client will use.
     It should be URL string.*/
@@ -38,6 +38,7 @@ public class JNDILookupClass {
         return initialContext;
     }
     
+    //Method that return a new Session Bean using IUser interface
     public static IUser doLookup() {
 		Context context = null;
 		IUser bean = null;
