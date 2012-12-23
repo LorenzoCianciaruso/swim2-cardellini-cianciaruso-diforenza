@@ -14,7 +14,7 @@
 	<br />
 	<%
 		List<User> list = (List<User>) request.getAttribute("listOfUsers");
-		if(list == null){
+		if(list.size()==0){
 	%>
 	NO Results for your search, I'm sorry!
 	<%
@@ -30,7 +30,7 @@
 	
 	%>
 	<br />
-	<form method="post" action="profile.jsp">
+	<form method="post" action="ServletProfilePage">
 		<input type="submit" value="Go to your Profile" />
 	</form>
 </body>

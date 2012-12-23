@@ -34,4 +34,14 @@
     <servlet-name>ServletSearch</servlet-name>
     <url-pattern>/ServletSearch</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletProfilePage</display-name>
+    <servlet-name>ServletProfilePage</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletProfilePage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletProfilePage</servlet-name>
+    <url-pattern>/ServletProfilePage</url-pattern>
+  </servlet-mapping>
 </web-app>
