@@ -17,4 +17,6 @@ public interface IUser {
     List<User> retrieveAllUsers();
     
     User findUserByLogin(User user);
+
+	List<User> findUserByName(User userToSearch);
 }
