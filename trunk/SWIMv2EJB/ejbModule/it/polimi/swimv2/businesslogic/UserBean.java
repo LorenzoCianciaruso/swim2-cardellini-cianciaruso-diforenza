@@ -27,24 +27,6 @@ public class UserBean implements IUser {
 		entityManager.persist(user);
 	}
 
-	//find user that correspond to the id of given user
-    @Override
-	public User findUser(User user) {
-
-		User u = entityManager.find(User.class, user.getId());
-		return u;
-	}
-
-	//get all users
-    @Override
-	public List<User> retrieveAllUsers() {
-		
-		String q = "SELECT u from " + User.class.getName() + " u";
-        Query query = entityManager.createQuery(q);
-        List<User> usersList = query.getResultList();
-        return usersList;
-	}
-
 	//select user by email and password (login info)
     @Override
 	public User findUserByLogin(User user) {
@@ -67,6 +49,20 @@ public class UserBean implements IUser {
 		try{
 			List<User> listOfUsersFound = (List<User>) query.getResultList();
 			return listOfUsersFound;
+		}catch (NoResultException e){
+			return null;
+		}
+	}
+
+
+	@Override
+	public User findUserById(User user) {
+
+		String q = "SELECT u FROM User u WHERE id = '"+user.getId()+"'";
+		Query query = entityManager.createQuery(q);
+		try{
+			User u = (User) query.getSingleResult();
+			return u;
 		}catch (NoResultException e){
 			return null;
 		}
