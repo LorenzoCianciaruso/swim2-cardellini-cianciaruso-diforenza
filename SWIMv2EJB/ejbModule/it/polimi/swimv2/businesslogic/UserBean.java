@@ -42,6 +42,7 @@ public class UserBean implements IUser {
 		}
 	}
 
+    //select user passing an user with the name to search
 	@Override
 	public List<User> findUserByName(User userToSearch) {
 		String q = "SELECT u FROM User u WHERE name = '"+userToSearch.getName()+"'";
@@ -54,7 +55,7 @@ public class UserBean implements IUser {
 		}
 	}
 
-
+	//select user by passing an user with id to search
 	@Override
 	public User findUserById(User user) {
 

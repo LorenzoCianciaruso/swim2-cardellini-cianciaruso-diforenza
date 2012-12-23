@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.ejb.Remote;
 
-
+//Interface for UserBean Session Bean
 @Remote
 public interface IUser {
 
