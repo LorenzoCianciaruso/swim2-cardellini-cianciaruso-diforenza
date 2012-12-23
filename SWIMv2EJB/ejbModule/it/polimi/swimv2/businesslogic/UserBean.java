@@ -60,5 +60,17 @@ public class UserBean implements IUser {
 		}
 	}
 
+	@Override
+	public List<User> findUserByName(User userToSearch) {
+		String q = "SELECT u FROM User u WHERE name = '"+userToSearch.getName()+"'";
+		Query query = entityManager.createQuery(q);
+		try{
+			List<User> listOfUsersFound = (List<User>) query.getResultList();
+			return listOfUsersFound;
+		}catch (NoResultException e){
+			return null;
+		}
+	}
+
 
 }
