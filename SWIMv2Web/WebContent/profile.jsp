@@ -8,12 +8,9 @@
 <title>User Profile Page</title>
 </head>
 <body>
-	<%
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-	%>
-	Ciao! la tua email è <%=email %>, la tua password è <%=password %>!!
+	Ciao! <%=request.getAttribute("user").toString() %>!!
 	<br>
+	L'id della sessione è <%=session.getAttribute("id") %>
 	<form method="post" action="index.jsp" >
 		<input type="submit" value="Log Out" />
 	</form>
