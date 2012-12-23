@@ -1,6 +1,7 @@
 package it.polimi.swimv2.controller;
 
 import it.polimi.swimv2.business.IUser;
+import it.polimi.swimv2.clientutility.JNDILookupClass;
 import it.polimi.swimv2.entities.User;
 
 import java.io.IOException;
@@ -19,11 +20,10 @@ import javax.servlet.http.HttpSession;
 //manage login
 public class ServletLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String LOOKUP_STRING = "UserBean/remote";
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		IUser bean = doLookup();
+		IUser bean = JNDILookupClass.doLookup();
 		//get login information from login page
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
@@ -53,23 +53,6 @@ public class ServletLogin extends HttpServlet {
 		
 		
 		
-	}
-	
-	private IUser doLookup() {
-		Context context = null;
-		IUser bean = null;
-		//TODO verifica se email duplicata
-		try {
-            // 1. Obtaining Context
-            context = it.polimi.swimv2.clientutility.JNDILookupClass.getInitialContext();
-            // 2. Lookup and cast
-            bean = (IUser) context.lookup(/*LOOKUP_STRING*/"UserBean");
- 
-        } catch (NamingException e) {
-            e.printStackTrace();
-        }
-		
-		return bean;
 	}
 	
 	

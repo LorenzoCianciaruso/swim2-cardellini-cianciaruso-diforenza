@@ -13,7 +13,7 @@
 	L'id della sessione è <%=session.getAttribute("id") %>
 	<br>
 	<br>
-	<form method="post" action="SearchServlet" >
+	<form method="post" action="ServletSearch" >
 		Type user name: <input name="search" />
 		<input type="submit" value="Search User" />
 	</form>
