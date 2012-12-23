@@ -1,5 +1,7 @@
 package it.polimi.swimv2.clientutility;
 
+import it.polimi.swimv2.business.IUser;
+
 import java.util.Properties;
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -35,4 +37,21 @@ public class JNDILookupClass {
         }
         return initialContext;
     }
+    
+    public static IUser doLookup() {
+		Context context = null;
+		IUser bean = null;
+		
+		try {
+            // 1. Obtaining Context
+            context = getInitialContext();
+            // 2. Lookup and cast
+            bean = (IUser) context.lookup("UserBean");
+ 
+        } catch (NamingException e) {
+            e.printStackTrace();
+        }
+		
+		return bean;
+	}
 }
