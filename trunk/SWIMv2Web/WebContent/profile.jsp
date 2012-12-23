@@ -11,6 +11,13 @@
 	Ciao! <%=request.getAttribute("user").toString() %>!!
 	<br>
 	L'id della sessione è <%=session.getAttribute("id") %>
+	<br>
+	<br>
+	<form method="post" action="SearchServlet" >
+		Type user name: <input name="search" />
+		<input type="submit" value="Search User" />
+	</form>
+	<br>
 	<form method="post" action="index.jsp" >
 		<input type="submit" value="Log Out" />
 	</form>

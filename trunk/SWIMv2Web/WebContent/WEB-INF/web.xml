@@ -24,4 +24,14 @@
     <servlet-name>ServletRegistration</servlet-name>
     <url-pattern>/registration</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletSearch</display-name>
+    <servlet-name>ServletSearch</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletSearch</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletSearch</servlet-name>
+    <url-pattern>/ServletSearch</url-pattern>
+  </servlet-mapping>
 </web-app>
