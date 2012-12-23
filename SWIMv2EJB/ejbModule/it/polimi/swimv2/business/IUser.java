@@ -12,11 +12,9 @@ public interface IUser {
 
 	void saveUser(User user);
     
-    User findUser(User user);
-    
-    List<User> retrieveAllUsers();
-    
     User findUserByLogin(User user);
 
 	List<User> findUserByName(User userToSearch);
+
+	User findUserById(User user);
 }
