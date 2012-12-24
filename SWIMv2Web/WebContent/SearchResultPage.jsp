@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="it.polimi.swimv2.entities.RegisteredUser" %>
+<%@ page import="it.polimi.swimv2.entities.User" %>
 <%@page import="java.util.List" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -24,7 +24,7 @@
 	%>
 	<%=user.toString() %>
 	<form method="post" action="ServletProfileSeenByOther">
-		<input type="hidden" name="user" value=<%=user.getIdRegisteredUser() %> />
+		<input type="hidden" name="user" value=<%=user.getIdUser() %> />
 		<input type="submit" value="View Profile" />
 	</form>
 	<%
