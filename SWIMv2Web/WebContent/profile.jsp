@@ -8,9 +8,9 @@
 <title>User Profile Page</title>
 </head>
 <body>
-	Ciao! <%=request.getAttribute("user").toString() %>!!
+	Hello <%=request.getAttribute("user").toString() %>!!
 	<br>
-	L'id della sessione è <%=session.getAttribute("id") %>
+	Session ID is <%=session.getAttribute("id") %>
 	<br>
 	<br>
 	<form method="post" action="ServletSearch" >

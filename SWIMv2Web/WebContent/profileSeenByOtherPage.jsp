@@ -12,6 +12,6 @@
 </title>
 </head>
 <body>
-	Questa è la pagina del profilo di <%= title %>
+	This is the profile of: <%= title %>
 </body>
 </html>
