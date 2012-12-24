@@ -1,6 +1,6 @@
 package it.polimi.swimv2.business;
 
-;
+
 import it.polimi.swimv2.entities.User;
 
 import java.util.List;
