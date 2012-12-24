@@ -9,18 +9,18 @@
 </head>
 <body>
 	<form method="post" action="registration">
-		Name: <input name="name" /><br>
-		City: <input name="city" /><br>
-		Email: <input name="email" /><br>
-		Telephone: <input name="phone" /><br>
-		Password: <input name="password" type="password"/><br>
-		Confim Password: <input name="password" type="password"/><br>
-		Abilities: <br>
-				   <input type="checkbox" name="abilities" value="imbianchino">Imbianchino<br>
-				   <input type="checkbox" name="abilities" value="muratore">Muratore<br>
-				   <input type="checkbox" name="abilities" value="idraulico">Idraulico<br>
-				   <input type="checkbox" name="abilities" value="Informatico">Informatico<br>
-				   <input type="checkbox" name="abilities" value="babysitter">Babysitter<br>
+		Name: <input name="name" /><br />
+		City: <input name="city" /><br />
+		Email: <input name="email" /><br />
+		Telephone: <input name="phone" /><br />
+		Password: <input name="password" type="password" /><br />
+		Confirm Password: <input name="password" type="password" /><br />
+		Abilities: <br />
+				   <input type="checkbox" name="abilities" value="imbianchino" />Imbianchino<br />
+				   <input type="checkbox" name="abilities" value="muratore" />Muratore<br />
+				   <input type="checkbox" name="abilities" value="idraulico" />Idraulico<br />
+				   <input type="checkbox" name="abilities" value="Informatico" />Informatico<br />
+				   <input type="checkbox" name="abilities" value="babysitter" />Babysitter<br />
 				   
 		<input type="submit" value="Submit Registration"></input>
     </form>
