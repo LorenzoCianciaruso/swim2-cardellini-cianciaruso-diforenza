@@ -44,4 +44,14 @@
     <servlet-name>ServletProfilePage</servlet-name>
     <url-pattern>/ServletProfilePage</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletProfileSeenByOther</display-name>
+    <servlet-name>ServletProfileSeenByOther</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletProfileSeenByOther</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletProfileSeenByOther</servlet-name>
+    <url-pattern>/ServletProfileSeenByOther</url-pattern>
+  </servlet-mapping>
 </web-app>
