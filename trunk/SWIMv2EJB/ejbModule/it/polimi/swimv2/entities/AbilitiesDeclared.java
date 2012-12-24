@@ -11,16 +11,16 @@ public class AbilitiesDeclared implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private RegisteredUser user;
+	private User user;
 	@Id
 	private Ability ability;
 	private int feedback;
 	
 	
-	public RegisteredUser getUser() {
+	public User getUser() {
 		return user;
 	}
-	public void setUser(RegisteredUser user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 	public int getIdAbility() {

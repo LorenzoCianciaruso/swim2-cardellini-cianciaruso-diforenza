@@ -14,7 +14,7 @@ public class NewAbility implements Serializable{
 	@Id
 	private int idNewAbilty;
 	@Id
-	private RegisteredUser user;
+	private User user;
 	private String name;
 	
 	
@@ -24,10 +24,10 @@ public class NewAbility implements Serializable{
 	public void setIdNewAbilty(int idNewAbilty) {
 		this.idNewAbilty = idNewAbilty;
 	}
-	public RegisteredUser getUser() {
+	public User getUser() {
 		return user;
 	}
-	public void setUser(RegisteredUser user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 	public String getName() {
