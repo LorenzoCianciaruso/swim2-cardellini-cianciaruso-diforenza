@@ -23,11 +23,11 @@ public class AbilitiesDeclared implements Serializable{
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public int getIdAbility() {
-		return idAbility;
+	public Ability getAbility() {
+		return ability;
 	}
-	public void setIdAbility(int idAbility) {
-		this.idAbility = idAbility;
+	public void setAbility(Ability ability) {
+		this.ability = ability;
 	}
 	public int getFeedback() {
 		return feedback;
