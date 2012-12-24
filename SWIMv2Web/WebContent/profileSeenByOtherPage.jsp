@@ -7,11 +7,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title><% User user = (User) request.getAttribute("user");	%>
-		<%String title = user.getName(); %>
-		<%= title %>
-</title>
+		<%= user.getName() %>
+	</title>
 </head>
 <body>
-	This is the profile of: <%= title %>
+	This is the profile of: <%= user.getName() %>
 </body>
 </html>

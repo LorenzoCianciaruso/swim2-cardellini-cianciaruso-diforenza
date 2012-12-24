@@ -9,8 +9,8 @@
 </head>
 <body>
 	You have to log in!
-	<br>
-	<form method="post" action="index.jsp" />
+	<br />
+	<form method="post" action="index.jsp" >
 		<input type="submit" value="Go to the Homepage" />
 	</form>
 </body>
