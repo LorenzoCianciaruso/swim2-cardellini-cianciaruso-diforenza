@@ -13,14 +13,14 @@
 	Here are all users that matches your research:<br />
 	<br />
 	<%
-		List<RegisteredUser> list = (List<RegisteredUser>) request.getAttribute("listOfUsers");
+		List<User> list = (List<User>) request.getAttribute("listOfUsers");
 		if(list.size()==0){
 	%>
 	NO Results for your search, I'm sorry!
 	<%
 		}else{
 			for(int i = 0; i< list.size(); i++){
-				RegisteredUser user = list.get(i);
+				User user = list.get(i);
 	%>
 	<%=user.toString() %>
 	<form method="post" action="ServletProfileSeenByOther">
