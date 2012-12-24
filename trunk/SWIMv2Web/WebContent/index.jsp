@@ -8,7 +8,7 @@
 <title>SWIMv2</title>
 </head>
 <body>
-	<h1>Benvenuti in SWIMv2</h1>
+	<h1>Welcome in SWIMv2</h1>
 	<br>
 	<br>
 	<form method="post" action="login">
@@ -21,6 +21,5 @@
 	<form method="post" action="RegistrationPage.jsp">
 		<input type="submit" value="Register" />
 	</form>
-	PS: Difo muori
 </body>
 </html>
