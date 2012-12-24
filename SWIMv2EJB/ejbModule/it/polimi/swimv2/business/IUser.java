@@ -1,5 +1,6 @@
 package it.polimi.swimv2.business;
 
+;
 import it.polimi.swimv2.entities.User;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public interface IUser {
 
 	void saveUser(User user);
     
-    User findUserByLogin(User user);
+    User findUserByLogin(User u);
 
 	List<User> findUserByName(User userToSearch);
 

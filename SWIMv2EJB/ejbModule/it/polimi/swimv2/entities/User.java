@@ -2,24 +2,46 @@ package it.polimi.swimv2.entities;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import javax.persistence.Entity;
 
-@Entity(name = "User")
+
+@Entity(name = "RegisteredUser") 
 public class User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	public User(){}
+	public User(){};
 	
-	//attributes
 	@Id
+	private int idRegisteredUser;
+	private String name;
+	private String surname;
 	private String email;
 	private String password;
-	private boolean administrator;
+	private String city;
+	private String birthday;
+	private String phone;
 
-
+	public int getIdUser() {
+		return idRegisteredUser;
+	}
+	public void setIdUser(int idRegisteredUser) {
+		this.idRegisteredUser = idRegisteredUser;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getSurname() {
+		return surname;
+	}
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
 	public String getEmail() {
 		return email;
 	}
@@ -32,43 +54,24 @@ public class User implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (administrator ? 1231 : 1237);
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result
-				+ ((password == null) ? 0 : password.hashCode());
-		return result;
+	public String getCity() {
+		return city;
 	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		if (administrator != other.administrator)
-			return false;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
-		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
-			return false;
-		return true;
+	public void setCity(String city) {
+		this.city = city;
 	}
-	
-	
-	
+	public String getBirthday() {
+		return birthday;
+	}
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
 	
-
 }
