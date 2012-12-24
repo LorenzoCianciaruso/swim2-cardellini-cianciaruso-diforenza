@@ -14,13 +14,13 @@
 	Hello <%=request.getAttribute("user").toString() %>!!
 	<br />
 	Session ID is <%=session.getAttribute("id") %>
-	<br>
-	<br>
+	<br />
+	<br />
 	<form method="post" action="ServletSearch" >
 		Type user name: <input name="search" />
 		<input type="submit" value="Search User" />
 	</form>
-	<br>
+	<br />
 	<form method="post" action="index.jsp" >
 		<input type="submit" value="Log Out" />
 	</form>
