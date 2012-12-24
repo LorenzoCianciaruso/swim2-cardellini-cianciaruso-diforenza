@@ -24,7 +24,7 @@
 	%>
 	<%=user.toString() %>
 	<form method="post" action="ServletProfileSeenByOther">
-		<input type="hidden" name="user" value=<%=user.getId() %> />
+		<input type="hidden" name="user" value=<%=user.getIdRegisteredUser() %> />
 		<input type="submit" value="View Profile" />
 	</form>
 	<%
