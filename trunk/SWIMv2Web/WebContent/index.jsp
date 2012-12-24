@@ -9,12 +9,12 @@
 </head>
 <body>
 	<h1>Welcome in SWIMv2</h1>
-	<br>
-	<br>
+	<br />
+	<br />
 	<form method="post" action="login">
-		Email: <input name="email" /><br>
-		Password:  <input name="password" type="password" /><br>
-		<br>
+		Email: <input name="email" /><br />
+		Password:  <input name="password" type="password" /><br />
+		<br />
 		<input type="submit" value="Log In" />
 	</form>
 	or
