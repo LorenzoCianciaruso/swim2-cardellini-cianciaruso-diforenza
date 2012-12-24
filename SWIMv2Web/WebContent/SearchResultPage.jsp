@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="it.polimi.swimv2.entities.User" %>
+<%@ page import="it.polimi.swimv2.entities.RegisteredUser" %>
 <%@page import="java.util.List" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -13,14 +13,14 @@
 	Here are all users that matches your research:<br />
 	<br />
 	<%
-		List<User> list = (List<User>) request.getAttribute("listOfUsers");
+		List<RegisteredUser> list = (List<RegisteredUser>) request.getAttribute("listOfUsers");
 		if(list.size()==0){
 	%>
 	NO Results for your search, I'm sorry!
 	<%
 		}else{
 			for(int i = 0; i< list.size(); i++){
-				User user = list.get(i);
+				RegisteredUser user = list.get(i);
 	%>
 	<%=user.toString() %>
 	<form method="post" action="ServletProfileSeenByOther">
