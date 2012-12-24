@@ -13,22 +13,13 @@ public class User implements Serializable {
 	
 	public User(){}
 	
-	//atributes
+	//attributes
 	@Id
-	private int id;
 	private String email;
 	private String password;
-	private String name;
-	private String city;
-	private String telephone;
+	private boolean administrator;
 
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -41,35 +32,16 @@ public class User implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
-	public String getTelephone() {
-		return telephone;
-	}
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}
-	
-	//gen hashcode
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + id;
+		result = prime * result + (administrator ? 1231 : 1237);
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result
+				+ ((password == null) ? 0 : password.hashCode());
 		return result;
 	}
-	
-	//return true if given object is equal to user
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -79,22 +51,24 @@ public class User implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (id != other.id)
+		if (administrator != other.administrator)
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
 			return false;
 		return true;
 	}
 	
-	//generate a String that describe the user
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", email=" + email + ", password=" + password
-				+ ", name=" + name + ", city=" + city + ", telephone="
-				+ telephone + "]";
-	}
 	
 	
-	
-	
+
 	
 
 }
