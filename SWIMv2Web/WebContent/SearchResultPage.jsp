@@ -23,6 +23,9 @@
 				User user = list.get(i);
 	%>
 	<%=user.toString() %>
+	<form method="post" action="ServletProfileSeenByOther">
+		<input type="submit" value="View Profile" />
+	</form>
 	<%
 			}
 		}
