@@ -25,14 +25,19 @@ public class ServletRegistration extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		String name = request.getParameter("name");
-		String telephone = request.getParameter("phone");
+		String surname = request.getParameter("surname");
+		String phone = request.getParameter("phone");
+		String birthday = request.getParameter("birthday");
 		String city = request.getParameter("city");
 		
 		User u = new User();
+		
 		u.setEmail(email);
 		u.setPassword(password);
 		u.setName(name);
-		u.setTelephone(telephone);
+		u.setSurname(surname);
+		u.setPhone(phone);
+		u.setBirthday(birthday);
 		u.setCity(city);
 		
 		//save the entity created in the DataBase
