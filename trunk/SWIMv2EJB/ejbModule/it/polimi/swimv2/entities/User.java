@@ -15,7 +15,7 @@ public class User implements Serializable {
 	public User(){};
 	
 	@Id
-	private int idRegisteredUser;
+	private int idUser;
 	private String name;
 	private String surname;
 	private String email;
@@ -25,10 +25,10 @@ public class User implements Serializable {
 	private String phone;
 
 	public int getIdUser() {
-		return idRegisteredUser;
+		return idUser;
 	}
 	public void setIdUser(int idRegisteredUser) {
-		this.idRegisteredUser = idRegisteredUser;
+		this.idUser = idUser;
 	}
 	public String getName() {
 		return name;
