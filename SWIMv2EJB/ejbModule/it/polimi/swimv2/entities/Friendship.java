@@ -15,21 +15,21 @@ public class Friendship implements Serializable {
 	//non so come si metta una chiave primaria multipla, questa chiave dovrebbe comprendere entrambi gli utenti registrati
 	
 	@Id
-	private User user1;
+	private int idUser1;
 	@Id
-	private User user2;
+	private int idUser2;
 	
-	public User getUser1() {
-		return user1;
+	public int getidUser1() {
+		return idUser1;
 	}
-	public void setUser1(User user1) {
-		this.user1 = user1;
+	public void setidUser1(int user1) {
+		this.idUser1 = user1;
 	}
-	public User getUser2() {
-		return user2;
+	public int getidUser2() {
+		return idUser2;
 	}
-	public void setUser2(User user2) {
-		this.user2 = user2;
+	public void setidUser2(int user2) {
+		this.idUser2 = user2;
 	}
 	
 	

@@ -60,7 +60,7 @@ public class UserBean implements IUser {
 	@Override
 	public User findUserById(User user) {
 
-		String q = "SELECT u FROM User u WHERE id = '"+user.getId()+"'";
+		String q = "SELECT u FROM User u WHERE id = '"+user.getIdUser()+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			User u = (User) query.getSingleResult();
