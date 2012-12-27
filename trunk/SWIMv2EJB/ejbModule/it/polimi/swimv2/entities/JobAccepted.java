@@ -11,16 +11,16 @@ public class JobAccepted implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private JobRequest job;
+	private int idJob;
 	private int feedback;
 	private String comment;
 	
 	
-	public JobRequest getJob() {
-		return job;
+	public int getIdJob() {
+		return idJob;
 	}
-	public void setJob(JobRequest job) {
-		this.job = job;
+	public void setJob(int job) {
+		this.idJob = job;
 	}
 	public int getFeedback() {
 		return feedback;

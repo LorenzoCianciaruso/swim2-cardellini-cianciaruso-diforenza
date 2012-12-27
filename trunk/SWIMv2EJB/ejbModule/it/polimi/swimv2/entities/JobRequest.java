@@ -13,9 +13,9 @@ public class JobRequest implements Serializable {
 	
 	@Id
 	private int idJobRequest;
-	private User performer;
-	private User requestor;
-	private Ability ability;
+	private int idPerfomer;
+	private int idRequestor;
+	private int idAbility;
 	private String place;
 	private String date;
 	
@@ -26,23 +26,23 @@ public class JobRequest implements Serializable {
 	public void setIdJob(int idJob) {
 		this.idJobRequest = idJob;
 	}
-	public User getPerformer() {
-		return performer;
+	public int getIdPerformer() {
+		return idPerfomer;
 	}
-	public void setPerformer(User performer) {
-		this.performer = performer;
+	public void setIdPerformer(int idPerformer) {
+		this.idPerfomer = idPerformer;
 	}
-	public User getRequestor() {
-		return requestor;
+	public int getRequestor() {
+		return idRequestor;
 	}
-	public void setRequestor(User requestor) {
-		this.requestor = requestor;
+	public void setRequestor(int idRequestor) {
+		this.idRequestor = idRequestor;
 	}
-	public Ability getAbility() {
-		return ability;
+	public int getAbility() {
+		return idAbility;
 	}
-	public void setAbility(Ability ability) {
-		this.ability = ability;
+	public void setAbility(int idAbility) {
+		this.idAbility = idAbility;
 	}
 	public String getPlace() {
 		return place;

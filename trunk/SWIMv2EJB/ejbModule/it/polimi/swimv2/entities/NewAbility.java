@@ -12,23 +12,22 @@ public class NewAbility implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private int idNewAbilty;
-	@Id
-	private User user;
+	private int idNewAbility;
+	private int idUser;
 	private String name;
 	
 	
-	public int getIdNewAbilty() {
-		return idNewAbilty;
+	public int getIdNewAbility() {
+		return idNewAbility;
 	}
-	public void setIdNewAbilty(int idNewAbilty) {
-		this.idNewAbilty = idNewAbilty;
+	public void setIdNewAbility(int idNewAbility) {
+		this.idNewAbility = idNewAbility;
 	}
-	public User getUser() {
-		return user;
+	public int getIdUser() {
+		return idUser;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public void setIdUser(int user) {
+		this.idUser = user;
 	}
 	public String getName() {
 		return name;
