@@ -29,7 +29,7 @@ public class ServletProfilePage extends HttpServlet {
 		
 		//i make a new user with the session id
 		User user = new User();
-		user.setId(currentSessionId);
+		user.setIdUser(currentSessionId);
 		
 		//i look for a user that has the same id in the database
 		User currentUser = bean.findUserById(user);

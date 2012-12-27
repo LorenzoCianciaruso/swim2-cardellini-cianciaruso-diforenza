@@ -44,7 +44,7 @@ public class ServletLogin extends HttpServlet {
 		//creating a new Session with the user id
 		else{
 			HttpSession session = request.getSession(true);
-			int id = u2.getId();
+			int id = u2.getIdUser();
 			session.setAttribute("id", id);
 			
 			request.setAttribute("user", u2);
