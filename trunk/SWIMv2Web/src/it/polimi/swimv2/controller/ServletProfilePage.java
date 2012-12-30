@@ -1,7 +1,7 @@
 package it.polimi.swimv2.controller;
 
 import it.polimi.swimv2.business.IUser;
-import it.polimi.swimv2.clientutility.JNDIUserLookupClass;
+import it.polimi.swimv2.clientutility.JNDILookupClass;
 import it.polimi.swimv2.entities.Admin;
 import it.polimi.swimv2.entities.User;
 
@@ -21,7 +21,7 @@ public class ServletProfilePage extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		IUser bean = JNDIUserLookupClass.doLookup();
+		IUser bean = (IUser) JNDILookupClass.doLookup("UserBean");
 		
 		//I check which user id matches the session
 		//i save the session id
