@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Entity;
 
 
-@Entity(name = "RegisteredUser") 
+@Entity(name = "User") 
 public class User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -15,7 +15,7 @@ public class User implements Serializable {
 	public User(){};
 	
 	@Id
-	private int idUser;
+	private int id;
 	private String name;
 	private String surname;
 	private String email;
@@ -24,11 +24,11 @@ public class User implements Serializable {
 	private String birthday;
 	private String phone;
 
-	public int getIdUser() {
-		return idUser;
+	public int getId() {
+		return id;
 	}
-	public void setIdUser(int idUser) {
-		this.idUser = idUser;
+	public void setId(int idUser) {
+		this.id = idUser;
 	}
 	public String getName() {
 		return name;
