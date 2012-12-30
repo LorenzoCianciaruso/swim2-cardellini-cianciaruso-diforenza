@@ -17,7 +17,8 @@ import javax.persistence.Query;
 @Stateless(mappedName="UserBean")
 @Remote(IUser.class)
 public class UserBean implements IUser {
-	@PersistenceContext(unitName = "SWIMv2DB")
+	
+	@PersistenceContext(unitName = "sql21573")
     private EntityManager entityManager;
 
     public UserBean() {}
@@ -32,7 +33,6 @@ public class UserBean implements IUser {
     @Override
 	public User findUserByLogin(User user) {
 
-		//SELECT * FROM User WHERE email = 'email' and password = 'password'
 		String q = "SELECT u FROM User u WHERE email = '"+user.getEmail()+"' and password = '"+user.getPassword()+"'";
 		Query query = entityManager.createQuery(q);
 		try{
