@@ -8,20 +8,18 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 //This is an utility class that is called to create a Session bean
-public class JNDILookupClass {
+public class JNDIUserLookupClass {
     /*location of JBoss JNDI Service provider the client will use.
     It should be URL string.*/
-    private static final String PROVIDER_URL = "jnp://localhost:1099";
+    private static final String PROVIDER_URL = "jnp://sql2.freesqldatabase.com:1099";
  
     /*specifying the list of package prefixes to use when
     loading in URL context factories. colon separated*/
-    private static final String JNP_INTERFACES =
-            "org.jboss.naming:org.jnp.interfaces";
+    private static final String JNP_INTERFACES = "org.jboss.naming:org.jnp.interfaces";
  
     /*Factory that creates initial context objects.
     fully qualified class name. */
-    private static final String INITIAL_CONTEXT_FACTORY =
-            "org.jnp.interfaces.NamingContextFactory";
+    private static final String INITIAL_CONTEXT_FACTORY = "org.jnp.interfaces.NamingContextFactory";
  
     private static Context initialContext;
  

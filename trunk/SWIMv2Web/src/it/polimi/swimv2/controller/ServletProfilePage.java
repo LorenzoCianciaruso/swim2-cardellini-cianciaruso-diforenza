@@ -1,7 +1,7 @@
 package it.polimi.swimv2.controller;
 
 import it.polimi.swimv2.business.IUser;
-import it.polimi.swimv2.clientutility.JNDILookupClass;
+import it.polimi.swimv2.clientutility.JNDIUserLookupClass;
 import it.polimi.swimv2.entities.Admin;
 import it.polimi.swimv2.entities.User;
 
@@ -21,7 +21,7 @@ public class ServletProfilePage extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		IUser bean = JNDILookupClass.doLookup();
+		IUser bean = JNDIUserLookupClass.doLookup();
 		
 		//I check which user id matches the session
 		//i save the session id
@@ -29,7 +29,7 @@ public class ServletProfilePage extends HttpServlet {
 		
 		//i make a new user with the session id
 		User user = new User();
-		user.setIdUser(currentSessionId);
+		user.setId(currentSessionId);
 		
 		//i look for a user that has the same id in the database
 		User currentUser = bean.findUserById(user);

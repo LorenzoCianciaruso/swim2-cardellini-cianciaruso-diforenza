@@ -1,7 +1,7 @@
 package it.polimi.swimv2.controller;
 
 import it.polimi.swimv2.business.IUser;
-import it.polimi.swimv2.clientutility.JNDILookupClass;
+import it.polimi.swimv2.clientutility.JNDIUserLookupClass;
 import it.polimi.swimv2.entities.User;
 
 import java.io.IOException;
@@ -22,7 +22,7 @@ public class ServletLogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//create a stateless Session bean
-		IUser bean = JNDILookupClass.doLookup();
+		IUser bean = JNDIUserLookupClass.doLookup();
 		
 		//get login information from the request form sent by the login page
 		String email = request.getParameter("email");
@@ -38,13 +38,15 @@ public class ServletLogin extends HttpServlet {
 		
 		//if login fail redirect to error page
 		if(u2 == null){
+			//controllare se è nella tabella admin
+			//altrimenti fare il redirect alla loginFail.jsp
 			response.sendRedirect(response.encodeRedirectURL("loginFail.jsp"));
 		}
 		//if login is successful redirect to user page
 		//creating a new Session with the user id
 		else{
 			HttpSession session = request.getSession(true);
-			int id = u2.getIdUser();
+			int id = u2.getId();
 			session.setAttribute("id", id);
 			
 			request.setAttribute("user", u2);
