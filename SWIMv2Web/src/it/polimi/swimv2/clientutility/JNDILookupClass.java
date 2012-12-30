@@ -8,10 +8,10 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 //This is an utility class that is called to create a Session bean
-public class JNDIUserLookupClass {
+public class JNDILookupClass {
     /*location of JBoss JNDI Service provider the client will use.
     It should be URL string.*/
-    private static final String PROVIDER_URL = "jnp://sql2.freesqldatabase.com:1099";
+    private static final String PROVIDER_URL = "jnp://localhost:1099";
  
     /*specifying the list of package prefixes to use when
     loading in URL context factories. colon separated*/
@@ -37,15 +37,15 @@ public class JNDIUserLookupClass {
     }
     
     //Method that return a new Session Bean using IUser interface
-    public static IUser doLookup() {
+    public static Object doLookup(String beanName) {
 		Context context = null;
-		IUser bean = null;
+		Object bean = null;
 		
 		try {
             // 1. Obtaining Context
             context = getInitialContext();
             // 2. Lookup and cast
-            bean = (IUser) context.lookup("UserBean");
+            bean = context.lookup(beanName);
  
         } catch (NamingException e) {
             e.printStackTrace();
