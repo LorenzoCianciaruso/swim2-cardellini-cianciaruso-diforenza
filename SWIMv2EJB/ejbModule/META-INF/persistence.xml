@@ -1,6 +1,6 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
    <!-- MySQL Datasource -->
-    <persistence-unit name="SWIMv2DB">
+    <persistence-unit name="sql21573">
         <jta-data-source>java:/MySQLDS</jta-data-source>
         <properties>
             <property name="showSql" value="true"/>

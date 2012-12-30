@@ -2,9 +2,9 @@
 <datasources>
     <local-tx-datasource>
         <jndi-name>MySQLDS</jndi-name>
-        <connection-url>jdbc:mysql://localhost/SWIMv2DB</connection-url>
+        <connection-url>jdbc:mysql://sql2.freesqldatabase.com/sql21573</connection-url>
         <driver-class>com.mysql.jdbc.Driver</driver-class>
-        <user-name>root</user-name>
+        <user-name>folgore</user-name>
         <password>polimi</password>
         <valid-connection-checker-class-name>
             org.jboss.resource.adapter.jdbc.vendor.MySQLValidConnectionChecker
