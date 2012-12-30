@@ -1,7 +1,7 @@
 package it.polimi.swimv2.controller;
 
 import it.polimi.swimv2.business.IUser;
-import it.polimi.swimv2.clientutility.JNDILookupClass;
+import it.polimi.swimv2.clientutility.JNDIUserLookupClass;
 import it.polimi.swimv2.entities.User;
 
 import java.io.IOException;
@@ -22,7 +22,7 @@ public class ServletSearch extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//Call a session bean
-		IUser bean = JNDILookupClass.doLookup();
+		IUser bean = JNDIUserLookupClass.doLookup();
 		
 		//get info from request
 		String searchName = request.getParameter("search");
