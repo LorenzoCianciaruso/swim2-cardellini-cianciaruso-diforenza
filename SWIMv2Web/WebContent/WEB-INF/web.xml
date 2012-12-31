@@ -54,4 +54,14 @@
     <servlet-name>ServletProfileSeenByOther</servlet-name>
     <url-pattern>/ServletProfileSeenByOther</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletLogout</display-name>
+    <servlet-name>ServletLogout</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletLogout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletLogout</servlet-name>
+    <url-pattern>/ServletLogout</url-pattern>
+  </servlet-mapping>
 </web-app>

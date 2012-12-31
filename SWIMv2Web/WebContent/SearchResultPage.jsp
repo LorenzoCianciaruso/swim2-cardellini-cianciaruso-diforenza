@@ -22,9 +22,9 @@
 			for(int i = 0; i< list.size(); i++){
 				User user = list.get(i);
 	%>
-	<%=user.toString() %>
+	<%=user.getName()+" "+user.getSurname() %>
 	<form method="post" action="ServletProfileSeenByOther">
-		<input type="hidden" name="user" value=<%=user.getId()%> />
+		<input type="hidden" name="userId" value=<%=user.getId()%> />
 		<input type="submit" value="View Profile" />
 	</form>
 	<%
