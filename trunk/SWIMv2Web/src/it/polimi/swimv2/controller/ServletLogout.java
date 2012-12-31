@@ -7,12 +7,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class ServletProfileSeenByOther extends HttpServlet {
+public class ServletLogout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		response.getWriter().println("L'id è: "+(Integer) request.getAttribute("userId"));
+
+		//Delete the session id associated to the user
+		//and forward to the login page
+		request.getSession().removeAttribute("id");
+		response.sendRedirect(response.encodeRedirectURL("index.jsp"));
 	}
 
 }
