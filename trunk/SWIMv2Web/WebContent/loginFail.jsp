@@ -8,7 +8,7 @@
 <title>Login</title>
 </head>
 <body>
-	You have to log in!
+	You have to log in or you have entered wrong values!
 	<br />
 	<form method="post" action="index.jsp" >
 		<input type="submit" value="Go to the Homepage" />
