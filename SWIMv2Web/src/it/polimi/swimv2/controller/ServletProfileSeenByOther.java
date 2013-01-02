@@ -12,7 +12,8 @@ public class ServletProfileSeenByOther extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.getWriter().println("L'id è: "+(Integer) request.getAttribute("userId"));
+		String id = request.getParameter("userId");
+		response.getWriter().println("L'id dell'utente è: "+id);
 	}
 
 }

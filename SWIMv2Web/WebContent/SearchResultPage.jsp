@@ -24,7 +24,7 @@
 	%>
 	<%=user.getName()+" "+user.getSurname() %>
 	<form method="post" action="ServletProfileSeenByOther">
-		<input type="hidden" name="userId" value=<%=user.getId()%> />
+		<input type="hidden" name="userId" value="<%=user.getId()%>" />
 		<input type="submit" value="View Profile" />
 	</form>
 	<%
