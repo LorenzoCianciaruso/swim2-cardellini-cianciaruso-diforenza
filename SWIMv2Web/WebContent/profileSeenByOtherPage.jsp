@@ -11,6 +11,18 @@
 	</title>
 </head>
 <body>
-	This is the profile of: <%= user.getName() %>
+	<br />
+	Profile of: <%=user.getName()+" "+user.getSurname() %>
+	<br />
+	Birthday: <%=user.getBirthday() %>
+	<br />
+	City: <%=user.getCity() %>
+	<br />
+	Phone Number: <%=user.getPhone() %>
+	<br />
+	Email: <%=user.getEmail() %>
+	<br />
+	//TODO aggiungere qualcosa che cicli su ability declared e restituisca le abilità dell'utente
+	<br />
 </body>
 </html>
