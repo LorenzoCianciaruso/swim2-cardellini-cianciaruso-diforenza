@@ -96,6 +96,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>ServletAbilityRequested</display-name>
+    <servlet-name>ServletAbilityRequested</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletAbilityRequested</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAbilityRequested</servlet-name>
+    <url-pattern>/ServletAbilityRequested</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>NewAbilitiesServlet</display-name>
     <servlet-name>NewAbilitiesServlet</servlet-name>
     <servlet-class>it.polimi.swimv2.controller.NewAbilitiesServlet</servlet-class>

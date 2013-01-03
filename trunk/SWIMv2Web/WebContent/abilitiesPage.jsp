@@ -10,10 +10,9 @@
 <title>List of Abilities</title>
 </head>
 <body>
+
 	<form method="post" action="ServletAbilityAdded">
-	
 		<h2>List of Abilities:</h2>
-		<br />
 		<br />
 		<%
 		List<Ability> list = (List<Ability>) request.getAttribute("abilitiesList");
@@ -23,18 +22,29 @@
 		<%
 		}
 		%>
+		<br />
+		<input type="submit" value="Add Checked Abilities" />
+	</form>
+	
+	<form method="post" action="ServletAbilityRequested">
+		<br />
 		If you can't find the ability, type its name in the field and then click the Add button: <input name="abilityAdded" />
 		<input type="submit" value="Add Abilities" />
 		<br />
 	</form>
+	
 	<br />
+	
 	<form method="post" action="ServletAbilityDeleted">
 		If you want to delete an ability from your profile click the Delete button: <input name="abilityDeleted" />
 		<input type="submit" value="Delete Ability" />
 	</form>
+	
 	<br />
+	
 	<form method="post" action="ServletProfilePage">
 		<input type="submit" value="Go back" />
 	</form>
+	
 </body>
 </html>
