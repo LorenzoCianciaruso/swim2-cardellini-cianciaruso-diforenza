@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class NewAbilitiesServlet
  */
-public class NewAbilitiesServlet extends HttpServlet {
+public class ServletNewAbilities extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
