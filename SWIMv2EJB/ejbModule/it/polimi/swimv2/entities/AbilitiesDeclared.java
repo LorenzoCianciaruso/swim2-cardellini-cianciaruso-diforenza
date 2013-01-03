@@ -10,9 +10,7 @@ public class AbilitiesDeclared implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	@Id
 	private int idUser;
-	@Id
 	private int idAbility;
 	private int feedback;
 	

@@ -36,9 +36,15 @@ public class AbilityBean implements IAbility {
 	}
 
 	@Override
-	public Ability findByName(String string) {
-		// TODO Auto-generated method stub
-		return null;
+	public Ability findByName(Ability ability) {
+		String q = "SELECT a FROM Ability a WHERE name ='"+ability.getName()+"'";
+		Query query = entityManager.createQuery(q);
+		try{
+			Ability a = (Ability) query.getSingleResult();
+			return a;
+		}catch(NoResultException e){
+			return null;
+		}
 	}
     
  
