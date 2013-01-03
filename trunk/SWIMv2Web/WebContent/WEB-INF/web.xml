@@ -94,4 +94,14 @@
     <servlet-name>ServletAbilityDeleted</servlet-name>
     <url-pattern>/ServletAbilityDeleted</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>NewAbilitiesServlet</display-name>
+    <servlet-name>NewAbilitiesServlet</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.NewAbilitiesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewAbilitiesServlet</servlet-name>
+    <url-pattern>/NewAbilitiesServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
