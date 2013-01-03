@@ -118,7 +118,7 @@
     <description></description>
     <display-name>ServletNewJob</display-name>
     <servlet-name>ServletNewJob</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletAbilityAdded</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.ServletNewJob</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletNewJob</servlet-name>
