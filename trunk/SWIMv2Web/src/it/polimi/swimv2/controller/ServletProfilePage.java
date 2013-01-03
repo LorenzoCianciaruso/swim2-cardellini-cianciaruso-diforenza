@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//This class manages tha access to the profile.jsp page, checking the Session id
+//This class manages the access to the profile.jsp page, checking the Session id
 public class ServletProfilePage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
