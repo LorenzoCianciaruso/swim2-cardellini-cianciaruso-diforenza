@@ -13,35 +13,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 public class ServletProfileSeenByOther extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
 		int id = Integer.parseInt(request.getParameter("userId"));
 		IUser bean = (IUser) JNDILookupClass.doLookup("UserBean");
-		response.getWriter().println("L'id dell'utente è: "+id);
 		User user = new User();
 		user.setId(id);
+
+		// i look for a user that has the same id in the database
+		User currentUser = bean.findUserById(user);
+
 		
-		
-		//i look for a user that has the same id in the database
-				User currentUser = bean.findUserById(user);
-				
-				if(currentUser == null){
-					//redirect to the fail page
-					//TODO error page
-					response.sendRedirect(response.encodeRedirectURL("loginFail.jsp"));
-				}else{
-					//i build the request form with user parameter
-					request.setAttribute("user", currentUser);
-					
-					//forward to the profile page
-					ServletContext sc = getServletContext(); 
-					RequestDispatcher rd = sc.getRequestDispatcher("/profileSeenByOtherPage.jsp"); 
-					rd.forward(request,response);
-				}
+			// i build the request form with user parameter
+			request.setAttribute("user", currentUser);
+
+			// forward to the profile page
+			ServletContext sc = getServletContext();
+			RequestDispatcher rd = sc
+					.getRequestDispatcher("/profileSeenByOtherPage.jsp");
+			rd.forward(request, response);
+		}
 	}
 
-}
