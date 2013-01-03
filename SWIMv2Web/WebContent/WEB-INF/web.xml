@@ -114,4 +114,14 @@
     <servlet-name>NewAbilitiesServlet</servlet-name>
     <url-pattern>/NewAbilitiesServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletNewJob</display-name>
+    <servlet-name>ServletNewJob</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletAbilityAdded</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletNewJob</servlet-name>
+    <url-pattern>/ServletNewJob</url-pattern>
+  </servlet-mapping>
 </web-app>
