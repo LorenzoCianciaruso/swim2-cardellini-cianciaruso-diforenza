@@ -23,7 +23,7 @@
 </title>
 </head>
 <body>
-	<h1>Wellcome back!!</h1>
+	<h1>Welcome back!!</h1>
 	<br />
 	Profile of <%=user.getName()+" "+user.getSurname() %>
 	<br />
