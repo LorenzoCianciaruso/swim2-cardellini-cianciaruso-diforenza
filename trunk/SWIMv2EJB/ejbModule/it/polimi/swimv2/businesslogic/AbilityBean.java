@@ -34,6 +34,12 @@ public class AbilityBean implements IAbility {
 			return null;
 		}
 	}
+
+	@Override
+	public Ability findByName(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
     
  
 }
