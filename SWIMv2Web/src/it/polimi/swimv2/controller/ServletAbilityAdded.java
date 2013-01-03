@@ -3,11 +3,15 @@ package it.polimi.swimv2.controller;
 import it.polimi.swimv2.business.IAbilitiesDeclared;
 import it.polimi.swimv2.business.IAbility;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
+import it.polimi.swimv2.entities.AbilitiesDeclared;
 import it.polimi.swimv2.entities.Ability;
+import it.polimi.swimv2.entities.User;
 
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,17 +27,27 @@ public class ServletAbilityAdded extends HttpServlet {
 		String[] abilitiesList = request.getParameterValues("ability");
 		
 		IAbilitiesDeclared bean = (IAbilitiesDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
+		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
 		
 		int userId = (int) request.getSession().getAttribute("id");
 		
-		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
-		
 		for(int i=0; i< abilitiesList.length ; i++){
 			
-			Ability a = abilityBean.findByName(abilitiesList[i]);
+			Ability ab = new Ability();
+			ab.setName(abilitiesList[i]);
+			Ability a = abilityBean.findByName(ab);
 			
-			bean.saveAbilityDeclared(a.getIdAbility(), userId);
+			AbilitiesDeclared abDec = new AbilitiesDeclared();
+			abDec.setAbility(a.getIdAbility());
+			abDec.setUser(userId);
+			abDec.setFeedback(0);
+			bean.saveAbilityDeclared(abDec);
 		}
+		
+		//TODO forward a pagina che dice "abilità aggiunte!"
+		ServletContext sc = getServletContext(); 
+		RequestDispatcher rd = sc.getRequestDispatcher("/abilitiesAddedPage.jsp"); 
+		rd.forward(request,response);
 		
 	}
 
