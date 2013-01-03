@@ -25,7 +25,7 @@ public class NewAbilityBean implements INewAbility {
 	@Override
 	public List<NewAbility> findAllNewAbilities() {
 		// TODO Auto-generated method stub
-		String q = "SELECT a FROM NewAbilty a";
+		String q = "SELECT a FROM NewAbility a";
 		Query query = entityManager.createQuery(q);
 		try{
 			List<NewAbility> newAbilitiesList = (List<NewAbility>) query.getResultList();
