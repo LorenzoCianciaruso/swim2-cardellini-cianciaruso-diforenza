@@ -11,6 +11,6 @@ public interface IAbility {
 
 	List<Ability> findAllAbilities();
 
-	Ability findByName(String string);
+	Ability findByName(Ability ab);
 
 }

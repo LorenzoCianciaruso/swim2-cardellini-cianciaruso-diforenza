@@ -1,10 +1,12 @@
 package it.polimi.swimv2.business;
 
+import it.polimi.swimv2.entities.AbilitiesDeclared;
+
 import javax.ejb.Remote;
 
 @Remote
 public interface IAbilitiesDeclared {
 
-	void saveAbilityDeclared(int idAbility, int userId);
+	void saveAbilityDeclared(AbilitiesDeclared abDec);
 
 }
