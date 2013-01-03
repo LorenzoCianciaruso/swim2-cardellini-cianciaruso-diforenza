@@ -106,13 +106,13 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>NewAbilitiesServlet</display-name>
-    <servlet-name>NewAbilitiesServlet</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.NewAbilitiesServlet</servlet-class>
+    <display-name>ServletNewAbilities</display-name>
+    <servlet-name>ServletNewAbilities</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletNewAbilities</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>NewAbilitiesServlet</servlet-name>
-    <url-pattern>/NewAbilitiesServlet</url-pattern>
+    <servlet-name>ServletNewAbilities</servlet-name>
+    <url-pattern>/ServletNewAbilities</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
