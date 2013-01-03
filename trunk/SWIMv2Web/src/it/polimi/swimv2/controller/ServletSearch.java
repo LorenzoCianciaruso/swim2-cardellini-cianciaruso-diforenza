@@ -37,7 +37,7 @@ public class ServletSearch extends HttpServlet {
 		//Forward to a page that shows the results
 		request.setAttribute("listOfUsers", listOfUsersFound);
 		ServletContext sc = getServletContext(); 
-		RequestDispatcher rd = sc.getRequestDispatcher("/SearchResultPage.jsp"); 
+		RequestDispatcher rd = sc.getRequestDispatcher("/searchResultPage.jsp"); 
 		rd.forward(request,response);
 		
 	}
