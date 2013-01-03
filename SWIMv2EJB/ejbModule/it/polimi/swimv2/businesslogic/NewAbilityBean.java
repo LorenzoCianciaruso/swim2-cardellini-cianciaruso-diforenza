@@ -2,8 +2,8 @@ package it.polimi.swimv2.businesslogic;
 
 import java.util.List;
 
-import it.polimi.swimv2.business.IAbility;
-import it.polimi.swimv2.entities.Ability;
+import it.polimi.swimv2.business.INewAbility;
+import it.polimi.swimv2.entities.NewAbility;
 
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
@@ -12,28 +12,29 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-@Stateless(mappedName="AbilityBean")
-@Remote(IAbility.class)
-public class AbilityBean implements IAbility {
 
+@Stateless(mappedName="NewAbilityBean")
+@Remote(INewAbility.class)
+public class NewAbilityBean implements INewAbility {
+	
 	@PersistenceContext(unitName = "sql21573")
     private EntityManager entityManager;
 	
-    public AbilityBean() {}
+    public NewAbilityBean() {}
 
 	@Override
-	public List<Ability> findAllAbilities() {
+	public List<NewAbility> findAllNewAbilities() {
 		// TODO Auto-generated method stub
-		String q = "SELECT a FROM Ability a";
+		String q = "SELECT a FROM NewAbilty a";
 		Query query = entityManager.createQuery(q);
 		try{
-			List<Ability> abilitiesList = (List<Ability>) query.getResultList();
-			return abilitiesList;
+			List<NewAbility> newAbilitiesList = (List<NewAbility>) query.getResultList();
+			return newAbilitiesList;
 			
 		}catch (NoResultException e){
 			return null;
 		}
-	}
-    
- 
+	}	
+
+	
 }
