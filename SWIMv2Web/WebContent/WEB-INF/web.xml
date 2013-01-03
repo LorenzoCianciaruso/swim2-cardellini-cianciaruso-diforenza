@@ -64,4 +64,34 @@
     <servlet-name>ServletLogout</servlet-name>
     <url-pattern>/ServletLogout</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletSkillPage</display-name>
+    <servlet-name>ServletSkillPage</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletSkillPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletSkillPage</servlet-name>
+    <url-pattern>/ServletSkillPage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletAbilityAdded</display-name>
+    <servlet-name>ServletAbilityAdded</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletAbilityAdded</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAbilityAdded</servlet-name>
+    <url-pattern>/ServletAbilityAdded</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletAbilityDeleted</display-name>
+    <servlet-name>ServletAbilityDeleted</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletAbilityDeleted</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAbilityDeleted</servlet-name>
+    <url-pattern>/ServletAbilityDeleted</url-pattern>
+  </servlet-mapping>
 </web-app>

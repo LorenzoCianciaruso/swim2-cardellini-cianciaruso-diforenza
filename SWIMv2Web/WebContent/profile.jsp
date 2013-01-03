@@ -39,11 +39,20 @@
 	Email: <%=user.getEmail() %>
 	<br />
 	<br />
+	
 	<form method="post" action="ServletSearch" >
 		Search by user's name: <input name="search" />
 		<input type="submit" value="Search User" />
 	</form>
+	
 	<br />
+	
+	<form method="post" action="ServletSkillPage" >
+		Go to the skill page: <input type="submit" value="Skills" />
+	</form>
+	
+	<br />
+	
 	<form method="post" action="ServletLogout" >
 		<input type="submit" value="Log Out" />
 	</form>
