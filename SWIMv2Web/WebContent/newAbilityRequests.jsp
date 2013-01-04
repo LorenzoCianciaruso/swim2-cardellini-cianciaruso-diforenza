@@ -11,7 +11,7 @@
 </head>
 <body>
 
-	<h2> New Ability Requests</h2>
+	<h2>New Ability Requests</h2>
 	<br />
 	<%
 	List<NewAbility> list = (List<NewAbility>) request.getAttribute("newAbilitiesList");
