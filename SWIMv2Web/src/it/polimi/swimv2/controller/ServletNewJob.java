@@ -19,15 +19,13 @@ public class ServletNewJob extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 
 		// create a new Session Bean
-		IJobRequest bean = (IJobRequest) JNDILookupClass
-				.doLookup("JobRequestBean");
+		IJobRequest bean = (IJobRequest) JNDILookupClass.doLookup("JobRequestBean");
 
 		// TODO carde controlla che con session funzioni tutto
 		// in realtà non so fare niente ti aspetto
-
+		int idPerformer = (int) request.getAttribute("userPerformerId");
 		// get info and create new entity
-		int idPerformer;
-		int idRequestor;
+		int idRequestor = (int) request.getSession().getAttribute("id");
 		int idAbility;
 		String place;
 		String date;

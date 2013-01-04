@@ -25,6 +25,7 @@
 	<% //TODO aggiungere qualcosa che cicli su ability declared e restituisca le abilità dell'utente %>
 	<br />
 	<form method="post" action="ServletNewJob" >
+		<input type="hidden" name="userPerformerId" value="<%=user.getId()%>" />
 		<input type="submit" value="Ask <%=user.getName()%>'s help for a job" />
 	</form>
 	<br />
