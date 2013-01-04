@@ -46,6 +46,11 @@ public class AbilityBean implements IAbility {
 			return null;
 		}
 	}
+	
+	@Override
+	public void deleteAbility(Ability ab){
+		//TODO
+	}
     
  
 }
