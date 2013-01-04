@@ -15,5 +15,12 @@
 	<form method="post" action="ServletNewAbilities" >
 	<input type="submit" value="New Ability Requests"></input>
 	</form> 
+	
+	<br />
+	
+	<form method="post" action="ServletAdminAbilityList" >
+	<input type="submit" value="Ability List"></input> 
+	</form>
+	
 </body>
 </html>
