@@ -12,5 +12,7 @@ public interface IAbility {
 	List<Ability> findAllAbilities();
 
 	Ability findByName(Ability ab);
+	
+	void deleteAbility(Ability ab);
 
 }
