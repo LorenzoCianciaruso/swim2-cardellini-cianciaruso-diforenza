@@ -30,7 +30,6 @@
 	<%
 			}
 		}
-	
 	%>
 	<br />
 	<form method="post" action="ServletProfilePage">
