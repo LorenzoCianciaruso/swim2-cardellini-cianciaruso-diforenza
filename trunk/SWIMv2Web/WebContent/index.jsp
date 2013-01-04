@@ -18,7 +18,7 @@
 		<input type="submit" value="Log In" />
 	</form>
 	or
-	<form method="post" action="RegistrationPage.jsp">
+	<form method="post" action="registrationPage.jsp">
 		<input type="submit" value="Register" />
 	</form>
 </body>
