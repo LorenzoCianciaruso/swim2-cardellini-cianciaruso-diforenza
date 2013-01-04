@@ -12,7 +12,7 @@
 	
 	<br />
 	
-	<form method="post" action="NewAbilitiesServlet" >
+	<form method="post" action="ServletNewAbilities" >
 	<input type="submit" value="New Ability Requests"></input>
 	</form> 
 </body>
