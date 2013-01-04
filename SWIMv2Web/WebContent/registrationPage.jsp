@@ -9,13 +9,16 @@
 </head>
 <body>
 	<form method="post" action="registration">
-		Name: <input name="name" /><br /> Surname: <input name="surname" /><br />
-		Birthday: (dd/mm/yyyy) <input name="birthday" /><br /> City: <input
-			name="city" /><br /> Email: <input name="email" /><br />
-		Telephone: <input name="phone" /><br /> Password: <input
-			name="password" type="password" /><br /> Confirm Password: <input
-			name="confirmPassword" type="password" /><br /> <input
-			type="submit" value="Submit Registration"></input>
+		Name: <input name="name" />
+		<br /> Surname: <input name="surname" />
+		<br /> Birthday: (dd/mm/yyyy) <input name="birthday" /> 
+		<br /> City: <input name="city" />
+		<br /> Email: <input name="email" />
+		<br /> Telephone: <input name="phone" />
+		<br /> Password: <input	name="password" type="password" /> 
+		<br /> Confirm Password: <input	name="confirmPassword" type="password" /> 
+		<br />
+		<input type="submit" value="Submit Registration"></input>
 	</form>
 </body>
 </html>
