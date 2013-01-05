@@ -10,7 +10,7 @@
 <title>List of Abilities</title>
 </head>
 <body>
-
+	
 	<form method="post" action="ServletAbilityAdded">
 		<h2>List of Abilities:</h2>
 		<br />
