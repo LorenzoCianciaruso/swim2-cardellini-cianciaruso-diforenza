@@ -41,7 +41,7 @@ public class UserBean implements IUser {
 			return null;
 		}
 	}
-
+   
     //select user passing an user with the name to search
 	@Override
 	public List<User> findUserByName(String name) {
