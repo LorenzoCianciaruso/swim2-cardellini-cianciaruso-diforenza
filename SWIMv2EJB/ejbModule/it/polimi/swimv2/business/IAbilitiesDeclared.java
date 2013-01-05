@@ -13,6 +13,6 @@ public interface IAbilitiesDeclared {
 
 	void saveAbilityDeclared(AbilitiesDeclared abDec);
 
-	List<AbilitiesDeclared> findAbilitiesOwnedByUser(AbilitiesDeclared abDec);
+	List<AbilitiesDeclared> findAbilitiesOwnedByUserId(int id);
 
 }
