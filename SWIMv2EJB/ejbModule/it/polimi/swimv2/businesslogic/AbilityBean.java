@@ -56,8 +56,14 @@ public class AbilityBean implements IAbility {
 
 	@Override
 	public Ability searchById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		String q = "SELECT a FROM Ability a WHERE idAbilty ='"+id+"'";
+		Query query = entityManager.createQuery(q);
+		try{
+			Ability a = (Ability) query.getSingleResult();
+			return a;
+		}catch(NoResultException e){
+			return null;
+		}
 	}
     
  
