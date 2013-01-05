@@ -4,6 +4,8 @@ import it.polimi.swimv2.business.IAbilitiesDeclared;
 import it.polimi.swimv2.business.IAbility;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
 
+
+import java.awt.List;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -16,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ServletDeleteAbility
  */
-public class ServletDeleteAbility extends HttpServlet {
+public class ServletAdminDeleteAbility extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
@@ -30,8 +32,9 @@ public class ServletDeleteAbility extends HttpServlet {
 		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
 		IAbilitiesDeclared abilitiesDeclaredBean = (IAbilitiesDeclared) JNDILookupClass.doLookup("abilitiesDeclaredBean");
 		
-		
-		
+		/*String string = request.getParameter("abilityId");
+		int id = Integer.parseInt(string);
+		*/
 		ServletContext sc = getServletContext();
 		RequestDispatcher rd = sc.getRequestDispatcher("/adminAbilityList.jsp"); 
 		rd.forward(request,response);
