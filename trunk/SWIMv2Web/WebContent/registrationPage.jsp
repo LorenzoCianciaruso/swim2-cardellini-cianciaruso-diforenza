@@ -11,6 +11,7 @@
 	<form method="post" action="registration">
 		Name: <input name="name" />
 		<br /> Surname: <input name="surname" />
+		<% //TODO controllo sul formato data che fa impazzire tutto%>
 		<br /> Birthday: (dd/mm/yyyy) <input name="birthday" /> 
 		<br /> City: <input name="city" />
 		<br /> Email: <input name="email" />
