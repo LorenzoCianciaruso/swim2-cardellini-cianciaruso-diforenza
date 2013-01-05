@@ -8,13 +8,14 @@
 <title> da fare</title>
 </head>
 <body>
-<%int idPerformer = (int) request.getAttribute("userPerformerId"); %>
+<%int idPerformer = (Integer) request.getAttribute("userPerformerId"); %>
 	<form method="post" action="Ask for help">
 		Date:  (dd/mm/yyyy)  <input name="date" />
 		<br /> Ability: <input name="ability" />
 		<br /> Place:<input name="place" /> 
 		<br />
-		<input type="submit" value="Submit Job"></input>
+		//TODO linkare al servlet new job
+		<input type="submit" value="Submit Request"></input>
 	</form>
 </body>
 </html>
