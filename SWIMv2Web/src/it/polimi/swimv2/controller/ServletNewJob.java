@@ -6,11 +6,12 @@ import it.polimi.swimv2.entities.JobRequest;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 public class ServletNewJob extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -22,7 +23,7 @@ public class ServletNewJob extends HttpServlet {
 		IJobRequest bean = (IJobRequest) JNDILookupClass.doLookup("JobRequestBean");
 		
 		// get info and create new entity
-		int idPerformer = (int) request.getAttribute("userPerformerId");		
+		int idPerformer = Integer.parseInt(request.getParameter("userPerformerId"));		
 		int idRequestor = (int) request.getSession().getAttribute("id");
 		int idAbility = Integer.parseInt(request.getParameter("ability"));
 		String place = request.getParameter("place");
@@ -45,16 +46,9 @@ public class ServletNewJob extends HttpServlet {
 			// save the entity created in the DataBase
 			bean.saveJobRequest(j);
 
-			// TODO redirect to user page
-			// redirect to the registrationOkPage
-			// int id = bean.findUserByLogin(session).getId();
-			// HttpSession session = request.getSession(true);
-			// session.setAttribute("id", id);
-
-			// ServletContext sc = getServletContext();
-			// RequestDispatcher rd =
-			// sc.getRequestDispatcher("/registrationOKPage.jsp");
-			// rd.forward(request,response);
+			ServletContext sc = getServletContext(); 
+			RequestDispatcher rd = sc.getRequestDispatcher("/done.jsp"); 
+			rd.forward(request,response);
 
 		}
 
