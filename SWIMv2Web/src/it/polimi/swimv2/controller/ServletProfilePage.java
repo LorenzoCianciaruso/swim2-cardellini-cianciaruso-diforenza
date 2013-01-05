@@ -2,7 +2,6 @@ package it.polimi.swimv2.controller;
 
 import it.polimi.swimv2.business.IUser;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
-import it.polimi.swimv2.entities.Admin;
 import it.polimi.swimv2.entities.User;
 
 import java.io.IOException;
@@ -32,7 +31,7 @@ public class ServletProfilePage extends HttpServlet {
 		user.setId(currentSessionId);
 		
 		//i look for a user that has the same id in the database
-		User currentUser = bean.findUserById(user);
+		User currentUser = bean.findUserById(currentSessionId);
 		
 		if(currentUser == null){
 			//redirect to the fail page

@@ -27,12 +27,8 @@ public class ServletSearch extends HttpServlet {
 		//get info from request
 		String searchName = request.getParameter("search");
 		
-		//create a user with that name
-		User userToSearch = new User();
-		userToSearch.setName(searchName);
-		
 		//call Bean's method to find an user using the name
-		List<User> listOfUsersFound = bean.findUserByName(userToSearch);
+		List<User> listOfUsersFound = bean.findUserByName(searchName);
 		
 		//Forward to a page that shows the results
 		request.setAttribute("listOfUsers", listOfUsersFound);
