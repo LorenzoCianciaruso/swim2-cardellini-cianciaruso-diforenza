@@ -1,6 +1,7 @@
 package it.polimi.swimv2.controller;
 
 import it.polimi.swimv2.business.IAbilitiesDeclared;
+import it.polimi.swimv2.business.IAbility;
 import it.polimi.swimv2.business.IUser;
 import it.polimi.swimv2.businesslogic.AbilityBean;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
@@ -26,7 +27,7 @@ public class ServletProfileSeenByOther extends HttpServlet {
 
 		int id = Integer.parseInt(request.getParameter("userId"));
 		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
-		IAbilitiesDeclared abilityBean = (IAbilitiesDeclared) JNDILookupClass
+		IAbilitiesDeclared abilityDeclaredBean = (IAbilitiesDeclared) JNDILookupClass
 				.doLookup("AbilitiesDeclaredBean");
 		User user = new User();
 		user.setId(id);
@@ -36,25 +37,26 @@ public class ServletProfileSeenByOther extends HttpServlet {
 		request.setAttribute("user", currentUser);
 
 		// build the list of user's abilities
-		List<AbilitiesDeclared> abilities = abilityBean
+		List<AbilitiesDeclared> abilities = abilityDeclaredBean
 				.findAbilitiesOwnedByUserId(id);
 
 		List<String> names = null;
 		List<Integer> feedbacks = null;
 		int idAbility;
 		Ability ability;
-			
-		
+		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("Ability");
+		;
+
 		for (int i = 0; i < abilities.size(); i++) {
 			// build the list that contains abilities name
 			idAbility = abilities.get(i).getId();
-			ability = abilityBean.findById(idAbility);
-			names.add(ability.getName());						
-			
+			ability = abilityBean.searchById(idAbility);
+			names.add(ability.getName());
+
 			// build the list that contains abilities feedback
 			feedbacks.add(abilities.get(i).getFeedback());
 		}
-		
+
 		request.setAttribute("names", names);
 		request.setAttribute("feedbacks", feedbacks);
 		// forward to the profile page
