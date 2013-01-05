@@ -26,14 +26,15 @@
 	<br />
 	<% //TODO aggiungere qualcosa che cicli su ability declared e restituisca le abilità dell'utente %>
 	<%
-		List<AbilitiesDeclared> list = (List<AbilitiesDeclared>) request.getAttribute("abilities");
-		for (int i = 0; i < list.size(); i++) {
+		List<String> names = (List<String>) request.getAttribute("names");
+	List<Integer> feedbacks = (List<Integer>) request.getAttribute("feedbacks");
+		for (int i = 0; i < names.size(); i++) {
 	%>
 	<br />	
 	Ability:
-	<%=list.get(i).getId()%>
+	<%=names.get(i)%>
 	Feedback:
-	<%=list.get(i).getFeedback()%>
+	<%=feedbacks.get(i)%>
 	<%	
 		}
 	%>
