@@ -40,7 +40,7 @@ public class ServletAbilityAdded extends HttpServlet {
 			bean.saveAbilityDeclared(abDec);
 		}
 		
-		//TODO forward a pagina che dice "abilità aggiunte!"
+		// forward a pagina che dice "abilità aggiunte!"
 		ServletContext sc = getServletContext(); 
 		RequestDispatcher rd = sc.getRequestDispatcher("/abilitiesAddedPage.jsp"); 
 		rd.forward(request,response);
