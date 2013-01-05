@@ -10,6 +10,7 @@ import it.polimi.swimv2.entities.Ability;
 import it.polimi.swimv2.entities.User;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -40,8 +41,8 @@ public class ServletProfileSeenByOther extends HttpServlet {
 		List<AbilitiesDeclared> abilities = abilityDeclaredBean
 				.findAbilitiesOwnedByUserId(id);
 
-		List<String> names = new List <String>();
-		List<Integer> feedbacks = new List <Integer>();
+		List<String> names = new ArrayList<String>();
+		List<Integer> feedbacks = new ArrayList<Integer>();
 		int idAbility;
 		Ability ability;
 		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("Ability");
