@@ -3,6 +3,7 @@ package it.polimi.swimv2.controller;
 import it.polimi.swimv2.business.IAbilitiesDeclared;
 import it.polimi.swimv2.business.IAbility;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
+import it.polimi.swimv2.entities.AbilitiesDeclared;
 
 
 import java.awt.List;
@@ -15,26 +16,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ServletDeleteAbility
- */
+
 public class ServletAdminDeleteAbility extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO elimina abilità dal database 
+		 
 		
 		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
 		IAbilitiesDeclared abilitiesDeclaredBean = (IAbilitiesDeclared) JNDILookupClass.doLookup("abilitiesDeclaredBean");
 		
-		/*String string = request.getParameter("abilityId");
+		String string = request.getParameter("abilityId");
 		int id = Integer.parseInt(string);
-		*/
+		
+		//rimuove abilità dalla tabella abilità
+		abilityBean.deleteAbilityById(id);
+		
+		//rimuove abilità da tabella abilitiesdeclared
+		//TODO dà errore sulla list
+		/*List<AbilitiesDeclared> list = abilitiesDeclaredBean.searchAbilitiesDeclaredById(id);
+		
+		for(int i=0; i < list.size();i++){
+			abilitiesDeclaredBean.remove(list.get(i));
+		}*/
+		
 		ServletContext sc = getServletContext();
 		RequestDispatcher rd = sc.getRequestDispatcher("/adminAbilityList.jsp"); 
 		rd.forward(request,response);
