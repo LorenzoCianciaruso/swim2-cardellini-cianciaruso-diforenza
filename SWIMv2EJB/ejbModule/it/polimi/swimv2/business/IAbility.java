@@ -13,7 +13,7 @@ public interface IAbility {
 	
 	void deleteAbility(Ability ab);
 
-	Ability findById(Ability a);
+	Ability searchById(int id);
 
 	Ability findByName(String name);
 
