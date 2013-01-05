@@ -41,13 +41,10 @@ public class ServletSkillPage extends HttpServlet {
 		List<AbilitiesDeclared> abilitiesDeclaredOwned = abilitiesDeclaredBean.findAbilitiesOwnedByUserId(currentUserId);
 		
 		List<Ability> abilitiesOwned = new ArrayList<Ability>();
-		Ability a;
+		
 		for(int i=0; i< abilitiesDeclaredOwned.size(); i++){
-			
-			a = new Ability();
-			a.setIdAbility(abilitiesDeclaredOwned.get(i).getAbility());
-			
-			abilitiesOwned.add(abilityBean.findById(a));
+						
+			abilitiesOwned.add(abilityBean.searchById(abilitiesDeclaredOwned.get(i).getAbility()));
 		}
 		
 		List<Ability> abilitiesList = abilityBean.findAllAbilities();
