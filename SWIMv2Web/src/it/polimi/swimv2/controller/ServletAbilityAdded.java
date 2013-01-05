@@ -34,6 +34,7 @@ public class ServletAbilityAdded extends HttpServlet {
 			Ability a = abilityBean.findByName(abilitiesList[i]);
 			
 			AbilitiesDeclared abDec = new AbilitiesDeclared();
+			
 			abDec.setAbility(a.getIdAbility());
 			abDec.setUser(userId);
 			abDec.setFeedback(0);

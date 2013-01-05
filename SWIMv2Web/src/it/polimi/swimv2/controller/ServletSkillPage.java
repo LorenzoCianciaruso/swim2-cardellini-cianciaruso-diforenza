@@ -33,13 +33,12 @@ public class ServletSkillPage extends HttpServlet {
 		
 		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
 		IAbilitiesDeclared abilitiesDeclaredBean = (IAbilitiesDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
-		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
 		
 		int currentUserId = (int) request.getSession().getAttribute("id");
 		AbilitiesDeclared abDec = new AbilitiesDeclared();
 		abDec.setUser(currentUserId);
 		
-		List<AbilitiesDeclared> abilitiesDeclaredOwned = abilitiesDeclaredBean.findAbilitiesOwnedByUser(abDec);
+		List<AbilitiesDeclared> abilitiesDeclaredOwned = abilitiesDeclaredBean.findAbilitiesOwnedByUserId(currentUserId);
 		
 		List<Ability> abilitiesOwned = new ArrayList<Ability>();
 		Ability a;
