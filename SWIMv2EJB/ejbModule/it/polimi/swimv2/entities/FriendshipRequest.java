@@ -12,22 +12,22 @@ public class FriendshipRequest implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private int idUser1;
+	private int sender;
 	@Id
-	private int idUser2;
+	private int receiver;
 	
 	
 	public int getidUser1() {
-		return idUser1;
+		return sender;
 	}
 	public void setidUser1(int user1) {
-		this.idUser1 = user1;
+		this.sender = user1;
 	}
 	public int getidUser2() {
-		return idUser2;
+		return receiver;
 	}
 	public void setidUser2(int user2) {
-		this.idUser2 = user2;
+		this.receiver = user2;
 	}
 	
 	
