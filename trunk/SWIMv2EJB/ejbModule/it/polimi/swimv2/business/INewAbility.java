@@ -8,4 +8,6 @@ public interface INewAbility {
 	
 	List<NewAbility> findAllNewAbilities();
 
+	void save(NewAbility newAbility);
+
 }

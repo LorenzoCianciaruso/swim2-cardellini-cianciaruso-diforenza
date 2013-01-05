@@ -34,6 +34,12 @@ public class NewAbilityBean implements INewAbility {
 		}catch (NoResultException e){
 			return null;
 		}
+	}
+
+	@Override
+	public void save(NewAbility newAbility) {
+		// TODO Auto-generated method stub
+		
 	}	
 
 	
