@@ -5,21 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Admin Home</title>
+<title>Done</title>
 </head>
 <body>
-	Welcome Administrator!
-	
-	<br />
-	
-	<form method="post" action="ServletNewAbilities" >
-	<input type="submit" value="New Ability Requests"></input>
-	</form> 
-	
-	<br />
-	
-	<form method="post" action="ServletAdminAbilityList" >
-	<input type="submit" value="Ability List"></input> 
+	We have successfully manage your request.	
+	<br />	
+	<form method="post" action="ServletProfilePage">
+		<input type="submit" value="Go back to your profile" />
 	</form>
 	
 </body>

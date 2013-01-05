@@ -14,7 +14,7 @@
 		<br /> Ability: <input name="ability" />
 		<br /> Place:<input name="place" /> 
 		<br />
-		<input type="hidden" name="userPerformerId" value="<%=request.getAttribute("userPerformerId")%>" />
+		<input type="hidden" name="userPerformerId" value="<%=request.getAttribute("userPerformerId")%>" ></input>
 		<input type="submit" value="Submit Request"></input>
 	</form>
 </body>
