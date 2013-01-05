@@ -1,5 +1,9 @@
 package it.polimi.swimv2.controller;
 
+import it.polimi.swimv2.business.IAbilitiesDeclared;
+import it.polimi.swimv2.business.IAbility;
+import it.polimi.swimv2.clientutility.JNDILookupClass;
+
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -22,6 +26,11 @@ public class ServletDeleteAbility extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO elimina abilità dal database 
+		
+		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
+		IAbilitiesDeclared abilitiesDeclaredBean = (IAbilitiesDeclared) JNDILookupClass.doLookup("abilitiesDeclaredBean");
+		
+		
 		
 		ServletContext sc = getServletContext();
 		RequestDispatcher rd = sc.getRequestDispatcher("/adminAbilityList.jsp"); 
