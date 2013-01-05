@@ -47,7 +47,7 @@ public class ServletProfileSeenByOther extends HttpServlet {
 		
 		for (int i = 0; i < abilities.size(); i++) {
 			// build the list that contains abilities name
-			idAbility = abilities.get(i).getId();
+			idAbility = abilities.get(i).getAbility();
 			System.out.println(idAbility);
 			names.add(abilityBean.searchById(idAbility).getName());
 
