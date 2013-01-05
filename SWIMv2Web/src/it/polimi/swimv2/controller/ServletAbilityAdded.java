@@ -31,8 +31,6 @@ public class ServletAbilityAdded extends HttpServlet {
 		
 		for(int i=0; i< abilitiesList.length ; i++){
 			
-			//Ability ab = new Ability();
-			//ab.setName(abilitiesList[i]);
 			Ability a = abilityBean.findByName(abilitiesList[i]);
 			
 			AbilitiesDeclared abDec = new AbilitiesDeclared();
