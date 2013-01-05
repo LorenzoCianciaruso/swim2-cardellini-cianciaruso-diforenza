@@ -14,6 +14,8 @@ public interface IAbilitiesDeclared {
 	void saveAbilityDeclared(AbilitiesDeclared abDec);
 
 	List<AbilitiesDeclared> findAbilitiesOwnedByUserId(int id);
+
+	void remove(AbilitiesDeclared abilitiesDeclared);
 	
 	
 
