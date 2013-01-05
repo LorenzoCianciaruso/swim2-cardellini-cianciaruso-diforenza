@@ -56,7 +56,7 @@ public class AbilityBean implements IAbility {
 
 	@Override
 	public Ability searchById(int id) {
-		String q = "SELECT a FROM Ability a WHERE idAbilty ='"+id+"'";
+		String q = "SELECT a FROM Ability a WHERE idAbility ='"+id+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			Ability a = (Ability) query.getSingleResult();
