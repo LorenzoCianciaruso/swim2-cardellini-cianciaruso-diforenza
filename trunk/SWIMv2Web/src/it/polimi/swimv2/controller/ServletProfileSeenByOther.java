@@ -40,16 +40,16 @@ public class ServletProfileSeenByOther extends HttpServlet {
 		List<AbilitiesDeclared> abilities = abilityDeclaredBean
 				.findAbilitiesOwnedByUserId(id);
 
-		List<String> names = null;
-		List<Integer> feedbacks = null;
+		List<String> names = new List <String>();
+		List<Integer> feedbacks = new List <Integer>();
 		int idAbility;
 		Ability ability;
 		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("Ability");
-		;
-
+		
 		for (int i = 0; i < abilities.size(); i++) {
 			// build the list that contains abilities name
 			idAbility = abilities.get(i).getId();
+			System.out.println(idAbility);
 			ability = abilityBean.searchById(idAbility);
 			names.add(ability.getName());
 
@@ -67,3 +67,4 @@ public class ServletProfileSeenByOther extends HttpServlet {
 
 	}
 }
+ 
