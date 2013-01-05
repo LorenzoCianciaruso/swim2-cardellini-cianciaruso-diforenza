@@ -26,16 +26,15 @@ public class ServletProfileSeenByOther extends HttpServlet {
 
 		// i look for a user that has the same id in the database
 		User currentUser = bean.findUserById(user);
-		
-			// i build the request form with user parameter
-			request.setAttribute("user", currentUser);
-			
-			// forward to the profile page
-			ServletContext sc = getServletContext();
-			RequestDispatcher rd = sc
-					.getRequestDispatcher("/profileSeenByOtherPage.jsp");
-			rd.forward(request, response);
-		
-		}
-	}
 
+		// i build the request form with user parameter
+		request.setAttribute("user", currentUser);
+
+		// forward to the profile page
+		ServletContext sc = getServletContext();
+		RequestDispatcher rd = sc
+				.getRequestDispatcher("/profileSeenByOtherPage.jsp");
+		rd.forward(request, response);
+
+	}
+}
