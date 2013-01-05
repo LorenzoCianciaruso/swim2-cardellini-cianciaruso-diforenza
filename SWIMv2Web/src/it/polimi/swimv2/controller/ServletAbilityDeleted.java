@@ -37,7 +37,7 @@ public class ServletAbilityDeleted extends HttpServlet {
 		for(int i=0; i<listDeclared.size(); i++){
 			
 			a = abilityBean.searchById(listDeclared.get(i).getAbility());
-			
+			//TODO NullPointerException da mettere a posto!
 			if(a.getName() == abilityToDeleteString){
 				abilitiesDeclaredBean.remove(listDeclared.get(i));
 			}
