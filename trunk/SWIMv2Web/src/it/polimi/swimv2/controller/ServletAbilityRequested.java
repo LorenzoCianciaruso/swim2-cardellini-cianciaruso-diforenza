@@ -7,6 +7,8 @@ import it.polimi.swimv2.entities.NewAbility;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -35,6 +37,10 @@ public class ServletAbilityRequested extends HttpServlet {
 		newAbility.setIdUser((int)request.getSession().getAttribute("id"));
 		
 		newAbilityBean.save(newAbility);
+		
+		ServletContext sc = getServletContext(); 
+		RequestDispatcher rd = sc.getRequestDispatcher("/done.jsp"); 
+		rd.forward(request,response);
 		
 	}
 
