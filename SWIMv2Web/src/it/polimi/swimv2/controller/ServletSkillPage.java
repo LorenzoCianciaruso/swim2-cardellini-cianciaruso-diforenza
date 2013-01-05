@@ -2,11 +2,9 @@ package it.polimi.swimv2.controller;
 
 import it.polimi.swimv2.business.IAbilitiesDeclared;
 import it.polimi.swimv2.business.IAbility;
-import it.polimi.swimv2.business.IUser;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
 import it.polimi.swimv2.entities.AbilitiesDeclared;
 import it.polimi.swimv2.entities.Ability;
-import it.polimi.swimv2.entities.User;
 
 import java.io.IOException;
 import java.util.ArrayList;

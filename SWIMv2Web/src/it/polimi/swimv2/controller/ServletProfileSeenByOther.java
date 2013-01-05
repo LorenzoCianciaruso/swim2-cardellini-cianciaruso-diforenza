@@ -5,7 +5,6 @@ import it.polimi.swimv2.business.IAbility;
 import it.polimi.swimv2.business.IUser;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
 import it.polimi.swimv2.entities.AbilitiesDeclared;
-import it.polimi.swimv2.entities.Ability;
 import it.polimi.swimv2.entities.User;
 
 import java.io.IOException;
@@ -43,12 +42,12 @@ public class ServletProfileSeenByOther extends HttpServlet {
 		List<String> names = new ArrayList<String>();
 		List<Integer> feedbacks = new ArrayList<Integer>();
 		int idAbility;
-		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
-		
+		IAbility abilityBean = (IAbility) JNDILookupClass
+				.doLookup("AbilityBean");
+
 		for (int i = 0; i < abilities.size(); i++) {
 			// build the list that contains abilities name
 			idAbility = abilities.get(i).getAbility();
-			System.out.println(idAbility);
 			names.add(abilityBean.searchById(idAbility).getName());
 
 			// build the list that contains abilities feedback
@@ -65,4 +64,3 @@ public class ServletProfileSeenByOther extends HttpServlet {
 
 	}
 }
- 
