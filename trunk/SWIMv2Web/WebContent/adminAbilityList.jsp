@@ -25,7 +25,7 @@
 	<%=list.get(i).getName()%>
 	
 	<form method="post" action="ServletDeleteAbility" >
-	<input type="submit" value="Delete Ability"></input> 
+	<input type="submit" value="Delete"></input> 
 	
 	<%
 		}

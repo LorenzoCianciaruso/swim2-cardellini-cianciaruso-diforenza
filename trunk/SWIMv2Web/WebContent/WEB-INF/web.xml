@@ -124,4 +124,24 @@
     <servlet-name>ServletNewJob</servlet-name>
     <url-pattern>/ServletNewJob</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletAdminAbilityList</display-name>
+    <servlet-name>ServletAdminAbilityList</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletAdminAbilityList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAdminAbilityList</servlet-name>
+    <url-pattern>/ServletAdminAbilityList</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletDeleteAbility</display-name>
+    <servlet-name>ServletDeleteAbility</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletDeleteAbility</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletDeleteAbility</servlet-name>
+    <url-pattern>/ServletDeleteAbility</url-pattern>
+  </servlet-mapping>
 </web-app>
