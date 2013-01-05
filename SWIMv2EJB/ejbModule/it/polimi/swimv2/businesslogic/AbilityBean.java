@@ -50,7 +50,8 @@ public class AbilityBean implements IAbility {
 	public void deleteAbility(Ability ab){
 		
 		entityManager.remove(ab);		
-				
+		
+		
 	}
 
 	@Override
