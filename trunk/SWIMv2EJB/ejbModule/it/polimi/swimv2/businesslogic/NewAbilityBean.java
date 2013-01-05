@@ -38,8 +38,7 @@ public class NewAbilityBean implements INewAbility {
 
 	@Override
 	public void save(NewAbility newAbility) {
-		// TODO Auto-generated method stub
-		
+		entityManager.persist(newAbility);
 	}	
 
 	
