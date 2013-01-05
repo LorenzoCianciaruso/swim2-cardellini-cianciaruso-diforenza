@@ -35,7 +35,7 @@ public class AbilitiesDeclaredBean implements IAbilitiesDeclared {
 		String q = "SELECT a FROM AbilitiesDeclared a WHERE idUser = '"+id+"'";
 		Query query = entityManager.createQuery(q);
 		try{
-			List<AbilitiesDeclared> list = query.getResultList();
+			List<AbilitiesDeclared> list = (List<AbilitiesDeclared>) query.getResultList();
 			return list;
 		}catch(NoResultException e){
 			return null;
