@@ -47,10 +47,9 @@ public class AbilityBean implements IAbility {
 	}
 	
 	@Override
-	public void deleteAbility(Ability ab){
+	public void deleteAbilityById(int id){
 		
-		entityManager.remove(ab);		
-		
+		entityManager.remove(id);		
 		
 	}
 
