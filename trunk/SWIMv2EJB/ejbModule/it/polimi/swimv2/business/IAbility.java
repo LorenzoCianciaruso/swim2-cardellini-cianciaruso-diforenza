@@ -11,7 +11,7 @@ public interface IAbility {
 
 	List<Ability> findAllAbilities();
 	
-	void deleteAbility(Ability ab);
+	void deleteAbilityById(int id);
 
 	Ability searchById(int id);
 
