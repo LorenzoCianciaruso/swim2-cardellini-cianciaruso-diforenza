@@ -20,15 +20,13 @@ public class ServletNewJob extends HttpServlet {
 
 		// create a new Session Bean
 		IJobRequest bean = (IJobRequest) JNDILookupClass.doLookup("JobRequestBean");
-
-		// TODO carde controlla che con session funzioni tutto
-		// in realtà non so fare niente ti aspetto
-		int idPerformer = (int) request.getAttribute("userPerformerId");
+		
 		// get info and create new entity
+		int idPerformer = (int) request.getAttribute("userPerformerId");		
 		int idRequestor = (int) request.getSession().getAttribute("id");
-		int idAbility;
-		String place;
-		String date;
+		int idAbility = Integer.parseInt(request.getParameter("ability"));
+		String place = request.getParameter("place");
+		String date = request.getParameter("date");
 
 		// TODO decidere se serve l'if per l'errore
 		if (false) {

@@ -9,12 +9,12 @@
 </head>
 <body>
 <%int idPerformer = (Integer) request.getAttribute("userPerformerId"); %>
-	<form method="post" action="Ask for help">
+	<form method="post" action="ServletNewJob">
 		Date:  (dd/mm/yyyy)  <input name="date" />
 		<br /> Ability: <input name="ability" />
 		<br /> Place:<input name="place" /> 
 		<br />
-		//TODO linkare al servlet new job
+		<input type="hidden" name="userPerformerId" value="<%=request.getAttribute("userPerformerId")%>" />
 		<input type="submit" value="Submit Request"></input>
 	</form>
 </body>
