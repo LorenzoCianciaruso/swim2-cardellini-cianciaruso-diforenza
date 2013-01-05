@@ -10,11 +10,11 @@ import javax.ejb.Remote;
 public interface IAbility {
 
 	List<Ability> findAllAbilities();
-
-	Ability findByName(Ability ab);
 	
 	void deleteAbility(Ability ab);
 
 	Ability findById(Ability a);
+
+	Ability findByName(String name);
 
 }

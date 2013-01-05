@@ -51,6 +51,12 @@ public class AbilityBean implements IAbility {
 	public void deleteAbility(Ability ab){
 		//TODO
 	}
+
+	@Override
+	public Ability findById(Ability a) {
+		// TODO Auto-generated method stub
+		return null;
+	}
     
  
 }
