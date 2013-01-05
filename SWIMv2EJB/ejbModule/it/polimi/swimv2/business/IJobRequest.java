@@ -2,7 +2,6 @@ package it.polimi.swimv2.business;
 
 
 import it.polimi.swimv2.entities.JobRequest;
-import it.polimi.swimv2.entities.User;
 
 import java.util.List;
 
@@ -16,7 +15,9 @@ public interface IJobRequest {
     
 	JobRequest findJobRequest(JobRequest jobRequest);
 	
-    List<JobRequest> findJobRequestByPerformer(User performer);
+	JobRequest findJobRequestById(int id);
+	
+    List<JobRequest> findJobRequestByPerformer(int idPerformer);
 
-    List<JobRequest> findJobRequestByRequestor(User requestor);
+    List<JobRequest> findJobRequestByRequestor(int idRequestor);
 }

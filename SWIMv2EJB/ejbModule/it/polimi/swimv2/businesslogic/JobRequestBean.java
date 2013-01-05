@@ -4,7 +4,6 @@ import java.util.List;
 
 import it.polimi.swimv2.business.IJobRequest;
 import it.polimi.swimv2.entities.JobRequest;
-import it.polimi.swimv2.entities.User;
 
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
@@ -42,11 +41,25 @@ public class JobRequestBean implements IJobRequest {
 			return null;
 		}
 	}
+    
+  //select job by id
+    @Override
+	public JobRequest findJobRequestById(int id) {
+
+		String q = "SELECT j FROM JobRequest j WHERE idJobRequest = '"+id+"'";
+		Query query = entityManager.createQuery(q);
+		try{
+			JobRequest j = (JobRequest) query.getSingleResult();
+			return j;
+		}catch (NoResultException e) {
+			return null;
+		}
+	}
 
     //select job by performer
 	@Override
-	public List<JobRequest> findJobRequestByPerformer(User performer) {
-		String q = "SELECT j FROM JobRequest j WHERE idPerfomer = '"+performer.getId()+"'";
+	public List<JobRequest> findJobRequestByPerformer(int idPerformer) {
+		String q = "SELECT j FROM JobRequest j WHERE idPerfomer = '"+idPerformer+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			List<JobRequest> list = (List<JobRequest>) query.getResultList();
@@ -58,8 +71,8 @@ public class JobRequestBean implements IJobRequest {
 
 	 //select job by requestor
 		@Override
-		public List<JobRequest> findJobRequestByRequestor(User requestor) {
-			String q = "SELECT j FROM JobRequest j WHERE idRequestor = '"+requestor.getId()+"'";
+		public List<JobRequest> findJobRequestByRequestor(int idRequestor) {
+			String q = "SELECT j FROM JobRequest j WHERE idRequestor = '"+idRequestor+"'";
 			Query query = entityManager.createQuery(q);
 			try{
 				List<JobRequest> list = (List<JobRequest>) query.getResultList();
