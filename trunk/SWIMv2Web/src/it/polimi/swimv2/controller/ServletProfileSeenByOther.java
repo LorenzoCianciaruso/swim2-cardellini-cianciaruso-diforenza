@@ -25,7 +25,7 @@ public class ServletProfileSeenByOther extends HttpServlet {
 		user.setId(id);
 
 		// i look for a user that has the same id in the database
-		User currentUser = bean.findUserById(user);
+		User currentUser = bean.findUserById(id);
 
 		// i build the request form with user parameter
 		request.setAttribute("user", currentUser);

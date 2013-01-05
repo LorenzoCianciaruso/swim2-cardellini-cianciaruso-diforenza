@@ -20,37 +20,32 @@ public class ServletNewJob extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 
 		// create a new Session Bean
-		IJobRequest bean = (IJobRequest) JNDILookupClass.doLookup("JobRequestBean");
-		
+		IJobRequest bean = (IJobRequest) JNDILookupClass
+				.doLookup("JobRequestBean");
+
 		// get info and create new entity
-		int idPerformer = Integer.parseInt(request.getParameter("userPerformerId"));		
+		int idPerformer = Integer.parseInt(request
+				.getParameter("userPerformerId"));
 		int idRequestor = (int) request.getSession().getAttribute("id");
 		int idAbility = Integer.parseInt(request.getParameter("ability"));
 		String place = request.getParameter("place");
 		String date = request.getParameter("date");
 
-		// TODO decidere se serve l'if per l'errore
-		if (false) {
-			response.sendRedirect(response.encodeRedirectURL("error.jsp"));
-		} else {
+		// create a new job request
+		JobRequest j = new JobRequest();
 
-			// create a new job request
-			JobRequest j = new JobRequest();
+		j.setIdPerformer(idPerformer);
+		j.setRequestor(idRequestor);
+		j.setAbility(idAbility);
+		j.setPlace(place);
+		j.setDate(date);
 
-			j.setIdPerformer(idPerformer);
-			j.setRequestor(idRequestor);
-			j.setAbility(idAbility);
-			j.setPlace(place);
-			j.setDate(date);
+		// save the entity created in the DataBase
+		bean.saveJobRequest(j);
 
-			// save the entity created in the DataBase
-			bean.saveJobRequest(j);
-
-			ServletContext sc = getServletContext(); 
-			RequestDispatcher rd = sc.getRequestDispatcher("/done.jsp"); 
-			rd.forward(request,response);
-
-		}
+		ServletContext sc = getServletContext();
+		RequestDispatcher rd = sc.getRequestDispatcher("/done.jsp");
+		rd.forward(request, response);
 
 	}
 
