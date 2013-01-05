@@ -1,7 +1,5 @@
 package it.polimi.swimv2.clientutility;
 
-import it.polimi.swimv2.business.IUser;
-
 import java.util.Properties;
 import javax.naming.Context;
 import javax.naming.InitialContext;
