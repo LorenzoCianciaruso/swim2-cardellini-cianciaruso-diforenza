@@ -2,6 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="it.polimi.swimv2.entities.User"%>
+<%@ page import="java.util.List"%>
+<%@ page import="it.polimi.swimv2.entities.AbilitiesDeclared"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -23,6 +25,18 @@
 	<%=user.getEmail() %>
 	<br />
 	<% //TODO aggiungere qualcosa che cicli su ability declared e restituisca le abilità dell'utente %>
+	<%
+		List<AbilitiesDeclared> list = (List<AbilitiesDeclared>) request.getAttribute("abilities");
+		for (int i = 0; i < list.size(); i++) {
+	%>
+	<br />	
+	Ability:
+	<%=list.get(i).getId()%>
+	Feedback:
+	<%=list.get(i).getFeedback()%>
+	<%	
+		}
+	%>
 	<br />
 	<form method="post" action="newJob.jsp">
 		<input type="hidden" name="userPerformerId" value="<%=user.getId()%>" />
