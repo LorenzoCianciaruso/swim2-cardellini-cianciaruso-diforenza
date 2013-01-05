@@ -30,9 +30,9 @@ public class AbilitiesDeclaredBean implements IAbilitiesDeclared {
 	}
 
 	@Override
-	public List<AbilitiesDeclared> findAbilitiesOwnedByUser(AbilitiesDeclared abDec) {
+	public List<AbilitiesDeclared> findAbilitiesOwnedByUserId(int id) {
 		
-		String q = "SELECT a FROM AbilitiesDeclared a WHERE idUser = '"+abDec.getUser()+"'";
+		String q = "SELECT a FROM AbilitiesDeclared a WHERE idUser = '"+id+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			List<AbilitiesDeclared> list = query.getResultList();

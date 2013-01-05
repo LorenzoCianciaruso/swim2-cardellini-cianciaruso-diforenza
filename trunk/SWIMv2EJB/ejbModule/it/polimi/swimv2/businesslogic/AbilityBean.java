@@ -28,8 +28,7 @@ public class AbilityBean implements IAbility {
 		Query query = entityManager.createQuery(q);
 		try{
 			List<Ability> abilitiesList = (List<Ability>) query.getResultList();
-			return abilitiesList;
-			
+			return abilitiesList;	
 		}catch (NoResultException e){
 			return null;
 		}
