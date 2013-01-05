@@ -36,8 +36,8 @@ public class AbilityBean implements IAbility {
 	}
 
 	@Override
-	public Ability findByName(Ability ability) {
-		String q = "SELECT a FROM Ability a WHERE name ='"+ability.getName()+"'";
+	public Ability findByName(String name) {
+		String q = "SELECT a FROM Ability a WHERE name ='"+name+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			Ability a = (Ability) query.getSingleResult();

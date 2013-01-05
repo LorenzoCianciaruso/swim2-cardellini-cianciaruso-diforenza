@@ -15,7 +15,7 @@ public interface IUser {
     
     User findUserByLogin(User u);
 
-	List<User> findUserByName(User userToSearch);
+	List<User> findUserByName(String name);
 
-	User findUserById(User user);
+	User findUserById(int id);
 }
