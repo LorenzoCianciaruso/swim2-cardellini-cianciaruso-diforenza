@@ -13,8 +13,6 @@ public interface IJobRequest {
 
 	void saveJobRequest(JobRequest JobRequest);
     
-	JobRequest findJobRequest(JobRequest jobRequest);
-	
 	JobRequest findJobRequestById(int id);
 	
     List<JobRequest> findJobRequestByPerformer(int idPerformer);

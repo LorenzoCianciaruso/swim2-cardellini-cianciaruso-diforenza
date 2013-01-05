@@ -45,8 +45,8 @@ public class UserBean implements IUser {
 
     //select user passing an user with the name to search
 	@Override
-	public List<User> findUserByName(User userToSearch) {
-		String q = "SELECT u FROM User u WHERE name = '"+userToSearch.getName()+"'";
+	public List<User> findUserByName(String name) {
+		String q = "SELECT u FROM User u WHERE name = '"+name+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			List<User> listOfUsersFound = (List<User>) query.getResultList();
@@ -58,9 +58,9 @@ public class UserBean implements IUser {
 
 	//select user by passing an user with id to search
 	@Override
-	public User findUserById(User user) {
+	public User findUserById(int id) {
 
-		String q = "SELECT u FROM User u WHERE id = '"+user.getId()+"'";
+		String q = "SELECT u FROM User u WHERE id = '"+id+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			User u = (User) query.getSingleResult();

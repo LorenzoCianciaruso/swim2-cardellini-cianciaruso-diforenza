@@ -11,7 +11,7 @@ public interface IAbility {
 
 	List<Ability> findAllAbilities();
 
-	Ability findByName(Ability ab);
+	Ability findByName(String name);
 	
 	void deleteAbility(Ability ab);
 

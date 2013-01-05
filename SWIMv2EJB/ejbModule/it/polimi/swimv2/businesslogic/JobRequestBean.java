@@ -27,20 +27,6 @@ public class JobRequestBean implements IJobRequest {
 	public void saveJobRequest(JobRequest jobRequest) {
 		entityManager.persist(jobRequest);
 	}
-
-	//select job by id
-    @Override
-	public JobRequest findJobRequest(JobRequest jobRequest) {
-
-		String q = "SELECT j FROM JobRequest j WHERE idJobRequest = '"+jobRequest.getIdJob()+"'";
-		Query query = entityManager.createQuery(q);
-		try{
-			JobRequest j = (JobRequest) query.getSingleResult();
-			return j;
-		}catch (NoResultException e) {
-			return null;
-		}
-	}
     
   //select job by id
     @Override
