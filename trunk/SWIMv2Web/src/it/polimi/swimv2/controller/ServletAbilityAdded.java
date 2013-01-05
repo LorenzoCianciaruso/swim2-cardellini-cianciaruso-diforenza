@@ -42,7 +42,7 @@ public class ServletAbilityAdded extends HttpServlet {
 		
 		// forward a pagina che dice "abilità aggiunte!"
 		ServletContext sc = getServletContext(); 
-		RequestDispatcher rd = sc.getRequestDispatcher("/abilitiesAddedPage.jsp"); 
+		RequestDispatcher rd = sc.getRequestDispatcher("/done.jsp"); 
 		rd.forward(request,response);
 		
 	}
