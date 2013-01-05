@@ -41,6 +41,12 @@ public class AbilitiesDeclaredBean implements IAbilitiesDeclared {
 			return null;
 		}
 	}
+
+	@Override
+	public void remove(AbilitiesDeclared abilitiesDeclared) {
+		// TODO Auto-generated method stub
+		
+	}
     
     
 
