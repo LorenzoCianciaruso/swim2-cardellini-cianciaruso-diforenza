@@ -44,7 +44,7 @@ public class AbilitiesDeclaredBean implements IAbilitiesDeclared {
 
 	@Override
 	public void remove(AbilitiesDeclared abilitiesDeclared) {
-		// TODO Auto-generated method stub
+		entityManager.remove(abilitiesDeclared);
 		
 	}
     
