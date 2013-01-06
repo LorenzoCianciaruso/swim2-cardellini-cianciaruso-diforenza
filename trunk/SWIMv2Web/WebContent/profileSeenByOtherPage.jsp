@@ -24,7 +24,6 @@
 	<br /> Email:
 	<%=user.getEmail() %>
 	<br />
-	<% //TODO aggiungere qualcosa che cicli su ability declared e restituisca le abilità dell'utente %>
 	<%
 	List<String> names = (List<String>) request.getAttribute("names");
 	List<Integer> feedbacks = (List<Integer>) request.getAttribute("feedbacks");
@@ -37,6 +36,7 @@
 	<%	
 		}
 	%>
+	
 	<br />
 	<form method="post" action="newJob.jsp">
 		<input type="hidden" name="userPerformerId" value="<%=user.getId()%>" />
