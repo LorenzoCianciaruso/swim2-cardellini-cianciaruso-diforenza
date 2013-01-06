@@ -16,8 +16,7 @@
 	<br />
 
 	<%
-		List<Ability> list = (List<Ability>) request
-				.getAttribute("abilityList");
+		List<Ability> list = (List<Ability>) request.getAttribute("abilityList");
 		for (int i = 0; i < list.size(); i++) {
 	%>
 	<br /> Ability name:
@@ -30,6 +29,12 @@
 	<%
 		}
 	%>
+	
+	<br />
+	
+	<form method="post" action="ServletAdminRedirect">
+		<input type="submit" value="Go Back"></input> 
+	</form>
 
 </body>
 </html>

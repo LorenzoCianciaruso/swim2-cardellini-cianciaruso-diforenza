@@ -37,5 +37,10 @@
 		}
 	%>
 
+	<form method="post" action="ServletAdminRedirect">
+		<input type="submit" value="Go Back"></input>
+	</form>
+	
+	
 </body>
 </html>
