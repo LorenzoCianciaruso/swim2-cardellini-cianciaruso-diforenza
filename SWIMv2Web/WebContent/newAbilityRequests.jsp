@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="it.polimi.swimv2.entities.NewAbility"%>
+<%@ page import="it.polimi.swimv2.entities.AbilityRequest"%>
 <%@ page import="java.util.List"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -14,8 +14,8 @@
 	<h2>New Ability Requests</h2>
 	<br />
 	<%
-		List<NewAbility> list = (List<NewAbility>) request.getAttribute("newAbilitiesList");
-		for (int i = 0; i < list.size(); i++) {
+		List<AbilityRequest> list = (List<AbilityRequest>) request.getAttribute("newAbilitiesList");
+			for (int i = 0; i < list.size(); i++) {
 	%>
 	<br /> Ability Request:
 	<%=list.get(i).getName()%>
