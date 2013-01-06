@@ -16,5 +16,7 @@ public interface IAbility {
 	Ability searchById(int id);
 
 	Ability findByName(String name);
+	
+	void saveAbility(Ability ab);
 
 }
