@@ -6,7 +6,7 @@ import javax.persistence.Id;
 
 import javax.persistence.Entity;
 
-@Entity ( name = "NewAbility")
+@Entity ( name = "AbilityRequest")
 public class AbilityRequest implements Serializable{
 
 	private static final long serialVersionUID = 1L;
