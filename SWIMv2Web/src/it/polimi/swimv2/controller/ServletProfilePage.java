@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//This class manages the access to the profile.jsp page, checking the Session id
+//manage the access to the profile.jsp page checking the session id
 public class ServletProfilePage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -27,26 +27,21 @@ public class ServletProfilePage extends HttpServlet {
 
 		IUser bean = (IUser) JNDILookupClass.doLookup("UserBean");
 
-		// I check which user id matches the session
-		// i save the session id
-		int currentSessionId = (Integer) request.getSession()
+		// retrieve the session id
+		int id = (Integer) request.getSession()
 				.getAttribute("id");
 		IAbilitiesDeclared abilityDeclaredBean = (IAbilitiesDeclared) JNDILookupClass
 				.doLookup("AbilitiesDeclaredBean");
 
-		// i make a new user with the session id
-		User user = new User();
-		user.setId(currentSessionId);
-
 		// i look for a user that has the same id in the database
-		User currentUser = bean.findUserById(currentSessionId);
+		User user = bean.findUserById(id);
 
-		if (currentUser == null) {
+		if (user == null) {
 			// redirect to the fail page
 			response.sendRedirect(response.encodeRedirectURL("loginFail.jsp"));
 		} else {
 			// i build the request form with user parameter
-			request.setAttribute("user", currentUser);
+			request.setAttribute("user", user);
 
 			// build the list of user's abilities
 			List<AbilitiesDeclared> abilities = abilityDeclaredBean
@@ -57,7 +52,6 @@ public class ServletProfilePage extends HttpServlet {
 			int idAbility;
 			IAbility abilityBean = (IAbility) JNDILookupClass
 					.doLookup("AbilityBean");
-
 			for (int i = 0; i < abilities.size(); i++) {
 				// build the list that contains abilities name
 				idAbility = abilities.get(i).getAbility();
@@ -66,9 +60,10 @@ public class ServletProfilePage extends HttpServlet {
 				// build the list that contains abilities feedback
 				feedbacks.add(abilities.get(i).getFeedback());
 			}
-
 			request.setAttribute("names", names);
 			request.setAttribute("feedbacks", feedbacks);
+			
+			
 			// forward to the profile page
 			ServletContext sc = getServletContext();
 			RequestDispatcher rd = sc

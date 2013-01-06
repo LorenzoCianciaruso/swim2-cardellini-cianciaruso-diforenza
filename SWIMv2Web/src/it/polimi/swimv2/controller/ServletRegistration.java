@@ -24,7 +24,7 @@ public class ServletRegistration extends HttpServlet {
 		//create a new Session Bean
 		IUser bean = (IUser) JNDILookupClass.doLookup("UserBean");
 		
-		//get info and create new entity
+		//get info from page
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		String confirmPassword = request.getParameter("confirmPassword");
@@ -42,9 +42,9 @@ public class ServletRegistration extends HttpServlet {
 			
 		}else{
 			
-			//create a new user
+			//create a new user with given information
 			User u = new User();
-		
+			
 			u.setEmail(email);
 			u.setPassword(password);
 			u.setName(name);
@@ -53,7 +53,7 @@ public class ServletRegistration extends HttpServlet {
 			u.setBirthday(birthday);
 			u.setCity(city);
 		
-			//save the entity created in the DataBase
+			//save the entity
 			bean.saveUser(u);
 		
 			//redirect to the registrationOkPage
@@ -62,7 +62,7 @@ public class ServletRegistration extends HttpServlet {
 			session.setAttribute("id", id);
 			
 			ServletContext sc = getServletContext(); 
-			RequestDispatcher rd = sc.getRequestDispatcher("/registrationOKPage.jsp"); 
+			RequestDispatcher rd = sc.getRequestDispatcher("/done.jsp"); 
 			rd.forward(request,response);
 
 		}

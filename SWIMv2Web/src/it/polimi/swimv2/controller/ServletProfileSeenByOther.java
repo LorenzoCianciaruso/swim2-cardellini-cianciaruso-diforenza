@@ -24,16 +24,15 @@ public class ServletProfileSeenByOther extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
+		//receive the id corresponding to the profile to see
 		int id = Integer.parseInt(request.getParameter("userId"));
 		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
 		IAbilitiesDeclared abilityDeclaredBean = (IAbilitiesDeclared) JNDILookupClass
 				.doLookup("AbilitiesDeclaredBean");
-		User user = new User();
-		user.setId(id);
-
+		
 		// i look for a user that has the same id in the database
-		User currentUser = userBean.findUserById(id);
-		request.setAttribute("user", currentUser);
+		User userToShow = userBean.findUserById(id);
+		request.setAttribute("user", userToShow);
 
 		// build the list of user's abilities
 		List<AbilitiesDeclared> abilities = abilityDeclaredBean
@@ -49,11 +48,9 @@ public class ServletProfileSeenByOther extends HttpServlet {
 			// build the list that contains abilities name
 			idAbility = abilities.get(i).getAbility();
 			names.add(abilityBean.searchById(idAbility).getName());
-
 			// build the list that contains abilities feedback
 			feedbacks.add(abilities.get(i).getFeedback());
 		}
-
 		request.setAttribute("names", names);
 		request.setAttribute("feedbacks", feedbacks);
 		// forward to the profile page
