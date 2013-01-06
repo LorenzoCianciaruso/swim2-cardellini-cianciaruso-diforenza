@@ -24,7 +24,8 @@ public class ServletAbilityDeleted extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String abilityToDeleteString = request.getParameter("abilityDeleted");
+		String[] abilityToDeleteStringArray =  request.getParameterValues("abilityDeleted");
+		
 		int currentUserId = (int) request.getSession().getAttribute("id");
 		
 		IAbilitiesDeclared abilitiesDeclaredBean = (IAbilitiesDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
@@ -32,14 +33,17 @@ public class ServletAbilityDeleted extends HttpServlet {
 		
 		List<AbilitiesDeclared> listDeclared = abilitiesDeclaredBean.findAbilitiesOwnedByUserId(currentUserId);
 		
-		List<Ability> listOfAbilities = new ArrayList<Ability>();
 		Ability a;
 		for(int i=0; i<listDeclared.size(); i++){
 			
 			a = abilityBean.searchById(listDeclared.get(i).getAbility());
-			//TODO NullPointerException da mettere a posto!
-			if(a.getName() == abilityToDeleteString){
-				abilitiesDeclaredBean.remove(listDeclared.get(i));
+			
+			for(int j=0; j<abilityToDeleteStringArray.length; j++){
+
+				if(a.getName().equals(abilityToDeleteStringArray[j])){
+					System.out.println("DEBUGGGGGGGGGGG");
+					abilitiesDeclaredBean.remove(listDeclared.get(i));
+				}
 			}
 		}
 		
