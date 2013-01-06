@@ -25,7 +25,7 @@ public class ServletNewAbilities extends HttpServlet {
 		
 		IAbilityRequest newAbilityBean = (IAbilityRequest) JNDILookupClass.doLookup("NewAbilityBean");
 		
-		List<AbilityRequest> newAbilityList = newAbilityBean.findAllNewAbilities();
+		List<AbilityRequest> newAbilityList = newAbilityBean.findAllAbilityRequests();
 		
 		request.setAttribute("newAbilitiesList", newAbilityList);
 		

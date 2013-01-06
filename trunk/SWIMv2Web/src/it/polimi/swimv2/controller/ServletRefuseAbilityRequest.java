@@ -20,7 +20,7 @@ public class ServletRefuseAbilityRequest extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		IAbilityRequest newAbilityBean = (IAbilityRequest) JNDILookupClass.doLookup("newAbilityBean");
-		
+		//gets information
 		String stringNewAbility = request.getParameter("idNewAbility");
 		int idNewAbility = Integer.parseInt(stringNewAbility);
 		
@@ -29,11 +29,13 @@ public class ServletRefuseAbilityRequest extends HttpServlet {
 		
 		String name = request.getParameter("name");
 		
+		//creates AbilityRequest
 		AbilityRequest newAbility = new AbilityRequest();
 		newAbility.setIdNewAbility(idNewAbility);
 		newAbility.setIdUser(idUser);
 		newAbility.setName(name);
 		
+		//removes abilityRequest
 		newAbilityBean.remove(newAbility);
 		
 		ServletContext sc = getServletContext(); 

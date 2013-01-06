@@ -19,23 +19,23 @@ import javax.servlet.http.HttpServletResponse;
 public class ServletAdminDeleteAbility extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		IAbility abilityBean = (IAbility) JNDILookupClass
-				.doLookup("AbilityBean");
-		IAbilitiesDeclared abilitiesDeclaredBean = (IAbilitiesDeclared) JNDILookupClass
-				.doLookup("abilitiesDeclaredBean");
-		//receive the id of the ability to delete
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
+		IAbilitiesDeclared abilitiesDeclaredBean = (IAbilitiesDeclared) JNDILookupClass.doLookup("abilitiesDeclaredBean");
+		
+		//receives the id of the ability to delete
 		String string = request.getParameter("abilityId");
 		int id = Integer.parseInt(string);
 
-		// rimuove abilità dalla tabella abilità
+		// removes the ability from Ability table
 		abilityBean.deleteAbilityById(id);
 
-		// rimuove abilità da tabella abilitiesdeclared
+		//searches all the tuples with that ability declared
 		List<AbilitiesDeclared> list = new ArrayList<AbilitiesDeclared>();
 		list = abilitiesDeclaredBean.searchAbilitiesDeclaredById(id);
-
+		
+		// removes all tuples with that ability in AbilitiesDeclared table
 		for (int i = 0; i < list.size(); i++) {
 			abilitiesDeclaredBean.remove(list.get(i));
 		}
