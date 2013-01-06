@@ -41,5 +41,10 @@ public class NewAbilityBean implements INewAbility {
 		entityManager.persist(newAbility);
 	}	
 
+	@Override
+	public void remove(NewAbility newAbility){
+		entityManager.remove(newAbility);
+	}
+		
 	
 }
