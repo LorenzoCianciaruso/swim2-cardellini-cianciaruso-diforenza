@@ -1,8 +1,8 @@
 package it.polimi.swimv2.controller;
 
-import it.polimi.swimv2.business.INewAbility;
+import it.polimi.swimv2.business.IAbilityRequest;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
-import it.polimi.swimv2.entities.NewAbility;
+import it.polimi.swimv2.entities.AbilityRequest;
 
 import java.io.IOException;
 import java.util.List;
@@ -23,9 +23,9 @@ public class ServletNewAbilities extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		INewAbility newAbilityBean = (INewAbility) JNDILookupClass.doLookup("NewAbilityBean");
+		IAbilityRequest newAbilityBean = (IAbilityRequest) JNDILookupClass.doLookup("NewAbilityBean");
 		
-		List<NewAbility> newAbilityList = newAbilityBean.findAllNewAbilities();
+		List<AbilityRequest> newAbilityList = newAbilityBean.findAllNewAbilities();
 		
 		request.setAttribute("newAbilitiesList", newAbilityList);
 		

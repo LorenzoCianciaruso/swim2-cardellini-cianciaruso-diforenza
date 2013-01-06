@@ -38,7 +38,7 @@
 	%>
 	
 	<br />
-	<form method="post" action="newJob.jsp">
+	<form method="post" action="newJobRequests.jsp">
 		<input type="hidden" name="userPerformerId" value="<%=user.getId()%>" />
 		<input type="submit" value="Ask <%=user.getName()%>'s help for a job" />
 	</form>

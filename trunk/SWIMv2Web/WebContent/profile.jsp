@@ -41,7 +41,7 @@
 	<br /> Email:
 	<%=user.getEmail() %>
 	<br />
-	
+
 	<br />
 	<%
 	List<String> names = (List<String>) request.getAttribute("names");
@@ -55,19 +55,26 @@
 	<%	
 		}
 	%>
-	
+
 	<br />
 	<br />
-	
+
 	<form method="post" action="ServletSearch">
 		Search by user's name: <input name="search" /> <input type="submit"
 			value="Search User" />
 	</form>
 
 	<br />
-
+	Manage your information:
+	
 	<form method="post" action="ServletSkillPage">
-		Go to the skill page: <input type="submit" value="Skills" />
+		<input type="submit" value="Skills" />
+	</form>
+
+	<br />
+
+	<form method="post" action="ServletJobRequestsPage">
+		<input type="submit" value="Job request" />
 	</form>
 
 	<br />
