@@ -16,17 +16,16 @@
 	<br />
 
 	<%
-		List<Ability> list = (List<Ability>) request.getAttribute("abilityList");
+		List<Ability> list = (List<Ability>) request
+				.getAttribute("abilityList");
 		for (int i = 0; i < list.size(); i++) {
 	%>
-	<br />
-	
-	Ability name:
+	<br /> Ability name:
 	<%=list.get(i).getName()%>
-	
-	<form method="post" action="ServletAdminDeleteAbility" >
-	<input type="hidden" name="abilityId" value="<%= list.get(i).getIdAbility() %>"></input>
-	<input type="submit" value="Delete"></input> 
+
+	<form method="post" action="ServletAdminDeleteAbility">
+		<input type="hidden" name="abilityId" value="<%=list.get(i).getIdAbility()%>"></input>
+		<input type="submit" value="Delete"></input>
 	</form>
 	<%
 		}

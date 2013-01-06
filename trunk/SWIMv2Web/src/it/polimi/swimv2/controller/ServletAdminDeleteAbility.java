@@ -8,6 +8,7 @@ import it.polimi.swimv2.entities.AbilitiesDeclared;
 
 import java.awt.List;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -33,13 +34,14 @@ public class ServletAdminDeleteAbility extends HttpServlet {
 		//rimuove abilità dalla tabella abilità
 		abilityBean.deleteAbilityById(id);
 		
+		
 		//rimuove abilità da tabella abilitiesdeclared
-		//TODO dà errore sulla list
-		/*List<AbilitiesDeclared> list = abilitiesDeclaredBean.searchAbilitiesDeclaredById(id);
+		List<AbilitiesDeclared> list = new ArrayList<AbilitiesDeclared>(); 
+		list = abilitiesDeclaredBean.searchAbilitiesDeclaredById(id);
 		
 		for(int i=0; i < list.size();i++){
 			abilitiesDeclaredBean.remove(list.get(i));
-		}*/
+		}
 		
 		ServletContext sc = getServletContext();
 		RequestDispatcher rd = sc.getRequestDispatcher("/adminAbilityList.jsp"); 
