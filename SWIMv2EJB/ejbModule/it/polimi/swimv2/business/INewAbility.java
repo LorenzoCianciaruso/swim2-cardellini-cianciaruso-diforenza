@@ -10,4 +10,5 @@ public interface INewAbility {
 
 	void save(NewAbility newAbility);
 
+	void remove(NewAbility newAbility);
 }
