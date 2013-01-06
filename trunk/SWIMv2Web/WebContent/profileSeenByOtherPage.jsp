@@ -43,5 +43,10 @@
 		<input type="submit" value="Ask <%=user.getName()%>'s help for a job" />
 	</form>
 	<br />
+	<br />
+	<form method="post" action="ServletFriendshipRequest" >
+		<input type="hidden" name="userReceiverId" value="<%=user.getId()%>" />
+		<input type="submit" value="Ask friendship to <%=user.getName()%>" />
+	</form>
 </body>
 </html>
