@@ -40,8 +40,9 @@ public class ServletAbilityDeleted extends HttpServlet {
 			
 			for(int j=0; j<abilityToDeleteStringArray.length; j++){
 
+				System.out.println("DEBUG-a.getName(): "+a.getName());
+				System.out.println("DEBUG-abilityToDeleteStringArray[j]: "+abilityToDeleteStringArray[j]);
 				if(a.getName().equals(abilityToDeleteStringArray[j])){
-					System.out.println("DEBUGGGGGGGGGGG");
 					abilitiesDeclaredBean.remove(listDeclared.get(i));
 				}
 			}
