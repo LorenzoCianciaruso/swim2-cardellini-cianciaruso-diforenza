@@ -48,7 +48,7 @@
 		<%
 		for(int i=0; i<listOwned.size(); i++){
 		%>
-		<input type="checkbox" name="abilityDeleted" value="<%= listOwned.get(i).getName()%>" /><%=listOwned.get(i).getName() %><br />
+		<input type="checkbox" name="abilityDeleted" value="<%=listOwned.get(i).getIdAbility()%>" /><%=listOwned.get(i).getName() %><br />
 		<%
 		}
 		%>
