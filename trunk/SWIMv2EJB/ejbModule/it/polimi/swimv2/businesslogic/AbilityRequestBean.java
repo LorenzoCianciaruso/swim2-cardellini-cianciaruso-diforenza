@@ -13,7 +13,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 
-@Stateless(mappedName="NewAbilityBean")
+@Stateless(mappedName="AbilityRequestBean")
 @Remote(IAbilityRequest.class)
 public class AbilityRequestBean implements IAbilityRequest {
 	
