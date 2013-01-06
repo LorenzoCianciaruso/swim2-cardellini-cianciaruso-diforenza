@@ -14,9 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ServletAdminAbilityList
- */
 public class ServletAdminAbilityList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
  
@@ -26,10 +23,11 @@ public class ServletAdminAbilityList extends HttpServlet {
 		
 		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean"); 
 		
-		List<Ability> abilityList = abilityBean.findAllAbilities();
-		
+		//create the list of all abilities
+		List<Ability> abilityList = abilityBean.findAllAbilities();		
 		request.setAttribute("abilityList", abilityList);
 		
+		//forward it to the page
 		ServletContext sc = getServletContext();
 		RequestDispatcher rd = sc.getRequestDispatcher("/adminAbilityList.jsp"); 
 		rd.forward(request,response);

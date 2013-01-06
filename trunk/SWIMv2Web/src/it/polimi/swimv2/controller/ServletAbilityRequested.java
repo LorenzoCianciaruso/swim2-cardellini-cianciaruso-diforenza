@@ -19,9 +19,8 @@ public class ServletAbilityRequested extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		String newAbilityString = request.getParameter("abilityAdded");
 		
+		String newAbilityString = request.getParameter("abilityAdded");		
 		INewAbility newAbilityBean = (INewAbility) JNDILookupClass.doLookup("NewAbilityBean");
 		
 		List<NewAbility> list = newAbilityBean.findAllNewAbilities();

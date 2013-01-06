@@ -71,8 +71,8 @@ public class ServletLogin extends HttpServlet {
 		}
 
 		// if login is successful redirect to user page
-		// creating a new Session with the user id
 		else {
+			// creating a new Session with the user id
 			HttpSession session = request.getSession(true);
 			int id = u2.getId();
 			session.setAttribute("id", id);

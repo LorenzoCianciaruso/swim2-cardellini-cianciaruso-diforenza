@@ -23,7 +23,7 @@ public class ServletNewJob extends HttpServlet {
 		IJobRequest bean = (IJobRequest) JNDILookupClass
 				.doLookup("JobRequestBean");
 
-		// get info and create new entity
+		// get info from the page
 		int idPerformer = Integer.parseInt(request
 				.getParameter("userPerformerId"));
 		int idRequestor = (int) request.getSession().getAttribute("id");
@@ -33,7 +33,6 @@ public class ServletNewJob extends HttpServlet {
 
 		// create a new job request
 		JobRequest j = new JobRequest();
-
 		j.setIdPerformer(idPerformer);
 		j.setRequestor(idRequestor);
 		j.setAbility(idAbility);
@@ -43,6 +42,7 @@ public class ServletNewJob extends HttpServlet {
 		// save the entity created in the DataBase
 		bean.saveJobRequest(j);
 
+		//forward to success page
 		ServletContext sc = getServletContext();
 		RequestDispatcher rd = sc.getRequestDispatcher("/done.jsp");
 		rd.forward(request, response);

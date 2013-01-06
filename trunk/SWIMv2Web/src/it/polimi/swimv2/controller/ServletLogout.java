@@ -11,10 +11,9 @@ public class ServletLogout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		//Delete the session id associated to the user
-		//and forward to the login page
+		//delete the session id associated to the user		
 		request.getSession().removeAttribute("id");
+		//forward to the login page
 		response.sendRedirect(response.encodeRedirectURL("index.jsp"));
 	}
 
