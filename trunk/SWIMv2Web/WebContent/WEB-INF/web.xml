@@ -4,144 +4,210 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  
   <servlet>
     <description></description>
     <display-name>ServletLogin</display-name>
     <servlet-name>ServletLogin</servlet-name>
     <servlet-class>it.polimi.swimv2.controller.ServletLogin</servlet-class>
   </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletLogin</servlet-name>
-    <url-pattern>/login</url-pattern>
-  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>ServletRegistration</display-name>
     <servlet-name>ServletRegistration</servlet-name>
     <servlet-class>it.polimi.swimv2.controller.ServletRegistration</servlet-class>
   </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletRegistration</servlet-name>
-    <url-pattern>/registration</url-pattern>
-  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletAcceptAbilityRequest</display-name>
+    <servlet-name>ServletAcceptAbilityRequest</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletAcceptAbilityRequest</servlet-class>
+  </servlet>
   <servlet>
     <description></description>
     <display-name>ServletSearch</display-name>
     <servlet-name>ServletSearch</servlet-name>
     <servlet-class>it.polimi.swimv2.controller.ServletSearch</servlet-class>
   </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletSearch</servlet-name>
-    <url-pattern>/ServletSearch</url-pattern>
-  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>ServletProfilePage</display-name>
     <servlet-name>ServletProfilePage</servlet-name>
     <servlet-class>it.polimi.swimv2.controller.ServletProfilePage</servlet-class>
   </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletProfilePage</servlet-name>
-    <url-pattern>/ServletProfilePage</url-pattern>
-  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>ServletProfileSeenByOther</display-name>
     <servlet-name>ServletProfileSeenByOther</servlet-name>
     <servlet-class>it.polimi.swimv2.controller.ServletProfileSeenByOther</servlet-class>
   </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletProfileSeenByOther</servlet-name>
-    <url-pattern>/ServletProfileSeenByOther</url-pattern>
-  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>ServletLogout</display-name>
     <servlet-name>ServletLogout</servlet-name>
     <servlet-class>it.polimi.swimv2.controller.ServletLogout</servlet-class>
   </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletLogout</servlet-name>
-    <url-pattern>/ServletLogout</url-pattern>
-  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>ServletSkillPage</display-name>
     <servlet-name>ServletSkillPage</servlet-name>
     <servlet-class>it.polimi.swimv2.controller.ServletSkillPage</servlet-class>
   </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletSkillPage</servlet-name>
-    <url-pattern>/ServletSkillPage</url-pattern>
-  </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ServletAbilityAdded</display-name>
-    <servlet-name>ServletAbilityAdded</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletAbilityAdded</servlet-class>
+    <display-name>ServletAbilityDeclared</display-name>
+    <servlet-name>ServletAbilityDeclared</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletAbilityDeclared</servlet-class>
   </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletAbilityAdded</servlet-name>
-    <url-pattern>/ServletAbilityAdded</url-pattern>
-  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>ServletAbilityDeleted</display-name>
     <servlet-name>ServletAbilityDeleted</servlet-name>
     <servlet-class>it.polimi.swimv2.controller.ServletAbilityDeleted</servlet-class>
   </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletAbilityDeleted</servlet-name>
-    <url-pattern>/ServletAbilityDeleted</url-pattern>
-  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>ServletAbilityRequested</display-name>
     <servlet-name>ServletAbilityRequested</servlet-name>
     <servlet-class>it.polimi.swimv2.controller.ServletAbilityRequested</servlet-class>
   </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletAbilityRequested</servlet-name>
-    <url-pattern>/ServletAbilityRequested</url-pattern>
-  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>ServletNewAbilities</display-name>
     <servlet-name>ServletNewAbilities</servlet-name>
     <servlet-class>it.polimi.swimv2.controller.ServletNewAbilities</servlet-class>
   </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletNewAbilities</servlet-name>
-    <url-pattern>/ServletNewAbilities</url-pattern>
-  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>ServletNewJob</display-name>
     <servlet-name>ServletNewJob</servlet-name>
     <servlet-class>it.polimi.swimv2.controller.ServletNewJob</servlet-class>
   </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletNewJob</servlet-name>
-    <url-pattern>/ServletNewJob</url-pattern>
-  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>ServletAdminAbilityList</display-name>
     <servlet-name>ServletAdminAbilityList</servlet-name>
     <servlet-class>it.polimi.swimv2.controller.ServletAdminAbilityList</servlet-class>
   </servlet>
+  
+  <servlet>
+    <description></description>
+    <display-name>ServletAdminDeleteAbility</display-name>
+    <servlet-name>ServletAdminDeleteAbility</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletAdminDeleteAbility</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description></description>
+    <display-name>ServletAdminRedirect</display-name>
+    <servlet-name>ServletAdminRedirect</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletAdminRedirect</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description></description>
+    <display-name>ServletJobRequestsPage</display-name>
+    <servlet-name>ServletJobRequestsPage</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletJobRequestsPage</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description></description>
+    <display-name>ServletRefuseAbilityRequest</display-name>
+    <servlet-name>ServletRefuseAbilityRequest</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletRefuseAbilityRequest</servlet-class>
+  </servlet>
+  
+  
+  
+  
+  <servlet-mapping>
+    <servlet-name>ServletRefuseAbilityRequest</servlet-name>
+    <url-pattern>/ServletRefuseAbilityRequest</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletJobRequestsPage</servlet-name>
+    <url-pattern>/ServletJobRequestsPage</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletLogin</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletRegistration</servlet-name>
+    <url-pattern>/registration</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletSearch</servlet-name>
+    <url-pattern>/ServletSearch</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletProfilePage</servlet-name>
+    <url-pattern>/ServletProfilePage</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletProfileSeenByOther</servlet-name>
+    <url-pattern>/ServletProfileSeenByOther</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletLogout</servlet-name>
+    <url-pattern>/ServletLogout</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletSkillPage</servlet-name>
+    <url-pattern>/ServletSkillPage</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletAbilityDeclared</servlet-name>
+    <url-pattern>/ServletAbilityDeclared</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletAbilityDeleted</servlet-name>
+    <url-pattern>/ServletAbilityDeleted</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletAbilityRequested</servlet-name>
+    <url-pattern>/ServletAbilityRequested</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletNewAbilities</servlet-name>
+    <url-pattern>/ServletNewAbilities</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletNewJob</servlet-name>
+    <url-pattern>/ServletNewJob</url-pattern>
+  </servlet-mapping>
+  
   <servlet-mapping>
     <servlet-name>ServletAdminAbilityList</servlet-name>
     <url-pattern>/ServletAdminAbilityList</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ServletDeleteAbility</display-name>
-    <servlet-name>ServletDeleteAbility</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletDeleteAbility</servlet-class>
-  </servlet>
+  
   <servlet-mapping>
-    <servlet-name>ServletDeleteAbility</servlet-name>
-    <url-pattern>/ServletDeleteAbility</url-pattern>
+    <servlet-name>ServletAdminDeleteAbility</servlet-name>
+    <url-pattern>/ServletAdminDeleteAbility</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletAcceptAbilityRequest</servlet-name>
+    <url-pattern>/ServletAcceptAbilityRequest</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletAdminRedirect</servlet-name>
+    <url-pattern>/ServletAdminRedirect</url-pattern>
   </servlet-mapping>
 </web-app>
