@@ -6,7 +6,7 @@ import it.polimi.swimv2.entities.AbilityRequest;
 
 public interface IAbilityRequest {
 	
-	List<AbilityRequest> findAllNewAbilities();
+	List<AbilityRequest> findAllAbilityRequests();
 
 	void save(AbilityRequest newAbility);
 

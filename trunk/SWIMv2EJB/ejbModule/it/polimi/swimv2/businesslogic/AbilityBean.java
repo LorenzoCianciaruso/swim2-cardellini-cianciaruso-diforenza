@@ -64,6 +64,11 @@ public class AbilityBean implements IAbility {
 			return null;
 		}
 	}
+	
+	@Override
+	public void saveAbility(Ability ab){
+		entityManager.persist(ab);
+	}
     
  
 }
