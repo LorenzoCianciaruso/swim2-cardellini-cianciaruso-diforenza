@@ -41,10 +41,19 @@ public class AbilitiesDeclaredBean implements IAbilitiesDeclared {
 		}
 	}
 
+	// I had to reload the entity before delete it, because if i don't reload this
+	// the method throws an exception.
 	@Override
 	public void remove(AbilitiesDeclared abilitiesDeclared) {
-		entityManager.remove(abilitiesDeclared);
-		
+		String q = "SELECT a FROM AbilitiesDeclared a WHERE id ='"+abilitiesDeclared.getId()
+				+"' and idUser='"+abilitiesDeclared.getUser()+"' and idAbility='"+abilitiesDeclared.getAbility()+"'";
+		Query query = entityManager.createQuery(q);
+		try{
+			AbilitiesDeclared abDec = (AbilitiesDeclared) query.getSingleResult();
+			entityManager.remove(abDec);
+		}catch(NoResultException e){
+			System.out.println("ERRORE");
+		}
 	}
     
 	@Override
