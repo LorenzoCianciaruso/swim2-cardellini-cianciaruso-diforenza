@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-public class ServletAbilityAdded extends HttpServlet {
+public class ServletAbilityDeclared extends HttpServlet {
 	private static final int DEFAULT_FEEDBACK = 2;
 	private static final long serialVersionUID = 1L;
 
