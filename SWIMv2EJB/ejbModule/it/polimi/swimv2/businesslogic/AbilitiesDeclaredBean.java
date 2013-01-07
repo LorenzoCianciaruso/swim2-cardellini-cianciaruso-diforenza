@@ -45,8 +45,7 @@ public class AbilitiesDeclaredBean implements IAbilitiesDeclared {
 	// the method throws an exception.
 	@Override
 	public void remove(AbilitiesDeclared abilitiesDeclared) {
-		String q = "SELECT a FROM AbilitiesDeclared a WHERE id ='"+abilitiesDeclared.getId()
-				+"' and idUser='"+abilitiesDeclared.getUser()+"' and idAbility='"+abilitiesDeclared.getAbility()+"'";
+		String q = "SELECT a FROM AbilitiesDeclared a WHERE id ='"+abilitiesDeclared.getId()+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			AbilitiesDeclared abDec = (AbilitiesDeclared) query.getSingleResult();
@@ -58,16 +57,20 @@ public class AbilitiesDeclaredBean implements IAbilitiesDeclared {
     
 	@Override
 	public List<AbilitiesDeclared> searchAbilitiesDeclaredById(int id){
-		String q = "SELECT A FROM AbilitiesDeclared a Where idAbility = '"+id+"'";
+		System.out.println("1");
+		String q = "SELECT a FROM AbilitiesDeclared a WHERE idAbility = '"+id+"'";
 		Query query = entityManager.createQuery(q);
+		System.out.println("2");
 		try{
 				List<AbilitiesDeclared> list = (List<AbilitiesDeclared>) query.getResultList();
+				System.out.println("3");
 				return list;
 		}catch(NoResultException e){
 				return null;
 		}
 		
 	}
+	
 
     
 

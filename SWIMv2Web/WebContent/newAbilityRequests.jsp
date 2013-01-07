@@ -20,17 +20,16 @@
 	<br /> Ability Request:
 	<%=list.get(i).getName()%>
 
+
 	<form method="post" action="ServletRefuseAbilityRequest">
 		<input type="hidden" name="idNewAbility" value="<%=list.get(i).getIdNewAbility()%>"> </input>
-		<input type="hidden" name="idUser" value="<%=list.get(i).getIdUser() %>"></input>
-		<input type="hidden" name="name" value="<%=list.get(i).getName() %>"></input>
  		<input type="submit" value="Refuse"></input>
 	</form>
 	
 	<form method="post" action="ServletAcceptAbilityRequest">
 		<input type="hidden" name="idNewAbility" value="<%=list.get(i).getIdNewAbility() %>"></input>
 		<input type="hidden" name="idUser" value="<%=list.get(i).getIdUser() %>"></input>
-		<input type="hidden" name="nameNewAbility" value="<%=list.get(i).getName() %>"></input>
+		<input type="hidden" name="name" value="<%=list.get(i).getName() %>"></input>
 		<input type="submit" value="Accept"></input>
 	</form>
 	<%

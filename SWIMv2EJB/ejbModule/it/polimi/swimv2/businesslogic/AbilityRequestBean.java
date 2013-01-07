@@ -42,8 +42,9 @@ public class AbilityRequestBean implements IAbilityRequest {
 	}	
 
 	@Override
-	public void remove(AbilityRequest ab){
-		String q = "SELECT a FROM AbilityRequest a WHERE idNewAbility ='"+ab.getIdNewAbility()+"'";
+	public void remove(int id){
+	
+		String q = "SELECT a FROM AbilityRequest a WHERE idNewAbility ='"+id+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			AbilityRequest abReq = (AbilityRequest) query.getSingleResult();
