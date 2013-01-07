@@ -130,7 +130,6 @@
     <servlet-name>ServletFriendshipRequest</servlet-name>
     <servlet-class>it.polimi.swimv2.controller.ServletFriendshipRequest</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>ServletJobAccepted</servlet-name>
     <url-pattern>/ServletJobAccepted</url-pattern>
@@ -214,5 +213,25 @@
   <servlet-mapping>
     <servlet-name>ServletFriendshipRequest</servlet-name>
     <url-pattern>/ServletFriendshipRequest</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletFriendshipPage</display-name>
+    <servlet-name>ServletFriendshipPage</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletFriendshipPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletFriendshipPage</servlet-name>
+    <url-pattern>/ServletFriendshipPage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletFriendListPage</display-name>
+    <servlet-name>ServletFriendListPage</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletFriendListPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletFriendListPage</servlet-name>
+    <url-pattern>/ServletFriendListPage</url-pattern>
   </servlet-mapping>
 </web-app>

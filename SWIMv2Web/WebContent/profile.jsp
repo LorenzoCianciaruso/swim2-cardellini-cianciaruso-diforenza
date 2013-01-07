@@ -54,6 +54,12 @@
 	<br />
 	Manage your information:
 	
+	<br />
+	
+	<form method="post" action="ServletFriendListPage">
+		<input type="submit" value="Friends" />
+	</form>
+	
 	<form method="post" action="ServletSkillPage">
 		<input type="submit" value="Skills" />
 	</form>
@@ -64,6 +70,12 @@
 		<input type="submit" value="Job request" />
 	</form>
 
+	<br />
+	
+	<form method="post" action="ServletFriendshipPage">
+		<input type="submit" value="Friendship Requests" />
+	</form>
+	
 	<br />
 
 	<form method="post" action="ServletLogout">
