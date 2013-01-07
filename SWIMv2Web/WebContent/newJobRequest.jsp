@@ -16,14 +16,6 @@
 
 	<form method="post" action="ServletNewJob">
 		Date: (dd/mm/yyyy) <input name="date" /> <br />
-		<%
-			for (int i = 0; i < abilities.size(); i++) {
-		%>
-		<input type="checkbox" name="ability" value="<%=abilities.get(i)%>" /><%=abilities.get(i)%><br />
-		<%
-			}
-		%>
-		<br />
 		Place:<input name="place" /> <br />
 		<input type="hidden" name="userPerformerId" value="<%=request.getParameter("userPerformerId")%>"></input>
 		<input type="submit" value="Submit Request"></input>
