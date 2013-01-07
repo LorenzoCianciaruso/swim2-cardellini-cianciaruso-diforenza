@@ -39,7 +39,7 @@ public class ServletRefuseAbilityRequest extends HttpServlet {
 		newAbilityBean.remove(newAbility);
 		
 		ServletContext sc = getServletContext(); 
-		RequestDispatcher rd = sc.getRequestDispatcher("/newAbilityRequests.jsp"); 
+		RequestDispatcher rd = sc.getRequestDispatcher("/adminProfile.jsp"); 
 		rd.forward(request,response);
 		
 	}
