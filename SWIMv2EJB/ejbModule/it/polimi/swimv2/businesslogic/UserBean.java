@@ -45,7 +45,7 @@ public class UserBean implements IUser {
     //select user passing an user with the name to search
 	@Override
 	public List<User> findUserByName(String name) {
-		String q = "SELECT u FROM User u WHERE name = '"+name+"'";
+		String q = "SELECT u FROM User u WHERE name LIKE '"+name+"%' or surname LIKE '"+name+"%'";
 		Query query = entityManager.createQuery(q);
 		try{
 			List<User> listOfUsersFound = (List<User>) query.getResultList();
