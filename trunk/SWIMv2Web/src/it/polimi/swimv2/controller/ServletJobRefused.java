@@ -19,6 +19,7 @@ public class ServletJobRefused extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
+		IJobRequest jobRequestBean = (IJobRequest) JNDILookupClass.doLookup("jobRequestBean");
 		// get the request to refuse
 		int id = Integer.parseInt(request.getParameter("idJobRequest"));
 
