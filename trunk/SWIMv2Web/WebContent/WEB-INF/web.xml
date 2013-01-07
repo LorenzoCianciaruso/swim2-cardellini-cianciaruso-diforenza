@@ -112,6 +112,33 @@
     <servlet-name>ServletRefuseAbilityRequest</servlet-name>
     <servlet-class>it.polimi.swimv2.controller.ServletRefuseAbilityRequest</servlet-class>
   </servlet>
+  <servlet>
+    <description></description>
+    <display-name>ServletJobRefused</display-name>
+    <servlet-name>ServletJobRefused</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletJobRefused</servlet-class>
+  </servlet>
+  <servlet>
+    <description></description>
+    <display-name>ServletJobAccepted</display-name>
+    <servlet-name>ServletJobAccepted</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletJobAccepted</servlet-class>
+  </servlet>
+  <servlet>
+    <description></description>
+    <display-name>ServletFriendshipRequest</display-name>
+    <servlet-name>ServletFriendshipRequest</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletFriendshipRequest</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ServletJobAccepted</servlet-name>
+    <url-pattern>/ServletJobAccepted</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletJobRefused</servlet-name>
+    <url-pattern>/ServletJobRefused</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ServletRefuseAbilityRequest</servlet-name>
     <url-pattern>/ServletRefuseAbilityRequest</url-pattern>
@@ -184,12 +211,6 @@
     <servlet-name>ServletAdminRedirect</servlet-name>
     <url-pattern>/ServletAdminRedirect</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ServletFriendshipRequest</display-name>
-    <servlet-name>ServletFriendshipRequest</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletFriendshipRequest</servlet-class>
-  </servlet>
   <servlet-mapping>
     <servlet-name>ServletFriendshipRequest</servlet-name>
     <url-pattern>/ServletFriendshipRequest</url-pattern>
