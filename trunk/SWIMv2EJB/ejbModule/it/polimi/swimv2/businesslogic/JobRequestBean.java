@@ -3,7 +3,6 @@ package it.polimi.swimv2.businesslogic;
 import java.util.List;
 
 import it.polimi.swimv2.business.IJobRequest;
-import it.polimi.swimv2.entities.AbilitiesDeclared;
 import it.polimi.swimv2.entities.JobRequest;
 
 import javax.ejb.Remote;
@@ -32,13 +31,14 @@ public class JobRequestBean implements IJobRequest {
   //select job by id
     @Override
 	public JobRequest findJobRequestById(int id) {
-
+    	System.out.println("partito");
 		String q = "SELECT j FROM JobRequest j WHERE idJobRequest = '"+id+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			JobRequest j = (JobRequest) query.getSingleResult();
 			return j;
 		}catch (NoResultException e) {
+			System.out.println("non trovato");
 			return null;
 		}
 	}
@@ -69,17 +69,17 @@ public class JobRequestBean implements IJobRequest {
 			}
 		}
 		
-		// I had to reload the entity before delete it, because if i don't reload this
-		// the method throws an exception.
 		@Override
-		public void remove(int id) {
+		public void remove(int id){		
 			String q = "SELECT j FROM JobRequest j WHERE idJobRequest = '"+id+"'";
 			Query query = entityManager.createQuery(q);
 			try{
-				JobRequest toRemove = (JobRequest) query.getSingleResult();
-				entityManager.remove(toRemove);
+				JobRequest jobR = (JobRequest) query.getSingleResult();
+				entityManager.remove(jobR);
 			}catch(NoResultException e){
+					//TODO
 			}
+			
 		}
 	    
 	
