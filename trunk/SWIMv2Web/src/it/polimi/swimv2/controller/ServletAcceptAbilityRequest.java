@@ -1,6 +1,7 @@
 package it.polimi.swimv2.controller;
 
 import it.polimi.swimv2.business.IAbility;
+import it.polimi.swimv2.business.IAbilityRequest;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
 import it.polimi.swimv2.entities.Ability;
 
@@ -25,7 +26,8 @@ public class ServletAcceptAbilityRequest extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("abilityBean");
+		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
+		IAbilityRequest abilityRequestBean = (IAbilityRequest) JNDILookupClass.doLookup("AbilityRequestBean");
 		
 		String name = request.getParameter("name");
 		
@@ -35,9 +37,15 @@ public class ServletAcceptAbilityRequest extends HttpServlet {
 		//saves the new ability
 		abilityBean.saveAbility(ab);
 		
-		//TODO sarebbe da reindirizzare alla stessa pagina passando attraverso ServletNewAbilities
+		
+		String idString = request.getParameter("idNewAbility");
+		int id = Integer.parseInt(idString);
+		
+		//removes the abilityRequest
+		abilityRequestBean.remove(id);
+		
 		ServletContext sc = getServletContext();
-		RequestDispatcher rd = sc.getRequestDispatcher("/adminProfile");
+		RequestDispatcher rd = sc.getRequestDispatcher("/adminProfile.jsp");
 		rd.forward(request, response);	
 		
 		

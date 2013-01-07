@@ -22,5 +22,10 @@
 	<input type="submit" value="Ability List"></input> 
 	</form>
 	
+	<br />
+	<form method="post" action="ServletLogout">
+		<input type="submit" value="Log Out" />
+	</form>
+	
 </body>
 </html>

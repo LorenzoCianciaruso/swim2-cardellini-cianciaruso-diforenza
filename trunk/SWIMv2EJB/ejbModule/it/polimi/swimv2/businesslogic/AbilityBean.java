@@ -4,6 +4,7 @@ import java.util.List;
 
 import it.polimi.swimv2.business.IAbility;
 import it.polimi.swimv2.entities.Ability;
+import it.polimi.swimv2.entities.AbilityRequest;
 
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
@@ -49,8 +50,14 @@ public class AbilityBean implements IAbility {
 	@Override
 	public void deleteAbilityById(int id){
 		
-		entityManager.remove(id);		
+		String q = "SELECT a FROM Ability a WHERE idAbility ='"+id+"'";
+		Query query = entityManager.createQuery(q);
+		try{
+			Ability ab = (Ability) query.getSingleResult();
+			entityManager.remove(ab);
+		}catch(NoResultException e){		
 		
+		}
 	}
 
 	@Override

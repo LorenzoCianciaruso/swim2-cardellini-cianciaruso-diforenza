@@ -22,7 +22,7 @@ public class ServletAdminDeleteAbility extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
-		IAbilitiesDeclared abilitiesDeclaredBean = (IAbilitiesDeclared) JNDILookupClass.doLookup("abilitiesDeclaredBean");
+		IAbilitiesDeclared abilitiesDeclaredBean = (IAbilitiesDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
 		
 		//receives the id of the ability to delete
 		String string = request.getParameter("abilityId");
@@ -41,7 +41,7 @@ public class ServletAdminDeleteAbility extends HttpServlet {
 		}
 
 		ServletContext sc = getServletContext();
-		RequestDispatcher rd = sc.getRequestDispatcher("/adminAbilityList.jsp");
+		RequestDispatcher rd = sc.getRequestDispatcher("/adminProfile.jsp");
 		rd.forward(request, response);
 	}
 

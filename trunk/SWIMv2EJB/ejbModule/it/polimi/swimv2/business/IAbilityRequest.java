@@ -10,5 +10,5 @@ public interface IAbilityRequest {
 
 	void save(AbilityRequest newAbility);
 
-	void remove(AbilityRequest newAbility);
+	void remove(int id);
 }
