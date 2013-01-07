@@ -28,7 +28,6 @@ public class ServletLogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		// create a stateless Session bean for an user
 		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
 		IAdmin adminBean = (IAdmin) JNDILookupClass.doLookup("AdminBean");
 		IAbilitiesDeclared abilityDeclaredBean = (IAbilitiesDeclared) JNDILookupClass
