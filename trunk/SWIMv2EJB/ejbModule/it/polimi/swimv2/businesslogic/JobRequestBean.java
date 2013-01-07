@@ -73,7 +73,7 @@ public class JobRequestBean implements IJobRequest {
 		// the method throws an exception.
 		@Override
 		public void remove(int id) {
-			String q = "SELECT a FROM AbilitiesDeclared a WHERE idJobRequest ='"+id+"'";
+			String q = "SELECT j FROM JobRequest j WHERE idJobRequest = '"+id+"'";
 			Query query = entityManager.createQuery(q);
 			try{
 				JobRequest toRemove = (JobRequest) query.getSingleResult();
