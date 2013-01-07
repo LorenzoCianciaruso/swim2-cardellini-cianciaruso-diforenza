@@ -3,6 +3,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.List" %>
 <%@ page import="it.polimi.swimv2.entities.JobRequest" %>
+<%@ page import="it.polimi.swimv2.entities.User" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -12,26 +13,28 @@
 <body>
 	<br />
 	<%
-		List<JobRequest> requestsToUser = (List<JobRequest>) request.getAttribute("requestsToUser");
-		List<JobRequest> requestsByUser = (List<JobRequest>) request.getAttribute("requestsByUser");
+		List<JobRequest> requestsToMe = (List<JobRequest>) request.getAttribute("requestsToMe");
+		List<JobRequest> requestsByMe = (List<JobRequest>) request.getAttribute("requestsByMe");
+		List<User> userIAsked = (List<User>) request.getAttribute("userIAsked");
+		List<User> userAskedToMe = (List<User>) request.getAttribute("userAskedToMe");
 	%>
 	List of job requests received:<br />
 	<br />
 	<%
-	for (int i = 0; i < requestsToUser.size(); i++) {
+	for (int i = 0; i < requestsToMe.size(); i++) {
 	%>
-	From: <%=requestsToUser.get(i).getRequestor()%><br />
-	Date: <%=requestsToUser.get(i).getDate() %><br />
-	Ability: <%=requestsToUser.get(i).getAbility() %><br />
-	Place: <%=requestsToUser.get(i).getPlace() %><br />
+	From: <%=userAskedToMe.get(i).getName()+" "+userAskedToMe.get(i).getSurname()%><br />
+	Date: <%=requestsToMe.get(i).getDate() %><br />
+	Ability: <%=requestsToMe.get(i).getAbility() %><br />
+	Place: <%=requestsToMe.get(i).getPlace() %><br />
 
 	<form method="post" action="ServletJobAccepted">
-		<input type="hidden" name="idJobRequest" value="<%=requestsToUser.get(i).getIdJob()%>"> </input>
+		<input type="hidden" name="idJobRequest" value="<%=requestsToMe.get(i).getIdJob()%>"> </input>
  		<input type="submit" value="Refuse"></input>
 	</form>
 	
 	<form method="post" action="ServletJobRefused">
-		<input type="hidden" name="idJobRequest" value="<%=requestsToUser.get(i).getIdJob()%>"> </input>
+		<input type="hidden" name="idJobRequest" value="<%=requestsToMe.get(i).getIdJob()%>"> </input>
 		<input type="submit" value="Accept"></input>
 	</form>
 	<%
@@ -41,15 +44,15 @@
 	List of job requests sent:<br />
 	<br />
 	<%
-	for (int i = 0; i < requestsByUser.size(); i++) {
+	for (int i = 0; i < requestsByMe.size(); i++) {
 	%>
-	From: <%=requestsByUser.get(i).getRequestor()%><br />
-	Date: <%=requestsByUser.get(i).getDate() %><br />
-	Ability: <%=requestsByUser.get(i).getAbility() %><br />
-	Place: <%=requestsByUser.get(i).getPlace() %><br />
+	To: <%=userIAsked.get(i).getName()+" "+userIAsked.get(i).getSurname()%><br />
+	Date: <%=requestsByMe.get(i).getDate() %><br />
+	Ability: <%=requestsByMe.get(i).getAbility() %><br />
+	Place: <%=requestsByMe.get(i).getPlace() %><br />
 
 	<form method="post" action="ServletJobRefused">
-		<input type="hidden" name="idJobRequest" value="<%=requestsByUser.get(i).getIdJob()%>"> </input>
+		<input type="hidden" name="idJobRequest" value="<%=requestsByMe.get(i).getIdJob()%>"> </input>
  		<input type="submit" value="Cancel"></input>
 	</form>
 	<%
