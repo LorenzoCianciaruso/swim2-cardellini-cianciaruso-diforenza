@@ -53,6 +53,8 @@ public class ServletProfileSeenByOther extends HttpServlet {
 		}
 		request.setAttribute("names", names);
 		request.setAttribute("feedbacks", feedbacks);
+		request.setAttribute("abilities", abilities);
+
 		// forward to the profile page
 		ServletContext sc = getServletContext();
 		RequestDispatcher rd = sc

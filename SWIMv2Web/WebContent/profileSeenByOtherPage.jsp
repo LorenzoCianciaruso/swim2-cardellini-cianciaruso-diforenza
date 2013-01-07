@@ -38,8 +38,9 @@
 	%>
 	
 	<br />
-	<form method="post" action="newJobRequests.jsp">
+	<form method="post" action="newJobRequest.jsp">
 		<input type="hidden" name="userPerformerId" value="<%=user.getId()%>" />
+		<input type="hidden" name="abilities" value="<%=request.getAttribute("abilities")%>" />
 		<input type="submit" value="Ask <%=user.getName()%>'s help for a job" />
 	</form>
 	<br />
