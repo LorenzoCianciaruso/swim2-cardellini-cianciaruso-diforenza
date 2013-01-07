@@ -26,6 +26,8 @@ public class ServletJobAccepted extends HttpServlet {
 		
 		//get the request to accept
 		int id = Integer.parseInt(request.getParameter("idJobRequest"));
+		System.out.println(id);
+		//L'id è giusto perchè non vaaaaaaa
 		JobRequest req = jobRequestBean.findJobRequestById(id);
 		
 		//create new job

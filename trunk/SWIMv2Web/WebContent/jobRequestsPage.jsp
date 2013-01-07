@@ -30,12 +30,12 @@
 
 	<form method="post" action="ServletJobAccepted">
 		<input type="hidden" name="idJobRequest" value="<%=requestsToMe.get(i).getIdJob()%>"> </input>
- 		<input type="submit" value="Refuse"></input>
+ 		<input type="submit" value="Accept"></input>
 	</form>
 	
 	<form method="post" action="ServletJobRefused">
 		<input type="hidden" name="idJobRequest" value="<%=requestsToMe.get(i).getIdJob()%>"> </input>
-		<input type="submit" value="Accept"></input>
+		<input type="submit" value="Refuse"></input>
 	</form>
 	<%
 		}
