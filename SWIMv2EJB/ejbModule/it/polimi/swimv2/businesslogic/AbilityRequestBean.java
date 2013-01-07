@@ -25,7 +25,7 @@ public class AbilityRequestBean implements IAbilityRequest {
 	@Override
 	public List<AbilityRequest> findAllAbilityRequests() {
 		// TODO Auto-generated method stub
-		String q = "SELECT a FROM NewAbility a";
+		String q = "SELECT a FROM AbilityRequest a";
 		Query query = entityManager.createQuery(q);
 		try{
 			List<AbilityRequest> abReqList = (List<AbilityRequest>) query.getResultList();
@@ -43,7 +43,7 @@ public class AbilityRequestBean implements IAbilityRequest {
 
 	@Override
 	public void remove(AbilityRequest ab){
-		String q = "SELECT a FROM AbilitiyRequest a WHERE id='"+ab.getIdNewAbility()+"'";
+		String q = "SELECT a FROM AbilityRequest a WHERE idNewAbility ='"+ab.getIdNewAbility()+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			AbilityRequest abReq = (AbilityRequest) query.getSingleResult();
