@@ -23,7 +23,7 @@ public class ServletNewAbilities extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		IAbilityRequest newAbilityBean = (IAbilityRequest) JNDILookupClass.doLookup("NewAbilityBean");
+		IAbilityRequest newAbilityBean = (IAbilityRequest) JNDILookupClass.doLookup("AbilityRequestBean");
 		
 		List<AbilityRequest> newAbilityList = newAbilityBean.findAllAbilityRequests();
 		
