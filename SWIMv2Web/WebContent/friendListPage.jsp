@@ -16,7 +16,7 @@ List<User> friendList = (List<User>) request.getAttribute("friendList");
 FRIENDS LIST:<br />
 <br />
 <%
-if(friendList == null){
+if(friendList.size() > 0){
 for(int i=0; i<friendList.size();i++){
 %>
 <%=friendList.get(i).getName()+" "+friendList.get(i).getSurname() %> 
