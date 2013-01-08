@@ -4,7 +4,6 @@ import java.util.List;
 
 import it.polimi.swimv2.business.IFriendship;
 import it.polimi.swimv2.entities.Friendship;
-import it.polimi.swimv2.entities.Job;
 
 import javax.ejb.Stateless;
 import javax.ejb.Remote;
@@ -37,6 +36,18 @@ public class FriendshipBean implements IFriendship {
 			return fList;
 		}catch (NoResultException e) {
 			return null;
+		}
+	}
+
+	@Override
+	public void remove(int id) {
+		String q = "SELECT f FROM Friendship f WHERE id = '"+id+"'";
+		Query query = entityManager.createQuery(q);
+		try{
+			Friendship f = (Friendship) query.getSingleResult();
+			entityManager.remove(f);
+		}catch(NoResultException e){
+				;
 		}
 	}
 
