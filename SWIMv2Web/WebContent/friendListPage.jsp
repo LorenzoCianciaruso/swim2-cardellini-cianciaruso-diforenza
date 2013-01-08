@@ -20,6 +20,7 @@ for(int i=0; i<friendList.size();i++){
 %>
 <%=friendList.get(i).getName()+" "+friendList.get(i).getSurname() %> 
 <form method="post" action="ServletProfileSeenByOther">
+	<input type="hidden" name ="userId" value="<%=friendList.get(i).getId()%>" />
 	<input type="submit" value="View Profile" />
 </form>
 <br />
