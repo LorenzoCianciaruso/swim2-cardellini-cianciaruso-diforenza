@@ -14,4 +14,6 @@ public interface IFriendship {
 
 	void remove(int id);
 
+	boolean isFriend(int currentUserId, int id);
+
 }
