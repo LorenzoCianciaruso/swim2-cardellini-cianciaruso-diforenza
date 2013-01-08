@@ -24,16 +24,14 @@
 
 	<form method="post" action="ServletNewJobRequest">
 		Date: (dd/mm/yyyy) <input name="date" /> <br />
+		<select name="Ability">
 		<%
 			for (int i = 0; i < names.size(); i++) {
 		%>
-		<br />
-		Ability:
-		<%=names.get(i)%>
-		Feedback:
-		<%=feedbacks.get(i)%>
-		Id: <%=idAbilities.get(i) %>
-		<input type="checkbox" name="ability" value="<%=idAbilities.get(i) %>" />
+		<option value = <%=idAbilities.get(i) %>>
+		<%=names.get(i)%> <%=feedbacks.get(i)%>
+		</option>
+		</select>
 		
 		<br /> 
 		<%
