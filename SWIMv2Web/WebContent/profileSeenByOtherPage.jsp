@@ -27,14 +27,14 @@
 	<%
 	List<String> names = (List<String>) request.getAttribute("names");
 	List<Integer> feedbacks = (List<Integer>) request.getAttribute("feedbacks");
-		for (int i = 0; i < names.size(); i++) {
+	for (int i = 0; i < names.size(); i++) {
 	%>
 	<br /> Ability:
 	<%=names.get(i)%>
 	Feedback:
 	<%=feedbacks.get(i)%>
 	<%	
-		}
+	}
 	%>
 	
 	<%
@@ -48,10 +48,18 @@
 	</form>
 	<br />
 	<br />
+	<%
+	int isFriend = (Integer)request.getAttribute("isFriend");
+	if(isFriend == 0){
+	%>
 	<form method="post" action="ServletFriendshipRequest" >
 		<input type="hidden" name="userReceiverId" value="<%=user.getId()%>" />
 		<input type="submit" value="Ask friendship to <%=user.getName()%>" />
 	</form>
+	<%
+	}
+	%>
+	
 	<%
 	}
 	%>
