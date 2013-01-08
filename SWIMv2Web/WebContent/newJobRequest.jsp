@@ -30,13 +30,11 @@
 		%>
 		<option value = <%=idAbilities.get(i) %>>
 		<%=names.get(i)%> <%=feedbacks.get(i)%>
-		</option>
-		</select>
-		
-		<br /> 
+		</option>		
 		<%
 			}
 		%>
+		</select>
 		<br />
 		Place:<input	name="place" />
 		<br />
