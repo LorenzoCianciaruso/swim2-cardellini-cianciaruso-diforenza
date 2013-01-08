@@ -2,6 +2,7 @@ package it.polimi.swimv2.controller;
 
 import it.polimi.swimv2.business.IAbilitiesDeclared;
 import it.polimi.swimv2.business.IAbility;
+import it.polimi.swimv2.business.IFriendship;
 import it.polimi.swimv2.business.IUser;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
 import it.polimi.swimv2.entities.AbilitiesDeclared;
@@ -29,6 +30,7 @@ public class ServletProfileSeenByOther extends HttpServlet {
 		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
 		IAbilitiesDeclared abilityDeclaredBean = (IAbilitiesDeclared) JNDILookupClass
 				.doLookup("AbilitiesDeclaredBean");
+		IFriendship friendshipBean = (IFriendship) JNDILookupClass.doLookup("FriendshipBean");
 		
 		// i look for a user that has the same id in the database
 		User userToShow = userBean.findUserById(id);
@@ -54,6 +56,14 @@ public class ServletProfileSeenByOther extends HttpServlet {
 		request.setAttribute("names", names);
 		request.setAttribute("feedbacks", feedbacks);
 
+		// check if this user is already my friend
+		int currentUserId = (int) request.getSession().getAttribute("id");
+		if(friendshipBean.isFriend(currentUserId, id)){
+			request.setAttribute("isFriend", 1);
+		}else{
+			request.setAttribute("isFriend", 0);
+		}
+		
 		// forward to the profile page
 		ServletContext sc = getServletContext();
 		RequestDispatcher rd = sc
