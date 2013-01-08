@@ -53,9 +53,10 @@ public class ServletProfileSeenByOther extends HttpServlet {
 			// build the list that contains abilities feedback
 			feedbacks.add(abilities.get(i).getFeedback());
 		}
+		
 		request.setAttribute("names", names);
 		request.setAttribute("feedbacks", feedbacks);
-
+		
 		// check if this user is already my friend
 		int currentUserId = (int) request.getSession().getAttribute("id");
 		if(friendshipBean.isFriend(currentUserId, id)){
@@ -66,8 +67,13 @@ public class ServletProfileSeenByOther extends HttpServlet {
 		
 		// forward to the profile page
 		ServletContext sc = getServletContext();
-		RequestDispatcher rd = sc
-				.getRequestDispatcher("/profileSeenByOtherPage.jsp");
+		
+		RequestDispatcher rd;
+		if( (Integer) request.getSession().getAttribute("id")  == 0 ){
+			 rd = sc.getRequestDispatcher("/profileSeenByAdmin.jsp");
+		}else{	
+			rd = sc.getRequestDispatcher("/profileSeenByOtherPage.jsp");
+		}
 		rd.forward(request, response);
 
 	}
