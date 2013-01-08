@@ -7,7 +7,6 @@ import it.polimi.swimv2.entities.AbilitiesDeclared;
 import it.polimi.swimv2.entities.Ability;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
