@@ -37,6 +37,10 @@
 		}
 	%>
 	
+	<%
+	int currentUserId = (Integer) session.getAttribute("id");
+	if(user.getId() != currentUserId){
+	%>
 	<br />
 	<form method="post" action="ServletAskJobToUser">
 		<input type="hidden" name="userPerformerId" value="<%=user.getId()%>" />
@@ -48,6 +52,9 @@
 		<input type="hidden" name="userReceiverId" value="<%=user.getId()%>" />
 		<input type="submit" value="Ask friendship to <%=user.getName()%>" />
 	</form>
+	<%
+	}
+	%>
 	<br />
 	<br />
 	<form method="post" action="ServletProfilePage" >
