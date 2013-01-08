@@ -55,10 +55,13 @@
 	Manage your information:
 	
 	<br />
+	<br />
 	
 	<form method="post" action="ServletFriendListPage">
 		<input type="submit" value="Friends" />
 	</form>
+	
+	<br />
 	
 	<form method="post" action="ServletSkillPage">
 		<input type="submit" value="Skills" />
