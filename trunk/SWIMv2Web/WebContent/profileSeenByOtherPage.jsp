@@ -58,7 +58,7 @@
 		<input type="hidden" name="userReceiverId" value="<%=user.getId()%>" />
 		<input type="submit" value="Ask friendship to <%=user.getName()%>" />
 	</form>
-	
+	<% } %>
 	
 	<br />
 	<br />
