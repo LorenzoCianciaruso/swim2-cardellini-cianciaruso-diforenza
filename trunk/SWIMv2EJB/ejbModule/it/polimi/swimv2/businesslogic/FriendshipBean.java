@@ -51,4 +51,20 @@ public class FriendshipBean implements IFriendship {
 		}
 	}
 
+	@Override
+	public boolean isFriend(int currentUserId, int id) {
+		String q = "SELECT f FROM Friendship f WHERE (idUser1 = '"+currentUserId+"' AND idUser2 = '"+id+"') OR (idUser1 ='"+id+"' AND idUser2 = '"+currentUserId+"')";
+		Query query = entityManager.createQuery(q);
+		try{
+			Friendship f = (Friendship) query.getSingleResult();
+			if(f.equals(null)){
+				return false;
+			}else{
+				return true;
+			}
+		}catch(NoResultException e){
+			return false;
+		}
+	}
+
 }
