@@ -38,10 +38,15 @@
 	
 	<% } %>
 	
+	<br />
+	<form method='post' action="ServletBanUser">
+		<input type="submit" value="Ban User"/></input>
+		</form>
+	
 	
 	<br />
-	<form method="post" action="ServletProfilePage" >
-		<input type="submit" value="Go Back to your Profile" />
+	<form method="post" action="adminProfile.jsp" >
+		<input type="submit" value="Go Back" />
 	</form>
 </body>
 </html>
