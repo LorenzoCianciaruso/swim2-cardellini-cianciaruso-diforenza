@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,19 +20,18 @@ public class ServletAskJobToUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		IAbilitiesDeclared abilityDeclaredBean = (IAbilitiesDeclared) JNDILookupClass.doLookup("AbilityDeclaredBean");
+		IAbilitiesDeclared abilitiesDeclaredBean = (IAbilitiesDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
 		
 		//get the user that will perform the job and his abilities
 		int idPerformer = Integer.parseInt(request.getParameter("userPerformerId"));
 				
 		// build the list of user's abilities
-				List<AbilitiesDeclared> abilities = abilityDeclaredBean
+				List<AbilitiesDeclared> abilities = abilitiesDeclaredBean
 						.findAbilitiesOwnedByUserId(idPerformer);
 
 				List<String> names = new ArrayList<String>();
 				List<Integer> feedbacks = new ArrayList<Integer>();
 				List<Integer> idAbilities = new ArrayList<Integer>();
-
 				int idAbility;
 				IAbility abilityBean = (IAbility) JNDILookupClass
 						.doLookup("AbilityBean");
@@ -50,5 +51,9 @@ public class ServletAskJobToUser extends HttpServlet {
 				request.setAttribute("names", names);
 				request.setAttribute("feedbacks", feedbacks);
 				request.setAttribute("idAbilities", idAbilities);
+				
+				ServletContext sc = getServletContext();
+				RequestDispatcher rd = sc.getRequestDispatcher("/newJobRequest.jsp"); 
+				rd.forward(request,response);
 	}
 }
