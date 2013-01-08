@@ -264,4 +264,14 @@
     <servlet-name>ServletFriendshipRefused</servlet-name>
     <url-pattern>/ServletFriendshipRefused</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletSearchAmongFriend</display-name>
+    <servlet-name>ServletSearchAmongFriend</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletSearchAmongFriend</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletSearchAmongFriend</servlet-name>
+    <url-pattern>/ServletSearchAmongFriend</url-pattern>
+  </servlet-mapping>
 </web-app>
