@@ -13,7 +13,7 @@ public class JobRequest implements Serializable {
 	
 	@Id
 	private int idJobRequest;
-	private int idPerfomer;
+	private int idPerformer;
 	private int idRequestor;
 	private int idAbility;
 	private String place;
@@ -27,10 +27,10 @@ public class JobRequest implements Serializable {
 		this.idJobRequest = idJob;
 	}
 	public int getIdPerformer() {
-		return idPerfomer;
+		return idPerformer;
 	}
 	public void setIdPerformer(int idPerformer) {
-		this.idPerfomer = idPerformer;
+		this.idPerformer = idPerformer;
 	}
 	public int getRequestor() {
 		return idRequestor;
