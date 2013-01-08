@@ -16,6 +16,7 @@ List<User> friendList = (List<User>) request.getAttribute("friendList");
 FRIENDS LIST:<br />
 <br />
 <%
+if(friendList == null){
 for(int i=0; i<friendList.size();i++){
 %>
 <%=friendList.get(i).getName()+" "+friendList.get(i).getSurname() %> 
@@ -27,10 +28,15 @@ for(int i=0; i<friendList.size();i++){
 <br />
 <%
 }
+}else{
+%>
+Nessuno amico!
+<%
+}
 %>
 <br />
 <form method="post" action="ServletProfilePage" >
-	<input type="submit" action="Go Back" />
+	<input type="submit" value="Go Back" />
 </form>
 
 </body>
