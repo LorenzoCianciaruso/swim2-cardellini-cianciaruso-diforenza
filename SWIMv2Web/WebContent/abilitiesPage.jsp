@@ -21,7 +21,6 @@
 		<%
 		List<Ability> list = (List<Ability>) request.getAttribute("abilitiesList");
 		List<Ability> listOwned = (List<Ability>) request.getAttribute("abilitiesOwned");
-
 		list.removeAll(listOwned);
 		for(int i = 0; i < list.size(); i++){
 		%>
