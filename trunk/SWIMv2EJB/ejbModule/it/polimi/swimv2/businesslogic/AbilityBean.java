@@ -4,7 +4,6 @@ import java.util.List;
 
 import it.polimi.swimv2.business.IAbility;
 import it.polimi.swimv2.entities.Ability;
-import it.polimi.swimv2.entities.AbilityRequest;
 
 import javax.ejb.Remote;
 import javax.ejb.Stateless;

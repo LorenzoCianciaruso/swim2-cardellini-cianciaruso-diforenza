@@ -31,14 +31,12 @@ public class JobRequestBean implements IJobRequest {
   //select job by id
     @Override
 	public JobRequest findJobRequestById(int id) {
-    	System.out.println("partito");
-		String q = "SELECT j FROM JobRequest j WHERE idJobRequest = '"+id+"'";
+    	String q = "SELECT j FROM JobRequest j WHERE idJobRequest = '"+id+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			JobRequest j = (JobRequest) query.getSingleResult();
 			return j;
 		}catch (NoResultException e) {
-			System.out.println("non trovato");
 			return null;
 		}
 	}
@@ -77,7 +75,7 @@ public class JobRequestBean implements IJobRequest {
 				JobRequest jobR = (JobRequest) query.getSingleResult();
 				entityManager.remove(jobR);
 			}catch(NoResultException e){
-					//TODO
+					;
 			}
 			
 		}
