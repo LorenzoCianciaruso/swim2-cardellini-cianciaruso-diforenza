@@ -274,4 +274,34 @@
     <servlet-name>ServletSearchAmongFriend</servlet-name>
     <url-pattern>/ServletSearchAmongFriend</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletAdminSearch</display-name>
+    <servlet-name>ServletAdminSearch</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletAdminSearch</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAdminSearch</servlet-name>
+    <url-pattern>/ServletAdminSearch</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletProfileSeenByAdmin</display-name>
+    <servlet-name>ServletProfileSeenByAdmin</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletProfileSeenByAdmin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletProfileSeenByAdmin</servlet-name>
+    <url-pattern>/ServletProfileSeenByAdmin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletBanUser</display-name>
+    <servlet-name>ServletBanUser</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletBanUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletBanUser</servlet-name>
+    <url-pattern>/ServletBanUser</url-pattern>
+  </servlet-mapping>
 </web-app>

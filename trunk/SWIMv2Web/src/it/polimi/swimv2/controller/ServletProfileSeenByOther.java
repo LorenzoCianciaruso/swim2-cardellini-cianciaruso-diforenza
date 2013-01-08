@@ -57,13 +57,18 @@ public class ServletProfileSeenByOther extends HttpServlet {
 		request.setAttribute("names", names);
 		request.setAttribute("feedbacks", feedbacks);
 		
-		/*ServletContext sc = getServletContext();
-		RequestDispatcher rd;
-		if( (Integer) request.getSession().getAttribute("id")  == -1 ){
-			 rd = sc.getRequestDispatcher("/profileSeenByAdmin.jsp");
-		rd.forward(request, response);
-		}*/
-		
+		/*cerca di riconoscere se è l'admin ma non va
+		 * 
+		 ServletContext sc = getServletContext();
+		 RequestDispatcher rd;
+		 if((Integer)request.getSession().getId() == 0){
+		 	rd = sc.getRequestDispatcher("/profileSeenByAdmin.jsp");
+		  	rd.forward(request,response);
+		  	}
+		 
+		 */
+
+		//ho commentato perchè lanciava un ecc
 		// check if this user is already my friend
 		/*int currentUserId = (int) request.getSession().getAttribute("id");
 		if(friendshipBean.isFriend(currentUserId, id)){
