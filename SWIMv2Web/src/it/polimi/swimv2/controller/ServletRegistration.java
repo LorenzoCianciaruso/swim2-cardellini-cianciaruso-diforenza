@@ -41,7 +41,8 @@ public class ServletRegistration extends HttpServlet {
 				|| confirmPassword.equals("") || name.equals("")
 				|| surname.equals("") || phone.equals("")
 				|| city.equals("")
-				|| !(password.equals(confirmPassword)) || !checkDate(birthday)) {
+				|| !(password.equals(confirmPassword)) || checkDate(birthday)) {
+			
 			response.sendRedirect(response.encodeRedirectURL("loginFail.jsp"));
 
 		} else {
