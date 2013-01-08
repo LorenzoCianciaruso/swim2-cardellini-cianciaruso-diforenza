@@ -27,5 +27,11 @@
 		<input type="submit" value="Log Out" />
 	</form>
 	
+	<br />
+
+	<form method="post" action="ServletSearch">
+		Search: <input name="search" /> <input type="submit"
+			value="Search User" />
+	</form>
 </body>
 </html>
