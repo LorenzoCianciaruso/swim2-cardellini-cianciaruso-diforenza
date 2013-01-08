@@ -17,6 +17,12 @@ public class FriendshipRequest implements Serializable{
 	private int receiver;
 	
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public int getSender() {
 		return sender;
 	}

@@ -1,5 +1,7 @@
 package it.polimi.swimv2.businesslogic;
 
+import java.util.List;
+
 import it.polimi.swimv2.business.IFriendshipRequest;
 import it.polimi.swimv2.entities.FriendshipRequest;
 
@@ -20,6 +22,20 @@ public class FriendshipRequestBean implements IFriendshipRequest {
 	@Override
 	public void save(FriendshipRequest friendshipRequest) {
 		entityManager.persist(friendshipRequest);
+	}
+
+	@Override
+	public List<FriendshipRequest> findFriendshipRequestByPerformer(
+			int currentUserId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<FriendshipRequest> findFriendshipRequestByRequestor(
+			int currentUserId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
