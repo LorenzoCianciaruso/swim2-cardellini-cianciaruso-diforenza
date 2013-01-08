@@ -4,7 +4,6 @@ import java.util.List;
 
 import it.polimi.swimv2.business.IFriendshipRequest;
 import it.polimi.swimv2.entities.FriendshipRequest;
-import it.polimi.swimv2.entities.JobRequest;
 
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
@@ -29,7 +28,7 @@ public class FriendshipRequestBean implements IFriendshipRequest {
 
 	@Override
 	public List<FriendshipRequest> findFriendshipRequestByPerformer(int currentUserId) {
-		String q = "SELECT f FROM FriendshipRequest f WHERE idReceiver = '"+currentUserId+"'";
+		String q = "SELECT f FROM FriendshipRequest f WHERE receiver = '"+currentUserId+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			List<FriendshipRequest> list = (List<FriendshipRequest>) query.getResultList();
@@ -41,7 +40,7 @@ public class FriendshipRequestBean implements IFriendshipRequest {
 
 	@Override
 	public List<FriendshipRequest> findFriendshipRequestByRequestor(int currentUserId) {
-		String q = "SELECT f FROM FriendshipRequest f WHERE idSender = '"+currentUserId+"'";
+		String q = "SELECT f FROM FriendshipRequest f WHERE sender = '"+currentUserId+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			List<FriendshipRequest> list = (List<FriendshipRequest>) query.getResultList();
@@ -57,12 +56,25 @@ public class FriendshipRequestBean implements IFriendshipRequest {
 		String q = "SELECT f FROM FriendshipRequest f WHERE id = '"+id+"'";
 		Query query = entityManager.createQuery(q);
 		try{
-			JobRequest jobR = (JobRequest) query.getSingleResult();
+			FriendshipRequest jobR = (FriendshipRequest) query.getSingleResult();
 			entityManager.remove(jobR);
 		}catch(NoResultException e){
 				;
 		}
 		
+	}
+	
+	
+	@Override
+	public FriendshipRequest findFriendshipRequestById(int id) {
+    	String q = "SELECT f FROM FriendshipRequest f WHERE id = '"+id+"'";
+		Query query = entityManager.createQuery(q);
+		try{
+			FriendshipRequest f = (FriendshipRequest) query.getSingleResult();
+			return f;
+		}catch (NoResultException e) {
+			return null;
+		}
 	}
 
 }
