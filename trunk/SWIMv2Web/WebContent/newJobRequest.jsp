@@ -32,20 +32,21 @@
 		<%=names.get(i)%>
 		Feedback:
 		<%=feedbacks.get(i)%>
-		Id:
-		<%=idAbilities.get(i)%>
+		Id: <%=idAbilities.get(i) %>
+		<input type="checkbox" name="ability" value="<%=idAbilities.get(i) %>" />
+		
 		<br /> 
 		<%
 			}
 		%>
-		<br />
-		Ability: <input name="ability" />
 		<br />
 		Place:<input	name="place" />
 		<br />
 		<input type="hidden" name="userPerformerId"
 			value="<%=request.getParameter("userPerformerId")%>"></input>
 			<input type="submit" value="Submit Request"></input>
+					<input type="submit" value="Add Checked Abilities" />
+			
 	</form>
 </body>
 </html>
