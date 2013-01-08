@@ -22,12 +22,10 @@ public class ServletJobAccepted extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		IJob jobBean = (IJob) JNDILookupClass.doLookup("jobBean");
-		IJobRequest jobRequestBean = (IJobRequest) JNDILookupClass.doLookup("jobRequestBean");
+		IJobRequest jobRequestBean = (IJobRequest) JNDILookupClass.doLookup("JobRequestBean");
 		
 		//get the request to accept
 		int id = Integer.parseInt(request.getParameter("idJobRequest"));
-		System.out.println(id);
-		//L'id è giusto perchè non vaaaaaaa
 		JobRequest req = jobRequestBean.findJobRequestById(id);
 		
 		//create new job
