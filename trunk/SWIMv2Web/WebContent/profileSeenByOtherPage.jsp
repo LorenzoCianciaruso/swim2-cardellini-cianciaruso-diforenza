@@ -48,5 +48,10 @@
 		<input type="hidden" name="userReceiverId" value="<%=user.getId()%>" />
 		<input type="submit" value="Ask friendship to <%=user.getName()%>" />
 	</form>
+	<br />
+	<br />
+	<form method="post" action="ServletProfilePage" >
+		<input type="submit" value="Go Back to your Profile" />
+	</form>
 </body>
 </html>

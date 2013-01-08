@@ -24,9 +24,6 @@ public class ServletFriendListPage extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
-		//TODO Pagina che visualizza l'elenco degli amici di un utente con bottoni per
-		// visualizzare il loro profilo
 		// IDEA: se mettiamo un campo di ricerca qui dentro facciamo la ricerca solo tra gli amici
 		// utilizzando lo stesso codice della ricerca normale, cambia sol la query
 		
@@ -37,7 +34,7 @@ public class ServletFriendListPage extends HttpServlet {
 		
 		// list of all friendship of the current user
 		List<Friendship> friendshipList = friendshipBean.findAllFriendshipsByUserId(currentUserId);
-		
+
 		// build a list of user from the list of friendship
 		List<User> friendList = new ArrayList<User>();
 		for(int i=0; i<friendshipList.size(); i++){
@@ -47,7 +44,7 @@ public class ServletFriendListPage extends HttpServlet {
 			}else
 				friendList.add(userBean.findUserById(friendshipList.get(i).getidUser1()));
 		}
-		
+
 		request.setAttribute("friendList", friendList);
 		
 		//forward to jsp
