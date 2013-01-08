@@ -5,13 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Login Error</title>
+<title>Error</title>
 </head>
-<body>
-	You have to log in or you have entered wrong values!
+<body><%= request.getAttribute("message")%>	
 	<br />
 	<form method="post" action="index.jsp" >
-		<input type="submit" value="Go to the Homepage" />
+		<input type="submit" value="Restart from the homepage" />
 	</form>
 </body>
 </html>

@@ -70,13 +70,13 @@
 	<br />
 
 	<form method="post" action="ServletJobRequestsPage">
-		<input type="submit" value="Job request" />
+		<input type="submit" value="See job requests" />
 	</form>
 
 	<br />
 	
 	<form method="post" action="ServletFriendshipPage">
-		<input type="submit" value="Friendship Requests" />
+		<input type="submit" value="See friendship requests" />
 	</form>
 	
 	<br />

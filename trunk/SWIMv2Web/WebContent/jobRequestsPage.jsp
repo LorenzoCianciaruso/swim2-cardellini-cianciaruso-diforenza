@@ -8,7 +8,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title></title>
+<title>Manage your job requests</title>
 </head>
 <body>
 	<br />
@@ -18,7 +18,8 @@
 		List<User> userIAsked = (List<User>) request.getAttribute("userIAsked");
 		List<User> userAskedToMe = (List<User>) request.getAttribute("userAskedToMe");
 	%>
-	List of job requests received:<br />
+	Job requests you have received.<br />
+	You can accept or refuse it<br />
 	<br />
 	<%
 	for (int i = 0; i < requestsToMe.size(); i++) {
@@ -41,7 +42,8 @@
 		}
 	%>
 	
-	List of job requests sent:<br />
+	Job requests you have sent.<br />
+	You can cancel them permanently from the system.<br />
 	<br />
 	<%
 	for (int i = 0; i < requestsByMe.size(); i++) {

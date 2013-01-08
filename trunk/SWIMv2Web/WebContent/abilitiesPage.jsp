@@ -34,8 +34,8 @@
 	
 	<form method="post" action="ServletAbilityRequested">
 		<br />
-		If you can't find the ability, type its name in the field and then click the Add button: <input name="abilityAdded" />
-		<input type="submit" value="Add Abilities" />
+		If you want to sent a request to add an abilty to SWIMv2 type the name of the ability here: <input name="abilityAdded" />
+		<input type="submit" value="Send request" />
 		<br />
 	</form>
 	
