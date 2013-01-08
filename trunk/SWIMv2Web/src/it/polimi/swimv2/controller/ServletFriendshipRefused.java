@@ -1,7 +1,6 @@
 package it.polimi.swimv2.controller;
 
 import it.polimi.swimv2.business.IFriendshipRequest;
-import it.polimi.swimv2.business.IJobRequest;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
 
 import java.io.IOException;
