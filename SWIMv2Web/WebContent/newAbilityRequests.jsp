@@ -36,7 +36,7 @@
 		}
 	%>
 
-	<form method="post" action="ServletAdminRedirect">
+	<form method="post" action="adminProfile.jsp">
 		<input type="submit" value="Go Back"></input>
 	</form>
 	

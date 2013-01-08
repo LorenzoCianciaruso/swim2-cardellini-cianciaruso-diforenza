@@ -41,7 +41,7 @@ public class ServletAdminDeleteAbility extends HttpServlet {
 		}
 
 		ServletContext sc = getServletContext();
-		RequestDispatcher rd = sc.getRequestDispatcher("/adminProfile.jsp");
+		RequestDispatcher rd = sc.getRequestDispatcher("/done.jsp");
 		rd.forward(request, response);
 	}
 
