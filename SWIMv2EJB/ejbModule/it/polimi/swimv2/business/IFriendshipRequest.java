@@ -17,4 +17,6 @@ public interface IFriendshipRequest {
 
 	void remove(int id);
 
+	FriendshipRequest findFriendshipRequestById(int id);
+
 }

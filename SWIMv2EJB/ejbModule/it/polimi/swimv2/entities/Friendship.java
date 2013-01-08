@@ -10,15 +10,20 @@ import javax.persistence.Id;
 public class Friendship implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-	
-	//non so come si metta una chiave primaria multipla, questa chiave dovrebbe comprendere entrambi gli utenti registrati
+
 	
 	@Id
+	private int id;
 	private int idUser1;
-	@Id
 	private int idUser2;
 	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public int getidUser1() {
 		return idUser1;
 	}
