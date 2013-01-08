@@ -7,21 +7,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Result List</title>
+<title>Results</title>
 </head>
 <body>
-	Here are all users that matches your research:<br />
-	<br />
-	<%
+		<%
 		List<User> list = (List<User>) request.getAttribute("listOfUsers");
 		if(list.size()==0){
-	%>
+		%>
 	NO Results for your search, I'm sorry!
-	<%
+		<%
 		}else{
+		%>
+			Here are all users that matches your research:<br />
+			<%
 			for(int i = 0; i< list.size(); i++){
 				User user = list.get(i);
-	%>
+			%>
 	<%=user.getName()+" "+user.getSurname() %>
 	<form method="post" action="ServletProfileSeenByOther">
 		<input type="hidden" name="userId" value=<%=user.getId()%> />

@@ -11,8 +11,7 @@
 </head>
 <body>
 
-	<h2>SWIMv2 Abilities</h2>
-
+	Here all the abilities of the system.
 	<br />
 
 	<%
@@ -24,7 +23,7 @@
 
 	<form method="post" action="ServletAdminDeleteAbility">
 		<input type="hidden" name="abilityId" value="<%=list.get(i).getIdAbility()%>"></input>
-		<input type="submit" value="Delete"></input>
+		<input type="submit" value="Remove"></input>
 	</form>
 	<%
 		}

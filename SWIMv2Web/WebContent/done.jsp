@@ -11,7 +11,7 @@
 	We have successfully manage your request.	
 	<br />	
 	<form method="post" action="ServletProfilePage">
-		<input type="submit" value="Go back to your profile" />
+		<input type="submit" value="Ok" />
 	</form>
 	
 </body>

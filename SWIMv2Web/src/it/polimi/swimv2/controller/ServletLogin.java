@@ -56,6 +56,8 @@ public class ServletLogin extends HttpServlet {
 			// checking the admin table
 			Admin a2 = adminBean.findAdminByLogin(a);
 			if (a2 == null) {
+				String message = "Login Fail. You have probably insert uncorrect email or password";
+				request.setAttribute("message", message);
 				response.sendRedirect(response
 						.encodeRedirectURL("loginFail.jsp"));
 			} else {

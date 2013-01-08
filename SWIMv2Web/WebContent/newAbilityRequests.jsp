@@ -7,11 +7,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>New Ability Requests</title>
+<title>Abilities requests</title>
 </head>
 <body>
-
-	<h2>New Ability Requests</h2>
+	Here all suggestion for new abilities.
 	<br />
 	<%
 		List<AbilityRequest> list = (List<AbilityRequest>) request.getAttribute("newAbilitiesList");
