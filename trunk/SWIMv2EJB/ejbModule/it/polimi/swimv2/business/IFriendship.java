@@ -12,4 +12,6 @@ public interface IFriendship {
 
 	List<Friendship> findAllFriendshipsByUserId(int currentUserId);
 
+	void remove(int id);
+
 }
