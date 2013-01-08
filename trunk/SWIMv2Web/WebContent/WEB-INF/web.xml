@@ -234,4 +234,24 @@
     <servlet-name>ServletFriendListPage</servlet-name>
     <url-pattern>/ServletFriendListPage</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletFriendshipAccepted</display-name>
+    <servlet-name>ServletFriendshipAccepted</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletFriendshipAccepted</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletFriendshipAccepted</servlet-name>
+    <url-pattern>/ServletFriendshipAccepted</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletFriendshipRefused</display-name>
+    <servlet-name>ServletFriendshipRefused</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletFriendshipRefused</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletFriendshipRefused</servlet-name>
+    <url-pattern>/ServletFriendshipRefused</url-pattern>
+  </servlet-mapping>
 </web-app>
