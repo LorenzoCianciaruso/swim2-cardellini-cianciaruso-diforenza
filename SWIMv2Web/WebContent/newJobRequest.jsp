@@ -16,7 +16,7 @@
 	//dovrebbe ricevere già come parametro una lista di abilita' pero ' da una jsp probabilmente conviene mettercci in mezzo un bel servlet e vaffanculo
 	//anzi senza il probilmente cacciamoci il servlet e bona li%>
 
-	<form method="post" action="ServletNewJob">
+	<form method="post" action="ServletNewJobRequest">
 		Date: (dd/mm/yyyy) <input name="date" /> <br />
 		Ability: <input name="ability" /> <br />
 		Place:<input name="place" /> <br />
