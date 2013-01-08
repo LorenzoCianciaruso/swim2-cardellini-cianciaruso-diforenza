@@ -44,7 +44,7 @@ public class JobRequestBean implements IJobRequest {
     //select job by performer
 	@Override
 	public List<JobRequest> findJobRequestByPerformer(int idPerformer) {
-		String q = "SELECT j FROM JobRequest j WHERE idPerfomer = '"+idPerformer+"'";
+		String q = "SELECT j FROM JobRequest j WHERE idPerformer = '"+idPerformer+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			List<JobRequest> list = (List<JobRequest>) query.getResultList();
