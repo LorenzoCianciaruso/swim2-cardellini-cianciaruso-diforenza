@@ -78,9 +78,9 @@
   </servlet>
   <servlet>
     <description></description>
-    <display-name>ServletNewJob</display-name>
-    <servlet-name>ServletNewJob</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletNewJob</servlet-class>
+    <display-name>ServletNewJobRequest</display-name>
+    <servlet-name>ServletNewJobRequest</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletNewJobRequest</servlet-class>
   </servlet>
   <servlet>
     <description></description>
@@ -191,8 +191,8 @@
     <url-pattern>/ServletNewAbilities</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>ServletNewJob</servlet-name>
-    <url-pattern>/ServletNewJob</url-pattern>
+    <servlet-name>ServletNewJobRequest</servlet-name>
+    <url-pattern>/ServletNewJobRequest</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ServletAdminAbilityList</servlet-name>
