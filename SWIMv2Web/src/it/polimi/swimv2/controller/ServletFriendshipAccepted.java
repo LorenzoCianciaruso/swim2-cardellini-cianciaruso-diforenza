@@ -36,6 +36,9 @@ public class ServletFriendshipAccepted extends HttpServlet {
 				
 		friendshipBean.saveFriendship(fs);
 		
+		//delete the friendship request from the db
+		friendshipRequestBean.remove(id);
+		
 		//forward to success page
 		ServletContext sc = getServletContext();
 		RequestDispatcher rd = sc.getRequestDispatcher("/done.jsp");
