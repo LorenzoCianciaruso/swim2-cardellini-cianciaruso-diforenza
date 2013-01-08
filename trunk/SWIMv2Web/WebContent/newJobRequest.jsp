@@ -24,7 +24,7 @@
 
 	<form method="post" action="ServletNewJobRequest">
 		Date: (dd/mm/yyyy) <input name="date" /> <br />
-		<select name="Ability">
+		<select name="ability">
 		<%
 			for (int i = 0; i < names.size(); i++) {
 		%>
@@ -40,9 +40,7 @@
 		<br />
 		<input type="hidden" name="userPerformerId"
 			value="<%=request.getParameter("userPerformerId")%>"></input>
-			<input type="submit" value="Submit Request"></input>
-					<input type="submit" value="Add Checked Abilities" />
-			
+			<input type="submit" value="Submit Request"></input>		
 	</form>
 </body>
 </html>
