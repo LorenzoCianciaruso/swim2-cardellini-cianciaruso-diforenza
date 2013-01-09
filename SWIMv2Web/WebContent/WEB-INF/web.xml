@@ -304,4 +304,14 @@
     <servlet-name>ServletBanUser</servlet-name>
     <url-pattern>/ServletBanUser</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletJobsPage</display-name>
+    <servlet-name>ServletJobsPage</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletJobsPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletJobsPage</servlet-name>
+    <url-pattern>/ServletJobsPage</url-pattern>
+  </servlet-mapping>
 </web-app>

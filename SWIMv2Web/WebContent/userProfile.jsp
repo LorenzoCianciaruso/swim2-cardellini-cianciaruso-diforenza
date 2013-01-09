@@ -81,8 +81,15 @@
 	
 	<br />
 
+	<form method="post" action="ServletJobsPage">
+		<input type="submit" value="Jobs" />
+	</form>
+	
+	<br />
+	
 	<form method="post" action="ServletLogout">
 		<input type="submit" value="Log Out" />
 	</form>
+	
 </body>
 </html>
