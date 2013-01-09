@@ -35,6 +35,8 @@ public class AbilityRequestBean implements IAbilityRequest {
 			return null;
 		}
 	}
+	
+	
 
 	@Override
 	public void save(AbilityRequest abReq) {
@@ -53,6 +55,18 @@ public class AbilityRequestBean implements IAbilityRequest {
 				//TODO
 		}
 		
+	}
+	
+	@Override
+	public List<AbilityRequest> findAllAbilityReqByUserId(int id){
+		String q = "SELECT a FROM AbilityRequest WHERE idUser = '"+id+"'";
+		Query query = entityManager.createQuery(q);
+		try{
+			List<AbilityRequest> list = (List<AbilityRequest>) query.getResultList();
+					return list;
+		}catch (NoResultException e){
+			return null;
+		}
 	}
 		
 	
