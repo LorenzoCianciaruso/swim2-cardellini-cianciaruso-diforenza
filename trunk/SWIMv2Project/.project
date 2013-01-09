@@ -5,7 +5,6 @@
 	<projects>
 		<project>SWIMv2EJB</project>
 		<project>SWIMv2Web</project>
-		<project>SWIMv2ApplicationClient</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
