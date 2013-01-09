@@ -62,9 +62,8 @@ public class ServletProfileSeenByOther extends HttpServlet {
 		 ServletContext sc = getServletContext();
 		 RequestDispatcher rd;
 		 if((Integer)request.getSession().getId() == 0){
-		 	rd = sc.getRequestDispatcher("/profileSeenByAdmin.jsp");
-		  	rd.forward(request,response);
-		  	}
+		 forward(request, response, "/profileSeenBtAdmin.jsp");
+		  	}else{
 		 
 		 */
 
@@ -78,9 +77,16 @@ public class ServletProfileSeenByOther extends HttpServlet {
 		}*/
 		
 		// forward to the profile page
-		ServletContext sc = getServletContext();
-		RequestDispatcher rd = sc.getRequestDispatcher("/profileSeenByOtherPage.jsp");
-		rd.forward(request, response);
+		forward(request, response, "/profileSeenByOther.jsp");
+	//}
 
 	}
+	
+	// forward steps
+		private void forward(HttpServletRequest request,HttpServletResponse response, String page) throws ServletException,IOException {
+			ServletContext sc = getServletContext();
+			RequestDispatcher rd = sc.getRequestDispatcher(page);
+			rd.forward(request, response);
+		}
+
 }
