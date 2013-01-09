@@ -158,11 +158,11 @@
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ServletLogin</servlet-name>
-    <url-pattern>/login</url-pattern>
+    <url-pattern>/ServletLogin</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ServletRegistration</servlet-name>
-    <url-pattern>/registration</url-pattern>
+    <url-pattern>/ServletRegistration</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ServletSearch</servlet-name>

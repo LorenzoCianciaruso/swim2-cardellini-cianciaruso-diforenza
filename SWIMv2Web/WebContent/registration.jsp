@@ -8,7 +8,7 @@
 <title>Register new profile</title>
 </head>
 <body>
-	<form method="post" action="registration">
+	<form method="post" action="ServletRegistration">
 		Name: <input name="name" />
 		<br /> Surname: <input name="surname" />
 		<br /> Birthday: (dd/mm/yyyy) <input name="birthday" /> 
