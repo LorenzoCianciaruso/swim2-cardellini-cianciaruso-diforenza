@@ -58,8 +58,9 @@ public class ServletLogin extends HttpServlet {
 			if (a2 == null) {
 				String message = "Login Fail. You have probably insert uncorrect email or password";
 				request.setAttribute("message", message);
-				response.sendRedirect(response
-						.encodeRedirectURL("loginFail.jsp"));
+				forward(request, response, "/loginFail.jsp");
+				//response.sendRedirect(response
+						//.encodeRedirectURL("loginFail.jsp"));
 			} else {
 				// admin login successful
 				HttpSession adminSession = request.getSession(true);
