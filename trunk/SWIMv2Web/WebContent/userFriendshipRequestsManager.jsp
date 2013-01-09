@@ -26,6 +26,7 @@
 	From: <%=userAskedToMe.get(i).getName()+" "+userAskedToMe.get(i).getSurname()%><br />
 
 	<form method="post" action="ServletFriendshipAccepted">
+		<input type="hidden" name="userId" value="<%=userAskedToMe.get(i).getId() %>" /> 
 		<input type="hidden" name="idFriendshipRequest" value="<%=requestsToMe.get(i).getId()%>"> </input>
  		<input type="submit" value="Accept"></input>
 	</form>
