@@ -9,9 +9,5 @@
             <dependent-object/>
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="SWIMv2ApplicationClient.jar" deploy-path="/" handle="module:/resource/SWIMv2ApplicationClient/SWIMv2ApplicationClient">
-            <dependent-object/>
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
     </wb-module>
 </project-modules>
