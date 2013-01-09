@@ -21,7 +21,7 @@ public class ServletJobAccepted extends HttpServlet {
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		IJob jobBean = (IJob) JNDILookupClass.doLookup("jobBean");
+		IJob jobBean = (IJob) JNDILookupClass.doLookup("JobBean");
 		IJobRequest jobRequestBean = (IJobRequest) JNDILookupClass.doLookup("JobRequestBean");
 		
 		//get the request to accept
