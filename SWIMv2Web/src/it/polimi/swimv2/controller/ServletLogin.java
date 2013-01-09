@@ -64,8 +64,8 @@ public class ServletLogin extends HttpServlet {
 			} else {
 				// admin login successful
 				HttpSession adminSession = request.getSession(true);
-				
-				adminSession.setAttribute("id", 0);
+				int idAdmin = a.getId();
+				adminSession.setAttribute("id", idAdmin);
 
 				request.setAttribute("admin", a2);
 				forward(request, response, "/adminProfile.jsp");
