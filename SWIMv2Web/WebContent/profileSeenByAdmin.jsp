@@ -40,6 +40,7 @@
 	
 	<br />
 	<form method='post' action="ServletBanUser">
+		<input type="hidden" name="idUser" value="<%=user.getId() %>"></input >
 		<input type="submit" value="Ban User"/></input>
 		</form>
 	
