@@ -57,7 +57,7 @@ public class ServletFriendshipPage extends HttpServlet {
 			
 		//forward to jsp
 		ServletContext sc = getServletContext();
-		RequestDispatcher rd = sc.getRequestDispatcher("/friendshipRequestsPage.jsp"); 
+		RequestDispatcher rd = sc.getRequestDispatcher("/userFriendshipRequestsManager.jsp"); 
 		rd.forward(request,response);
 	}
 

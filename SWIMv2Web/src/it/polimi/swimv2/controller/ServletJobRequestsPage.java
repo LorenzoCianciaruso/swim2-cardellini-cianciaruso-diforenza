@@ -57,7 +57,7 @@ public class ServletJobRequestsPage extends HttpServlet {
 		
 		//forward to jsp
 		ServletContext sc = getServletContext();
-		RequestDispatcher rd = sc.getRequestDispatcher("/jobRequestsPage.jsp"); 
+		RequestDispatcher rd = sc.getRequestDispatcher("/userJobRequestsManager.jsp"); 
 		rd.forward(request,response);
 	}
 }

@@ -51,7 +51,7 @@ public class ServletSkillPage extends HttpServlet {
 		request.setAttribute("abilitiesList", abilitiesList);
 			
 		ServletContext sc = getServletContext();
-		RequestDispatcher rd = sc.getRequestDispatcher("/abilitiesPage.jsp"); 
+		RequestDispatcher rd = sc.getRequestDispatcher("/userAbilitiesManager.jsp"); 
 		rd.forward(request,response);
 	}
 }

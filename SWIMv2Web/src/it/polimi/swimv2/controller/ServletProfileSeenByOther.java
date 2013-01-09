@@ -77,7 +77,7 @@ public class ServletProfileSeenByOther extends HttpServlet {
 		}
 		
 		// forward to the profile page
-		forward(request, response, "/profileSeenByOtherPage.jsp");
+		forward(request, response, "/profileSeenByOther.jsp");
 	//}
 
 	}

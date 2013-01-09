@@ -38,7 +38,7 @@ public class ServletProfilePage extends HttpServlet {
 
 		if (user == null) {
 			// redirect to the fail page
-			response.sendRedirect(response.encodeRedirectURL("loginFail.jsp"));
+			response.sendRedirect(response.encodeRedirectURL("messageFail.jsp"));
 		} else {
 			// i build the request form with user parameter
 			request.setAttribute("user", user);
@@ -67,7 +67,7 @@ public class ServletProfilePage extends HttpServlet {
 			// forward to the profile page
 			ServletContext sc = getServletContext();
 			RequestDispatcher rd = sc
-					.getRequestDispatcher("/profile.jsp");
+					.getRequestDispatcher("/userProfile.jsp");
 			rd.forward(request, response);
 		}
 	}

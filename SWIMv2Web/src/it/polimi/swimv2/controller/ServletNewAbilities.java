@@ -30,7 +30,7 @@ public class ServletNewAbilities extends HttpServlet {
 		request.setAttribute("newAbilitiesList", newAbilityList);
 		
 		ServletContext sc = getServletContext();
-		RequestDispatcher rd = sc.getRequestDispatcher("/newAbilityRequests.jsp"); 
+		RequestDispatcher rd = sc.getRequestDispatcher("/adminAbilityRequestsManager.jsp"); 
 		rd.forward(request,response);
 	}
 

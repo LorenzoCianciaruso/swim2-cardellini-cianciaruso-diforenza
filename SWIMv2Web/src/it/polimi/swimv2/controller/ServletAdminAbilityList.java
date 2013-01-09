@@ -29,7 +29,7 @@ public class ServletAdminAbilityList extends HttpServlet {
 		
 		//forward it to the page
 		ServletContext sc = getServletContext();
-		RequestDispatcher rd = sc.getRequestDispatcher("/adminAbilityList.jsp"); 
+		RequestDispatcher rd = sc.getRequestDispatcher("/adminAbilityManager.jsp"); 
 		rd.forward(request,response);
 	}
 
