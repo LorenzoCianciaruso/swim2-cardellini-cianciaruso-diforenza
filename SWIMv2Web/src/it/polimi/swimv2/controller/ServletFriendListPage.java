@@ -49,7 +49,7 @@ public class ServletFriendListPage extends HttpServlet {
 		
 		//forward to jsp
 		ServletContext sc = getServletContext();
-		RequestDispatcher rd = sc.getRequestDispatcher("/userFriendList.jsp"); 
+		RequestDispatcher rd = sc.getRequestDispatcher("/userFriendsList.jsp"); 
 		rd.forward(request,response);
 	}
 
