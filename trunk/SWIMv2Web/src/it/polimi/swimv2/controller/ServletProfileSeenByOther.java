@@ -25,13 +25,14 @@ public class ServletProfileSeenByOther extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		//receive the id corresponding to the profile to see
+		// receive the id corresponding to the profile to see
 		int id = Integer.parseInt(request.getParameter("userId"));
 		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
 		IAbilitiesDeclared abilityDeclaredBean = (IAbilitiesDeclared) JNDILookupClass
 				.doLookup("AbilitiesDeclaredBean");
-		IFriendship friendshipBean = (IFriendship) JNDILookupClass.doLookup("FriendshipBean");
-		
+		IFriendship friendshipBean = (IFriendship) JNDILookupClass
+				.doLookup("FriendshipBean");
+
 		// i look for a user that has the same id in the database
 		User userToShow = userBean.findUserById(id);
 		request.setAttribute("user", userToShow);
@@ -53,40 +54,37 @@ public class ServletProfileSeenByOther extends HttpServlet {
 			// build the list that contains abilities feedback
 			feedbacks.add(abilities.get(i).getFeedback());
 		}
-		
+
 		request.setAttribute("names", names);
 		request.setAttribute("feedbacks", feedbacks);
-		
-		/*cerca di riconoscere se è l'admin ma non va
-		 * 
-		 ServletContext sc = getServletContext();
-		 RequestDispatcher rd;
-		 if((Integer)request.getSession().getId() == 0){
-		 forward(request, response, "/profileSeenBtAdmin.jsp");
-		  	}else{
-		 
-		 */
 
-		//ho commentato perchè lanciava un ecc
-		// check if this user is already my friend
-		int currentUserId = (int) request.getSession().getAttribute("id");
-		if(friendshipBean.isFriend(currentUserId, id)){
-			request.setAttribute("isFriend", 1);
-		}else{
-			request.setAttribute("isFriend", 0);
-		}
-		
+		/*if ((Integer) request.getSession().getAttribute("id") == 0) {
+			forward(request, response, "/profileSeenByAdmin.jsp");
+		} else {*/
+
+			// ho commentato perchè lanciava un ecc
+			// check if this user is already my friend
+			int currentUserId = (int) request.getSession().getAttribute("id");
+			if (friendshipBean.isFriend(currentUserId, id)) {
+				request.setAttribute("isFriend", 1);
+			} else {
+				request.setAttribute("isFriend", 0);
+			}
+		//}
+
 		// forward to the profile page
 		forward(request, response, "/profileSeenByOther.jsp");
-	//}
+		// }
 
 	}
-	
+
 	// forward steps
-		private void forward(HttpServletRequest request,HttpServletResponse response, String page) throws ServletException,IOException {
-			ServletContext sc = getServletContext();
-			RequestDispatcher rd = sc.getRequestDispatcher(page);
-			rd.forward(request, response);
-		}
+	private void forward(HttpServletRequest request,
+			HttpServletResponse response, String page) throws ServletException,
+			IOException {
+		ServletContext sc = getServletContext();
+		RequestDispatcher rd = sc.getRequestDispatcher(page);
+		rd.forward(request, response);
+	}
 
 }
