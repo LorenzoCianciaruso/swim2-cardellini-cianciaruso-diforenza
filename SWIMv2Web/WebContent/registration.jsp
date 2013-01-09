@@ -8,18 +8,70 @@
 <title>Register new profile</title>
 </head>
 <body>
-	<form method="post" action="ServletRegistration">
-		Name: <input name="name" />
-		<br /> Surname: <input name="surname" />
-		<br /> Birthday: (dd/mm/yyyy) <input name="birthday" /> 
-		<br /> City: <input name="city" />
-		<br /> Email: <input name="email" />
-		<br /> Telephone: <input name="phone" />
-		<br /> Password: <input	name="password" type="password" /> 
-		<br /> Confirm Password: <input	name="confirmPassword" type="password" /> 
-		<br />
+
+<script>
+		function validateForm() {
+			var sname = document.forms["registration"]["name"].value;
+			var ssurname = document.forms["registration"]["surname"].value;
+			var sbirthday = document.forms["registration"]["birthday"].value;
+			var scity = document.forms["registration"]["city"].value;
+			var semail = document.forms["registration"]["email"].value;
+			var sphone = document.forms["registration"]["phone"].value;
+			var spassword = document.forms["registration"]["password"].value;
+			var sconfirm = document.forms["registration"]["confirmPassword"].value;
+
+			if (sname == null || sname == ""){
+				alert("All fields must be filled out");
+				return false;
+			}
+			if (ssurname == null || ssurname == ""){
+				alert("All fields must be filled out");
+				return false;
+			}
+			if (sbirthday == null || sbirthday == ""){
+				alert("All fields must be filled out");
+				return false;
+			}
+			if (scity == null || scity == ""){
+				alert("All fields must be filled out");
+				return false;
+			}
+			if (semail == null || semail == ""){
+				alert("All fields must be filled out");
+				return false;
+			}
+			if (sphone == null || sphone == ""){
+				alert("All fields must be filled out");
+				return false;
+			}
+			if (spassword == null || spassword == ""){
+				alert("All fields must be filled out");
+				return false;
+			}
+			if (sconfirm == null || sconfirm == ""){
+				alert("All fields must be filled out");
+				return false;
+			}
+			if (spassword != sconfirm ){
+				alert("Password must be the same");
+				return false;
+			}
+		//TODO controllo data
+			
+		}
+	</script>
+		<form name="registration" action="ServletRegistration"	onsubmit="return validateForm()" method="post">
+			Name: <input name="name" />	<br /> 
+			Surname: <input name="surname" /> <br /> 
+			Birthday: (dd/mm/yyyy) <input name="birthday" /> <br /> 
+			City: <input name="city" />	<br /> 
+			Email: <input name="email" /> <br /> 
+			Telephone: <input name="phone" /> <br /> 
+			Password: <input	name="password" type="password" /> 	<br /> 
+			Confirm Password: <input	name="confirmPassword" type="password" /> 
+			<input type="submit" value="Submit">
+		</form>
 		
-		<input type="submit" value="Submit Registration"></input>
-	</form>
+	
 </body>
 </html>
