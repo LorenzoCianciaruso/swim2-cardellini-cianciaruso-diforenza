@@ -66,6 +66,12 @@
 	<form method="post" action="ServletSkillPage">
 		<input type="submit" value="Skills" />
 	</form>
+	
+	<br />
+
+	<form method="post" action="ServletJobsPage">
+		<input type="submit" value="Jobs" />
+	</form>
 
 	<br />
 
@@ -77,12 +83,6 @@
 	
 	<form method="post" action="ServletFriendshipPage">
 		<input type="submit" value="See friendship requests" />
-	</form>
-	
-	<br />
-
-	<form method="post" action="ServletJobsPage">
-		<input type="submit" value="Jobs" />
 	</form>
 	
 	<br />
