@@ -69,12 +69,12 @@ public class ServletProfileSeenByOther extends HttpServlet {
 
 		//ho commentato perchè lanciava un ecc
 		// check if this user is already my friend
-		/*int currentUserId = (int) request.getSession().getAttribute("id");
+		int currentUserId = (int) request.getSession().getAttribute("id");
 		if(friendshipBean.isFriend(currentUserId, id)){
 			request.setAttribute("isFriend", 1);
 		}else{
 			request.setAttribute("isFriend", 0);
-		}*/
+		}
 		
 		// forward to the profile page
 		forward(request, response, "/profileSeenByOtherPage.jsp");

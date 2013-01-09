@@ -50,16 +50,20 @@
 	<br />
 	
 	<%
-	//int isFriend = (Integer)request.getAttribute("isFriend");
-	//if(isFriend == 0){
+	int isFriend = (Integer)request.getAttribute("isFriend");
+	if(isFriend == 0){
 	%>
 	
 	<form method="post" action="ServletFriendshipRequest" >
 		<input type="hidden" name="userReceiverId" value="<%=user.getId()%>" />
 		<input type="submit" value="Ask friendship to <%=user.getName()%>" />
 	</form>
-	<% } %>
-	
+	<%
+	}
+	%>
+	<%
+	}
+	%>
 	<br />
 	<br />
 	<form method="post" action="ServletProfilePage" >
