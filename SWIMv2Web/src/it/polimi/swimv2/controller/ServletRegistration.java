@@ -28,7 +28,6 @@ public class ServletRegistration extends HttpServlet {
 		// get info from page
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		String confirmPassword = request.getParameter("confirmPassword");
 		String name = request.getParameter("name");
 		String surname = request.getParameter("surname");
 		String phone = request.getParameter("phone");
@@ -37,13 +36,8 @@ public class ServletRegistration extends HttpServlet {
 
 		// if user doesn't fill an input or the passwords don't match forward to
 		// the fail page
-		if (email.equals("") || password.equals("")
-				|| confirmPassword.equals("") || name.equals("")
-				|| surname.equals("") || phone.equals("")
-				|| city.equals("")
-				|| !(password.equals(confirmPassword)) || checkDate(birthday)) {
-			
-			request.setAttribute("message", "We cannot proceed with the registration. You entered wrong values in the registration form!");
+		if (checkDate(birthday)) {			
+			request.setAttribute("message", "You have insert wrong date");
 			ServletContext sc = getServletContext();
 			RequestDispatcher rd = sc.getRequestDispatcher("/messageFail.jsp");
 			rd.forward(request, response);
