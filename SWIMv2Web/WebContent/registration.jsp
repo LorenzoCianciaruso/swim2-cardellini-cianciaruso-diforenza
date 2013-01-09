@@ -18,6 +18,7 @@
 		<br /> Password: <input	name="password" type="password" /> 
 		<br /> Confirm Password: <input	name="confirmPassword" type="password" /> 
 		<br />
+		
 		<input type="submit" value="Submit Registration"></input>
 	</form>
 </body>
