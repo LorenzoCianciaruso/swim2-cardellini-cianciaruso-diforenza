@@ -29,7 +29,7 @@
 	
 	<br />
 
-	<form method="post" action="ServletAdminSearch">
+	<form method="post" action="ServletSearch">
 		Search: <input name="search" /> <input type="submit"
 			value="Search User" />
 	</form>
