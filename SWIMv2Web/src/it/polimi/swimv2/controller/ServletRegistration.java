@@ -43,7 +43,11 @@ public class ServletRegistration extends HttpServlet {
 				|| city.equals("")
 				|| !(password.equals(confirmPassword)) || checkDate(birthday)) {
 			
-			response.sendRedirect(response.encodeRedirectURL("loginFail.jsp"));
+			request.setAttribute("message", "We cannot proceed with the registration. You entered wrong values in the registration form!");
+			ServletContext sc = getServletContext();
+			RequestDispatcher rd = sc.getRequestDispatcher("/loginFail.jsp");
+			rd.forward(request, response);
+			//response.sendRedirect(response.encodeRedirectURL("loginFail.jsp"));
 
 		} else {
 
