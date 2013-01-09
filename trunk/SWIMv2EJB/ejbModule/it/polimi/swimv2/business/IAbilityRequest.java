@@ -11,4 +11,6 @@ public interface IAbilityRequest {
 	void save(AbilityRequest newAbility);
 
 	void remove(int id);
+	
+	List<AbilityRequest> findAllAbilityReqByUserId(int id);
 }

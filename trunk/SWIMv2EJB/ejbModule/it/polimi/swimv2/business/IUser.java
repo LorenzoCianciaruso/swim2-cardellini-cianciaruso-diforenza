@@ -18,4 +18,6 @@ public interface IUser {
 	List<User> findUserByName(String name);
 
 	User findUserById(int id);
+	
+	void remove(int id);
 }

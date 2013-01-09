@@ -3,6 +3,7 @@ package it.polimi.swimv2.businesslogic;
 import java.util.List;
 
 import it.polimi.swimv2.business.IUser;
+import it.polimi.swimv2.entities.AbilitiesDeclared;
 import it.polimi.swimv2.entities.User;
 
 import javax.ejb.Remote;
@@ -67,6 +68,19 @@ public class UserBean implements IUser {
 		}catch (NoResultException e){
 			return null;
 		}
+	}
+	
+	@Override
+	public void remove(int id){
+		String q = "SELECT u FROM User u WHERE id ='"+id+"'";
+		Query query = entityManager.createQuery(q);
+		try{
+			User user = (User) query.getSingleResult();
+			entityManager.remove(user);
+		}catch(NoResultException e){
+			
+		}
+		
 	}
 
 
