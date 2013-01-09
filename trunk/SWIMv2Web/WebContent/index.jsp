@@ -31,7 +31,7 @@
 		</form>
 	</body>
 	or
-	<form method="post" action="registrationPage.jsp">
+	<form method="post" action="registration.jsp">
 		<input type="submit" value="Register" />
 	</form>
 </body>
