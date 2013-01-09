@@ -14,7 +14,7 @@ public class Job implements Serializable{
 	private int idJob;
 	private int feedback;
 	private String comment;
-	private int idPerfomer;
+	private int idPerformer;
 	private int idRequestor;
 	private int idAbility;
 	private String place;
@@ -39,10 +39,10 @@ public class Job implements Serializable{
 		this.comment = comment;
 	}
 	public int getIdPerformer() {
-		return idPerfomer;
+		return idPerformer;
 	}
 	public void setIdPerformer(int idPerformer) {
-		this.idPerfomer = idPerformer;
+		this.idPerformer = idPerformer;
 	}
 	public int getRequestor() {
 		return idRequestor;
