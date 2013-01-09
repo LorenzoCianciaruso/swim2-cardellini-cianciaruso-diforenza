@@ -58,7 +58,7 @@ public class ServletLogin extends HttpServlet {
 			if (a2 == null) {
 				String message = "Login Fail. You have probably insert uncorrect email or password";
 				request.setAttribute("message", message);
-				forward(request, response, "/loginFail.jsp");
+				forward(request, response, "/messageFail.jsp");
 				//response.sendRedirect(response
 						//.encodeRedirectURL("loginFail.jsp"));
 			} else {
@@ -103,7 +103,7 @@ public class ServletLogin extends HttpServlet {
 			
 			// forward to the profile page
 			request.setAttribute("user", u2);
-			forward(request, response, "/profile.jsp");
+			forward(request, response, "/userProfile.jsp");
 		}
 
 	}

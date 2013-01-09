@@ -28,7 +28,7 @@ public class ServletJobRefused extends HttpServlet {
 
 		// return to success page
 		ServletContext sc = getServletContext();
-		RequestDispatcher rd = sc.getRequestDispatcher("/done.jsp");
+		RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp");
 		rd.forward(request, response);
 	}
 }

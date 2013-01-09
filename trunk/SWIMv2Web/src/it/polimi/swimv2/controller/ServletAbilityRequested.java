@@ -38,7 +38,7 @@ public class ServletAbilityRequested extends HttpServlet {
 		newAbilityBean.save(newAbility);
 		
 		ServletContext sc = getServletContext(); 
-		RequestDispatcher rd = sc.getRequestDispatcher("/done.jsp"); 
+		RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp"); 
 		rd.forward(request,response);
 		
 	}

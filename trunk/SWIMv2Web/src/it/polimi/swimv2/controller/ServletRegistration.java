@@ -45,7 +45,7 @@ public class ServletRegistration extends HttpServlet {
 			
 			request.setAttribute("message", "We cannot proceed with the registration. You entered wrong values in the registration form!");
 			ServletContext sc = getServletContext();
-			RequestDispatcher rd = sc.getRequestDispatcher("/loginFail.jsp");
+			RequestDispatcher rd = sc.getRequestDispatcher("/messageFail.jsp");
 			rd.forward(request, response);
 			//response.sendRedirect(response.encodeRedirectURL("loginFail.jsp"));
 

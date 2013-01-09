@@ -33,7 +33,7 @@ public class ServletNewJobRequest extends HttpServlet {
 		String date = request.getParameter("date");
 
 		if (place.equals("") || !checkDate(date)) {
-			response.sendRedirect(response.encodeRedirectURL("loginFail.jsp"));
+			response.sendRedirect(response.encodeRedirectURL("messageFail.jsp"));
 		} else {
 			// create a new job request
 			JobRequest j = new JobRequest();
@@ -48,7 +48,7 @@ public class ServletNewJobRequest extends HttpServlet {
 
 			// forward to success page
 			ServletContext sc = getServletContext();
-			RequestDispatcher rd = sc.getRequestDispatcher("/done.jsp");
+			RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp");
 			rd.forward(request, response);
 
 		}

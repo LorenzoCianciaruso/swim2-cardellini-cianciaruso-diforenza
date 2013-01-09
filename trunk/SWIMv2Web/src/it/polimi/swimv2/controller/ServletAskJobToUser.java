@@ -53,7 +53,7 @@ public class ServletAskJobToUser extends HttpServlet {
 				request.setAttribute("idAbilities", idAbilities);
 				
 				ServletContext sc = getServletContext();
-				RequestDispatcher rd = sc.getRequestDispatcher("/newJobRequest.jsp"); 
+				RequestDispatcher rd = sc.getRequestDispatcher("/userNewJobRequest.jsp"); 
 				rd.forward(request,response);
 	}
 }
