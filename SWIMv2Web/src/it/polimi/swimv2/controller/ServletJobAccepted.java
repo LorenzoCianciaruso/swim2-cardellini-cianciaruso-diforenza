@@ -39,6 +39,9 @@ public class ServletJobAccepted extends HttpServlet {
 				
 		jobBean.saveJob(job);
 		
+		// delete the Request because we don't need it anymore
+		jobRequestBean.remove(req.getIdJob());
+		
 		//forward to success page
 		ServletContext sc = getServletContext();
 		RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp");
