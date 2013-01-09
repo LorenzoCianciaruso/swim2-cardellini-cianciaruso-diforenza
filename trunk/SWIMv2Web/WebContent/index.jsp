@@ -26,7 +26,7 @@
 		<form name="myForm" action="ServletLogin"
 			onsubmit="return validateForm()" method="post">
 			Email: <input type="text" name="email">
-			Password: <input type="text" name="password">
+			Password: <input type="password" name="password">
 			<input type="submit" value="Submit">
 		</form>
 	</body>
