@@ -1,0 +1,111 @@
+@CHARSET "utf-8";
+
+body { font-size: medium;
+	font-family: "Calibri", Times, serif;
+	background-color: lightGreen;}
+	ul li { list-style: square; }
+	a:hover { background-color: white; }
+	input.err { background-color: orange; }
+	
+
+#text { 
+	width: auto;
+	font-size: medium;
+	font-family: "Calibri", Times, serif;
+	
+}
+
+#textcenter { 
+	font-size: medium;
+	font-family: "Calibri", Times, serif;
+	text-align:center;
+	align:center;
+}
+
+#textcenterbig { 
+	font-size: x-large;
+	font-family: "Calibri", Times, serif;
+	text-align:center;
+	align:center;
+}
+
+#logo{
+	align:center;
+	text-align:center;
+}
+
+#footer, #orientationinfo{
+	font-family: "Calibri";
+ 	text-align:center;
+  	color: #B0B0B0;
+	clear: left; 	
+}
+
+#landmarkup, #landmarkdown{
+	font-family: "Calibri", Times, serif;
+	align :center;
+	display:block;
+	float:left;
+	width:100%;
+	height:30px;
+	background-color:#78C342;	
+	font-size:20px;
+	text-transform:uppercase;
+	line-height:25px;
+	margin-left:0;
+}
+
+#landmarkup a, #landmarkdown a{
+	font-family: "Calibri", Times, serif;
+	align :center;
+	display:block;
+	float:left;
+	width:24%;
+	height:30px;
+	background-color:#78C342;
+	font-size:20px;
+	text-transform:uppercase;
+	line-height:25px;	
+}
+
+
+#nolink{
+	font-family: "Calibri", Times, serif;
+	font-size: medium;
+	color:red;
+}
+#container {
+	
+}
+
+#sidebar{
+	font-family: "Calibri", Times, serif;
+	font-size: medium;
+	clear: right;
+	float: right;
+	width: 25%;
+	overflow:hidden;	
+	text-align:left;
+	height: auto !important;
+	
+	}
+
+#textside h1, #textside h2, #textside a{
+	font-family: "Calibri", Times, serif;
+	font-size: medium;	
+	font-weight:normal;
+	text-align:left;
+	}
+
+#textside_center a, #textside_center{ 
+	font-size: large;
+	font-family: "Calibri", Times, serif;
+	text-align:center;
+	align:center;
+}
+#textside{
+	width: 75%;
+	float: left;
+	
+}
+
