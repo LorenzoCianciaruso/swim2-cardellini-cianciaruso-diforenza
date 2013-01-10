@@ -26,8 +26,8 @@ public class ServletRegistration extends HttpServlet {
 		IUser bean = (IUser) JNDILookupClass.doLookup("UserBean");
 
 		// get info from page
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
+		String email = request.getParameter("registrationEmail");
+		String password = request.getParameter("registrationPassword");
 		String name = request.getParameter("name");
 		String surname = request.getParameter("surname");
 		String phone = request.getParameter("phone");
@@ -72,7 +72,8 @@ public class ServletRegistration extends HttpServlet {
 			session.setAttribute("id", id);
 
 			ServletContext sc = getServletContext();
-			RequestDispatcher rd = sc.getRequestDispatcher("/done.jsp");
+			request.setAttribute("next", "ServletProfilePage");
+			RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp");
 			rd.forward(request, response);
 
 		}
