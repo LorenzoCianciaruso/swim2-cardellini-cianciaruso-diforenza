@@ -27,7 +27,7 @@ public class ServletAbilityRequested extends HttpServlet {
 		
 		for(int i=0; i<list.size(); i++){
 			if(list.get(i).getName() == newAbilityString){
-				response.sendRedirect(response.encodeRedirectURL("done.jsp"));
+				response.sendRedirect(response.encodeRedirectURL("messageDone.jsp"));
 			}
 		}
 		

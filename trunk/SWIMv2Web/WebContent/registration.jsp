@@ -10,6 +10,7 @@
 <body>
 
 	<script>
+
 		function validateForm() {
 			var sname = document.forms["registration"]["name"].value;
 			var ssurname = document.forms["registration"]["surname"].value;
@@ -20,54 +21,48 @@
 			var spassword = document.forms["registration"]["password"].value;
 			var sconfirm = document.forms["registration"]["confirmPassword"].value;
 
-			if (sname == null || sname == ""){
+			if (sname == null || sname == "") {
 				alert("All fields must be filled out");
 				return false;
 			}
-			if (ssurname == null || ssurname == ""){
+			if (ssurname == null || ssurname == "") {
 				alert("All fields must be filled out");
 				return false;
 			}
-			if (sbirthday == null || sbirthday == ""){
+			if (sbirthday == null || sbirthday == "") {
 				alert("All fields must be filled out");
 				return false;
 			}
-			if (scity == null || scity == ""){
+			if (scity == null || scity == "") {
 				alert("All fields must be filled out");
 				return false;
 			}
-			if (semail == null || semail == ""){
+			if (semail == null || semail == "") {
 				alert("All fields must be filled out");
 				return false;
 			}
-			if (sphone == null || sphone == ""){
+			if (sphone == null || sphone == "") {
 				alert("All fields must be filled out");
 				return false;
 			}
-			if (spassword == null || spassword == ""){
+			if (spassword == null || spassword == "") {
 				alert("All fields must be filled out");
 				return false;
 			}
-			if (sconfirm == null || sconfirm == ""){
+			if (sconfirm == null || sconfirm == "") {
 				alert("All fields must be filled out");
 				return false;
 			}
-			if (spassword != sconfirm ){
+			if (spassword != sconfirm) {
 				alert("Password must be the same");
 				return false;
 			}
-		
+			if (!sbirthday
+					.match("(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/(19|20)[0-9][0-9]")) {
+				alert("Invalid date format");
+				return false;
+			}
 
-			if(!sbirthday.match("(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/(19|20)[0-9][0-9]")) {
-			      alert("Invalid date format");
-			      return false;
-			    }
-			
-
-			
-
-	
-			
 		}
 	</script>
 	<form name="registration" action="ServletRegistration"

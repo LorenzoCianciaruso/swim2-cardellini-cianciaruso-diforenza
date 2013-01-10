@@ -36,8 +36,15 @@ public class ServletRegistration extends HttpServlet {
 
 		// if user doesn't fill an input or the passwords don't match forward to
 		// the fail page
-		if (checkDate(birthday)) {			
-			request.setAttribute("message", "You have insert wrong date");
+		if (email==null || email ==""||
+			password==null || password ==""||
+			name==null || name ==""||
+			surname==null || surname ==""||
+			phone==null || phone ==""||
+			birthday==null || birthday ==""||	
+			city==null || city ==""||	
+			!checkDate(birthday)) {			
+			request.setAttribute("message", "You have insert wrong values");
 			ServletContext sc = getServletContext();
 			RequestDispatcher rd = sc.getRequestDispatcher("/messageFail.jsp");
 			rd.forward(request, response);

@@ -45,7 +45,8 @@ public class ServletAcceptAbilityRequest extends HttpServlet {
 		abilityRequestBean.remove(id);
 		
 		ServletContext sc = getServletContext();
-		RequestDispatcher rd = sc.getRequestDispatcher("/adminProfile.jsp");
+		request.setAttribute("next", "ServletAcceptAbilityRequest");
+		RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp");
 		rd.forward(request, response);	
 		
 		

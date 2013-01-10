@@ -34,7 +34,7 @@ public class ServletAbilityDeclared extends HttpServlet {
 		//get user id
 		int userId = (int) request.getSession().getAttribute("id");
 		
-		//for eacch ability create an entity ability declared
+		//for each ability create an entity ability declared
 		for (int i = 0; i < abilitiesList.length; i++) {
 			Ability a = abilityBean.findByName(abilitiesList[i]);
 			AbilitiesDeclared abDec = new AbilitiesDeclared();
@@ -45,6 +45,7 @@ public class ServletAbilityDeclared extends HttpServlet {
 		}
 		//forward to success page
 		ServletContext sc = getServletContext();
+		request.setAttribute("next", "ServletSkillPage");
 		RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp");
 		rd.forward(request, response);
 

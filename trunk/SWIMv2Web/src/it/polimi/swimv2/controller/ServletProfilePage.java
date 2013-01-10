@@ -41,6 +41,7 @@ public class ServletProfilePage extends HttpServlet {
 
 			if (user == null) {
 				// redirect to the fail page
+				request.setAttribute("message", "Error you have to login");
 				response.sendRedirect(response
 						.encodeRedirectURL("messageFail.jsp"));
 			} else {

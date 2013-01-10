@@ -26,6 +26,7 @@ public class ServletFriendshipRefused extends HttpServlet {
 
 		// return to success page
 		ServletContext sc = getServletContext();
+		request.setAttribute("next", "ServletFriendshipPage");
 		RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp");
 		rd.forward(request, response);
 	}

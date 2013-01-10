@@ -44,6 +44,7 @@ public class ServletJobAccepted extends HttpServlet {
 		
 		//forward to success page
 		ServletContext sc = getServletContext();
+		request.setAttribute("next", "ServletJobRequestsPage");
 		RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp");
 		rd.forward(request, response);			
 	}

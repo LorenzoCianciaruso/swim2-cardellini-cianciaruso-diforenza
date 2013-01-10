@@ -10,7 +10,7 @@
 <body>
 	We have successfully manage your request.	
 	<br />	
-	<form method="post" action="<%= request.getAttribute("nextPage")%>">
+	<form method="post" action="<%= request.getAttribute("next")%>">
 		<input type="submit" value="Ok" />
 	</form>
 	

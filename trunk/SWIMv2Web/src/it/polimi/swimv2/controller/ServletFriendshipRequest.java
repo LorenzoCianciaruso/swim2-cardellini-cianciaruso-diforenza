@@ -36,7 +36,8 @@ public class ServletFriendshipRequest extends HttpServlet {
 		friendshipRequestBean.save(friendshipRequest);
 			
 		// forwarding to done.jsp page
-		ServletContext sc = getServletContext(); 
+		ServletContext sc = getServletContext();
+		request.setAttribute("next", "ServletProfilePage");
 		RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp"); 
 		rd.forward(request,response);
 		

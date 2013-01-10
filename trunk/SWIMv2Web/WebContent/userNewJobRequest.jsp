@@ -22,9 +22,28 @@
 				.getAttribute("feedbacks");
 	%>
 
-	<form method="post" action="ServletNewJobRequest">
-		Date: (dd/mm/yyyy) <input name="date" /> <br />
-		<select name="ability">
+<script>
+		function validateForm() {
+			var x = document.forms["newJob"]["date"].value;
+			var y = document.forms["newJob"]["place"].value;
+			if (x == null || x == "" || y == null || y == "") {
+				alert("Field must be filled out");
+				return false;
+			}
+			if (!x
+						.match("(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/(19|20)[0-9][0-9]")) {
+					alert("Invalid date format");
+				return false;
+			
+			}
+		}
+	</script>
+	</head>
+	<body>
+		<form name="newJob" action="ServletNewJobRequest"
+			onsubmit="return validateForm()" method="post">
+			Date: (dd/mm/yyyy) <input type="text" name="date">
+			<select name="ability">
 		<%
 			for (int i = 0; i < names.size(); i++) {
 		%>
@@ -35,12 +54,10 @@
 			}
 		%>
 		</select>
-		<br />
-		Place:<input name="place" />
-		<br />
-		<input type="hidden" name="userPerformerId"
+			Place: <input type="text" name="place">
+			<input type="hidden" name="userPerformerId"
 			value="<%=request.getParameter("userPerformerId")%>"></input>
-			<input type="submit" value="Submit Request"></input>		
-	</form>
+			<input type="submit" value="Submit">
+		</form>
 </body>
 </html>

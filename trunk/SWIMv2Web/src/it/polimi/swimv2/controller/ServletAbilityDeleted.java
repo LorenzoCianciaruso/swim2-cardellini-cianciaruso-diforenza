@@ -48,6 +48,7 @@ public class ServletAbilityDeleted extends HttpServlet {
 		}
 		
 		ServletContext sc = getServletContext(); 
+		request.setAttribute("next", "ServletSkillPage");
 		RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp"); 
 		rd.forward(request,response);
 	}
