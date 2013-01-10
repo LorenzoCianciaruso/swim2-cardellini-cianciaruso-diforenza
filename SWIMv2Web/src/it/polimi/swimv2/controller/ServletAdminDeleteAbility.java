@@ -41,6 +41,7 @@ public class ServletAdminDeleteAbility extends HttpServlet {
 		}
 
 		ServletContext sc = getServletContext();
+		request.setAttribute("next", "ServletAdminAbilityList");
 		RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp");
 		rd.forward(request, response);
 	}

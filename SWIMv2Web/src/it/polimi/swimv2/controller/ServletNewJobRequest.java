@@ -48,6 +48,7 @@ public class ServletNewJobRequest extends HttpServlet {
 
 			// forward to success page
 			ServletContext sc = getServletContext();
+			request.setAttribute("next", "ServletProfilePage");
 			RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp");
 			rd.forward(request, response);
 

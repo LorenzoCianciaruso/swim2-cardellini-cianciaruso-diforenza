@@ -18,6 +18,7 @@
 		List<User> userIAsked = (List<User>) request.getAttribute("userIAsked");
 		List<User> userAskedToMe = (List<User>) request.getAttribute("userAskedToMe");
 	%>
+	<%if(requestsToMe.size()>0) {%>
 	Job requests you have received.<br />
 	You can accept or refuse it<br />
 	<br />
@@ -40,8 +41,14 @@
 	</form>
 	<%
 		}
+	}
+	else{%>
+	You haven't received any new job request.<br />
+	<br />
+	<%
+		}
 	%>
-	
+	<%if(requestsByMe.size()>0) {%>
 	Job requests you have sent.<br />
 	You can cancel them permanently from the system.<br />
 	<br />
@@ -57,6 +64,12 @@
 		<input type="hidden" name="idJobRequest" value="<%=requestsByMe.get(i).getIdJob()%>"> </input>
  		<input type="submit" value="Cancel"></input>
 	</form>
+	<%
+		}
+	}
+	else{%>
+	No job request sent and still pending.<br />
+	<br />
 	<%
 		}
 	%>

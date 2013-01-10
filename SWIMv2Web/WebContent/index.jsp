@@ -13,8 +13,8 @@
 	<br />
 	<script>
 		function validateForm() {
-			var x = document.forms["myForm"]["email"].value;
-			var y = document.forms["myForm"]["password"].value;
+			var x = document.forms["login"]["email"].value;
+			var y = document.forms["login"]["password"].value;
 			if (x == null || x == "" || y == null || y == "") {
 				alert("Field must be filled out");
 				return false;
@@ -23,7 +23,7 @@
 	</script>
 	</head>
 	<body>
-		<form name="myForm" action="ServletLogin"
+		<form name="login" action="ServletLogin"
 			onsubmit="return validateForm()" method="post">
 			Email: <input type="text" name="email">
 			Password: <input type="password" name="password">
