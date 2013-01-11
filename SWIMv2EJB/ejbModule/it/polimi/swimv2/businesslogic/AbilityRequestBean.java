@@ -58,7 +58,7 @@ public class AbilityRequestBean implements IAbilityRequest {
 	
 	@Override
 	public List<AbilityRequest> findByUserId(int id){
-		String q = "SELECT a FROM AbilityRequest a WHERE id = '"+id+"'";
+		String q = "SELECT a FROM AbilityRequest a WHERE idUser = '"+id+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			List<AbilityRequest> list = (List<AbilityRequest>) query.getResultList();
