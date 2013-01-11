@@ -25,7 +25,7 @@
 		list.removeAll(listOwned);
 		for(int i = 0; i < list.size(); i++){
 		%>
-		<input type="checkbox" name="ability" value="<%=list.get(i).getName() %>" /><%=list.get(i).getName() %><br />
+		<input type="checkbox" name="ability" value="<%=list.get(i).getIdAbility() %>" /><%=list.get(i).getName() %><br />
 		<%
 		}
 		%>
@@ -35,7 +35,7 @@
 	
 	<form method="post" action="ServletAbilityRequested">
 		<br />
-		If you want to sent a request to add an abilty to SWIMv2 type the name of the ability here: <input name="abilityAdded" />
+		If you want to sent a request to add an ability to SWIMv2 type the name of the ability here: <input name="abilityAdded" />
 		<input type="submit" value="Send request" />
 		<br />
 	</form>
@@ -48,7 +48,7 @@
 		<%
 		for(int i=0; i<listOwned.size(); i++){
 		%>
-		<input type="checkbox" name="abilityDeleted" value="<%=listOwned.get(i).getName()%>" /><%=listOwned.get(i).getName() %><br />
+		<input type="checkbox" name="abilityDeleted" value="<%=listOwned.get(i).getIdAbility()%>" /><%=listOwned.get(i).getName() %><br />
 		<%
 		}
 		%>

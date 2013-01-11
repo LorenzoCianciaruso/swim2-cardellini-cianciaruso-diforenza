@@ -18,7 +18,7 @@
 	List<User> userIAsked = (List<User>) request.getAttribute("userIAsked");
 	List<User> userAskedToMe = (List<User>) request.getAttribute("userAskedToMe");
 	%>
-	
+	<%if(requestsToMe.size()>0) {%>
 	List of friendship requests received:<br />
 	<br />
 	<%
@@ -38,8 +38,14 @@
 	</form>
 	<%
 		}
+	}
+	else{%>
+	You haven't received any new friendship request.<br />
+	<br />
+	<%
+		}
 	%>
-	
+	<%if(requestsByMe.size()>0) {%>	
 	List of friendship requests sent:<br />
 	<br />
 	<%
@@ -51,6 +57,12 @@
 		<input type="hidden" name="idFriendshipRequest" value="<%=requestsByMe.get(i).getId()%>"> </input>
  		<input type="submit" value="Cancel"></input>
 	</form>
+	<%
+		}
+	}
+	else{%>
+	You haven't sent any friendship request.<br />
+	<br />
 	<%
 		}
 	%>
