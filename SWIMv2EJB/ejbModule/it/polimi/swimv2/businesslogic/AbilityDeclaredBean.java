@@ -51,7 +51,7 @@ public class AbilityDeclaredBean implements IAbilityDeclared {
 			AbilityDeclared abDec = (AbilityDeclared) query.getSingleResult();
 			entityManager.remove(abDec);
 		} catch (NoResultException e) {
-			System.out.println("ERRORE");
+			
 		}
 	}
 
@@ -82,7 +82,7 @@ public class AbilityDeclaredBean implements IAbilityDeclared {
 			AbilityDeclared abDec = (AbilityDeclared) query.getSingleResult();
 			entityManager.remove(abDec);
 		} catch (NoResultException e) {
-			System.out.println("ERRORE");
+			
 		}
 	}
 
