@@ -35,7 +35,7 @@ public class AbilityBean implements IAbility {
 	}
 
 	@Override
-	public Ability findByName(String name) {
+	public Ability searchByName(String name) {
 		String q = "SELECT a FROM Ability a WHERE name LIKE '"+name+"%'";
 		Query query = entityManager.createQuery(q);
 		try{
