@@ -29,49 +29,49 @@ Requester: <%=listUserPerformed.get(i).getName()+" "+listUserPerformed.get(i).ge
 Date: <%=listPerformedJob.get(i).getDate() %><br />
 Place: <%=listPerformedJob.get(i).getPlace() %><br />
 <%
-for(int j=0; j< listOfAbility.size(); j++){
-	if(listOfAbility.get(j).getIdAbility() == listPerformedJob.get(i).getAbility()){
-		%>
-Ability: <%=listOfAbility.get(j).getName() %>	
-		<%
-	}
-}
-%><br />
-FeedBack released: <%=listPerformedJob.get(i).getFeedback() %><br />
-<%
-if( !(listPerformedJob.get(i).getComment() == null) ){
+	for(int j=0; j< listOfAbility.size(); j++){
+	if(listOfAbility.get(j).getId() == listPerformedJob.get(i).getAbility()){
 %>
-Comment: <%=listPerformedJob.get(i).getComment() %><br />
+Ability: <%=listOfAbility.get(j).getName()%>	
+		<%
+				}
+			}
+			%><br />
+FeedBack released: <%=listPerformedJob.get(i).getFeedback()%><br />
 <%
-}else{
+	if( !(listPerformedJob.get(i).getComment() == null) ){
+%>
+Comment: <%=listPerformedJob.get(i).getComment()%><br />
+<%
+	}else{
 %>
 Comment: no comment!
 <%
-}
+	}
 %>
 <br />
 <%
-}
+	}
 }else{
 %>
 You haven't performed any jobs!<br />
 <%
-}
+	}
 %>
 <br />
 <b>JOBS YOU HAVE REQUESTED:</b><br />
 <br />
 <%
-if(listAskedJob.size() > 0){
+	if(listAskedJob.size() > 0){
 for(int i=0; i < listAskedJob.size(); i++){
 %>
-Performer: <%=listUserRequester.get(i).getName()+" "+listUserRequester.get(i).getSurname() %><br />
-Date: <%=listAskedJob.get(i).getDate() %><br />
-Place: <%=listAskedJob.get(i).getPlace() %><br />
+Performer: <%=listUserRequester.get(i).getName()+" "+listUserRequester.get(i).getSurname()%><br />
+Date: <%=listAskedJob.get(i).getDate()%><br />
+Place: <%=listAskedJob.get(i).getPlace()%><br />
 <%
-for(int j=0; j< listOfAbility.size(); j++){
-	if(listOfAbility.get(j).getIdAbility() == listAskedJob.get(i).getAbility()){
-		%>
+	for(int j=0; j< listOfAbility.size(); j++){
+	if(listOfAbility.get(j).getId() == listAskedJob.get(i).getAbility()){
+%>
 Ability: <%=listOfAbility.get(j).getName() %>	
 		<%
 	}
@@ -81,7 +81,7 @@ Ability: <%=listOfAbility.get(j).getName() %>
 if( listAskedJob.get(i).getComment() == null ){
 %>
 <form method="post" action="userReleaseFeedbackPage.jsp" >
-	<input type="hidden" name="jobId" value="<%=listAskedJob.get(i).getIdJob() %>" />
+	<input type="hidden" name="jobId" value="<%=listAskedJob.get(i).getId()%>" />
 	<input type="submit" value="Set Feedback and Comment" />
 </form>	
 <%

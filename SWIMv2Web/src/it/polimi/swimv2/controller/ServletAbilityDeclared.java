@@ -1,9 +1,9 @@
 package it.polimi.swimv2.controller;
 
-import it.polimi.swimv2.business.IAbilitiesDeclared;
+import it.polimi.swimv2.business.IAbilityDeclared;
 import it.polimi.swimv2.business.IAbility;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
-import it.polimi.swimv2.entities.AbilitiesDeclared;
+import it.polimi.swimv2.entities.AbilityDeclared;
 import it.polimi.swimv2.entities.Ability;
 
 import java.io.IOException;
@@ -25,7 +25,7 @@ public class ServletAbilityDeclared extends HttpServlet {
 		// receive the name of declared abilities
 		String[] abilitiesList = request.getParameterValues("ability");
 
-		IAbilitiesDeclared bean = (IAbilitiesDeclared) JNDILookupClass
+		IAbilityDeclared bean = (IAbilityDeclared) JNDILookupClass
 				.doLookup("AbilitiesDeclaredBean");
 		IAbility abilityBean = (IAbility) JNDILookupClass
 				.doLookup("AbilityBean");
@@ -34,12 +34,12 @@ public class ServletAbilityDeclared extends HttpServlet {
 
 		// for each ability create an entity ability declared
 		for (int i = 0; i < abilitiesList.length; i++) {
-			Ability a = abilityBean.searchById(Integer.parseInt(abilitiesList[i]));
-			AbilitiesDeclared abDec = new AbilitiesDeclared();
-			abDec.setAbility(a.getIdAbility());
+			Ability a = abilityBean.findById(Integer.parseInt(abilitiesList[i]));
+			AbilityDeclared abDec = new AbilityDeclared();
+			abDec.setAbility(a.getId());
 			abDec.setUser(userId);
 			abDec.setFeedback(DEFAULT_FEEDBACK);
-			bean.saveAbilityDeclared(abDec);
+			bean.save(abDec);
 		}
 		// forward to success page
 		ServletContext sc = getServletContext();

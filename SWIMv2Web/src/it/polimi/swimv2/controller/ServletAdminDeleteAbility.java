@@ -1,9 +1,9 @@
 package it.polimi.swimv2.controller;
 
-import it.polimi.swimv2.business.IAbilitiesDeclared;
+import it.polimi.swimv2.business.IAbilityDeclared;
 import it.polimi.swimv2.business.IAbility;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
-import it.polimi.swimv2.entities.AbilitiesDeclared;
+import it.polimi.swimv2.entities.AbilityDeclared;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,18 +22,18 @@ public class ServletAdminDeleteAbility extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
-		IAbilitiesDeclared abilitiesDeclaredBean = (IAbilitiesDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
+		IAbilityDeclared abilitiesDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
 		
 		//receives the id of the ability to delete
 		String string = request.getParameter("abilityId");
 		int id = Integer.parseInt(string);
 
 		// removes the ability from Ability table
-		abilityBean.deleteAbilityById(id);
+		abilityBean.remove(id);
 
 		//searches all the tuples with that ability declared
-		List<AbilitiesDeclared> list = new ArrayList<AbilitiesDeclared>();
-		list = abilitiesDeclaredBean.searchByAbilityId(id);
+		List<AbilityDeclared> list = new ArrayList<AbilityDeclared>();
+		list = abilitiesDeclaredBean.findByAbilityId(id);
 		
 		// removes all tuples with that ability in AbilitiesDeclared table
 		for (int i = 0; i < list.size(); i++) {

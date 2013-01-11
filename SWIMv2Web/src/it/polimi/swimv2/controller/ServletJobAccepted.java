@@ -31,16 +31,16 @@ public class ServletJobAccepted extends HttpServlet {
 		//create new job
 		Job job = new Job();
 		
-		job.setIdPerformer(req.getIdPerformer());
+		job.setPerformer(req.getPerformer());
 		job.setRequestor(req.getRequestor());
 		job.setAbility(req.getAbility());
 		job.setDate(req.getDate());
 		job.setPlace(req.getPlace());
 				
-		jobBean.saveJob(job);
+		jobBean.save(job);
 		
 		// delete the Request because we don't need it anymore
-		jobRequestBean.remove(req.getIdJob());
+		jobRequestBean.remove(req.getId());
 		
 		//forward to success page
 		ServletContext sc = getServletContext();

@@ -37,14 +37,14 @@ public class ServletNewJobRequest extends HttpServlet {
 		} else {
 			// create a new job request
 			JobRequest j = new JobRequest();
-			j.setIdPerformer(idPerformer);			
+			j.setPerformer(idPerformer);			
 			j.setRequestor(idRequestor);
 			j.setAbility(idAbility);
 			j.setPlace(place);
 			j.setDate(date);
 
 			// save the entity created in the DataBase
-			bean.saveJobRequest(j);
+			bean.save(j);
 
 			// forward to success page
 			ServletContext sc = getServletContext();

@@ -32,15 +32,15 @@ public class ServletSearchAmongFriend extends HttpServlet {
 		IFriendship friendshipBean = (IFriendship) JNDILookupClass.doLookup("FriendshipBean");
 		
 		//find all friendships of the user
-		List<Friendship> listOfFriendship = friendshipBean.findAllFriendshipsByUserId(currentUserId);
+		List<Friendship> listOfFriendship = friendshipBean.findByUserId(currentUserId);
 		
 		// building list of User of friends
 		List<User> listOfFriendUser = new ArrayList<User>();
 		for(int i=0; i<listOfFriendship.size(); i++){
-			if(currentUserId == listOfFriendship.get(i).getidUser2()){
-				listOfFriendUser.add(bean.findUserById(listOfFriendship.get(i).getidUser1()));
+			if(currentUserId == listOfFriendship.get(i).getUser2()){
+				listOfFriendUser.add(bean.findUserById(listOfFriendship.get(i).getUser1()));
 			}else
-				listOfFriendUser.add(bean.findUserById(listOfFriendship.get(i).getidUser2()));
+				listOfFriendUser.add(bean.findUserById(listOfFriendship.get(i).getUser2()));
 		}
 		
 		for(int i=listOfFriendUser.size()-1; i >= 0; i--){

@@ -48,7 +48,7 @@ public class ServletJobRequestsPage extends HttpServlet {
 		int performerId;
 		for (int i = 0; i < requestsByMe.size(); i++) {
 			// build the list that contains abilities name
-			performerId = requestsByMe.get(i).getIdPerformer();
+			performerId = requestsByMe.get(i).getPerformer();
 			userIAsked.add(userBean.findUserById(performerId));
 		}
 		

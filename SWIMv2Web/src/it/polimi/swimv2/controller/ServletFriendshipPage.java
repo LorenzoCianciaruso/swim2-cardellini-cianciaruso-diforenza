@@ -29,8 +29,8 @@ public class ServletFriendshipPage extends HttpServlet {
 		
 		int currentUserId = (int) request.getSession().getAttribute("id");
 		
-		List<FriendshipRequest> requestsToMe = friendshipRequestBean.findFriendshipRequestByPerformer(currentUserId);
-		List<FriendshipRequest> requestsByMe = friendshipRequestBean.findFriendshipRequestByRequestor(currentUserId);
+		List<FriendshipRequest> requestsToMe = friendshipRequestBean.findByPerformerId(currentUserId);
+		List<FriendshipRequest> requestsByMe = friendshipRequestBean.findByRequestorId(currentUserId);
 		request.setAttribute("requestsToMe", requestsToMe);
 		request.setAttribute("requestsByMe", requestsByMe);
 		

@@ -32,37 +32,40 @@
 	Place: <%=requestsToMe.get(i).getPlace() %><br />
 
 	<form method="post" action="ServletJobAccepted">
-		<input type="hidden" name="idJobRequest" value="<%=requestsToMe.get(i).getIdJob()%>"> </input>
+		<input type="hidden" name="idJobRequest" value="<%=requestsToMe.get(i).getId()%>"> </input>
  		<input type="submit" value="Accept"></input>
 	</form>
 	
 	<form method="post" action="ServletJobRefused">
-		<input type="hidden" name="idJobRequest" value="<%=requestsToMe.get(i).getIdJob()%>"> </input>
+		<input type="hidden" name="idJobRequest" value="<%=requestsToMe.get(i).getId()%>"> </input>
 		<input type="submit" value="Refuse"></input>
 	</form>
 	<%
 		}
-	}
-	else{%>
+		}
+		else{
+	%>
 	You haven't received any new job request.<br />
 	<br />
 	<%
 		}
 	%>
-	<%if(requestsByMe.size()>0) {%>
+	<%
+		if(requestsByMe.size()>0) {
+	%>
 	Job requests you have sent.<br />
 	You can cancel them permanently from the system.<br />
 	<br />
 	<%
-	for (int i = 0; i < requestsByMe.size(); i++) {
+		for (int i = 0; i < requestsByMe.size(); i++) {
 	%>
 	To: <%=userIAsked.get(i).getName()+" "+userIAsked.get(i).getSurname()%><br />
-	Date: <%=requestsByMe.get(i).getDate() %><br />
-	Ability: <%=requestsByMe.get(i).getAbility() %><br />
-	Place: <%=requestsByMe.get(i).getPlace() %><br />
+	Date: <%=requestsByMe.get(i).getDate()%><br />
+	Ability: <%=requestsByMe.get(i).getAbility()%><br />
+	Place: <%=requestsByMe.get(i).getPlace()%><br />
 
 	<form method="post" action="ServletJobRefused">
-		<input type="hidden" name="idJobRequest" value="<%=requestsByMe.get(i).getIdJob()%>"> </input>
+		<input type="hidden" name="idJobRequest" value="<%=requestsByMe.get(i).getId()%>"> </input>
  		<input type="submit" value="Cancel"></input>
 	</form>
 	<%

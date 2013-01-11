@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.List"%>
-<%@ page import="it.polimi.swimv2.entities.AbilitiesDeclared"%>
+<%@ page import="it.polimi.swimv2.entities.AbilityDeclared"%>
 <%@ page import="it.polimi.swimv2.entities.User"%>
 
 

@@ -1,9 +1,9 @@
 package it.polimi.swimv2.controller;
 
-import it.polimi.swimv2.business.IAbilitiesDeclared;
+import it.polimi.swimv2.business.IAbilityDeclared;
 import it.polimi.swimv2.business.IAbility;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
-import it.polimi.swimv2.entities.AbilitiesDeclared;
+import it.polimi.swimv2.entities.AbilityDeclared;
 import it.polimi.swimv2.entities.Ability;
 
 import java.io.IOException;
@@ -30,22 +30,22 @@ public class ServletSkillPage extends HttpServlet {
 		// nell'elenco, con un pulsante "send" che aggiunge tale abilità nella tbella NewAbility
 		
 		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
-		IAbilitiesDeclared abilitiesDeclaredBean = (IAbilitiesDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
+		IAbilityDeclared abilitiesDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
 		
 		int currentUserId = (int) request.getSession().getAttribute("id");
-		AbilitiesDeclared abDec = new AbilitiesDeclared();
+		AbilityDeclared abDec = new AbilityDeclared();
 		abDec.setUser(currentUserId);
 		
-		List<AbilitiesDeclared> abilitiesDeclaredOwned = abilitiesDeclaredBean.searchByUserId(currentUserId);
+		List<AbilityDeclared> abilitiesDeclaredOwned = abilitiesDeclaredBean.findByUserId(currentUserId);
 		
 		List<Ability> abilitiesOwned = new ArrayList<Ability>();
 		
 		for(int i=0; i< abilitiesDeclaredOwned.size(); i++){
 						
-			abilitiesOwned.add(abilityBean.searchById(abilitiesDeclaredOwned.get(i).getAbility()));
+			abilitiesOwned.add(abilityBean.findById(abilitiesDeclaredOwned.get(i).getAbility()));
 		}
 		
-		List<Ability> abilitiesList = abilityBean.findAllAbilities();
+		List<Ability> abilitiesList = abilityBean.allAbilities();
 			
 		request.setAttribute("abilitiesOwned", abilitiesOwned);
 		request.setAttribute("abilitiesList", abilitiesList);

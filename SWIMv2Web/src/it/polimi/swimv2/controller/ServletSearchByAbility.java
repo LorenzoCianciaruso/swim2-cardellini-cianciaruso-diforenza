@@ -27,7 +27,7 @@ public class ServletSearchByAbility extends HttpServlet {
 
 		// get the ability to search
 		String abilityName = request.getParameter("search");
-		List<Ability> abilities = abilityBean.searchByName(abilityName);
+		List<Ability> abilities = abilityBean.findByName(abilityName);
 
 		// Forward to a page that shows the results
 		request.setAttribute("abilities", abilities);

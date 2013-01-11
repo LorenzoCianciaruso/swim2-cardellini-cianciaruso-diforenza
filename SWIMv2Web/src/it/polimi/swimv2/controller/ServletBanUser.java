@@ -1,13 +1,13 @@
 package it.polimi.swimv2.controller;
 
-import it.polimi.swimv2.business.IAbilitiesDeclared;
+import it.polimi.swimv2.business.IAbilityDeclared;
 import it.polimi.swimv2.business.IAbilityRequest;
 import it.polimi.swimv2.business.IFriendship;
 import it.polimi.swimv2.business.IFriendshipRequest;
 import it.polimi.swimv2.business.IJobRequest;
 import it.polimi.swimv2.business.IUser;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
-import it.polimi.swimv2.entities.AbilitiesDeclared;
+import it.polimi.swimv2.entities.AbilityDeclared;
 import it.polimi.swimv2.entities.AbilityRequest;
 import it.polimi.swimv2.entities.Friendship;
 import it.polimi.swimv2.entities.FriendshipRequest;
@@ -34,7 +34,7 @@ public class ServletBanUser extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
-		IAbilitiesDeclared abilitiesDeclaredBean = (IAbilitiesDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
+		IAbilityDeclared abilitiesDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
 		IFriendship friendshipBean = (IFriendship) JNDILookupClass.doLookup("FriendshipBean");
 		IFriendshipRequest friendshipRequestBean = (IFriendshipRequest) JNDILookupClass.doLookup("FriendshipRequestBean");
 		IAbilityRequest abilityRequestBean = (IAbilityRequest) JNDILookupClass.doLookup("AbilityRequestBean");
@@ -43,14 +43,14 @@ public class ServletBanUser extends HttpServlet {
 		int idUser = Integer.parseInt(request.getParameter("idUser"));
 		
 		//removes all user's friendships
-		List<Friendship> friendList = friendshipBean.findAllFriendshipsByUserId(idUser);
+		List<Friendship> friendList = friendshipBean.findByUserId(idUser);
 		for(int i=0; i<friendList.size(); i++){
 			friendshipBean.remove(friendList.get(i).getId());
 		}
 		
 		//removes all friendship requests
-		List<FriendshipRequest> frReqPerformerList = friendshipRequestBean.findFriendshipRequestByPerformer(idUser);
-		List<FriendshipRequest> frReqRequestorList = friendshipRequestBean.findFriendshipRequestByRequestor(idUser);
+		List<FriendshipRequest> frReqPerformerList = friendshipRequestBean.findByPerformerId(idUser);
+		List<FriendshipRequest> frReqRequestorList = friendshipRequestBean.findByRequestorId(idUser);
 		
 		for(int i=0; i < frReqPerformerList.size(); i++){
 			friendshipRequestBean.remove(frReqPerformerList.get(i).getId());
@@ -61,10 +61,10 @@ public class ServletBanUser extends HttpServlet {
 		}
 		
 		// removes abilityRequests
-		List<AbilityRequest> abilityReqList = abilityRequestBean.findAllAbilityReqByUserId(idUser);
+		List<AbilityRequest> abilityReqList = abilityRequestBean.findByUserId(idUser);
 		
 		for(int i=0; i < abilityReqList.size(); i++){
-			abilityReqList.remove(abilityReqList.get(i).getIdNewAbility());
+			abilityReqList.remove(abilityReqList.get(i).getId());
 		}
 		
 		//removes jobRequests
@@ -72,16 +72,16 @@ public class ServletBanUser extends HttpServlet {
 		List<JobRequest> jobRequestRequestorList = jobRequestBean.findJobRequestByRequestor(idUser);
 		
 		for(int i = 0; i < jobRequestPerformerList.size() ; i++){
-			jobRequestPerformerList.remove(jobRequestPerformerList.get(i).getIdJob());
+			jobRequestPerformerList.remove(jobRequestPerformerList.get(i).getId());
 		}
 		
 		for(int i = 0; i < jobRequestRequestorList.size() ; i++){
-			jobRequestRequestorList.remove(jobRequestRequestorList.get(i).getIdJob());
+			jobRequestRequestorList.remove(jobRequestRequestorList.get(i).getId());
 		}
 		
 		
 		//removes ablitiesdeclared
-		List<AbilitiesDeclared> abDeclList = abilitiesDeclaredBean.searchByUserId(idUser);
+		List<AbilityDeclared> abDeclList = abilitiesDeclaredBean.findByUserId(idUser);
 		
 		for(int i = 0; i < abDeclList.size(); i++){
 			abDeclList.remove(abDeclList.get(i).getId());

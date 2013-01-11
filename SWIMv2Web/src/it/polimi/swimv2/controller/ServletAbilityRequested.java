@@ -23,7 +23,7 @@ public class ServletAbilityRequested extends HttpServlet {
 		String newAbilityString = request.getParameter("abilityAdded");		
 		IAbilityRequest newAbilityBean = (IAbilityRequest) JNDILookupClass.doLookup("AbilityRequestBean");
 		
-		List<AbilityRequest> list = newAbilityBean.findAllAbilityRequests();
+		List<AbilityRequest> list = newAbilityBean.allAbilityRequests();
 		
 		for(int i=0; i<list.size(); i++){
 			if(list.get(i).getName() == newAbilityString){
@@ -33,7 +33,7 @@ public class ServletAbilityRequested extends HttpServlet {
 		
 		AbilityRequest newAbility = new AbilityRequest();
 		newAbility.setName(newAbilityString);
-		newAbility.setIdUser((int)request.getSession().getAttribute("id"));
+		newAbility.setUser((int)request.getSession().getAttribute("id"));
 		
 		newAbilityBean.save(newAbility);
 		

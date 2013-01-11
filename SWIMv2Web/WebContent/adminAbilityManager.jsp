@@ -23,7 +23,7 @@
 	<%=list.get(i).getName()%>
 
 	<form method="post" action="ServletAdminDeleteAbility">
-		<input type="hidden" name="abilityId" value="<%=list.get(i).getIdAbility()%>"></input>
+		<input type="hidden" name="abilityId" value="<%=list.get(i).getId()%>"></input>
 		<input type="submit" value="Remove"></input>
 	</form>
 	<%

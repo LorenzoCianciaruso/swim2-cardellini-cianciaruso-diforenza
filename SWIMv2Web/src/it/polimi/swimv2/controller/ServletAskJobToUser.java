@@ -1,9 +1,9 @@
 package it.polimi.swimv2.controller;
 
-import it.polimi.swimv2.business.IAbilitiesDeclared;
+import it.polimi.swimv2.business.IAbilityDeclared;
 import it.polimi.swimv2.business.IAbility;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
-import it.polimi.swimv2.entities.AbilitiesDeclared;
+import it.polimi.swimv2.entities.AbilityDeclared;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,14 +20,14 @@ public class ServletAskJobToUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		IAbilitiesDeclared abilitiesDeclaredBean = (IAbilitiesDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
+		IAbilityDeclared abilitiesDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
 		
 		//get the user that will perform the job and his abilities
 		int idPerformer = Integer.parseInt(request.getParameter("userPerformerId"));
 				
 		// build the list of user's abilities
-				List<AbilitiesDeclared> abilities = abilitiesDeclaredBean
-						.searchByUserId(idPerformer);
+				List<AbilityDeclared> abilities = abilitiesDeclaredBean
+						.findByUserId(idPerformer);
 
 				List<String> names = new ArrayList<String>();
 				List<Integer> feedbacks = new ArrayList<Integer>();
@@ -41,7 +41,7 @@ public class ServletAskJobToUser extends HttpServlet {
 					idAbility = abilities.get(i).getAbility();
 					idAbilities.add(idAbility);
 					// build the list that contains abilities name
-					names.add(abilityBean.searchById(idAbility).getName());
+					names.add(abilityBean.findById(idAbility).getName());
 					// build the list that contains abilities feedback
 					feedbacks.add(abilities.get(i).getFeedback());
 					idAbilities.add(idAbility);

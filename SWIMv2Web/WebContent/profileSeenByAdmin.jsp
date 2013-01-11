@@ -3,7 +3,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="it.polimi.swimv2.entities.User"%>
 <%@ page import="java.util.List"%>
-<%@ page import="it.polimi.swimv2.entities.AbilitiesDeclared"%>
+<%@ page import="it.polimi.swimv2.entities.AbilityDeclared"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>

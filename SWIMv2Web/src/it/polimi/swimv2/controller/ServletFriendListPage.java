@@ -33,16 +33,16 @@ public class ServletFriendListPage extends HttpServlet {
 		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
 		
 		// list of all friendship of the current user
-		List<Friendship> friendshipList = friendshipBean.findAllFriendshipsByUserId(currentUserId);
+		List<Friendship> friendshipList = friendshipBean.findByUserId(currentUserId);
 
 		// build a list of user from the list of friendship
 		List<User> friendList = new ArrayList<User>();
 		for(int i=0; i<friendshipList.size(); i++){
 			
-			if(friendshipList.get(i).getidUser1() == currentUserId){
-				friendList.add(userBean.findUserById(friendshipList.get(i).getidUser2()));
+			if(friendshipList.get(i).getUser1() == currentUserId){
+				friendList.add(userBean.findUserById(friendshipList.get(i).getUser2()));
 			}else
-				friendList.add(userBean.findUserById(friendshipList.get(i).getidUser1()));
+				friendList.add(userBean.findUserById(friendshipList.get(i).getUser1()));
 		}
 
 		request.setAttribute("friendList", friendList);

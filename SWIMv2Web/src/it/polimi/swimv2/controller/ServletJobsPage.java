@@ -32,9 +32,9 @@ public class ServletJobsPage extends HttpServlet {
 		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
 		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
 		
-		List<Job> listPerformedJob = jobBean.findJobByPerformer(currentUserId);
-		List<Job> listAskedJob = jobBean.findJobByRequestor(currentUserId);
-		List<Ability> listOfAbility = abilityBean.findAllAbilities();
+		List<Job> listPerformedJob = jobBean.findByPerformerId(currentUserId);
+		List<Job> listAskedJob = jobBean.findByRequestorId(currentUserId);
+		List<Ability> listOfAbility = abilityBean.allAbilities();
 		
 		List<User> listUserPerformed = new ArrayList<User>();
 		List<User> listUserRequester = new ArrayList<User>();
@@ -44,7 +44,7 @@ public class ServletJobsPage extends HttpServlet {
 		}
 		
 		for(int i=0; i<listAskedJob.size(); i++){
-			listUserRequester.add(userBean.findUserById(listAskedJob.get(i).getIdPerformer()));
+			listUserRequester.add(userBean.findUserById(listAskedJob.get(i).getPerformer()));
 		}
 		
 		request.setAttribute("listUserPerformed", listUserPerformed);
