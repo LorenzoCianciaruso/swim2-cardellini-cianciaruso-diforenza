@@ -40,6 +40,7 @@ public class ServletFriendshipRequest extends HttpServlet {
 		friendshipRequestBean.save(friendshipRequest);
 			
 		// forwarding to done.jsp page
+		request.setAttribute("next", "ServletProfilePage");
 		forward(request,response,"/messageDone.jsp");
 		}
 		
