@@ -11,11 +11,12 @@ public interface IAbilitiesDeclared {
 
 	void saveAbilityDeclared(AbilitiesDeclared abDec);
 
-	List<AbilitiesDeclared> findAbilitiesOwnedByUserId(int id);
+	List<AbilitiesDeclared> searchByUserId(int id);
+	
+	List<AbilitiesDeclared> searchByAbilityId(int id);
 
 	void remove(int id);
 	
-	List<AbilitiesDeclared> searchAbilitiesDeclaredByIdAbility(int id);
 	
 
 }
