@@ -314,4 +314,24 @@
     <servlet-name>ServletJobsPage</servlet-name>
     <url-pattern>/ServletJobsPage</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletSearchByPlace</display-name>
+    <servlet-name>ServletSearchByPlace</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletSearchByPlace</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletSearchByPlace</servlet-name>
+    <url-pattern>/ServletSearchByPlace</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletSearchByAbility</display-name>
+    <servlet-name>ServletSearchByAbility</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletSearchByAbility</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletSearchByAbility</servlet-name>
+    <url-pattern>/ServletSearchByAbility</url-pattern>
+  </servlet-mapping>
 </web-app>

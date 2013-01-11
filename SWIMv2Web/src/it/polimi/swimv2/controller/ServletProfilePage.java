@@ -50,7 +50,7 @@ public class ServletProfilePage extends HttpServlet {
 
 				// build the list of user's abilities
 				List<AbilitiesDeclared> abilities = abilityDeclaredBean
-						.findAbilitiesOwnedByUserId(user.getId());
+						.searchByUserId(user.getId());
 
 				List<String> names = new ArrayList<String>();
 				List<Integer> feedbacks = new ArrayList<Integer>();
