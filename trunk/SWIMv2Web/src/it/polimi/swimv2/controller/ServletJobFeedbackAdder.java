@@ -20,13 +20,13 @@ public class ServletJobFeedbackAdder extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String comment = request.getParameter("comment");
-		String feedback = request.getParameter("feedback");
+		int feedback = Integer.parseInt(request.getParameter("feedback"));
 		int jobId = Integer.parseInt(request.getParameter("jobId"));
 		
 		IJob jobBean = (IJob) JNDILookupClass.doLookup("JobBean");
 		
-		//jobBean.setCommentByJobId(jobId, comment);
-		//jobBean.setFeedbackByJobId(jobId, feedback);
+		jobBean.setCommentByJobId(jobId, comment);
+		jobBean.setFeedbackByJobId(jobId, feedback);
 		
 		ServletContext sc = getServletContext();
 		request.setAttribute("next", "ServletProfilePage");
