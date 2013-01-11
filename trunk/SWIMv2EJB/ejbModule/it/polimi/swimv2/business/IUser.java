@@ -11,7 +11,7 @@ import javax.ejb.Remote;
 @Remote
 public interface IUser {
 
-	void saveUser(User user);
+	void save(User user);
     
     User findUserByLogin(User u);
 

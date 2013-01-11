@@ -5,8 +5,8 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity (name = "AbilitiesDeclared")
-public class AbilitiesDeclared implements Serializable{
+@Entity (name = "AbilityDeclared")
+public class AbilityDeclared implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	

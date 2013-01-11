@@ -10,13 +10,13 @@ import javax.ejb.Remote;
 public interface IFriendshipRequest {
 
 	void save(FriendshipRequest friendshipRequest);
+	
+	FriendshipRequest findById(int id);
 
-	List<FriendshipRequest> findFriendshipRequestByPerformer(int currentUserId);
+	List<FriendshipRequest> findByPerformerId(int id);
 
-	List<FriendshipRequest> findFriendshipRequestByRequestor(int currentUserId);
+	List<FriendshipRequest> findByRequestorId(int id);
 
 	void remove(int id);
-
-	FriendshipRequest findFriendshipRequestById(int id);
 
 }

@@ -11,15 +11,15 @@ import javax.ejb.Remote;
 @Remote
 public interface IJob {
 
-	void saveJob(Job job);
+	void save(Job job);
     
-	Job findJobById(int id);
+	Job findById(int id);
 	
-    List<Job> findJobByPerformer(int idPerformer);
+    List<Job> findByPerformerId(int idPerformer);
 
-    List<Job> findJobByRequestor(int idRequestor);
+    List<Job> findByRequestorId(int idRequestor);
 
-	void setCommentByJobId(int jobId, String comment);
+	void setCommentById(int jobId, String comment);
 
-	void setFeedbackByJobId(int jobId, int feedback);
+	void setFeedbackById(int jobId, int feedback);
 }

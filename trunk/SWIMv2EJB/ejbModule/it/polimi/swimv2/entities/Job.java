@@ -11,7 +11,7 @@ public class Job implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private int idJob;
+	private int id;
 	private int feedback;
 	private String comment;
 	private int idPerformer;
@@ -20,11 +20,11 @@ public class Job implements Serializable{
 	private String place;
 	private String date;
 	
-	public int getIdJob() {
-		return idJob;
+	public int getId() {
+		return id;
 	}
-	public void setJob(int job) {
-		this.idJob = job;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public int getFeedback() {
 		return feedback;
@@ -38,10 +38,10 @@ public class Job implements Serializable{
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	public int getIdPerformer() {
+	public int getPerformer() {
 		return idPerformer;
 	}
-	public void setIdPerformer(int idPerformer) {
+	public void setPerformer(int idPerformer) {
 		this.idPerformer = idPerformer;
 	}
 	public int getRequestor() {

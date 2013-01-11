@@ -22,7 +22,7 @@ public class AbilityBean implements IAbility {
     public AbilityBean() {}
 
 	@Override
-	public List<Ability> findAllAbilities() {
+	public List<Ability> allAbilities() {
 		String q = "SELECT a FROM Ability a";
 		Query query = entityManager.createQuery(q);
 		try{
@@ -34,7 +34,7 @@ public class AbilityBean implements IAbility {
 	}
 
 	@Override
-	public List<Ability> searchByName(String name) {
+	public List<Ability> findByName(String name) {
 		String q = "SELECT a FROM Ability a WHERE name LIKE '"+name+"%'";
 		Query query = entityManager.createQuery(q);
 		try{
@@ -46,9 +46,9 @@ public class AbilityBean implements IAbility {
 	}
 	
 	@Override
-	public void deleteAbilityById(int id){
+	public void remove(int id){
 		
-		String q = "SELECT a FROM Ability a WHERE idAbility ='"+id+"'";
+		String q = "SELECT a FROM Ability a WHERE id ='"+id+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			Ability ab = (Ability) query.getSingleResult();
@@ -59,8 +59,8 @@ public class AbilityBean implements IAbility {
 	}
 
 	@Override
-	public Ability searchById(int id) {
-		String q = "SELECT a FROM Ability a WHERE idAbility ='"+id+"'";
+	public Ability findById(int id) {
+		String q = "SELECT a FROM Ability a WHERE id ='"+id+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			Ability a = (Ability) query.getSingleResult();
@@ -71,7 +71,7 @@ public class AbilityBean implements IAbility {
 	}
 	
 	@Override
-	public void saveAbility(Ability ab){
+	public void save(Ability ab){
 		entityManager.persist(ab);
 	}
     

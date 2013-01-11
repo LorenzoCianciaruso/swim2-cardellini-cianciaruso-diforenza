@@ -27,8 +27,8 @@ public class FriendshipRequestBean implements IFriendshipRequest {
 	}
 
 	@Override
-	public List<FriendshipRequest> findFriendshipRequestByPerformer(int currentUserId) {
-		String q = "SELECT f FROM FriendshipRequest f WHERE receiver = '"+currentUserId+"'";
+	public List<FriendshipRequest> findByPerformerId(int currentUserId) {
+		String q = "SELECT f FROM FriendshipRequest f WHERE idReceiver = '"+currentUserId+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			List<FriendshipRequest> list = (List<FriendshipRequest>) query.getResultList();
@@ -39,8 +39,8 @@ public class FriendshipRequestBean implements IFriendshipRequest {
 	}
 
 	@Override
-	public List<FriendshipRequest> findFriendshipRequestByRequestor(int currentUserId) {
-		String q = "SELECT f FROM FriendshipRequest f WHERE sender = '"+currentUserId+"'";
+	public List<FriendshipRequest> findByRequestorId(int currentUserId) {
+		String q = "SELECT f FROM FriendshipRequest f WHERE idSender = '"+currentUserId+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			List<FriendshipRequest> list = (List<FriendshipRequest>) query.getResultList();
@@ -66,7 +66,7 @@ public class FriendshipRequestBean implements IFriendshipRequest {
 	
 	
 	@Override
-	public FriendshipRequest findFriendshipRequestById(int id) {
+	public FriendshipRequest findById(int id) {
     	String q = "SELECT f FROM FriendshipRequest f WHERE id = '"+id+"'";
 		Query query = entityManager.createQuery(q);
 		try{

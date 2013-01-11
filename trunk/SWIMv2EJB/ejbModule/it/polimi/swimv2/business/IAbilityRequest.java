@@ -6,11 +6,11 @@ import it.polimi.swimv2.entities.AbilityRequest;
 
 public interface IAbilityRequest {
 	
-	List<AbilityRequest> findAllAbilityRequests();
-
 	void save(AbilityRequest newAbility);
-
-	void remove(int id);
 	
-	List<AbilityRequest> findAllAbilityReqByUserId(int id);
+	List<AbilityRequest> allAbilityRequests();
+
+	List<AbilityRequest> findByUserId(int id);
+	
+	void remove(int id);
 }
