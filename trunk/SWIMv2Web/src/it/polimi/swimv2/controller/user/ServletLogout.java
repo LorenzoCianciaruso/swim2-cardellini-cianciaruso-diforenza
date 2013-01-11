@@ -1,4 +1,4 @@
-package it.polimi.swimv2.controller;
+package it.polimi.swimv2.controller.user;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

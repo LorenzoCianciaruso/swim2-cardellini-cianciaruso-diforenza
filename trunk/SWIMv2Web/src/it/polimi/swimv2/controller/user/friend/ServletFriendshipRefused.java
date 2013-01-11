@@ -1,4 +1,4 @@
-package it.polimi.swimv2.controller;
+package it.polimi.swimv2.controller.user.friend;
 
 import it.polimi.swimv2.business.IFriendshipRequest;
 import it.polimi.swimv2.clientutility.JNDILookupClass;

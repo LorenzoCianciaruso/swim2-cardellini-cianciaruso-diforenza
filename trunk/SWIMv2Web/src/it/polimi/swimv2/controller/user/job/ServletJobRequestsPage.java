@@ -1,9 +1,9 @@
-package it.polimi.swimv2.controller;
+package it.polimi.swimv2.controller.user.job;
 
-import it.polimi.swimv2.business.IFriendshipRequest;
+import it.polimi.swimv2.business.IJobRequest;
 import it.polimi.swimv2.business.IUser;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
-import it.polimi.swimv2.entities.FriendshipRequest;
+import it.polimi.swimv2.entities.JobRequest;
 import it.polimi.swimv2.entities.User;
 
 import java.io.IOException;
@@ -17,48 +17,48 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-public class ServletFriendshipPage extends HttpServlet {
+public class ServletJobRequestsPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		IFriendshipRequest friendshipRequestBean = (IFriendshipRequest) JNDILookupClass.doLookup("FriendshipRequestBean");
+				
+		IJobRequest jobRequestBean = (IJobRequest) JNDILookupClass.doLookup("JobRequestBean");
 		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
 		
-		int currentUserId = (int) request.getSession().getAttribute("id");
+		//get the id of the user
+		int id = (int) request.getSession().getAttribute("id");
 		
-		List<FriendshipRequest> requestsToMe = friendshipRequestBean.findByPerformerId(currentUserId);
-		List<FriendshipRequest> requestsByMe = friendshipRequestBean.findByRequestorId(currentUserId);
+		//create the lists of both job to perform and requested
+		List<JobRequest> requestsToMe = jobRequestBean.findJobRequestByPerformer(id);
+		List<JobRequest> requestsByMe = jobRequestBean.findJobRequestByRequestor(id);
 		request.setAttribute("requestsToMe", requestsToMe);
 		request.setAttribute("requestsByMe", requestsByMe);
 		
 		//create the lists of users names
 		List<User> userIAsked = new ArrayList<User>();
 		List<User> userAskedToMe =  new ArrayList<User>();
-			
 		int requestorId;
+		
 		for (int i = 0; i < requestsToMe.size(); i++) {
-				
-			requestorId = requestsToMe.get(i).getSender();
+			// build the list that contains abilities name
+			requestorId = requestsToMe.get(i).getRequestor();
 			userAskedToMe.add(userBean.findUserById(requestorId));
 		}
-				
+		
 		int performerId;
 		for (int i = 0; i < requestsByMe.size(); i++) {
-				
-			performerId = requestsByMe.get(i).getReceiver();
+			// build the list that contains abilities name
+			performerId = requestsByMe.get(i).getPerformer();
 			userIAsked.add(userBean.findUserById(performerId));
 		}
-				
+		
 		request.setAttribute("userIAsked", userIAsked);
 		request.setAttribute("userAskedToMe", userAskedToMe);
-			
+		
 		//forward to jsp
 		ServletContext sc = getServletContext();
-		RequestDispatcher rd = sc.getRequestDispatcher("/userFriendshipRequestsManager.jsp"); 
+		RequestDispatcher rd = sc.getRequestDispatcher("/userJobRequestsManager.jsp"); 
 		rd.forward(request,response);
 	}
-
 }
+

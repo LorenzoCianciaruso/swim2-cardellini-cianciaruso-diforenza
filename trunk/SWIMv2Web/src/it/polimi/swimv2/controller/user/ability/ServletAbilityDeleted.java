@@ -1,6 +1,6 @@
-package it.polimi.swimv2.controller;
+package it.polimi.swimv2.controller.user.ability;
 
-import it.polimi.swimv2.business.IJobRequest;
+import it.polimi.swimv2.business.IAbilityDeclared;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
 
 import java.io.IOException;
@@ -12,24 +12,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ServletJobRefused extends HttpServlet {
+public class ServletAbilityDeleted extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		IJobRequest jobRequestBean = (IJobRequest) JNDILookupClass.doLookup("JobRequestBean");
+		String[] toDelete = request
+				.getParameterValues("abilityDeleted");
 
-		// get the request to refuse
-		int id = Integer.parseInt(request.getParameter("idJobRequest"));
+		int currentUserId = (int) request.getSession().getAttribute("id");
 
-		// removes abilityRequest
-		jobRequestBean.remove(id);
+		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass
+				.doLookup("AbilityDeclaredBean");
+	
+		for (int i = 0; i < toDelete.length; i++) {
+			abilityDeclaredBean.remove(Integer.parseInt(toDelete[i]),currentUserId);
 
-		// return to success page
+		}
+		
 		ServletContext sc = getServletContext();
-		request.setAttribute("next", "ServletJobRequestsPage");
+		request.setAttribute("next", "ServletSkillPage");
 		RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp");
 		rd.forward(request, response);
 	}
+
 }

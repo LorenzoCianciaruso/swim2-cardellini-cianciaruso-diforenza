@@ -1,4 +1,4 @@
-package it.polimi.swimv2.controller;
+package it.polimi.swimv2.controller.user;
 
 import it.polimi.swimv2.business.IAbilityDeclared;
 import it.polimi.swimv2.business.IAbility;
