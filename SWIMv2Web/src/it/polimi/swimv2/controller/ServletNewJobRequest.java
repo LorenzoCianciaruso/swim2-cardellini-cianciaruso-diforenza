@@ -42,15 +42,18 @@ public class ServletNewJobRequest extends HttpServlet {
 			j.setAbility(idAbility);
 			j.setPlace(place);
 			j.setDate(date);
+			
+			if(idPerformer==idRequestor){
+				forward(request,response,"/messageFail.jsp");
+			}else{
 
 			// save the entity created in the DataBase
 			bean.save(j);
 
 			// forward to success page
-			ServletContext sc = getServletContext();
-			request.setAttribute("next", "ServletProfilePage");
-			RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp");
-			rd.forward(request, response);
+			
+			forward(request, response,"/messageDone.jsp");
+			}
 
 		}
 	}
@@ -62,4 +65,13 @@ public class ServletNewJobRequest extends HttpServlet {
 		else
 			return false;
 	}
+	
+	// forward steps
+		private void forward(HttpServletRequest request,
+				HttpServletResponse response, String page) throws ServletException,
+				IOException {
+			ServletContext sc = getServletContext();
+			RequestDispatcher rd = sc.getRequestDispatcher(page);
+			rd.forward(request, response);
+		}
 }
