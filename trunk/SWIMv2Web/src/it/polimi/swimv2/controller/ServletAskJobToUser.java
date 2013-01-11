@@ -20,13 +20,13 @@ public class ServletAskJobToUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		IAbilityDeclared abilitiesDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
+		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilityDeclaredBean");
 		
 		//get the user that will perform the job and his abilities
 		int idPerformer = Integer.parseInt(request.getParameter("userPerformerId"));
 				
 		// build the list of user's abilities
-				List<AbilityDeclared> abilities = abilitiesDeclaredBean
+				List<AbilityDeclared> abilities = abilityDeclaredBean
 						.findByUserId(idPerformer);
 
 				List<String> names = new ArrayList<String>();

@@ -22,13 +22,7 @@ public class ServletSkillPage extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// stampo a video tutte le abilità della tabella Ability del Database in una pagina jsp
-		// con delle checkbox da spuntare. In fondo all'elenco ci sarà un pulsante "Update"
-		// che chiama un servlet che controlla le abilità selezionate e aggiorna le tabelle opportune
-		// sotto ci sarà un campo di testo dove l'utente propone una nuova abilità non ancora presente
-		// nell'elenco, con un pulsante "send" che aggiunge tale abilità nella tbella NewAbility
-		
+				
 		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
 		IAbilityDeclared abilitiesDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
 		

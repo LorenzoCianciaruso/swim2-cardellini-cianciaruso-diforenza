@@ -31,7 +31,7 @@ public class ServletLogin extends HttpServlet {
 		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
 		IAdmin adminBean = (IAdmin) JNDILookupClass.doLookup("AdminBean");
 		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass
-				.doLookup("AbilitiesDeclaredBean");
+				.doLookup("AbilityDeclaredBean");
 
 		// get login information from the request form sent by the login page
 		String email = request.getParameter("email");

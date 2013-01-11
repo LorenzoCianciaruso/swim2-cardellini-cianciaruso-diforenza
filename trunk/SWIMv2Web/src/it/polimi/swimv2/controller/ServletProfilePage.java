@@ -30,7 +30,7 @@ public class ServletProfilePage extends HttpServlet {
 		// retrieve the session id
 		int id = (Integer) request.getSession().getAttribute("id");
 		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass
-				.doLookup("AbilitiesDeclaredBean");
+				.doLookup("AbilityDeclaredBean");
 
 		if (id == 0) {
 			forward(request, response, "/adminProfile.jsp");

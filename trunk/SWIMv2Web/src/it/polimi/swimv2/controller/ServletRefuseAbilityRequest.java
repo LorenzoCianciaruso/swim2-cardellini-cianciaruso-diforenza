@@ -18,13 +18,13 @@ public class ServletRefuseAbilityRequest extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		IAbilityRequest newAbilityBean = (IAbilityRequest) JNDILookupClass.doLookup("AbilityRequestBean");
+		IAbilityRequest abilityRequestBean = (IAbilityRequest) JNDILookupClass.doLookup("AbilityRequestBean");
 		//gets information		
 		String stringNewAbility = request.getParameter("idNewAbility");
 		int idNewAbility = Integer.parseInt(stringNewAbility);
 			
 		//removes abilityRequest
-		newAbilityBean.remove(idNewAbility);
+		abilityRequestBean.remove(idNewAbility);
 		
 		ServletContext sc = getServletContext(); 
 		RequestDispatcher rd = sc.getRequestDispatcher("/adminProfile.jsp"); 

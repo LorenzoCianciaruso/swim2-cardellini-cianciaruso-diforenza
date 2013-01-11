@@ -29,7 +29,7 @@ public class ServletProfileSeenByOther extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("userId"));
 		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
 		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass
-				.doLookup("AbilitiesDeclaredBean");
+				.doLookup("AbilityDeclaredBean");
 		IFriendship friendshipBean = (IFriendship) JNDILookupClass
 				.doLookup("FriendshipBean");
 
