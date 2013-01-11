@@ -32,28 +32,28 @@ public class ServletFriendshipAccepted extends HttpServlet {
 		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
 		
 		//get the request to accept
-		FriendshipRequest req = friendshipRequestBean.findFriendshipRequestById(idFriendshipRequest);
+		FriendshipRequest req = friendshipRequestBean.findById(idFriendshipRequest);
 		
 		//create new job
 		Friendship fs = new Friendship();
 		
-		fs.setidUser1(req.getReceiver());
-		fs.setidUser2(req.getSender());
+		fs.setUser1(req.getReceiver());
+		fs.setUser2(req.getSender());
 				
-		friendshipBean.saveFriendship(fs);
+		friendshipBean.save(fs);
 		
 		//delete the friendship request from the db
 		friendshipRequestBean.remove(idFriendshipRequest);
 		
 		//manage the info about friendship suggestion
-		List<Friendship> friendshipList = friendshipBean.findAllFriendshipsByUserId(userId);
+		List<Friendship> friendshipList = friendshipBean.findByUserId(userId);
 		List<User> listOfPossibleFriend = new ArrayList<User>();
 		
 		for(int i=0; i < friendshipList.size();i++){
-			if(friendshipList.get(i).getidUser1() == userId){
-				listOfPossibleFriend.add(userBean.findUserById(friendshipList.get(i).getidUser2()));
+			if(friendshipList.get(i).getUser1() == userId){
+				listOfPossibleFriend.add(userBean.findUserById(friendshipList.get(i).getUser2()));
 			}else{
-				listOfPossibleFriend.add(userBean.findUserById(friendshipList.get(i).getidUser1()));
+				listOfPossibleFriend.add(userBean.findUserById(friendshipList.get(i).getUser1()));
 			}
 		}
 		

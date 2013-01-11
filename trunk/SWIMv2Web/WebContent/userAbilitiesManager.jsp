@@ -25,9 +25,9 @@
 		list.removeAll(listOwned);
 		for(int i = 0; i < list.size(); i++){
 		%>
-		<input type="checkbox" name="ability" value="<%=list.get(i).getIdAbility() %>" /><%=list.get(i).getName() %><br />
+		<input type="checkbox" name="ability" value="<%=list.get(i).getId()%>" /><%=list.get(i).getName()%><br />
 		<%
-		}
+			}
 		%>
 		<br />
 		<input type="submit" value="Add Checked Abilities" />
@@ -46,9 +46,9 @@
 		If you want to delete an ability from your profile check them:<br />
 		<br />
 		<%
-		for(int i=0; i<listOwned.size(); i++){
+			for(int i=0; i<listOwned.size(); i++){
 		%>
-		<input type="checkbox" name="abilityDeleted" value="<%=listOwned.get(i).getIdAbility()%>" /><%=listOwned.get(i).getName() %><br />
+		<input type="checkbox" name="abilityDeleted" value="<%=listOwned.get(i).getId()%>" /><%=listOwned.get(i).getName() %><br />
 		<%
 		}
 		%>

@@ -25,8 +25,8 @@ public class ServletJobFeedbackAdder extends HttpServlet {
 		
 		IJob jobBean = (IJob) JNDILookupClass.doLookup("JobBean");
 		
-		jobBean.setCommentByJobId(jobId, comment);
-		jobBean.setFeedbackByJobId(jobId, feedback);
+		jobBean.setCommentById(jobId, comment);
+		jobBean.setFeedbackById(jobId, feedback);
 		
 		ServletContext sc = getServletContext();
 		request.setAttribute("next", "ServletProfilePage");

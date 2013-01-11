@@ -1,9 +1,9 @@
 package it.polimi.swimv2.controller;
 
-import it.polimi.swimv2.business.IAbilitiesDeclared;
+import it.polimi.swimv2.business.IAbilityDeclared;
 import it.polimi.swimv2.business.IAbility;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
-import it.polimi.swimv2.entities.AbilitiesDeclared;
+import it.polimi.swimv2.entities.AbilityDeclared;
 import it.polimi.swimv2.entities.Ability;
 
 import java.io.IOException;
@@ -27,7 +27,7 @@ public class ServletAbilityDeleted extends HttpServlet {
 
 		int currentUserId = (int) request.getSession().getAttribute("id");
 
-		IAbilitiesDeclared abilitiesDeclaredBean = (IAbilitiesDeclared) JNDILookupClass
+		IAbilityDeclared abilitiesDeclaredBean = (IAbilityDeclared) JNDILookupClass
 				.doLookup("AbilitiesDeclaredBean");
 	
 		for (int i = 0; i < toDelete.length; i++) {

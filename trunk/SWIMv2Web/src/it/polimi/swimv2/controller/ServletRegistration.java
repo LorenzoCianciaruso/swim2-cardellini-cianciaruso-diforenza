@@ -64,7 +64,7 @@ public class ServletRegistration extends HttpServlet {
 			u.setCity(city);
 
 			// save the entity
-			bean.saveUser(u);
+			bean.save(u);
 
 			// redirect to the registrationOkPage
 			int id = bean.findUserByLogin(u).getId();

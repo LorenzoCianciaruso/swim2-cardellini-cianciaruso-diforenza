@@ -35,7 +35,7 @@ public class ServletAcceptAbilityRequest extends HttpServlet {
 		ab.setName(name);
 		
 		//saves the new ability
-		abilityBean.saveAbility(ab);
+		abilityBean.save(ab);
 		
 		
 		String idString = request.getParameter("idNewAbility");

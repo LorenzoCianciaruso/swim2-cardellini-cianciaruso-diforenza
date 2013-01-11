@@ -24,7 +24,7 @@ public class ServletAdminAbilityList extends HttpServlet {
 		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean"); 
 		
 		//create the list of all abilities
-		List<Ability> abilityList = abilityBean.findAllAbilities();		
+		List<Ability> abilityList = abilityBean.allAbilities();		
 		request.setAttribute("abilityList", abilityList);
 		
 		//forward it to the page

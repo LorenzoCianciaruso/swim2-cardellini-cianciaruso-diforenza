@@ -1,9 +1,9 @@
 package it.polimi.swimv2.controller;
 
-import it.polimi.swimv2.business.IAbilitiesDeclared;
+import it.polimi.swimv2.business.IAbilityDeclared;
 import it.polimi.swimv2.business.IUser;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
-import it.polimi.swimv2.entities.AbilitiesDeclared;
+import it.polimi.swimv2.entities.AbilityDeclared;
 import it.polimi.swimv2.entities.User;
 
 import java.io.IOException;
@@ -26,13 +26,13 @@ public class ServletSearchByGivenAbility extends HttpServlet {
 		
 		//Call a session bean
 		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
-		IAbilitiesDeclared abilityDeclaredBean = (IAbilitiesDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
+		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
 
 		//get the ability to search
 		int abilityId = Integer.parseInt(request.getParameter("id"));
 				
 		//get the id of users with that ability
-		List<AbilitiesDeclared> usersIds = abilityDeclaredBean.searchByAbilityId(abilityId);
+		List<AbilityDeclared> usersIds = abilityDeclaredBean.findByAbilityId(abilityId);
 
 		//get users 
 		List<User> listOfUsersFound = new ArrayList<User>();
