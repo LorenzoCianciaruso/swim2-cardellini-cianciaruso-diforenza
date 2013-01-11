@@ -37,10 +37,17 @@ public class ServletSearchByGivenAbility extends HttpServlet {
 		//get users 
 		List<User> listOfUsersFound = new ArrayList<User>();
 
-		for (int i=0;i<usersIds.size();i++){
+		for (int i=0;i < usersIds.size();i++){
 			User found = userBean.findUserById(usersIds.get(i).getUser());
 			listOfUsersFound.add(found);
 		}		
+		
+		//removes from the list the user with the same session id
+		for(int i=0; i < listOfUsersFound.size(); i++){
+			if ((Integer) request.getSession().getAttribute("id") == listOfUsersFound.get(i).getId()){
+				listOfUsersFound.remove(i);
+			}
+		}
 		
 		//Forward to a page that shows the results
 		request.setAttribute("listOfUsers", listOfUsersFound);

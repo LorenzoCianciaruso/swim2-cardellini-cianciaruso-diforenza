@@ -57,6 +57,13 @@ public class ServletFriendshipAccepted extends HttpServlet {
 			}
 		}
 		
+		//removes from the list the user with the same session id
+		for(int i=0; i < listOfPossibleFriend.size(); i++){
+			if ((Integer) request.getSession().getAttribute("id") == listOfPossibleFriend.get(i).getId()){
+				listOfPossibleFriend.remove(i);
+			}
+		}
+		
 		request.setAttribute("listOfPossibleFriends", listOfPossibleFriend);
 		
 		//forward to success page

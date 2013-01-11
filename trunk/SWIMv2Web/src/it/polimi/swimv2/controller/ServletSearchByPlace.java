@@ -30,6 +30,13 @@ public class ServletSearchByPlace extends HttpServlet {
 		//call Bean's method to find an user using the name
 		List<User> listOfUsersFound = bean.findUserByPlace(searchName);
 		
+		//removes from the list the user with the same session id
+		for(int i=0; i < listOfUsersFound.size(); i++){
+			if ((Integer) request.getSession().getAttribute("id") == listOfUsersFound.get(i).getId()){
+				listOfUsersFound.remove(i);
+			}
+		}
+		
 		//Forward to a page that shows the results
 		request.setAttribute("listOfUsers", listOfUsersFound);
 		

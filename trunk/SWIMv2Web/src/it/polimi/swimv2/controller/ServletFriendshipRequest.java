@@ -32,15 +32,26 @@ public class ServletFriendshipRequest extends HttpServlet {
 		friendshipRequest.setReceiver(receiverId);
 		friendshipRequest.setSender(currentUserId);
 		
+		if(receiverId==currentUserId){
+			forward(request,response,"/messageFail.jsp");
+		}else{
+		
 		// using bean methods to save the request in the database
 		friendshipRequestBean.save(friendshipRequest);
 			
 		// forwarding to done.jsp page
-		ServletContext sc = getServletContext();
-		request.setAttribute("next", "ServletProfilePage");
-		RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp"); 
-		rd.forward(request,response);
+		forward(request,response,"/messageDone.jsp");
+		}
 		
 	}
+	
+	// forward steps
+		private void forward(HttpServletRequest request,
+				HttpServletResponse response, String page) throws ServletException,
+				IOException {
+			ServletContext sc = getServletContext();
+			RequestDispatcher rd = sc.getRequestDispatcher(page);
+			rd.forward(request, response);
+		}
 
 }
