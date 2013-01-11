@@ -43,7 +43,7 @@ public class ServletAskJobToUser extends HttpServlet {
 					// build the list that contains abilities name
 					names.add(abilityBean.findById(idAbility).getName());
 					// build the list that contains abilities feedback
-					feedbacks.add(abilities.get(i).getFeedback());
+					feedbacks.add(abilities.get(i).getPositiveFeedback());
 					idAbilities.add(idAbility);
 
 					

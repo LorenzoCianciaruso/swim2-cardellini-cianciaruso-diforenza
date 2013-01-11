@@ -38,7 +38,7 @@ public class ServletAbilityDeclared extends HttpServlet {
 			AbilityDeclared abDec = new AbilityDeclared();
 			abDec.setAbility(a.getId());
 			abDec.setUser(userId);
-			abDec.setFeedback(DEFAULT_FEEDBACK);
+			abDec.setPositiveFeedback(DEFAULT_FEEDBACK);
 			abilityDeclaredBean.save(abDec);
 		}
 		// forward to success page
