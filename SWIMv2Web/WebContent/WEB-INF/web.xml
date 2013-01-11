@@ -314,6 +314,18 @@
     <servlet-name>ServletJobsPage</servlet-name>
     <url-pattern>/ServletJobsPage</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>ServletJobFeedbackAdder</display-name>
+    <servlet-name>ServletJobFeedbackAdder</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.ServletJobFeedbackAdder</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletJobFeedbackAdder</servlet-name>
+    <url-pattern>/ServletJobFeedbackAdder</url-pattern>
+  </servlet-mapping>
+
   <servlet>
     <description></description>
     <display-name>ServletSearchByPlace</display-name>
@@ -334,4 +346,5 @@
     <servlet-name>ServletSearchByAbility</servlet-name>
     <url-pattern>/ServletSearchByAbility</url-pattern>
   </servlet-mapping>
+
 </web-app>
