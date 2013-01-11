@@ -1,6 +1,19 @@
 package it.polimi.swimv2.controller;
 
+import it.polimi.swimv2.business.IAbility;
+import it.polimi.swimv2.business.IJob;
+import it.polimi.swimv2.business.IUser;
+import it.polimi.swimv2.clientutility.JNDILookupClass;
+import it.polimi.swimv2.entities.Ability;
+import it.polimi.swimv2.entities.Job;
+import it.polimi.swimv2.entities.User;
+
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +25,39 @@ public class ServletJobsPage extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		int currentUserId = (int) request.getSession().getAttribute("id");
+		
+		IJob jobBean = (IJob) JNDILookupClass.doLookup("JobBean");
+		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
+		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
+		
+		List<Job> listPerformedJob = jobBean.findJobByPerformer(currentUserId);
+		List<Job> listAskedJob = jobBean.findJobByRequestor(currentUserId);
+		List<Ability> listOfAbility = abilityBean.findAllAbilities();
+		
+		List<User> listUserPerformed = new ArrayList<User>();
+		List<User> listUserRequester = new ArrayList<User>();
+		
+		for(int i=0; i<listPerformedJob.size(); i++){
+			listUserPerformed.add(userBean.findUserById(listPerformedJob.get(i).getRequestor()));
+		}
+		
+		for(int i=0; i<listAskedJob.size(); i++){
+			listUserRequester.add(userBean.findUserById(listAskedJob.get(i).getIdPerformer()));
+		}
+		
+		request.setAttribute("listUserPerformed", listUserPerformed);
+		request.setAttribute("listUserRequester", listUserRequester);
+		request.setAttribute("listPerformedJob", listPerformedJob);
+		request.setAttribute("listAskedJob", listAskedJob);
+		request.setAttribute("listOfAbility", listOfAbility);
+		
+		//forward to jsp
+		ServletContext sc = getServletContext();
+		RequestDispatcher rd = sc.getRequestDispatcher("/userJobsList.jsp"); 
+		rd.forward(request,response);
+		
 	}
 
 }
