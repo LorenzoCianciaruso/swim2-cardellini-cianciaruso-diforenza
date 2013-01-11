@@ -34,6 +34,8 @@ public class ServletSearchByAbility extends HttpServlet {
 		//get the ability to search
 		String abilityName = request.getParameter("search");
 		Ability ability = abilityBean.findByName(abilityName);
+		System.out.println(ability.getIdAbility());
+
 		
 		//get the id of users with that ability
 		List<AbilitiesDeclared> usersIds = abilityDeclaredBean.searchByAbilityId(ability.getIdAbility());
