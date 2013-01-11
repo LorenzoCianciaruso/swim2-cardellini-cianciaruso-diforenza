@@ -51,7 +51,7 @@ public class ServletNewJobRequest extends HttpServlet {
 			bean.save(j);
 
 			// forward to success page
-			
+			request.setAttribute("next", "ServletProfilePage");
 			forward(request, response,"/messageDone.jsp");
 			}
 
