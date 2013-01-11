@@ -81,7 +81,7 @@ public class ServletBanUser extends HttpServlet {
 		
 		
 		//removes ablitiesdeclared
-		List<AbilitiesDeclared> abDeclList = abilitiesDeclaredBean.findAbilitiesOwnedByUserId(idUser);
+		List<AbilitiesDeclared> abDeclList = abilitiesDeclaredBean.searchByUserId(idUser);
 		
 		for(int i = 0; i < abDeclList.size(); i++){
 			abDeclList.remove(abDeclList.get(i).getId());

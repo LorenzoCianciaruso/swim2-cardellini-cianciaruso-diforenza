@@ -30,7 +30,7 @@ public class ServletAbilityDeleted extends HttpServlet {
 		IAbilitiesDeclared abilitiesDeclaredBean = (IAbilitiesDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
 		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
 		
-		List<AbilitiesDeclared> listDeclared = abilitiesDeclaredBean.findAbilitiesOwnedByUserId(currentUserId);
+		List<AbilitiesDeclared> listDeclared = abilitiesDeclaredBean.searchByUserId(currentUserId);
 		
 		Ability a;
 		for(int i=0; i<listDeclared.size(); i++){

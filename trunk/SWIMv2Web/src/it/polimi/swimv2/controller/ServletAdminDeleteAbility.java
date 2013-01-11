@@ -33,7 +33,7 @@ public class ServletAdminDeleteAbility extends HttpServlet {
 
 		//searches all the tuples with that ability declared
 		List<AbilitiesDeclared> list = new ArrayList<AbilitiesDeclared>();
-		list = abilitiesDeclaredBean.searchAbilitiesDeclaredByIdAbility(id);
+		list = abilitiesDeclaredBean.searchByAbilityId(id);
 		
 		// removes all tuples with that ability in AbilitiesDeclared table
 		for (int i = 0; i < list.size(); i++) {

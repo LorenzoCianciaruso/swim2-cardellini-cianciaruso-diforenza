@@ -27,7 +27,7 @@ public class ServletAskJobToUser extends HttpServlet {
 				
 		// build the list of user's abilities
 				List<AbilitiesDeclared> abilities = abilitiesDeclaredBean
-						.findAbilitiesOwnedByUserId(idPerformer);
+						.searchByUserId(idPerformer);
 
 				List<String> names = new ArrayList<String>();
 				List<Integer> feedbacks = new ArrayList<Integer>();

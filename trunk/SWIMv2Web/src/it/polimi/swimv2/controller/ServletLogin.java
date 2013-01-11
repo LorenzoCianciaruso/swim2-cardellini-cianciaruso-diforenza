@@ -81,7 +81,7 @@ public class ServletLogin extends HttpServlet {
 			
 			// build the list of user's abilities
 			List<AbilitiesDeclared> abilities = abilityDeclaredBean
-					.findAbilitiesOwnedByUserId(id);
+					.searchByUserId(id);
 
 			List<String> names = new ArrayList<String>();
 			List<Integer> feedbacks = new ArrayList<Integer>();
