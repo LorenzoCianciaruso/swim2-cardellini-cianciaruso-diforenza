@@ -18,4 +18,8 @@ public interface IJob {
     List<Job> findJobByPerformer(int idPerformer);
 
     List<Job> findJobByRequestor(int idRequestor);
+
+	void setCommentByJobId(int jobId, String comment);
+
+	void setFeedbackByJobId(int jobId, int feedback);
 }
