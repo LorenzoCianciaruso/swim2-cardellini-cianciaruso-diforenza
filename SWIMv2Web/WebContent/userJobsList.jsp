@@ -19,7 +19,7 @@ List<Ability> listOfAbility = (List<Ability>) request.getAttribute("listOfAbilit
 <title>Jobs</title>
 </head>
 <body>
-Jobs you have performed:<br />
+<b>JOBS YOU HAVE PERFORMED:</b><br />
 <br />
 <%
 if(listPerformedJob.size() > 0){
@@ -59,7 +59,7 @@ You haven't performed any jobs!<br />
 }
 %>
 <br />
-Jobs you have request:<br />
+<b>JOBS YOU HAVE REQUESTED:</b><br />
 <br />
 <%
 if(listAskedJob.size() > 0){
@@ -70,7 +70,7 @@ Date: <%=listAskedJob.get(i).getDate() %><br />
 Place: <%=listAskedJob.get(i).getPlace() %><br />
 <%
 for(int j=0; j< listOfAbility.size(); j++){
-	if(listOfAbility.get(j).getIdAbility() == listPerformedJob.get(i).getAbility()){
+	if(listOfAbility.get(j).getIdAbility() == listAskedJob.get(i).getAbility()){
 		%>
 Ability: <%=listOfAbility.get(j).getName() %>	
 		<%
