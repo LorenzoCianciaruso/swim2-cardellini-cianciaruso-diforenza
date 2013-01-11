@@ -34,10 +34,7 @@ public class ServletAbilityDeclared extends HttpServlet {
 
 		// for each ability create an entity ability declared
 		for (int i = 0; i < abilitiesList.length; i++) {
-			// TODO ho cambiato il search by name e ho messo il like qui non so
-			// se funziona ancora ma è una vera porcata qui si deve usare l'id
-			//controlla ma secondo me ci vuole un secondo basta cambiare quello che passi
-			Ability a = abilityBean.searchByName(abilitiesList[i]);
+			Ability a = abilityBean.searchById(Integer.parseInt(abilitiesList[i]));
 			AbilitiesDeclared abDec = new AbilitiesDeclared();
 			abDec.setAbility(a.getIdAbility());
 			abDec.setUser(userId);
