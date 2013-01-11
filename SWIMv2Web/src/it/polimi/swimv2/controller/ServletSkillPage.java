@@ -24,7 +24,7 @@ public class ServletSkillPage extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				
 		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
-		IAbilityDeclared abilitiesDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
+		IAbilityDeclared abilitiesDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilityDeclaredBean");
 		
 		int currentUserId = (int) request.getSession().getAttribute("id");
 		AbilityDeclared abDec = new AbilityDeclared();
