@@ -46,7 +46,7 @@ public class JobBean implements IJob {
     //select job by performer
 	@Override
 	public List<Job> findJobByPerformer(int idPerformer) {
-		String q = "SELECT j FROM Job j WHERE idPerfomer = '"+idPerformer+"'";
+		String q = "SELECT j FROM Job j WHERE idPerformer = '"+idPerformer+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			List<Job> list = (List<Job>) query.getResultList();
