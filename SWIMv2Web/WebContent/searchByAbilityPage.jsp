@@ -26,7 +26,7 @@
 			%>
 	<%=ability.getName() %>
 	<form method="post" action="ServletSearchByGivenAbility">
-		<input type="hidden" name="id" value=<%=ability.getIdAbility()%> />
+		<input type="hidden" name="id" value=<%=ability.getId()%> />
 		<input type="submit" value="Search users with this ability" />
 	</form>
 	<%

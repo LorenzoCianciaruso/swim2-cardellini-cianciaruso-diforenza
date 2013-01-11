@@ -8,7 +8,7 @@
     <description></description>
     <display-name>ServletLogin</display-name>
     <servlet-name>ServletLogin</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletLogin</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.ServletLogin</servlet-class>
   </servlet>
   <servlet>
     <description></description>
@@ -20,7 +20,7 @@
     <description></description>
     <display-name>ServletAcceptAbilityRequest</display-name>
     <servlet-name>ServletAcceptAbilityRequest</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletAcceptAbilityRequest</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.admin.ServletAcceptAbilityRequest</servlet-class>
   </servlet>
   <servlet>
     <description></description>
@@ -32,109 +32,109 @@
     <description></description>
     <display-name>ServletProfilePage</display-name>
     <servlet-name>ServletProfilePage</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletProfilePage</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.ServletProfilePage</servlet-class>
   </servlet>
   <servlet>
     <description></description>
     <display-name>ServletProfileSeenByOther</display-name>
     <servlet-name>ServletProfileSeenByOther</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletProfileSeenByOther</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.ServletProfileSeenByOther</servlet-class>
   </servlet>
   <servlet>
     <description></description>
     <display-name>ServletLogout</display-name>
     <servlet-name>ServletLogout</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletLogout</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.ServletLogout</servlet-class>
   </servlet>
   <servlet>
     <description></description>
     <display-name>ServletSkillPage</display-name>
     <servlet-name>ServletSkillPage</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletSkillPage</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.ability.ServletSkillPage</servlet-class>
   </servlet>
   <servlet>
     <description></description>
     <display-name>ServletAbilityDeclared</display-name>
     <servlet-name>ServletAbilityDeclared</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletAbilityDeclared</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.ability.ServletAbilityDeclared</servlet-class>
   </servlet>
   <servlet>
     <description></description>
     <display-name>ServletAbilityDeleted</display-name>
     <servlet-name>ServletAbilityDeleted</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletAbilityDeleted</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.ability.ServletAbilityDeleted</servlet-class>
   </servlet>
   <servlet>
     <description></description>
     <display-name>ServletAbilityRequested</display-name>
     <servlet-name>ServletAbilityRequested</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletAbilityRequested</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.ability.ServletAbilityRequested</servlet-class>
   </servlet>
   <servlet>
     <description></description>
     <display-name>ServletNewAbilities</display-name>
     <servlet-name>ServletNewAbilities</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletNewAbilities</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.admin.ServletNewAbilities</servlet-class>
   </servlet>
   <servlet>
     <description></description>
     <display-name>ServletNewJobRequest</display-name>
     <servlet-name>ServletNewJobRequest</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletNewJobRequest</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.job.ServletNewJobRequest</servlet-class>
   </servlet>
   <servlet>
     <description></description>
     <display-name>ServletAdminAbilityList</display-name>
     <servlet-name>ServletAdminAbilityList</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletAdminAbilityList</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.admin.ServletAdminAbilityList</servlet-class>
   </servlet>
   <servlet>
     <description></description>
     <display-name>ServletAdminDeleteAbility</display-name>
     <servlet-name>ServletAdminDeleteAbility</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletAdminDeleteAbility</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.admin.ServletAdminDeleteAbility</servlet-class>
   </servlet>
   <servlet>
     <description></description>
     <display-name>ServletAdminRedirect</display-name>
     <servlet-name>ServletAdminRedirect</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletAdminRedirect</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.admin.ServletAdminRedirect</servlet-class>
   </servlet>
   <servlet>
     <description></description>
     <display-name>ServletJobRequestsPage</display-name>
     <servlet-name>ServletJobRequestsPage</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletJobRequestsPage</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.job.ServletJobRequestsPage</servlet-class>
   </servlet>
   <servlet>
     <description></description>
     <display-name>ServletRefuseAbilityRequest</display-name>
     <servlet-name>ServletRefuseAbilityRequest</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletRefuseAbilityRequest</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.admin.ServletRefuseAbilityRequest</servlet-class>
   </servlet>
   <servlet>
     <description></description>
     <display-name>ServletJobRefused</display-name>
     <servlet-name>ServletJobRefused</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletJobRefused</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.job.ServletJobRefused</servlet-class>
   </servlet>
   <servlet>
     <description></description>
     <display-name>ServletJobAccepted</display-name>
     <servlet-name>ServletJobAccepted</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletJobAccepted</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.job.ServletJobAccepted</servlet-class>
   </servlet>
   <servlet>
     <description></description>
     <display-name>ServletFriendshipRequest</display-name>
     <servlet-name>ServletFriendshipRequest</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletFriendshipRequest</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.friend.ServletFriendshipRequest</servlet-class>
   </servlet>
   <servlet>
     <description></description>
     <display-name>ServletAskJobToUser</display-name>
     <servlet-name>ServletAskJobToUser</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletAskJobToUser</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.job.ServletAskJobToUser</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletAskJobToUser</servlet-name>
@@ -228,7 +228,7 @@
     <description></description>
     <display-name>ServletFriendshipPage</display-name>
     <servlet-name>ServletFriendshipPage</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletFriendshipPage</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.friend.ServletFriendshipPage</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletFriendshipPage</servlet-name>
@@ -238,7 +238,7 @@
     <description></description>
     <display-name>ServletFriendListPage</display-name>
     <servlet-name>ServletFriendListPage</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletFriendListPage</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.friend.ServletFriendListPage</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletFriendListPage</servlet-name>
@@ -248,7 +248,7 @@
     <description></description>
     <display-name>ServletFriendshipAccepted</display-name>
     <servlet-name>ServletFriendshipAccepted</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletFriendshipAccepted</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.friend.ServletFriendshipAccepted</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletFriendshipAccepted</servlet-name>
@@ -258,7 +258,7 @@
     <description></description>
     <display-name>ServletFriendshipRefused</display-name>
     <servlet-name>ServletFriendshipRefused</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletFriendshipRefused</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.friend.ServletFriendshipRefused</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletFriendshipRefused</servlet-name>
@@ -268,7 +268,7 @@
     <description></description>
     <display-name>ServletSearchAmongFriend</display-name>
     <servlet-name>ServletSearchAmongFriend</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletSearchAmongFriend</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.friend.ServletSearchAmongFriend</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletSearchAmongFriend</servlet-name>
@@ -278,7 +278,7 @@
     <description></description>
     <display-name>ServletAdminSearch</display-name>
     <servlet-name>ServletAdminSearch</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletAdminSearch</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.admin.ServletAdminSearch</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletAdminSearch</servlet-name>
@@ -288,7 +288,7 @@
     <description></description>
     <display-name>ServletProfileSeenByAdmin</display-name>
     <servlet-name>ServletProfileSeenByAdmin</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletProfileSeenByAdmin</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.admin.ServletProfileSeenByAdmin</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletProfileSeenByAdmin</servlet-name>
@@ -298,7 +298,7 @@
     <description></description>
     <display-name>ServletBanUser</display-name>
     <servlet-name>ServletBanUser</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletBanUser</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.admin.ServletBanUser</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletBanUser</servlet-name>
@@ -308,7 +308,7 @@
     <description></description>
     <display-name>ServletJobsPage</display-name>
     <servlet-name>ServletJobsPage</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletJobsPage</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.job.ServletJobsPage</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletJobsPage</servlet-name>
@@ -318,7 +318,7 @@
     <description></description>
     <display-name>ServletJobFeedbackAdder</display-name>
     <servlet-name>ServletJobFeedbackAdder</servlet-name>
-    <servlet-class>it.polimi.swimv2.controller.ServletJobFeedbackAdder</servlet-class>
+    <servlet-class>it.polimi.swimv2.controller.user.job.ServletJobFeedbackAdder</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletJobFeedbackAdder</servlet-name>
