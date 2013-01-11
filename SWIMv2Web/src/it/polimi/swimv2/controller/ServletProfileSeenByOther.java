@@ -58,9 +58,12 @@ public class ServletProfileSeenByOther extends HttpServlet {
 		request.setAttribute("names", names);
 		request.setAttribute("feedbacks", feedbacks);
 
-		if ((Integer) request.getSession().getAttribute("id") == 0) {
+
+		if ((Integer) request.getSession().getAttribute("id") == null) {
+			forward(request, response, "/profileSeenByGuest.jsp");		
+		}else if((Integer) request.getSession().getAttribute("id") == 0) {
 			forward(request, response, "/profileSeenByAdmin.jsp");
-		} else {
+		} else if((Integer) request.getSession().getAttribute("id") == 1){
 
 			// ho commentato perchè lanciava un ecc
 			// check if this user is already my friend

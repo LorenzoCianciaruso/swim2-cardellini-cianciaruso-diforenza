@@ -30,9 +30,12 @@
 	
 	<br />
 
+	<div id="sidebar">
 	<form method="post" action="ServletSearch">
 		Search: <input name="search" /> <input type="submit"
 			value="Search User" />
 	</form>
+	</div>
+	
 </body>
 </html>

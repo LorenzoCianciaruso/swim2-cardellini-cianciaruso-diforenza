@@ -23,8 +23,32 @@
 		}
 	</script>
 	</head>
-	Login<br />
 	<body>
+	
+	<br />
+	
+	<div id="sidebar">
+	Search for an user:
+	<br />
+	<form method="post" action="ServletSearch">
+		<input name="search" placeholder="type name here.."/> <input type="submit"
+			value="Search User" />
+	</form>
+	<br />
+	<form method="post" action="ServletSearchByPlace">
+		<input name="search" placeholder="type place here.."/> <input type="submit"
+			value="Search User" />
+	</form>
+	<br />
+	<form method="post" action="ServletSearchByAbility">
+		<input name="search" placeholder="type ability here.."/> <input type="submit"
+			value="Search User" />
+	</form>
+	</div>
+	<br />
+	Login
+	<br />
+	
 		<form name="login" action="ServletLogin"
 			onsubmit="return validateLogin()" method="post">
 			<input type="text" name="email" placeholder="Email">
@@ -32,7 +56,7 @@
 			<input type="submit" value="Login">
 		</form>
 	</body>
-	or register new profile
+	
 	<script>
 
 		function validateRegistration() {
@@ -89,6 +113,8 @@
 
 		}
 	</script>
+	<div id="textcenter">
+	or register new profile
 	<form name="registration" action="ServletRegistration"
 		onsubmit="return validateRegistration()" method="post">
 		<input name="name" placeholder="First name"/> <br />
@@ -101,6 +127,8 @@
 		<input name="confirmPassword" placeholder="Re-enter password"type="password" /><br />
 		<input type="submit" value="Register">
 	</form>
+	</div>
+	
 
 </body>
 </html>
