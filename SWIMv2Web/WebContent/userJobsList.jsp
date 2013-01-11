@@ -77,10 +77,16 @@ Ability: <%=listOfAbility.get(j).getName() %>
 	}
 }
 %><br />
-<form method="post" action="ServletFeedbackOfJob" >
+<%
+if( listAskedJob.get(i).getComment() == null ){
+%>
+<form method="post" action="userReleaseFeedbackPage.jsp" >
 	<input type="hidden" name="jobId" value="<%=listAskedJob.get(i).getIdJob() %>" />
 	<input type="submit" value="Set Feedback and Comment" />
 </form>	
+<%
+}
+%>
 <br />
 <%
 }
