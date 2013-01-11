@@ -23,7 +23,6 @@ public class AbilityBean implements IAbility {
 
 	@Override
 	public List<Ability> findAllAbilities() {
-		// TODO Auto-generated method stub
 		String q = "SELECT a FROM Ability a";
 		Query query = entityManager.createQuery(q);
 		try{
@@ -35,12 +34,12 @@ public class AbilityBean implements IAbility {
 	}
 
 	@Override
-	public Ability searchByName(String name) {
+	public List<Ability> searchByName(String name) {
 		String q = "SELECT a FROM Ability a WHERE name LIKE '"+name+"%'";
 		Query query = entityManager.createQuery(q);
 		try{
-			Ability a = (Ability) query.getSingleResult();
-			return a;
+			List<Ability> abilitiesList = (List<Ability>) query.getResultList();
+			return abilitiesList;
 		}catch(NoResultException e){
 			return null;
 		}
