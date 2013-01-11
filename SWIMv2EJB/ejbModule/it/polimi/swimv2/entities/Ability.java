@@ -34,6 +34,7 @@ public class Ability implements Serializable{
 		result = prime * result + id;
 		return result;
 	}
+	*/
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -47,7 +48,7 @@ public class Ability implements Serializable{
 		if (id != other.id)
 			return false;
 		return true;
-	}*/
+	}
 	
 	
 	
