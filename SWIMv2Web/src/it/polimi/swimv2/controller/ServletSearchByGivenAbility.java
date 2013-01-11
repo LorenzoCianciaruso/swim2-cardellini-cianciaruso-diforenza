@@ -26,7 +26,7 @@ public class ServletSearchByGivenAbility extends HttpServlet {
 		
 		//Call a session bean
 		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
-		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
+		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilityDeclaredBean");
 
 		//get the ability to search
 		int abilityId = Integer.parseInt(request.getParameter("id"));

@@ -22,7 +22,7 @@ public class ServletAdminDeleteAbility extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
-		IAbilityDeclared abilitiesDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
+		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilityDeclaredBean");
 		
 		//receives the id of the ability to delete
 		String string = request.getParameter("abilityId");
@@ -33,11 +33,11 @@ public class ServletAdminDeleteAbility extends HttpServlet {
 
 		//searches all the tuples with that ability declared
 		List<AbilityDeclared> list = new ArrayList<AbilityDeclared>();
-		list = abilitiesDeclaredBean.findByAbilityId(id);
+		list = abilityDeclaredBean.findByAbilityId(id);
 		
 		// removes all tuples with that ability in AbilitiesDeclared table
 		for (int i = 0; i < list.size(); i++) {
-			abilitiesDeclaredBean.remove(list.get(i).getId());
+			abilityDeclaredBean.remove(list.get(i).getId());
 		}
 
 		ServletContext sc = getServletContext();

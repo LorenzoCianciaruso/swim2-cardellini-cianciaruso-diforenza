@@ -34,7 +34,7 @@ public class ServletBanUser extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
-		IAbilityDeclared abilitiesDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilitiesDeclaredBean");
+		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("abilityDeclaredBean");
 		IFriendship friendshipBean = (IFriendship) JNDILookupClass.doLookup("FriendshipBean");
 		IFriendshipRequest friendshipRequestBean = (IFriendshipRequest) JNDILookupClass.doLookup("FriendshipRequestBean");
 		IAbilityRequest abilityRequestBean = (IAbilityRequest) JNDILookupClass.doLookup("AbilityRequestBean");
@@ -81,7 +81,7 @@ public class ServletBanUser extends HttpServlet {
 		
 		
 		//removes ablitiesdeclared
-		List<AbilityDeclared> abDeclList = abilitiesDeclaredBean.findByUserId(idUser);
+		List<AbilityDeclared> abDeclList = abilityDeclaredBean.findByUserId(idUser);
 		
 		for(int i = 0; i < abDeclList.size(); i++){
 			abDeclList.remove(abDeclList.get(i).getId());

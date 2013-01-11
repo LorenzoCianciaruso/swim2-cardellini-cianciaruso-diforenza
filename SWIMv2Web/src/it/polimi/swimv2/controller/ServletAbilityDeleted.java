@@ -27,11 +27,11 @@ public class ServletAbilityDeleted extends HttpServlet {
 
 		int currentUserId = (int) request.getSession().getAttribute("id");
 
-		IAbilityDeclared abilitiesDeclaredBean = (IAbilityDeclared) JNDILookupClass
-				.doLookup("AbilitiesDeclaredBean");
+		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass
+				.doLookup("AbilityDeclaredBean");
 	
 		for (int i = 0; i < toDelete.length; i++) {
-			abilitiesDeclaredBean.remove(Integer.parseInt(toDelete[i]),currentUserId);
+			abilityDeclaredBean.remove(Integer.parseInt(toDelete[i]),currentUserId);
 
 		}
 		

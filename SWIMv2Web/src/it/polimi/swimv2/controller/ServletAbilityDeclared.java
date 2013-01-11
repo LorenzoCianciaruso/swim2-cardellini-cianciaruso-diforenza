@@ -25,8 +25,8 @@ public class ServletAbilityDeclared extends HttpServlet {
 		// receive the name of declared abilities
 		String[] abilitiesList = request.getParameterValues("ability");
 
-		IAbilityDeclared bean = (IAbilityDeclared) JNDILookupClass
-				.doLookup("AbilitiesDeclaredBean");
+		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass
+				.doLookup("AbilityDeclaredBean");
 		IAbility abilityBean = (IAbility) JNDILookupClass
 				.doLookup("AbilityBean");
 		// get user id
@@ -39,7 +39,7 @@ public class ServletAbilityDeclared extends HttpServlet {
 			abDec.setAbility(a.getId());
 			abDec.setUser(userId);
 			abDec.setFeedback(DEFAULT_FEEDBACK);
-			bean.save(abDec);
+			abilityDeclaredBean.save(abDec);
 		}
 		// forward to success page
 		ServletContext sc = getServletContext();
