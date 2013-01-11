@@ -16,6 +16,8 @@ public interface IAbilitiesDeclared {
 	List<AbilitiesDeclared> searchByAbilityId(int id);
 
 	void remove(int id);
+
+	void remove(int idAbility, int idUser);
 	
 	
 
