@@ -54,6 +54,19 @@ public class UserBean implements IUser {
 			return null;
 		}
 	}
+	
+	@Override
+	public List<User> findUserByPlace(String place) {
+		String q = "SELECT u FROM User u WHERE city LIKE '"+place+"%'";
+		Query query = entityManager.createQuery(q);
+		try{
+			List<User> listOfUsersFound = (List<User>) query.getResultList();
+			return listOfUsersFound;
+		}catch (NoResultException e){
+			return null;
+		}
+	}
+
 
 	//select user by passing an user with id to search
 	@Override
@@ -82,5 +95,6 @@ public class UserBean implements IUser {
 		
 	}
 
+	
 
 }

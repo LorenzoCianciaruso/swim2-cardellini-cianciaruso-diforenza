@@ -16,8 +16,12 @@ public interface IUser {
     User findUserByLogin(User u);
 
 	List<User> findUserByName(String name);
+	
+	List<User> findUserByPlace(String place);
 
 	User findUserById(int id);
 	
 	void remove(int id);
+
+	
 }

@@ -29,7 +29,7 @@ public class AbilitiesDeclaredBean implements IAbilitiesDeclared {
 	}
 
 	@Override
-	public List<AbilitiesDeclared> findAbilitiesOwnedByUserId(int id) {
+	public List<AbilitiesDeclared> searchByUserId(int id) {
 		
 		String q = "SELECT a FROM AbilitiesDeclared a WHERE idUser = '"+id+"'";
 		Query query = entityManager.createQuery(q);
@@ -56,7 +56,7 @@ public class AbilitiesDeclaredBean implements IAbilitiesDeclared {
 	}
     
 	@Override
-	public List<AbilitiesDeclared> searchAbilitiesDeclaredByIdAbility(int id){
+	public List<AbilitiesDeclared> searchByAbilityId(int id){
 		
 		String q = "SELECT a FROM AbilitiesDeclared a WHERE idAbility = '"+id+"'";
 		Query query = entityManager.createQuery(q);
