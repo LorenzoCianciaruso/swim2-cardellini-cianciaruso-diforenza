@@ -9,6 +9,15 @@
 <link rel="stylesheet" type="text/css" href="global.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Abilities list</title>
+<script>
+		function validateNewAbility() {
+			var x = document.forms["newAbility"]["name"].value;
+			if (x == null || x == "") {
+				alert("Field must be filled out");
+				return false;
+			}
+		}
+	</script>
 </head>
 <body>
 
@@ -29,6 +38,12 @@
 	<%
 		}
 	%>
+	<br /> Create new ability.
+	<form name="newAbility" action="ServletAcceptAbilityRequest"
+		onsubmit="return validateNewAbility()" method="post">
+		<input name="name" placeholder="Name"/> <br />
+		<input type="submit" value="Create ability">
+	</form>
 	
 	<br />
 	
