@@ -68,5 +68,19 @@ public class JobBean implements IJob {
 				return null;
 			}
 		}
+
+		@Override
+		public void setCommentByJobId(int jobId, String comment) {
+			String q = "UPDATE Job j SET comment = '"+comment+"' WHERE idJob = '"+jobId+"'";
+			Query query = entityManager.createQuery(q);
+			query.executeUpdate();
+		}
+
+		@Override
+		public void setFeedbackByJobId(int jobId, int feedback) {
+			String q = "UPDATE Job j SET feedback = '"+feedback+"' WHERE idJob = '"+jobId+"'";
+			Query query = entityManager.createQuery(q);
+			query.executeUpdate();
+		}
 	
 }
