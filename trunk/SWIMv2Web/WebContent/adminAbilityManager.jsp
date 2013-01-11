@@ -32,9 +32,10 @@
 	
 	<br />
 	
+	<div id="textcenter">
 	<form method="post" action="adminProfile.jsp">
 		<input type="submit" value="Go Back"></input> 
 	</form>
-
+	</div>
 </body>
 </html>
