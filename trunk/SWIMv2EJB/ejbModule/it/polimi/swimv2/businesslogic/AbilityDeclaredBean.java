@@ -31,8 +31,7 @@ public class AbilityDeclaredBean implements IAbilityDeclared {
 	@Override
 	public List<AbilityDeclared> findByUserId(int id) {
 
-		String q = "SELECT a FROM AbilityDeclared a WHERE id = '" + id
-				+ "'";
+		String q = "SELECT a FROM AbilityDeclared a WHERE id = '" + id+ "'";
 		Query query = entityManager.createQuery(q);
 		try {
 			List<AbilityDeclared> list = (List<AbilityDeclared>) query
@@ -75,7 +74,7 @@ public class AbilityDeclaredBean implements IAbilityDeclared {
 
 	@Override
 	public void remove(int idAbility, int idUser) {
-		String q = "SELECT a FROM AbilityDeclared a WHERE id ='"
+		String q = "SELECT a FROM AbilityDeclared a WHERE idAbility ='"
 				+ idAbility + "'and idUser = '" + idUser + "'";
 		Query query = entityManager.createQuery(q);
 		try {
