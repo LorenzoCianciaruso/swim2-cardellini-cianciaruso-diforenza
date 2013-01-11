@@ -12,6 +12,7 @@ public class Ability implements Serializable{
 
 	@Id
 	private int idAbility;
+	
 	private String name;
 	
 	public int getIdAbility() {
