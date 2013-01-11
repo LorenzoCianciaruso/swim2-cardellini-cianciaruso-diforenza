@@ -31,7 +31,7 @@ public class AbilityDeclaredBean implements IAbilityDeclared {
 	@Override
 	public List<AbilityDeclared> findByUserId(int id) {
 
-		String q = "SELECT a FROM AbilitiesDeclared a WHERE idUser = '" + id
+		String q = "SELECT a FROM AbilityDeclared a WHERE id = '" + id
 				+ "'";
 		Query query = entityManager.createQuery(q);
 		try {
@@ -45,7 +45,7 @@ public class AbilityDeclaredBean implements IAbilityDeclared {
 
 	@Override
 	public void remove(int id) {
-		String q = "SELECT a FROM AbilitiesDeclared a WHERE id ='" + id + "'";
+		String q = "SELECT a FROM AbilityDeclared a WHERE id ='" + id + "'";
 		Query query = entityManager.createQuery(q);
 		try {
 			AbilityDeclared abDec = (AbilityDeclared) query.getSingleResult();
@@ -58,7 +58,7 @@ public class AbilityDeclaredBean implements IAbilityDeclared {
 	@Override
 	public List<AbilityDeclared> findByAbilityId(int id) {
 
-		String q = "SELECT a FROM AbilitiesDeclared a WHERE idAbility = '" + id
+		String q = "SELECT a FROM AbilityDeclared a WHERE id = '" + id
 				+ "'";
 		Query query = entityManager.createQuery(q);
 
@@ -75,7 +75,7 @@ public class AbilityDeclaredBean implements IAbilityDeclared {
 
 	@Override
 	public void remove(int idAbility, int idUser) {
-		String q = "SELECT a FROM AbilitiesDeclared a WHERE idAbility ='"
+		String q = "SELECT a FROM AbilityDeclared a WHERE id ='"
 				+ idAbility + "'and idUser = '" + idUser + "'";
 		Query query = entityManager.createQuery(q);
 		try {
