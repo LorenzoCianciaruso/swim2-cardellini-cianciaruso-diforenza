@@ -57,7 +57,7 @@ public class AbilityDeclaredBean implements IAbilityDeclared {
 	@Override
 	public List<AbilityDeclared> findByAbilityId(int id) {
 
-		String q = "SELECT a FROM AbilityDeclared a WHERE id = '" + id
+		String q = "SELECT a FROM AbilityDeclared a WHERE idAbility = '" + id
 				+ "'";
 		Query query = entityManager.createQuery(q);
 
