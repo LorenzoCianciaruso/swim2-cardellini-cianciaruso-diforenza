@@ -14,7 +14,8 @@ public class AbilityDeclared implements Serializable{
 	private int id;
 	private int idUser;
 	private int idAbility;
-	private int feedback;
+	private int positiveFeedback;
+	private int negativeFeedback;
 	
 	
 	public int getId() {
@@ -35,11 +36,17 @@ public class AbilityDeclared implements Serializable{
 	public void setAbility(int idAbility) {
 		this.idAbility = idAbility;
 	}
-	public int getFeedback() {
-		return feedback;
+	public int getPositiveFeedback() {
+		return positiveFeedback;
 	}
-	public void setFeedback(int feedback) {
-		this.feedback = feedback;
+	public void setPositiveFeedback(int feedback) {
+		this.positiveFeedback = feedback;
+	}
+	public int getNegativeFeedback() {
+		return negativeFeedback;
+	}
+	public void setNegativeFeedback(int feedback) {
+		this.negativeFeedback = feedback;
 	}
 	
 	
