@@ -24,14 +24,14 @@ public class JobRequestBean implements IJobRequest {
 
 	//save job in the database
     @Override
-	public void saveJobRequest(JobRequest jobRequest) {
+	public void save(JobRequest jobRequest) {
 		entityManager.persist(jobRequest);
 	}
     
   //select job by id
     @Override
 	public JobRequest findJobRequestById(int id) {
-    	String q = "SELECT j FROM JobRequest j WHERE idJobRequest = '"+id+"'";
+    	String q = "SELECT j FROM JobRequest j WHERE id = '"+id+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			JobRequest j = (JobRequest) query.getSingleResult();
@@ -69,7 +69,7 @@ public class JobRequestBean implements IJobRequest {
 		
 		@Override
 		public void remove(int id){		
-			String q = "SELECT j FROM JobRequest j WHERE idJobRequest = '"+id+"'";
+			String q = "SELECT j FROM JobRequest j WHERE id = '"+id+"'";
 			Query query = entityManager.createQuery(q);
 			try{
 				JobRequest jobR = (JobRequest) query.getSingleResult();

@@ -8,12 +8,12 @@ import javax.ejb.Remote;
 @Remote
 public interface IFriendship {
 
-	void saveFriendship(Friendship f);
+	void save(Friendship f);
 
-	List<Friendship> findAllFriendshipsByUserId(int currentUserId);
-
-	void remove(int id);
+	List<Friendship> findByUserId(int id);
 
 	boolean isFriend(int currentUserId, int id);
+	
+	void remove(int id);
 
 }

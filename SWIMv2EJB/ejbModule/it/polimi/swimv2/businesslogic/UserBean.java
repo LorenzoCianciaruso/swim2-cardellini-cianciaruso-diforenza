@@ -24,7 +24,7 @@ public class UserBean implements IUser {
 
 	//save user in the database
     @Override
-	public void saveUser(User user) {
+	public void save(User user) {
 		entityManager.persist(user);
 	}
 

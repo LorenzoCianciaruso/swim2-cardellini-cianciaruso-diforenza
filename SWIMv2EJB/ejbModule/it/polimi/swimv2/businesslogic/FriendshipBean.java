@@ -22,12 +22,12 @@ public class FriendshipBean implements IFriendship {
     public FriendshipBean() {}
     
     @Override
-	public void saveFriendship(Friendship f) {
+	public void save(Friendship f) {
 		entityManager.persist(f);
 	}
 
 	@Override
-	public List<Friendship> findAllFriendshipsByUserId(int currentUserId) {
+	public List<Friendship> findByUserId(int currentUserId) {
 
 		String q = "SELECT f FROM Friendship f WHERE idUser1 = '"+currentUserId+"' or idUser2 = '"+currentUserId+"'";
 		Query query = entityManager.createQuery(q);

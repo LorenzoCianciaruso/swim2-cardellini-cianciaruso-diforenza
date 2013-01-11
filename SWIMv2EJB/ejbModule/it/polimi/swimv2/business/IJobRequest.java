@@ -11,7 +11,7 @@ import javax.ejb.Remote;
 @Remote
 public interface IJobRequest {
 
-	void saveJobRequest(JobRequest JobRequest);
+	void save(JobRequest JobRequest);
     
 	JobRequest findJobRequestById(int id);
 	

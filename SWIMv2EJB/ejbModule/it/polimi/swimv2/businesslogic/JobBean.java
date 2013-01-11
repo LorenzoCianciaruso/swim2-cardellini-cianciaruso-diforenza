@@ -25,15 +25,15 @@ public class JobBean implements IJob {
 
 	//save job in the database
     @Override
-	public void saveJob(Job job) {
+	public void save(Job job) {
 		entityManager.persist(job);
 	}
     
   //select job by id
     @Override
-	public Job findJobById(int id) {
+	public Job findById(int id) {
 
-		String q = "SELECT j FROM Job j WHERE idJob = '"+id+"'";
+		String q = "SELECT j FROM Job j WHERE id = '"+id+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			Job j = (Job) query.getSingleResult();
@@ -45,7 +45,7 @@ public class JobBean implements IJob {
 
     //select job by performer
 	@Override
-	public List<Job> findJobByPerformer(int idPerformer) {
+	public List<Job> findByPerformerId(int idPerformer) {
 		String q = "SELECT j FROM Job j WHERE idPerformer = '"+idPerformer+"'";
 		Query query = entityManager.createQuery(q);
 		try{
@@ -58,7 +58,7 @@ public class JobBean implements IJob {
 
 	 //select job by requestor
 		@Override
-		public List<Job> findJobByRequestor(int idRequestor) {
+		public List<Job> findByRequestorId(int idRequestor) {
 			String q = "SELECT j FROM Job j WHERE idRequestor = '"+idRequestor+"'";
 			Query query = entityManager.createQuery(q);
 			try{
@@ -70,15 +70,15 @@ public class JobBean implements IJob {
 		}
 
 		@Override
-		public void setCommentByJobId(int jobId, String comment) {
-			String q = "UPDATE Job j SET comment = '"+comment+"' WHERE idJob = '"+jobId+"'";
+		public void setCommentById(int jobId, String comment) {
+			String q = "UPDATE Job j SET comment = '"+comment+"' WHERE id = '"+jobId+"'";
 			Query query = entityManager.createQuery(q);
 			query.executeUpdate();
 		}
 
 		@Override
-		public void setFeedbackByJobId(int jobId, int feedback) {
-			String q = "UPDATE Job j SET feedback = '"+feedback+"' WHERE idJob = '"+jobId+"'";
+		public void setFeedbackById(int jobId, int feedback) {
+			String q = "UPDATE Job j SET feedback = '"+feedback+"' WHERE id = '"+jobId+"'";
 			Query query = entityManager.createQuery(q);
 			query.executeUpdate();
 		}

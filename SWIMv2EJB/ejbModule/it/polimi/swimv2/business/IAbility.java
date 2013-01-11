@@ -9,14 +9,14 @@ import javax.ejb.Remote;
 @Remote
 public interface IAbility {
 
-	void deleteAbilityById(int id);
+	void save(Ability ab);
 	
-	List<Ability> findAllAbilities();
+	List<Ability> allAbilities();
 
-	Ability searchById(int id);
+	Ability findById(int id);
 
-	List<Ability> searchByName(String name);
+	List<Ability> findByName(String name);
 	
-	void saveAbility(Ability ab);
+	void remove(int id);
 
 }

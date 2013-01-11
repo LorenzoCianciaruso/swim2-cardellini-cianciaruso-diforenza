@@ -12,21 +12,21 @@ public class AbilityRequest implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private int idNewAbility;
+	private int id;
 	private int idUser;
 	private String name;
 	
 	
-	public int getIdNewAbility() {
-		return idNewAbility;
+	public int getId() {
+		return id;
 	}
-	public void setIdNewAbility(int idNewAbility) {
-		this.idNewAbility = idNewAbility;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public int getIdUser() {
+	public int getUser() {
 		return idUser;
 	}
-	public void setIdUser(int user) {
+	public void setUser(int user) {
 		this.idUser = user;
 	}
 	public String getName() {

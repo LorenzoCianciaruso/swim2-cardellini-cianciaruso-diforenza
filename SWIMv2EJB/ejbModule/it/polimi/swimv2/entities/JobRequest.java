@@ -12,7 +12,7 @@ public class JobRequest implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private int idJobRequest;
+	private int id;
 	private int idPerformer;
 	private int idRequestor;
 	private int idAbility;
@@ -20,16 +20,16 @@ public class JobRequest implements Serializable {
 	private String date;
 	
 	
-	public int getIdJob() {
-		return idJobRequest;
+	public int getId() {
+		return id;
 	}
-	public void setIdJob(int idJob) {
-		this.idJobRequest = idJob;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public int getIdPerformer() {
+	public int getPerformer() {
 		return idPerformer;
 	}
-	public void setIdPerformer(int idPerformer) {
+	public void setPerformer(int idPerformer) {
 		this.idPerformer = idPerformer;
 	}
 	public int getRequestor() {

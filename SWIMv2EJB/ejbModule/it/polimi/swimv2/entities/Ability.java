@@ -11,15 +11,14 @@ public class Ability implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int idAbility;
-	
+	private int id;	
 	private String name;
 	
-	public int getIdAbility() {
-		return idAbility;
+	public int getId() {
+		return id;
 	}
-	public void setIdAbility(int idAbility) {
-		this.idAbility = idAbility;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getName() {
 		return name;
@@ -28,11 +27,11 @@ public class Ability implements Serializable{
 		this.name = name;
 	}
 	
-	@Override
+	/*@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + idAbility;
+		result = prime * result + id;
 		return result;
 	}
 	
@@ -45,10 +44,10 @@ public class Ability implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Ability other = (Ability) obj;
-		if (idAbility != other.idAbility)
+		if (id != other.id)
 			return false;
 		return true;
-	}
+	}*/
 	
 	
 	

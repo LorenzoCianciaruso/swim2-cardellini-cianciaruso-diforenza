@@ -24,16 +24,16 @@ public class Friendship implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getidUser1() {
+	public int getUser1() {
 		return idUser1;
 	}
-	public void setidUser1(int user1) {
+	public void setUser1(int user1) {
 		this.idUser1 = user1;
 	}
-	public int getidUser2() {
+	public int getUser2() {
 		return idUser2;
 	}
-	public void setidUser2(int user2) {
+	public void setUser2(int user2) {
 		this.idUser2 = user2;
 	}
 	

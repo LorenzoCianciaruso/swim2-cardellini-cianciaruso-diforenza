@@ -13,8 +13,8 @@ public class FriendshipRequest implements Serializable{
 	
 	@Id
 	private int id;
-	private int sender;
-	private int receiver;
+	private int idSender;
+	private int idReceiver;
 	
 	
 	public int getId() {
@@ -24,16 +24,16 @@ public class FriendshipRequest implements Serializable{
 		this.id = id;
 	}
 	public int getSender() {
-		return sender;
+		return idSender;
 	}
 	public void setSender(int user1) {
-		this.sender = user1;
+		this.idSender = user1;
 	}
 	public int getReceiver() {
-		return receiver;
+		return idReceiver;
 	}
 	public void setReceiver(int user2) {
-		this.receiver = user2;
+		this.idReceiver = user2;
 	}
 	
 	
