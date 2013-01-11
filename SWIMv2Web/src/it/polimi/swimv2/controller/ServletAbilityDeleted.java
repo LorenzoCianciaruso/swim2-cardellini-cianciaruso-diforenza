@@ -1,13 +1,9 @@
 package it.polimi.swimv2.controller;
 
 import it.polimi.swimv2.business.IAbilityDeclared;
-import it.polimi.swimv2.business.IAbility;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
-import it.polimi.swimv2.entities.AbilityDeclared;
-import it.polimi.swimv2.entities.Ability;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
