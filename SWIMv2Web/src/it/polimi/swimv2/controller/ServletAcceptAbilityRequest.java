@@ -39,13 +39,14 @@ public class ServletAcceptAbilityRequest extends HttpServlet {
 		
 		
 		String idString = request.getParameter("idNewAbility");
+		if(idString!=null){
 		int id = Integer.parseInt(idString);
 		
 		//removes the abilityRequest
-		abilityRequestBean.remove(id);
+		abilityRequestBean.remove(id);}
 		
 		ServletContext sc = getServletContext();
-		request.setAttribute("next", "ServletAcceptAbilityRequest");
+		request.setAttribute("next", "ServletAdminAbilityList");
 		RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp");
 		rd.forward(request, response);	
 		
