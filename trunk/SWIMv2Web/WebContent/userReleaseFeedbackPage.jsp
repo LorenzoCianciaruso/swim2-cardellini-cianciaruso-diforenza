@@ -8,9 +8,13 @@
 <%
 int jobId = Integer.parseInt(request.getParameter("jobId"));
 %>
-<title>Feedback and comment</title>
+<title>Feedback</title>
 </head>
+<div id=text>
 <body>
+	<div id =logo>
+	<h1>SWIMv2</h1>
+</div>
 <b>HERE YOU CAN RELEASE THE FEEDBACK AND ADD A COMMENT TO THE JOB:</b><br />
 <br />
 Feedback can be positive or negative:<br />
@@ -30,5 +34,17 @@ Feedback can be positive or negative:<br />
 <form method="post" action="ServletProfilePage" >
 	<input type="submit" value="Cancel and Go to the profile" />
 </form>
+	</div>
+
+<div id="sidebar">
+	<form method="post" action="ServletSearch">
+		Search: <input name="search" /> <input type="submit"
+			value="Search User" />
+	</form>
+</div>
+
+<div id="footer">
+Copyright &copy; 2013 Site for didactic purpose.
+</div>
 </body>
 </html>

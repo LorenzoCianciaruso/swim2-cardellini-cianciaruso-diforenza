@@ -11,6 +11,10 @@
 <title>Abilities requests</title>
 </head>
 <body>
+	<div id =logo>
+	<h1>SWIMv2</h1>
+	</div>
+<div id="textcenter">
 	Here all suggestion for new abilities.
 	<br />
 	<%
@@ -35,13 +39,33 @@
 	<%
 		}
 	%>
-	
-	
-	<div id="textcenter">
 	<form method="post" action="adminProfile.jsp">
 		<input type="submit" value="Go Back"></input>
 	</form>
 	</div>
+	
+	<div id="sidebar">
+	Search for an user:
+	<br />
+	<form method="post" action="ServletSearch">
+		<input name="search" placeholder="type name here.."/> <input type="submit"
+			value="Search User" />
+	</form>
+	<br />
+	<form method="post" action="ServletSearchByPlace">
+		<input name="search" placeholder="type place here.."/> <input type="submit"
+			value="Search User" />
+	</form>
+	<br />
+	<form method="post" action="ServletSearchByAbility">
+		<input name="search" placeholder="type ability here.."/> <input type="submit"
+			value="Search User" />
+	</form>
+</div>
+	
+<div id="footer">
+	Copyright &copy; 2013 Site for didactic purpose.
+</div>
 	
 </body>
 </html>

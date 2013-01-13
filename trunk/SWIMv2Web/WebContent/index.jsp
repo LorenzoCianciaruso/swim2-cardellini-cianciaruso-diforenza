@@ -6,13 +6,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="global.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>SWIMv2</title>
-</head>
-<body>
-	<h1>Welcome in SWIMv2</h1>
-	<br />
-	<br />
-	<script>
+<script>
 		function validateLogin() {
 			var x = document.forms["login"]["email"].value;
 			var y = document.forms["login"]["password"].value;
@@ -22,42 +16,7 @@
 			}
 		}
 	</script>
-	</head>
-	<body>
-	
-	<br />
-	
-	<div id="sidebar">
-	Search for an user:
-	<br />
-	<form method="post" action="ServletSearch">
-		<input name="search" placeholder="type name here.."/> <input type="submit"
-			value="Search User" />
-	</form>
-	<br />
-	<form method="post" action="ServletSearchByPlace">
-		<input name="search" placeholder="type place here.."/> <input type="submit"
-			value="Search User" />
-	</form>
-	<br />
-	<form method="post" action="ServletSearchByAbility">
-		<input name="search" placeholder="type ability here.."/> <input type="submit"
-			value="Search User" />
-	</form>
-	</div>
-	<br />
-	Login
-	<br />
-	
-		<form name="login" action="ServletLogin"
-			onsubmit="return validateLogin()" method="post">
-			<input type="text" name="email" placeholder="Email">
-			<input type="password" name="password" placeholder="Password">
-			<input type="submit" value="Login">
-		</form>
-	</body>
-	
-	<script>
+<script>
 
 		function validateRegistration() {
 			var sname = document.forms["registration"]["name"].value;
@@ -113,7 +72,23 @@
 
 		}
 	</script>
-	<div id="textcenter">
+<title>SWIMv2</title>
+</head>
+<body>
+	<div id =logo>
+	<h1>SWIMv2</h1>
+	</div>
+	<div id="text">
+	<h1>Welcome</h1>
+	<br />
+	Login
+	<br />	
+		<form name="login" action="ServletLogin"
+			onsubmit="return validateLogin()" method="post">
+			<input type="text" name="email" placeholder="Email">
+			<input type="password" name="password" placeholder="Password">
+			<input type="submit" value="Login">
+		</form>
 	or register new profile
 	<form name="registration" action="ServletRegistration"
 		onsubmit="return validateRegistration()" method="post">
@@ -129,6 +104,28 @@
 	</form>
 	</div>
 	
-
+<div id="sidebar">
+	Search for an user:
+	<br />
+	<form method="post" action="ServletSearch">
+		<input name="search" placeholder="type name here.."/> <input type="submit"
+			value="Search User" />
+	</form>
+	<br />
+	<form method="post" action="ServletSearchByPlace">
+		<input name="search" placeholder="type place here.."/> <input type="submit"
+			value="Search User" />
+	</form>
+	<br />
+	<form method="post" action="ServletSearchByAbility">
+		<input name="search" placeholder="type ability here.."/> <input type="submit"
+			value="Search User" />
+	</form>
+</div>
+	
+<div id="footer">
+	Copyright &copy; 2013 Site for didactic purpose.
+</div>
+	
 </body>
 </html>

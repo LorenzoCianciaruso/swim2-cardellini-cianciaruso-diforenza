@@ -9,6 +9,9 @@
 <title>Admin Home</title>
 </head>
 <body>
+	<div id =logo>
+	<h1>SWIMv2</h1>
+	</div>
 	Welcome Administrator!
 	
 	<br />
@@ -36,6 +39,11 @@
 			value="Search User" />
 	</form>
 	</div>
+	
+	
+<div id="footer">
+	Copyright &copy; 2013 Site for didactic purpose.
+</div>
 	
 </body>
 </html>
