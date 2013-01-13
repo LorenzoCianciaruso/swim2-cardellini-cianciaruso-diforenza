@@ -31,13 +31,16 @@
 	<br />
 	<%
 	List<String> names = (List<String>) request.getAttribute("names");
-	List<Integer> feedbacks = (List<Integer>) request.getAttribute("feedbacks");
+	List<Integer> posFeedbacks = (List<Integer>) request.getAttribute("posFeedbacks");
+	List<Integer> negFeedbacks = (List<Integer>) request.getAttribute("negFeedbacks");
 	for (int i = 0; i < names.size(); i++) {
 	%>
 	<br /> Ability:
 	<%=names.get(i)%>
-	Feedback:
-	<%=feedbacks.get(i)%>
+	Feedback:   +
+	<%=posFeedbacks.get(i)%>
+	    -
+	 <%=negFeedbacks.get(i)%>
 	<%	
 	}
 	%>

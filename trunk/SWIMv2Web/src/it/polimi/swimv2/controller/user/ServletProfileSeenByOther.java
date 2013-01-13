@@ -42,7 +42,8 @@ public class ServletProfileSeenByOther extends HttpServlet {
 				.findByUserId(id);
 
 		List<String> names = new ArrayList<String>();
-		List<Integer> feedbacks = new ArrayList<Integer>();
+		List<Integer> posFeedbacks = new ArrayList<Integer>();
+		List<Integer> negFeedbacks = new ArrayList<Integer>();
 		int idAbility;
 		IAbility abilityBean = (IAbility) JNDILookupClass
 				.doLookup("AbilityBean");
@@ -52,11 +53,13 @@ public class ServletProfileSeenByOther extends HttpServlet {
 			idAbility = abilities.get(i).getAbility();
 			names.add(abilityBean.findById(idAbility).getName());
 			// build the list that contains abilities feedback
-			feedbacks.add(abilities.get(i).getPositiveFeedback());
+			posFeedbacks.add(abilities.get(i).getPositiveFeedback());
+			negFeedbacks.add(abilities.get(i).getNegativeFeedback());
 		}
 
 		request.setAttribute("names", names);
-		request.setAttribute("feedbacks", feedbacks);
+		request.setAttribute("posFeedbacks", posFeedbacks);
+		request.setAttribute("negFeedbacks", negFeedbacks);
 
 
 		if ((Integer) request.getSession().getAttribute("id") == null) {
