@@ -16,6 +16,10 @@
 </title>
 </head>
 <body>
+	<div id =logo>
+	<h1>SWIMv2</h1>
+	</div>
+<div id=text>
 	<h1>Welcome back!!</h1>
 	<br /> Profile of
 	<%=user.getName()+" "+user.getSurname() %>
@@ -99,6 +103,18 @@
 	<form method="post" action="ServletLogout">
 		<input type="submit" value="Log Out" />
 	</form>
+		</div>
+
+<div id="sidebar">
+	<form method="post" action="ServletSearch">
+		Search: <input name="search" /> <input type="submit"
+			value="Search User" />
+	</form>
+</div>
+
+<div id="footer">
+Copyright &copy; 2013 Site for didactic purpose.
+</div>
 	
 </body>
 </html>

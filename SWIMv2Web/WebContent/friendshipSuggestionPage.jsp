@@ -11,6 +11,10 @@
 <title>Friendship Suggestion</title>
 </head>
 <body>
+	<div id =logo>
+	<h1>SWIMv2</h1>
+	</div>
+<div id =text>
 <% List<User> listOfPossibleFriends = (List<User>) request.getAttribute("listOfPossibleFriends"); %>
 	You accepted the request!<br />
 	<br />
@@ -32,5 +36,18 @@
 	<form method="post" action="ServletProfilePage">
 		<input type="submit" value="Go back to your profile" />
 	</form>
+	</div>
+	
+	<div id="sidebar">
+	<form method="post" action="ServletSearch">
+		Search: <input name="search" /> <input type="submit"
+			value="Search User" />
+	</form>
+	</div>
+	
+	
+<div id="footer">
+	Copyright &copy; 2013 Site for didactic purpose.
+</div>
 </body>
 </html>

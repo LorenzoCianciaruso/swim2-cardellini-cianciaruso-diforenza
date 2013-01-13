@@ -9,9 +9,13 @@
 <head>
 <link rel="stylesheet" type="text/css" href="global.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Manage your job requests</title>
+<title>Job Requests</title>
 </head>
 <body>
+	<div id =logo>
+	<h1>SWIMv2</h1>
+	</div>
+<div id=text>
 	<br />
 	<%
 		List<JobRequest> requestsToMe = (List<JobRequest>) request.getAttribute("requestsToMe");
@@ -82,6 +86,17 @@
 	<form method="post" action="ServletProfilePage">
 		<input type="submit" value="Go Back"></input>
 	</form>
-	
+		</div>
+
+<div id="sidebar">
+	<form method="post" action="ServletSearch">
+		Search: <input name="search" /> <input type="submit"
+			value="Search User" />
+	</form>
+</div>
+
+<div id="footer">
+Copyright &copy; 2013 Site for didactic purpose.
+</div>
 </body>
 </html>

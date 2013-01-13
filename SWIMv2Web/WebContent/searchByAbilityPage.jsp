@@ -11,6 +11,10 @@
 <title>Results</title>
 </head>
 <body>
+	<div id =logo>
+	<h1>SWIMv2</h1>
+	</div>
+<div id=text>
 		<%
 		List<Ability> list = (List<Ability>) request.getAttribute("abilities");
 		if(list.size()==0){
@@ -37,5 +41,17 @@
 	<form method="post" action="ServletProfilePage">
 		<input type="submit" value="Go to your Profile" />
 	</form>
+	</div>
+
+<div id="sidebar">
+	<form method="post" action="ServletSearch">
+		Search: <input name="search" /> <input type="submit"
+			value="Search User" />
+	</form>
+</div>
+
+<div id="footer">
+Copyright &copy; 2013 Site for didactic purpose.
+</div>
 </body>
 </html>

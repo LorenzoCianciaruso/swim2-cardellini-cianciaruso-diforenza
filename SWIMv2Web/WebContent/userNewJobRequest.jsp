@@ -11,9 +11,13 @@
 <head>
 <link rel="stylesheet" type="text/css" href="global.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Send request for a job</title>
+<title>Create a job</title>
 </head>
 <body>
+	<div id =logo>
+	<h1>SWIMv2</h1>
+	</div>
+<div id=text>
 	<%
 		int idPerformer = (Integer) request.getAttribute("userPerformerId");
 		List<String> names = (List<String>) request.getAttribute("names");
@@ -60,5 +64,17 @@
 			value="<%=request.getParameter("userPerformerId")%>"></input>
 			<input type="submit" value="Submit">
 		</form>
+			</div>
+
+<div id="sidebar">
+	<form method="post" action="ServletSearch">
+		Search: <input name="search" /> <input type="submit"
+			value="Search User" />
+	</form>
+</div>
+
+<div id="footer">
+Copyright &copy; 2013 Site for didactic purpose.
+</div>
 </body>
 </html>
