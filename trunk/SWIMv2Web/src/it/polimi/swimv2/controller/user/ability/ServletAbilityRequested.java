@@ -19,25 +19,28 @@ public class ServletAbilityRequested extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		//get parameter
 		String newAbilityString = request.getParameter("abilityAdded");		
 		IAbilityRequest newAbilityBean = (IAbilityRequest) JNDILookupClass.doLookup("AbilityRequestBean");
 		
 		List<AbilityRequest> list = newAbilityBean.allAbilityRequests();
 		
+		//search for the same ability in AbilityRequest
 		for(int i=0; i<list.size(); i++){
+			//if it is already requested, no more
 			if(list.get(i).getName() == newAbilityString){
 				response.sendRedirect(response.encodeRedirectURL("messageDone.jsp"));
 			}
 		}
 		
-		AbilityRequest newAbility = new AbilityRequest();
-		newAbility.setName(newAbilityString);
-		newAbility.setUser((int)request.getSession().getAttribute("id"));
+		AbilityRequest abilityReq = new AbilityRequest();
+		abilityReq.setName(newAbilityString);
+		abilityReq.setUser((int)request.getSession().getAttribute("id"));
 		
-		newAbilityBean.save(newAbility);
+		newAbilityBean.save(abilityReq);
 		
 		ServletContext sc = getServletContext(); 
+		request.setAttribute("next", "ServletSkillPage");
 		RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp"); 
 		rd.forward(request,response);
 		
