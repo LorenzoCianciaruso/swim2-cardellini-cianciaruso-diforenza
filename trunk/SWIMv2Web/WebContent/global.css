@@ -3,6 +3,7 @@
 body { font-size: medium;
 	font-family: "Calibri", Times, serif;
 }
+
 ul li {
 	list-style: square;
 }
@@ -10,11 +11,11 @@ ul li {
 #text { 
 	font-size: medium;
 	font-family: "Calibri", Times, serif;
-	width: 73%;
+	width: 70%;
 	float: left;
-	border-right-color: Green;
-	border-right-style: solid;
-	border-right-width: 5px;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 #logo{
@@ -22,7 +23,7 @@ ul li {
 	font-size: x-large;	
  	text-align:center;
  	color: Green;
-	clear: both;
+ 	clear: both;
 	border-bottom-color: Green;
 	border-bottom-style: solid;
 	border-bottom-width: 5px;
@@ -30,11 +31,10 @@ ul li {
 
 #footer{
 	font-family: "Calibri";
-	text-align:center;
-  	clear: both;
-  	border-top-color: Green;
-	border-top-style: solid;
-	border-top-width: 5px; 	
+	text-align:right;
+  	clear: right;
+  	padding-top: 15px; 
+  	color: #B0B0B0
 }
 
 #sidebar{
@@ -43,8 +43,17 @@ ul li {
 	clear: right;
 	float: right;
 	width: 25%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
 	overflow:hidden;	
 	text-align:left;
 	height: auto !important;
+	border-left-color: Green;
+	border-left-style: solid;
+	border-left-width: 5px;
+	border-bottom-color: Green;
+	border-bottom-style: solid;
+	border-bottom-width: 5px;
 	 	
 	}
