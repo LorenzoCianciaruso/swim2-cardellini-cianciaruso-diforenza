@@ -49,21 +49,7 @@
 	%>
 
 	<br />
-	<br />
-	<form method="post" action="ServletSearch">
-		<input name="search" placeholder="type name here.."/> <input type="submit"
-			value="Search User" />
-	</form>
-	<br />
-	<form method="post" action="ServletSearchByPlace">
-		<input name="search" placeholder="type place here.."/> <input type="submit"
-			value="Search User" />
-	</form>
-	<br />
-	<form method="post" action="ServletSearchByAbility">
-		<input name="search" placeholder="type ability here.."/> <input type="submit"
-			value="Search User" />
-	</form>
+	
 	<br />
 	Manage your information:
 	
@@ -106,8 +92,20 @@
 		</div>
 
 <div id="sidebar">
+	Search for an user:
+	<br />
 	<form method="post" action="ServletSearch">
-		Search: <input name="search" /> <input type="submit"
+		<input name="search" placeholder="type name here.."/> <input type="submit"
+			value="Search User" />
+	</form>
+	<br />
+	<form method="post" action="ServletSearchByPlace">
+		<input name="search" placeholder="type place here.."/> <input type="submit"
+			value="Search User" />
+	</form>
+	<br />
+	<form method="post" action="ServletSearchByAbility">
+		<input name="search" placeholder="type ability here.."/> <input type="submit"
 			value="Search User" />
 	</form>
 </div>

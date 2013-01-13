@@ -4,6 +4,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="it.polimi.swimv2.entities.JobRequest" %>
 <%@ page import="it.polimi.swimv2.entities.User" %>
+<%@ page import="it.polimi.swimv2.entities.Ability" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -20,6 +21,8 @@
 	<%
 		List<JobRequest> requestsToMe = (List<JobRequest>) request.getAttribute("requestsToMe");
 		List<JobRequest> requestsByMe = (List<JobRequest>) request.getAttribute("requestsByMe");
+		List<Ability> abilityRequestsToMe = (List<Ability>) request.getAttribute("abilityRequestsToMe");
+		List<Ability> abilityRequestsByMe = (List<Ability>) request.getAttribute("abilityRequestsByMe");
 		List<User> userIAsked = (List<User>) request.getAttribute("userIAsked");
 		List<User> userAskedToMe = (List<User>) request.getAttribute("userAskedToMe");
 	%>
@@ -31,9 +34,9 @@
 	for (int i = 0; i < requestsToMe.size(); i++) {
 	%>
 	From: <%=userAskedToMe.get(i).getName()+" "+userAskedToMe.get(i).getSurname()%><br />
-	Date: <%=requestsToMe.get(i).getDate() %><br />
-	Ability: <%=requestsToMe.get(i).getAbility() %><br />
-	Place: <%=requestsToMe.get(i).getPlace() %><br />
+	Date: <%=requestsToMe.get(i).getDate()%><br />
+	Ability: <%=abilityRequestsToMe.get(i).getName() %><br />
+	Place: <%=requestsToMe.get(i).getPlace()%><br />
 
 	<form method="post" action="ServletJobAccepted">
 		<input type="hidden" name="idJobRequest" value="<%=requestsToMe.get(i).getId()%>"> </input>
@@ -46,8 +49,8 @@
 	</form>
 	<%
 		}
-		}
-		else{
+			}
+			else{
 	%>
 	You haven't received any new job request.<br />
 	<br />
@@ -65,7 +68,7 @@
 	%>
 	To: <%=userIAsked.get(i).getName()+" "+userIAsked.get(i).getSurname()%><br />
 	Date: <%=requestsByMe.get(i).getDate()%><br />
-	Ability: <%=requestsByMe.get(i).getAbility()%><br />
+	Ability: <%=abilityRequestsByMe.get(i).getName()%><br />
 	Place: <%=requestsByMe.get(i).getPlace()%><br />
 
 	<form method="post" action="ServletJobRefused">
@@ -89,8 +92,20 @@
 		</div>
 
 <div id="sidebar">
+	Search for an user:
+	<br />
 	<form method="post" action="ServletSearch">
-		Search: <input name="search" /> <input type="submit"
+		<input name="search" placeholder="type name here.."/> <input type="submit"
+			value="Search User" />
+	</form>
+	<br />
+	<form method="post" action="ServletSearchByPlace">
+		<input name="search" placeholder="type place here.."/> <input type="submit"
+			value="Search User" />
+	</form>
+	<br />
+	<form method="post" action="ServletSearchByAbility">
+		<input name="search" placeholder="type ability here.."/> <input type="submit"
 			value="Search User" />
 	</form>
 </div>

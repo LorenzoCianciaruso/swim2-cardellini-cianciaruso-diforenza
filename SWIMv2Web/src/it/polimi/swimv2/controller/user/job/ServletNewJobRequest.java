@@ -37,9 +37,9 @@ public class ServletNewJobRequest extends HttpServlet {
 		} else {
 			// create a new job request
 			JobRequest j = new JobRequest();
-			j.setPerformer(idPerformer);			
-			j.setRequestor(idRequestor);
-			j.setAbility(idAbility);
+			j.setIdPerformer(idPerformer);			
+			j.setIdRequestor(idRequestor);
+			j.setIdAbility(idAbility);
 			j.setPlace(place);
 			j.setDate(date);
 			

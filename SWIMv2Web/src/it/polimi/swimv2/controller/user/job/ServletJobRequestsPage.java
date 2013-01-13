@@ -1,8 +1,10 @@
 package it.polimi.swimv2.controller.user.job;
 
+import it.polimi.swimv2.business.IAbility;
 import it.polimi.swimv2.business.IJobRequest;
 import it.polimi.swimv2.business.IUser;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
+import it.polimi.swimv2.entities.Ability;
 import it.polimi.swimv2.entities.JobRequest;
 import it.polimi.swimv2.entities.User;
 
@@ -24,6 +26,7 @@ public class ServletJobRequestsPage extends HttpServlet {
 				
 		IJobRequest jobRequestBean = (IJobRequest) JNDILookupClass.doLookup("JobRequestBean");
 		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
+		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
 		
 		//get the id of the user
 		int id = (int) request.getSession().getAttribute("id");
@@ -34,6 +37,20 @@ public class ServletJobRequestsPage extends HttpServlet {
 		request.setAttribute("requestsToMe", requestsToMe);
 		request.setAttribute("requestsByMe", requestsByMe);
 		
+		List<Ability> abilityRequestsToMe = new ArrayList<Ability>();
+		List<Ability> abilityRequestsByMe = new ArrayList<Ability>();
+		
+		for(int i=0; i < requestsByMe.size();i++){
+			abilityRequestsByMe.add(abilityBean.findById(requestsByMe.get(i).getIdAbility()));
+		}
+		
+		for(int i=0; i < abilityRequestsToMe.size();i++){
+			abilityRequestsToMe.add(abilityBean.findById(requestsToMe.get(i).getIdAbility()));
+		}
+		
+		request.setAttribute("abilityRequestsToMe", abilityRequestsToMe);
+		request.setAttribute("abilityRequestsByMe", abilityRequestsByMe);
+		
 		//create the lists of users names
 		List<User> userIAsked = new ArrayList<User>();
 		List<User> userAskedToMe =  new ArrayList<User>();
@@ -41,14 +58,14 @@ public class ServletJobRequestsPage extends HttpServlet {
 		
 		for (int i = 0; i < requestsToMe.size(); i++) {
 			// build the list that contains abilities name
-			requestorId = requestsToMe.get(i).getRequestor();
+			requestorId = requestsToMe.get(i).getIdRequestor();
 			userAskedToMe.add(userBean.findUserById(requestorId));
 		}
 		
 		int performerId;
 		for (int i = 0; i < requestsByMe.size(); i++) {
 			// build the list that contains abilities name
-			performerId = requestsByMe.get(i).getPerformer();
+			performerId = requestsByMe.get(i).getIdPerformer();
 			userIAsked.add(userBean.findUserById(performerId));
 		}
 		
