@@ -26,12 +26,7 @@
 	<input type="submit" value="Ability List"></input> 
 	</form>
 	
-	<br />
-	<form method="post" action="ServletLogout">
-		<input type="submit" value="Log Out" />
-	</form>
 	
-	<br />
 
 	<div id="sidebar">
 	Search for an user:
@@ -50,6 +45,12 @@
 		<input name="search" placeholder="type ability here.."/> <input type="submit"
 			value="Search User" />
 	</form>
+	<br />
+	<form method="post" action="ServletLogout">
+		<input type="submit" value="Log Out" />
+	</form>
+	
+	<br />
 </div>
 	
 	

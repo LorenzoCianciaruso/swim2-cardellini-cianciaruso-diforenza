@@ -44,7 +44,10 @@
 	 <%=negFeedbacks.get(i)%>v
 	
 	<% } %>
-	
+		
+	</div>
+
+<div id="sidebar">
 	<br />
 	
 	Search for an user:
@@ -63,21 +66,11 @@
 		<input name="search" placeholder="type ability here.."/> <input type="submit"
 			value="Search User" />
 	</form>
-	
-	
 	<form method="post" action="index.jsp">
 		<input type="submit" value="Go Home"></input>
 	</form>
 	
 	<br />
-	
-	</div>
-
-<div id="sidebar">
-	<form method="post" action="ServletSearch">
-		Search: <input name="search" /> <input type="submit"
-			value="Search User" />
-	</form>
 </div>
 
 <div id="footer">
