@@ -90,9 +90,6 @@
 	
 	<br />
 	
-	<form method="post" action="ServletLogout">
-		<input type="submit" value="Log Out" />
-	</form>
 		</div>
 
 <div id="sidebar">
@@ -105,12 +102,12 @@
 	<br />
 	<form method="post" action="ServletSearchByPlace">
 		<input name="search" placeholder="type place here.."/> <input type="submit"
-			value="Search User" />
+			value="Search Place" />
 	</form>
 	<br />
 	<form method="post" action="ServletSearchByAbility">
 		<input name="search" placeholder="type ability here.."/> <input type="submit"
-			value="Search User" />
+			value="Search Ability" />
 	</form>
 	<br />
 	<form method="post" action="ServletLogout">

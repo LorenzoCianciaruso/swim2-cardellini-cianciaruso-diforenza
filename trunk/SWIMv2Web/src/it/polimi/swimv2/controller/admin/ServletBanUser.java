@@ -52,14 +52,14 @@ public class ServletBanUser extends HttpServlet {
 		}
 		
 		for(int i=0; i < frReqRequestorList.size();  i++){
-			frReqRequestorList.remove(frReqRequestorList.get(i).getId());
+			friendshipRequestBean.remove(frReqRequestorList.get(i).getId());
 		}
 		
 		// removes abilityRequests
 		List<AbilityRequest> abilityReqList = abilityRequestBean.findByUserId(idUser);
 		
 		for(int i=0; i < abilityReqList.size(); i++){
-			abilityReqList.remove(abilityReqList.get(i).getId());
+			abilityRequestBean.remove(abilityReqList.get(i).getId());
 		}
 		
 		//removes jobRequests
@@ -67,11 +67,11 @@ public class ServletBanUser extends HttpServlet {
 		List<JobRequest> jobRequestRequestorList = jobRequestBean.findJobRequestByRequestor(idUser);
 		
 		for(int i = 0; i < jobRequestPerformerList.size() ; i++){
-			jobRequestPerformerList.remove(jobRequestPerformerList.get(i).getId());
+			jobRequestBean.remove(jobRequestPerformerList.get(i).getId());
 		}
 		
 		for(int i = 0; i < jobRequestRequestorList.size() ; i++){
-			jobRequestRequestorList.remove(jobRequestRequestorList.get(i).getId());
+			jobRequestBean.remove(jobRequestRequestorList.get(i).getId());
 		}
 		
 		
@@ -79,7 +79,7 @@ public class ServletBanUser extends HttpServlet {
 		List<AbilityDeclared> abDeclList = abilityDeclaredBean.findByUserId(idUser);
 		
 		for(int i = 0; i < abDeclList.size(); i++){
-			abDeclList.remove(abDeclList.get(i).getId());
+			abilityDeclaredBean.remove(abDeclList.get(i).getId());
 		}
 		
 		//removes user
