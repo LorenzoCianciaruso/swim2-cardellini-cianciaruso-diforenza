@@ -68,6 +68,18 @@ public class JobRequestBean implements IJobRequest {
 		}
 		
 		@Override
+		public List<JobRequest> findJobRequestByAbility(int id){
+			String q = "SELECT j FROM JobRequest j WHERE idAbility = '"+id+"'";
+			Query query = entityManager.createQuery(q);
+			try{
+				List<JobRequest> list = (List<JobRequest>) query.getResultList();
+				return list;
+			}catch (NoResultException e){
+				return null;
+			}
+		}
+		
+		@Override
 		public void remove(int id){		
 			String q = "SELECT j FROM JobRequest j WHERE id = '"+id+"'";
 			Query query = entityManager.createQuery(q);

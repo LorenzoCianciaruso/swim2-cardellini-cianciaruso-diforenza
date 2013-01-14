@@ -20,4 +20,6 @@ public interface IJobRequest {
     List<JobRequest> findJobRequestByRequestor(int idRequestor);
     
     void remove(int id);
+    
+    List<JobRequest> findJobRequestByAbility(int idAbility);
 }
