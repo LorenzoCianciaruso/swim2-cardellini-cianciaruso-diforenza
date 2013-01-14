@@ -29,8 +29,8 @@ public class ServletProfilePage extends HttpServlet {
 
 		// retrieve the session id
 		int id = (Integer) request.getSession().getAttribute("id");
-		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass
-				.doLookup("AbilityDeclaredBean");
+		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilityDeclaredBean");
+		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
 
 		if (id == 0) {
 			forward(request, response, "/adminProfile.jsp");
@@ -42,8 +42,7 @@ public class ServletProfilePage extends HttpServlet {
 			if (user == null) {
 				// redirect to the fail page
 				request.setAttribute("message", "Error you have to login");
-				response.sendRedirect(response
-						.encodeRedirectURL("messageFail.jsp"));
+				response.sendRedirect(response.encodeRedirectURL("messageFail.jsp"));
 			} else {
 				// i build the request form with user parameter
 				request.setAttribute("user", user);
@@ -51,23 +50,27 @@ public class ServletProfilePage extends HttpServlet {
 				// build the list of user's abilities
 				List<AbilityDeclared> abilities = abilityDeclaredBean
 						.findByUserId(user.getId());
-
-				List<String> names = new ArrayList<String>();
-				List<Integer> feedbacks = new ArrayList<Integer>();
+				
 				int idAbility;
-				IAbility abilityBean = (IAbility) JNDILookupClass
-						.doLookup("AbilityBean");
+				
+				
+				List<String> names = new ArrayList<String>();
+				List<Integer> posFeedbacks = new ArrayList<Integer>();
+				List<Integer> negFeedbacks = new ArrayList<Integer>();
+				
 				for (int i = 0; i < abilities.size(); i++) {
 					// build the list that contains abilities name
 					idAbility = abilities.get(i).getAbility();
 					names.add(abilityBean.findById(idAbility).getName());
-
 					// build the list that contains abilities feedback
-					feedbacks.add(abilities.get(i).getPositiveFeedback());
+					posFeedbacks.add(abilities.get(i).getPositiveFeedback());
+					negFeedbacks.add(abilities.get(i).getNegativeFeedback());
 				}
-				request.setAttribute("names", names);
-				request.setAttribute("feedbacks", feedbacks);
 
+				request.setAttribute("names", names);
+				request.setAttribute("posFeedbacks", posFeedbacks);
+				request.setAttribute("negFeedbacks", negFeedbacks);
+				
 				// forward to the profile page
 				forward(request, response, "/userProfile.jsp");
 

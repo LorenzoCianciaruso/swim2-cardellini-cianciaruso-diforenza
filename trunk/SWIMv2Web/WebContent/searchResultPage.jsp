@@ -58,14 +58,7 @@
 		<input name="search" placeholder="type ability here.."/> <input type="submit"
 			value="Search User" />
 	</form>
-	<br />
-	<form method="post" action="ServletProfilePage">
-		<input type="submit" value="Go to your Profile" />
-	</form>
-	<br />
-	<form method="post" action="ServletLogout">
-		<input type="submit" value="Log Out" />
-	</form>
+	
 </div>
 
 <div id="footer">
