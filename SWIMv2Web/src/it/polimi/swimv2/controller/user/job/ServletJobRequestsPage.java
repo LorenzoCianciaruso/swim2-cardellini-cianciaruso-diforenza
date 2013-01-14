@@ -44,7 +44,7 @@ public class ServletJobRequestsPage extends HttpServlet {
 			abilityRequestsByMe.add(abilityBean.findById(requestsByMe.get(i).getIdAbility()));
 		}
 		
-		for(int i=0; i < abilityRequestsToMe.size();i++){
+		for(int i=0; i < requestsToMe.size();i++){
 			abilityRequestsToMe.add(abilityBean.findById(requestsToMe.get(i).getIdAbility()));
 		}
 		
