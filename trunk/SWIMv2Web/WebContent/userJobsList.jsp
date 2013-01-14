@@ -8,6 +8,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<link rel="stylesheet" type="text/css" href="global.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <% 
 List<Job> listPerformedJob = (List<Job>) request.getAttribute("listPerformedJob");
@@ -34,12 +35,12 @@ Date: <%=listPerformedJob.get(i).getDate() %><br />
 Place: <%=listPerformedJob.get(i).getPlace() %><br />
 <%
 	for(int j=0; j< listOfAbility.size(); j++){
-	if(listOfAbility.get(j).getId() == listPerformedJob.get(i).getAbility()){
+	if(listOfAbility.get(j).getId() == listPerformedJob.get(i).getIdAbility()){
 %>
 Ability: <%=listOfAbility.get(j).getName()%>	
 		<%
 				}
-			}
+				}
 			%><br />
 FeedBack released: <%=listPerformedJob.get(i).getFeedback()%><br />
 <%
@@ -69,12 +70,12 @@ You haven't performed any jobs!<br />
 	if(listAskedJob.size() > 0){
 for(int i=0; i < listAskedJob.size(); i++){
 %>
-Performer: <%=listUserRequester.get(i).getName()+" "+listUserRequester.get(i).getSurname()%><br />
+Performer:	<%=listUserRequester.get(i).getName()+" "+listUserRequester.get(i).getSurname()%><br />
 Date: <%=listAskedJob.get(i).getDate()%><br />
 Place: <%=listAskedJob.get(i).getPlace()%><br />
 <%
 	for(int j=0; j< listOfAbility.size(); j++){
-	if(listOfAbility.get(j).getId() == listAskedJob.get(i).getAbility()){
+	if(listOfAbility.get(j).getId() == listAskedJob.get(i).getIdAbility()){
 %>
 Ability: <%=listOfAbility.get(j).getName() %>	
 		<%
