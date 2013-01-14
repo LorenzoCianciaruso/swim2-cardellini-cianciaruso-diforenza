@@ -41,7 +41,7 @@
 	Feedback:   +
 	<%=posFeedbacks.get(i)%>
 	    -
-	 <%=negFeedbacks.get(i)%>v
+	 <%=negFeedbacks.get(i)%>
 	
 	<% } %>
 		

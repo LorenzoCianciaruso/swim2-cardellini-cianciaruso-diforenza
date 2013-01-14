@@ -83,23 +83,27 @@ public class ServletLogin extends HttpServlet {
 			List<AbilityDeclared> abilities = abilityDeclaredBean
 					.findByUserId(id);
 
-			List<String> names = new ArrayList<String>();
-			List<Integer> feedbacks = new ArrayList<Integer>();
+			
 			int idAbility;
-			IAbility abilityBean = (IAbility) JNDILookupClass
-					.doLookup("AbilityBean");
+			IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
 
+			
+			List<String> names = new ArrayList<String>();
+			List<Integer> posFeedbacks = new ArrayList<Integer>();
+			List<Integer> negFeedbacks = new ArrayList<Integer>();
+			
 			for (int i = 0; i < abilities.size(); i++) {
 				// build the list that contains abilities name
 				idAbility = abilities.get(i).getAbility();
 				names.add(abilityBean.findById(idAbility).getName());
-
 				// build the list that contains abilities feedback
-				feedbacks.add(abilities.get(i).getPositiveFeedback());
+				posFeedbacks.add(abilities.get(i).getPositiveFeedback());
+				negFeedbacks.add(abilities.get(i).getNegativeFeedback());
 			}
 
 			request.setAttribute("names", names);
-			request.setAttribute("feedbacks", feedbacks);
+			request.setAttribute("posFeedbacks", posFeedbacks);
+			request.setAttribute("negFeedbacks", negFeedbacks);
 			
 			// forward to the profile page
 			request.setAttribute("user", u2);
