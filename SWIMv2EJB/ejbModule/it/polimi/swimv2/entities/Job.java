@@ -38,22 +38,22 @@ public class Job implements Serializable{
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	public int getPerformer() {
+	public int getIdPerformer() {
 		return idPerformer;
 	}
-	public void setPerformer(int idPerformer) {
+	public void setIdPerformer(int idPerformer) {
 		this.idPerformer = idPerformer;
 	}
-	public int getRequestor() {
+	public int getIdRequestor() {
 		return idRequestor;
 	}
-	public void setRequestor(int idRequestor) {
+	public void setIdRequestor(int idRequestor) {
 		this.idRequestor = idRequestor;
 	}
-	public int getAbility() {
+	public int getIdAbility() {
 		return idAbility;
 	}
-	public void setAbility(int idAbility) {
+	public void setIdAbility(int idAbility) {
 		this.idAbility = idAbility;
 	}
 	public String getPlace() {
