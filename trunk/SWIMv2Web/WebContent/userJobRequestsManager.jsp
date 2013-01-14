@@ -86,9 +86,7 @@
 	%>
 	
 
-	<form method="post" action="ServletProfilePage">
-		<input type="submit" value="Go Back"></input>
-	</form>
+	
 		</div>
 
 <div id="sidebar">
@@ -107,6 +105,14 @@
 	<form method="post" action="ServletSearchByAbility">
 		<input name="search" placeholder="type ability here.."/> <input type="submit"
 			value="Search User" />
+	</form>
+	<br />
+	<form method="post" action="ServletProfilePage">
+		<input type="submit" value="Go To Your Profile"></input>
+	</form>
+	<br />
+	<form method="post" action="ServletLogout">
+		<input type="submit" value="Log Out" />
 	</form>
 </div>
 

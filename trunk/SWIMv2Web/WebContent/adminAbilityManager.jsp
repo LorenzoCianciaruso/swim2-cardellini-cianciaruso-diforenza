@@ -50,10 +50,7 @@
 	<br />
 	
 	
-	<form method="post" action="adminProfile.jsp">
-		<input type="submit" value="Go Back"></input> 
-	</form>
-	</div>
+	
 	
 <div id="sidebar">
 	Search for an user:
@@ -72,6 +69,10 @@
 		<input name="search" placeholder="type ability here.."/> <input type="submit"
 			value="Search User" />
 	</form>
+	<form method="post" action="adminProfile.jsp">
+		<input type="submit" value="Go Back"></input> 
+	</form>
+	</div>
 </div>
 	
 <div id="footer">
