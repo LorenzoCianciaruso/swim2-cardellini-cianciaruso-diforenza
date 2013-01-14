@@ -30,14 +30,21 @@ List<Ability> listOfAbility = (List<Ability>) request.getAttribute("listOfAbilit
 if(listPerformedJob.size() > 0){
 for(int i=0; i < listPerformedJob.size(); i++){
 %>
-Requester: <%=listUserPerformed.get(i).getName()+" "+listUserPerformed.get(i).getSurname() %><br />
+Requester: <%try{ %> <%=listUserPerformed.get(i).getName()+" "+listUserPerformed.get(i).getSurname() %>
+			<%}catch(NullPointerException e){ %>
+			<%= "User Banned" %>
+			<%} %><br />
 Date: <%=listPerformedJob.get(i).getDate() %><br />
 Place: <%=listPerformedJob.get(i).getPlace() %><br />
 <%
 	for(int j=0; j< listOfAbility.size(); j++){
 	if(listOfAbility.get(j).getId() == listPerformedJob.get(i).getIdAbility()){
 %>
-Ability: <%=listOfAbility.get(j).getName()%>	
+Ability: <%try{ %><%=listOfAbility.get(j).getName()%>	
+		<%}catch(NullPointerException e){ %>
+		<%= "Ability Deleted" %>
+		<%} %>
+		
 		<%
 				}
 				}
