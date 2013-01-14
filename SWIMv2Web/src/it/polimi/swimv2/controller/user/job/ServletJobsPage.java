@@ -40,11 +40,19 @@ public class ServletJobsPage extends HttpServlet {
 		List<User> listUserRequester = new ArrayList<User>();
 		
 		for(int i=0; i<listPerformedJob.size(); i++){
-			listUserPerformed.add(userBean.findUserById(listPerformedJob.get(i).getRequestor()));
+			listUserPerformed.add(userBean.findUserById(listPerformedJob.get(i).getIdRequestor()));
+			if(listUserPerformed.get(i)==null){
+					listUserPerformed.get(i).setName("User");
+					listUserPerformed.get(i).setSurname("Banned");
+			}
 		}
 		
 		for(int i=0; i<listAskedJob.size(); i++){
-			listUserRequester.add(userBean.findUserById(listAskedJob.get(i).getPerformer()));
+			listUserRequester.add(userBean.findUserById(listAskedJob.get(i).getIdPerformer()));
+			if(listUserRequester.get(i)==null){
+				listUserRequester.get(i).setName("User");
+				listUserRequester.get(i).setSurname("Banned");
+			}
 		}
 		
 		request.setAttribute("listUserPerformed", listUserPerformed);

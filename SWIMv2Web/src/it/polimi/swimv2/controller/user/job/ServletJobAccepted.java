@@ -31,9 +31,9 @@ public class ServletJobAccepted extends HttpServlet {
 		//create new job
 		Job job = new Job();
 		
-		job.setPerformer(req.getIdPerformer());
-		job.setRequestor(req.getIdRequestor());
-		job.setAbility(req.getIdAbility());
+		job.setIdPerformer(req.getIdPerformer());
+		job.setIdRequestor(req.getIdRequestor());
+		job.setIdAbility(req.getIdAbility());
 		job.setDate(req.getDate());
 		job.setPlace(req.getPlace());
 				
