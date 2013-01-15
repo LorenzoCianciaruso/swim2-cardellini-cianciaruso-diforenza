@@ -26,8 +26,8 @@
 		List<User> userIAsked = (List<User>) request.getAttribute("userIAsked");
 		List<User> userAskedToMe = (List<User>) request.getAttribute("userAskedToMe");
 	%>
-	<%if(requestsToMe.size()>0) {%>
-	Job requests you have received.<br />
+	JOB REQUEST YOU HAVE RECEIVED.<br />
+	<%if(requestsToMe.size()>0) {%>	
 	You can accept or refuse it<br />
 	<br />
 	<%
@@ -57,10 +57,10 @@
 	<%
 		}
 	%>
+	JOB REQUEST YOU HAVE SENT.<br />
 	<%
 		if(requestsByMe.size()>0) {
 	%>
-	Job requests you have sent.<br />
 	You can cancel them permanently from the system.<br />
 	<br />
 	<%
