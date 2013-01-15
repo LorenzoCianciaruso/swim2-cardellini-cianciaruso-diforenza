@@ -42,10 +42,10 @@ public class ServletLogin extends HttpServlet {
 		User user = userBean.findUserByLogin(email);
 
 		// if login fail we control if it is an admin
-		if (user == null||user.getPassword()!=password) {
+		if (user == null||!(user.getPassword().equals(password))) {
 			// checking the admin table
 			Admin admin = adminBean.findAdminByLogin(email);
-			if (admin == null||admin.getPassword()!=password) {
+			if (admin == null||!(admin.getPassword().equals(password))) {
 				String message = "Login Fail. You have probably insert uncorrect email or password";
 				request.setAttribute("message", message);
 				forward(request, response, "/messageFail.jsp");
