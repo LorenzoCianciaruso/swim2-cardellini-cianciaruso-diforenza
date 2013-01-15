@@ -18,6 +18,8 @@ public interface IAbilityDeclared {
 	void remove(int id);
 
 	void remove(int idAbility, int idUser);
+
+	void setFeedbackById(int idAbility, int idUser, int feedback);
 	
 	
 
