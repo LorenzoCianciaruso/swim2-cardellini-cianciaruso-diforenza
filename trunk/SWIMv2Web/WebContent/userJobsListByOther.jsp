@@ -24,7 +24,7 @@ List<Ability> listOfAbility = (List<Ability>) request.getAttribute("listOfAbilit
 	<h1>SWIMv2</h1>
 	</div>
 <div id=text>
-<b>JOBS PERFORMED:</b><br />
+JOBS PERFORMED:<br />
 <br />
 <%
 if(listPerformedJob.size() > 0){
@@ -71,7 +71,7 @@ No jobs performed!<br />
 	}
 %>
 <br />
-<b>JOBS REQUESTED:</b><br />
+JOBS REQUESTED:<br />
 <br />
 <%
 	if(listAskedJob.size() > 0){
