@@ -55,7 +55,7 @@
 	
 	
 <div id="footer">
-	Copyright &copy; 2013 Site for didactic purpose.
+	Copyright &copy; 2013<br /> Site for didactic purpose.
 </div>
 	
 </body>
