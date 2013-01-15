@@ -20,7 +20,6 @@
 	<h1>SWIMv2</h1>
 	</div>
 <div id=text>
-	<h1>Welcome back!!</h1>
 	<br /> Profile of
 	<%=user.getName()+" "+user.getSurname() %>
 	<br />
