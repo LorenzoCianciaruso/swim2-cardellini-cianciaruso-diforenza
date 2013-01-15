@@ -85,4 +85,17 @@ public class AbilityDeclaredBean implements IAbilityDeclared {
 		}
 	}
 
+	@Override
+	public void setFeedbackById(int idAbility, int idUser, int feedback) {
+		String q;
+		if(feedback == 1){
+			q = "UPDATE AbilityDeclared a SET positiveFeedback = positiveFeedback +1 WHERE idAbility = '"+idAbility+"' AND idUser ='"+idUser+"'";
+		}else{
+			q = "UPDATE AbilityDeclared a SET negativeFeedback = negativeFeedback +1 WHERE idAbility = '"+idAbility+"' AND idUser ='"+idUser+"'";
+		}
+		Query query = entityManager.createQuery(q);
+		query.executeUpdate();
+		
+	}
+
 }
