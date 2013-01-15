@@ -119,13 +119,8 @@ No jobs requested!<br />
 		<input name="search" placeholder="type ability here.."/> <input type="submit"
 			value="Search User" />
 	</form>
-	<br />
-	<form method="post" action="ServletProfilePage" >
-		<input type="submit" value="Go To Your Profile" />
-	</form>
-	<br />
-	<form method="post" action="ServletLogout">
-		<input type="submit" value="Log Out" />
+	<form method="post" action="ServletLogin">
+		<input type="submit" value="Log In" />
 	</form>
 </div>
 
