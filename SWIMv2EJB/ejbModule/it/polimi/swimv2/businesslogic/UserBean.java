@@ -30,9 +30,9 @@ public class UserBean implements IUser {
 
 	//select user by email and password (login info)
     @Override
-	public User findUserByLogin(User user) {
+	public User findUserByLogin(String email) {
 
-		String q = "SELECT u FROM User u WHERE email = '"+user.getEmail()+"' and password = '"+user.getPassword()+"'";
+		String q = "SELECT u FROM User u WHERE email = '"+email+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			User u = (User) query.getSingleResult();
