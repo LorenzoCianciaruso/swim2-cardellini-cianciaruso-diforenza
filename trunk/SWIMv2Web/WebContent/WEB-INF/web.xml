@@ -354,4 +354,14 @@
     <servlet-name>ServletSearchByGivenAbility</servlet-name>
     <url-pattern>/ServletSearchByGivenAbility</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletJobPageByOther</display-name>
+    <servlet-name>ServletJobPageByOther</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.user.ServletJobPageByOther</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletJobPageByOther</servlet-name>
+    <url-pattern>/ServletJobPageByOther</url-pattern>
+  </servlet-mapping>
 </web-app>

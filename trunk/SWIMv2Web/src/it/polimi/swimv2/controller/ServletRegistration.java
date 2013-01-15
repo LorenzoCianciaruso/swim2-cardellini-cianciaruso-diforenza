@@ -24,7 +24,7 @@ public class ServletRegistration extends HttpServlet {
 
 		// create a new Session Bean
 		IUser bean = (IUser) JNDILookupClass.doLookup("UserBean");
-
+		
 		// get info from page
 		String email = request.getParameter("registrationEmail");
 		String password = request.getParameter("registrationPassword");
@@ -33,9 +33,13 @@ public class ServletRegistration extends HttpServlet {
 		String phone = request.getParameter("phone");
 		String birthday = request.getParameter("birthday");
 		String city = request.getParameter("city");
+		
+		//check if exist an user with the same email
+		User user = bean.findUserByLogin(email);
 
-		// if user doesn't fill an input or the passwords don't match forward to
+		// if the mail already exist forward to 
 		// the fail page
+		// check again also the values checked by the script just to be sure
 		if (email==null || email ==""||
 			password==null || password ==""||
 			name==null || name ==""||
@@ -43,8 +47,9 @@ public class ServletRegistration extends HttpServlet {
 			phone==null || phone ==""||
 			birthday==null || birthday ==""||	
 			city==null || city ==""||	
-			!checkDate(birthday)) {			
-			request.setAttribute("message", "You have insert wrong values");
+			!checkDate(birthday)||user!=null) {			
+			
+			request.setAttribute("message", "The mail already exist or you haven't fill all fields in the form");
 			ServletContext sc = getServletContext();
 			RequestDispatcher rd = sc.getRequestDispatcher("/messageFail.jsp");
 			rd.forward(request, response);
@@ -67,7 +72,7 @@ public class ServletRegistration extends HttpServlet {
 			bean.save(u);
 
 			// redirect to the registrationOkPage
-			int id = bean.findUserByLogin(u).getId();
+			int id = bean.findUserByLogin(email).getId();
 			HttpSession session = request.getSession(true);
 			session.setAttribute("id", id);
 
