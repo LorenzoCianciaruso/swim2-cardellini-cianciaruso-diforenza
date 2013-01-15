@@ -50,6 +50,13 @@
 		<input type="hidden" name="idUser" value="<%=user.getId() %>"></input >
 		<input type="submit" value="Ban User"/></input>
 		</form>
+			<br />		
+	<form method="post" action="ServletJobPageByOther">
+		<input type="hidden" name="toShow" value=<%=user.getId()%> />
+		<input type="submit" value="See <%=user.getName()%>'s jobs" />
+	</form>	
+	<br />
+	</div>
 
 <div id="sidebar">
 	Search for an user:

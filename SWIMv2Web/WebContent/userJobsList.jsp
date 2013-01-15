@@ -104,7 +104,7 @@ if( listAskedJob.get(i).getComment() == null ){
 }
 }else{
 %>
-You haven't performed any jobs!<br />
+You haven't asked help for any jobs!<br />
 <%
 }
 %>

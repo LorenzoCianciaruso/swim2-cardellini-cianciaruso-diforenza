@@ -37,37 +37,26 @@ public class ServletLogin extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 
-		// make a new user with those email and password
-		User u = new User();
-		u.setEmail(email);
-		u.setPassword(password);
-
-		// make a new admin
-		Admin a = new Admin();
-		a.setEmail(email);
-		a.setPassword(password);
-
 		// I use the Session Bean to check if the made user exist in the
 		// database
-		User u2 = userBean.findUserByLogin(u);
+		User user = userBean.findUserByLogin(email);
 
 		// if login fail we control if it is an admin
-		if (u2 == null) {
+		if (user == null||user.getPassword()!=password) {
 			// checking the admin table
-			Admin a2 = adminBean.findAdminByLogin(a);
-			if (a2 == null) {
+			Admin admin = adminBean.findAdminByLogin(email);
+			if (admin == null||admin.getPassword()!=password) {
 				String message = "Login Fail. You have probably insert uncorrect email or password";
 				request.setAttribute("message", message);
 				forward(request, response, "/messageFail.jsp");
-				//response.sendRedirect(response
-						//.encodeRedirectURL("loginFail.jsp"));
+				
 			} else {
 				// admin login successful
 				HttpSession adminSession = request.getSession(true);
-				int idAdmin = a.getId();
+				int idAdmin = admin.getId();
 				adminSession.setAttribute("id", idAdmin);
 
-				request.setAttribute("admin", a2);
+				request.setAttribute("admin", admin);
 				forward(request, response, "/adminProfile.jsp");
 			}
 		}
@@ -76,7 +65,7 @@ public class ServletLogin extends HttpServlet {
 		else {
 			// creating a new Session with the user id
 			HttpSession session = request.getSession(true);
-			int id = u2.getId();
+			int id = user.getId();
 			session.setAttribute("id", id);
 			
 			// build the list of user's abilities
@@ -106,10 +95,9 @@ public class ServletLogin extends HttpServlet {
 			request.setAttribute("negFeedbacks", negFeedbacks);
 			
 			// forward to the profile page
-			request.setAttribute("user", u2);
+			request.setAttribute("user", user);
 			forward(request, response, "/userProfile.jsp");
 		}
-
 	}
 
 	// forward steps
