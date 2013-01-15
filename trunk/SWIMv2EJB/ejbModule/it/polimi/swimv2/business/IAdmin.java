@@ -7,6 +7,6 @@ import javax.ejb.Remote;
 @Remote
 public interface IAdmin {
 
-	Admin findAdminByLogin(Admin a);
+	Admin findAdminByLogin(String email);
 
 }

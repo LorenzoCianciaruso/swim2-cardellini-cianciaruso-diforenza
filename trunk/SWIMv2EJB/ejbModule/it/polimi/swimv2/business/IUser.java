@@ -13,7 +13,7 @@ public interface IUser {
 
 	void save(User user);
     
-    User findUserByLogin(User u);
+    User findUserByLogin(String email);
 
 	List<User> findUserByName(String name);
 	

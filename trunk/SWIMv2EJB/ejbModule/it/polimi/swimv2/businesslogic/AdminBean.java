@@ -21,9 +21,9 @@ public class AdminBean implements IAdmin {
     public AdminBean() {}
 
 	@Override
-	public Admin findAdminByLogin(Admin a) {
+	public Admin findAdminByLogin(String email) {
 		
-		String q = "SELECT a FROM Admin a WHERE email = '"+a.getEmail()+"' and password = '"+a.getPassword()+"'";
+		String q = "SELECT a FROM Admin a WHERE email = '"+email+"'";
 		Query query = entityManager.createQuery(q);
 		try{
 			Admin admin = (Admin) query.getSingleResult();
