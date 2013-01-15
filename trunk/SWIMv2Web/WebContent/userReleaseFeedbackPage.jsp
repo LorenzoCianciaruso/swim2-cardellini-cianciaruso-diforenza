@@ -11,12 +11,12 @@ int jobId = Integer.parseInt(request.getParameter("jobId"));
 %>
 <title>Feedback</title>
 </head>
-<div id=text>
 <body>
 	<div id =logo>
 	<h1>SWIMv2</h1>
 </div>
-<b>HERE YOU CAN RELEASE THE FEEDBACK AND ADD A COMMENT TO THE JOB:</b><br />
+<div id=text>
+HERE YOU CAN RELEASE THE FEEDBACK AND ADD A COMMENT TO THE JOB:<br />
 <br />
 Feedback can be positive or negative:<br />
 
@@ -24,7 +24,7 @@ Feedback can be positive or negative:<br />
 	<input type="radio" name="feedback" value="1" />Positive<br />
 	<input type="radio" name="feedback" value="0" />Negative<br />
 	<br />
-	<textarea name="comment" rows="5" cols="100" placeholder="Write here the comment..." maxlength="1000"></textarea>
+	<textarea name="comment" rows="5" width="100%" placeholder="Write here the comment..." maxlength="1000"></textarea>
 	<br />
 	<input type="hidden" name="jobId" value="<%=jobId %>" />
 	<input type="submit" value="Set Feedback" />
