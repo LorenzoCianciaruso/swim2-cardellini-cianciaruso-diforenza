@@ -1,7 +1,9 @@
 package it.polimi.swimv2.controller.user.job;
 
+import it.polimi.swimv2.business.IAbilityDeclared;
 import it.polimi.swimv2.business.IJob;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
+import it.polimi.swimv2.entities.Job;
 
 import java.io.IOException;
 
@@ -24,9 +26,16 @@ public class ServletJobFeedbackAdder extends HttpServlet {
 		int jobId = Integer.parseInt(request.getParameter("jobId"));
 		
 		IJob jobBean = (IJob) JNDILookupClass.doLookup("JobBean");
+		IAbilityDeclared abDecBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilityDeclaredBean");
 		
 		jobBean.setCommentById(jobId, comment);
 		jobBean.setFeedbackById(jobId, feedback);
+		
+		// Update AbilitiesDeclared table in db
+		Job job = jobBean.findById(jobId);
+		int idAbility = job.getIdAbility();
+		int idUser = job.getIdPerformer();
+		abDecBean.setFeedbackById(idAbility, idUser, feedback);
 		
 		ServletContext sc = getServletContext();
 		request.setAttribute("next", "ServletProfilePage");
