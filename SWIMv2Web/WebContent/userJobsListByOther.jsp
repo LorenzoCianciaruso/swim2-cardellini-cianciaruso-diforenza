@@ -103,6 +103,8 @@ No jobs requested!<br />
 	</div>
 
 <div id="sidebar">
+<br />
+	<br />
 	Search for an user:
 	<br />
 	<form method="post" action="ServletSearch">
@@ -119,6 +121,10 @@ No jobs requested!<br />
 		<input name="search" placeholder="type ability here.."/> <input type="submit"
 			value="Search User" />
 	</form>
+	<br />
+	<br />
+	<br />
+	<br />
 	<form method="post" action="ServletLogin">
 		<input type="submit" value="Log In" />
 	</form>

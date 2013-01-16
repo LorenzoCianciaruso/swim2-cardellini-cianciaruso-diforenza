@@ -59,6 +59,8 @@
 	</div>
 
 <div id="sidebar">
+<br />
+	<br />
 	Search for an user:
 	<br />
 	<form method="post" action="ServletSearch">
@@ -76,6 +78,10 @@
 			value="Search User" />
 	</form>
 	<br />
+	<br />
+	<br />
+	<br />
+	
 	<form method="post" action="adminProfile.jsp">
 		<input type="submit" value="Go Back"></input>
 	</form>

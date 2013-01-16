@@ -41,6 +41,8 @@
 	</div>
 
 <div id="sidebar">
+<br />
+	<br />
 	Search for an user:
 	<br />
 	<form method="post" action="ServletSearch">

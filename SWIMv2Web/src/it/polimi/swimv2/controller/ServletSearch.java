@@ -31,7 +31,7 @@ public class ServletSearch extends HttpServlet {
 		List<User> listOfUsersFound = bean.findUserByName(searchName);
 		
 		//removes from the list the user with the same session id (not an admin and not a guest)
-		if ((Integer) request.getSession().getAttribute("id")!=null && (Integer) request.getSession().getAttribute("id")!=0){
+		if ((Integer) request.getSession().getAttribute("id")!=null ){
 		for(int i=0; i< listOfUsersFound.size();i++){
 			if ((Integer) request.getSession().getAttribute("id") == listOfUsersFound.get(i).getId()){
 				listOfUsersFound.remove(i);

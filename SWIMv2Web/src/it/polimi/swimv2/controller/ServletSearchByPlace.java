@@ -17,32 +17,35 @@ import javax.servlet.http.HttpServletResponse;
 //This class manages the search tab in the profile.jsp
 public class ServletSearchByPlace extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-   
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		//Call a session bean
+
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
+		// Call a session bean
 		IUser bean = (IUser) JNDILookupClass.doLookup("UserBean");
-		
-		//get info from request
+
+		// get info from request
 		String searchName = request.getParameter("search");
-		
-		//call Bean's method to find an user using the name
+
+		// call Bean's method to find an user using the name
 		List<User> listOfUsersFound = bean.findUserByPlace(searchName);
-		
-		//removes from the list the user with the same session id
-		for(int i=0; i < listOfUsersFound.size(); i++){
-			if ((Integer) request.getSession().getAttribute("id") == listOfUsersFound.get(i).getId()){
-				listOfUsersFound.remove(i);
+
+		// removes from the list the user with the same session id
+		if ((Integer) request.getSession().getAttribute("id") != null) {
+			for (int i = 0; i < listOfUsersFound.size(); i++) {
+				if ((Integer) request.getSession().getAttribute("id") == listOfUsersFound
+						.get(i).getId()) {
+					listOfUsersFound.remove(i);
+				}
 			}
 		}
-		
-		//Forward to a page that shows the results
+
+		// Forward to a page that shows the results
 		request.setAttribute("listOfUsers", listOfUsersFound);
-		
-		ServletContext sc = getServletContext(); 
-		RequestDispatcher rd = sc.getRequestDispatcher("/searchResultPage.jsp"); 
-		rd.forward(request,response);
-		
+
+		ServletContext sc = getServletContext();
+		RequestDispatcher rd = sc.getRequestDispatcher("/searchResultPage.jsp");
+		rd.forward(request, response);
+
 	}
 }
