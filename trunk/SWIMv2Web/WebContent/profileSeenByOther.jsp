@@ -82,6 +82,8 @@
 	</div>
 
 <div id="sidebar">
+<br />
+	<br />
 	Search for an user:
 	<br />
 	<form method="post" action="ServletSearch">
@@ -102,6 +104,9 @@
 	<form method="post" action="ServletProfilePage" >
 		<input type="submit" value="Go Back To Your Profile" />
 	</form>
+	<br />
+	<br />
+	<br />
 	<br />
 	<form method="post" action="ServletLogout">
 		<input type="submit" value="Log Out" />

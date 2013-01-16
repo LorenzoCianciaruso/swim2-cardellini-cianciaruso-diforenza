@@ -20,41 +20,45 @@ import javax.servlet.http.HttpServletResponse;
 //This class manages the search tab in the profile.jsp
 public class ServletSearchByGivenAbility extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-   
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		//Call a session bean
+
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
+		// Call a session bean
 		IUser userBean = (IUser) JNDILookupClass.doLookup("UserBean");
-		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilityDeclaredBean");
+		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass
+				.doLookup("AbilityDeclaredBean");
 
-		//get the ability to search
+		// get the ability to search
 		int abilityId = Integer.parseInt(request.getParameter("id"));
-				
-		//get the id of users with that ability
-		List<AbilityDeclared> usersIds = abilityDeclaredBean.findByAbilityId(abilityId);
 
-		//get users 
+		// get the id of users with that ability
+		List<AbilityDeclared> usersIds = abilityDeclaredBean
+				.findByAbilityId(abilityId);
+
+		// get users
 		List<User> listOfUsersFound = new ArrayList<User>();
 
-		for (int i=0;i < usersIds.size();i++){
+		for (int i = 0; i < usersIds.size(); i++) {
 			User found = userBean.findUserById(usersIds.get(i).getUser());
 			listOfUsersFound.add(found);
-		}		
-		
-		//removes from the list the user with the same session id
-		for(int i=0; i < listOfUsersFound.size(); i++){
-			if ((Integer) request.getSession().getAttribute("id") == listOfUsersFound.get(i).getId()){
-				listOfUsersFound.remove(i);
+		}
+
+		// removes from the list the user with the same session id
+		if ((Integer) request.getSession().getAttribute("id") != null) {
+			for (int i = 0; i < listOfUsersFound.size(); i++) {
+				if ((Integer) request.getSession().getAttribute("id") == listOfUsersFound.get(i).getId()) {
+					listOfUsersFound.remove(i);
+				}
 			}
 		}
-		
-		//Forward to a page that shows the results
+
+		// Forward to a page that shows the results
 		request.setAttribute("listOfUsers", listOfUsersFound);
-		
-		ServletContext sc = getServletContext(); 
-		RequestDispatcher rd = sc.getRequestDispatcher("/searchResultPage.jsp"); 
-		rd.forward(request,response);
-		
+
+		ServletContext sc = getServletContext();
+		RequestDispatcher rd = sc.getRequestDispatcher("/searchResultPage.jsp");
+		rd.forward(request, response);
+
 	}
 }

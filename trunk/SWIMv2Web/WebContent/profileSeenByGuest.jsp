@@ -55,6 +55,7 @@
 
 <div id="sidebar">
 	<br />
+	<br />
 	
 	Search for an user:
 	<br />
@@ -72,6 +73,10 @@
 		<input name="search" placeholder="type ability here.."/> <input type="submit"
 			value="Search User" />
 	</form>
+	<br />
+	<br />
+	<br />
+	<br />
 	<form method="post" action="index.jsp">
 		<input type="submit" value="Go Home"></input>
 	</form>
