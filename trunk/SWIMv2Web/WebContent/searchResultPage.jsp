@@ -61,6 +61,15 @@
 			value="Search User" />
 	</form>
 	
+	<br />
+	<br />
+	<br />
+	<br />
+	
+	<form method="post" action="ServletProfilePage" >
+		<input type="submit" value="Go Back" />
+	</form>
+	
 </div>
 
 <div id="footer">

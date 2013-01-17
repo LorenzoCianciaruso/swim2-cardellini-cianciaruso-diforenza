@@ -40,9 +40,7 @@ public class ServletProfilePage extends HttpServlet {
 			User user = bean.findUserById(id);
 
 			if (user == null) {
-				// redirect to the fail page
-				request.setAttribute("message", "Error you have to login");
-				response.sendRedirect(response.encodeRedirectURL("messageFail.jsp"));
+				response.sendRedirect(response.encodeRedirectURL("index.jsp"));
 			} else {
 				// i build the request form with user parameter
 				request.setAttribute("user", user);
