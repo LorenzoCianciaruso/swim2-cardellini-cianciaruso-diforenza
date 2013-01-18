@@ -76,7 +76,7 @@
 </head>
 <body>
 	<div id =logo>
-	<h1>SWIMv2</h1>
+	<a href="vai_a_pag.html"><img src="logo.jpg" /></a>
 	</div>
 	<div id="text">
 	<h1>Welcome</h1>
