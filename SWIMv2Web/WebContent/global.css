@@ -19,14 +19,12 @@ ul li {
 }
 
 #logo{
-	font-family: "Calibri";
-	font-size: x-large;	
- 	text-align:center;
- 	color: Green;
+	text-align:center; 
  	clear: both;
 	border-bottom-color: Green;
 	border-bottom-style: solid;
 	border-bottom-width: 5px;
+		
 }
 
 #footer{
