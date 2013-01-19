@@ -15,8 +15,15 @@ public class FriendshipRequest implements Serializable{
 	private int id;
 	private int idSender;
 	private int idReceiver;
+	private int direction;
 	
 	
+	public int getDirection() {
+		return direction;
+	}
+	public void setDirection(int direction) {
+		this.direction = direction;
+	}
 	public int getId() {
 		return id;
 	}
