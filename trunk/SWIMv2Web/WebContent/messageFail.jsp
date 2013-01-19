@@ -10,12 +10,12 @@
 <body>
 </head>
 	<div id =logo>
-	<h1>SWIMv2</h1>
+	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 <div id=text>
 	<body><%=request.getAttribute("message")%>
 		<br />
-		<form method="post" action="index.jsp">
+		<form method="post" action="ServletProfilePage">
 			<input type="submit" value="Restart from the homepage" />
 		</form>
 </div>

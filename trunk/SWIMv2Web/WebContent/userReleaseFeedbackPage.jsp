@@ -13,8 +13,8 @@ int jobId = Integer.parseInt(request.getParameter("jobId"));
 </head>
 <body>
 	<div id =logo>
-	<h1>SWIMv2</h1>
-</div>
+	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
+	</div>
 <div id=text>
 HERE YOU CAN RELEASE THE FEEDBACK AND ADD A COMMENT TO THE JOB:<br />
 <br />

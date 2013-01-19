@@ -76,11 +76,9 @@
 </head>
 <body>
 	<div id =logo>
-	<a href="vai_a_pag.html"><img src="logo.jpg" /></a>
+	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 	<div id="text">
-	<h1>Welcome</h1>
-	<br />
 	Login
 	<br />	
 		<form name="login" action="ServletLogin"

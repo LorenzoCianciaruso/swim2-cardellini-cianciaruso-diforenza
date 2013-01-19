@@ -11,8 +11,8 @@
 <title>Results</title>
 </head>
 <body>
-	<div id =logo>
-	<h1>SWIMv2</h1>
+<div id =logo>
+	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 <div id=text>
 		<%
