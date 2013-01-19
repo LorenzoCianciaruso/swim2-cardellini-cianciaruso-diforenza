@@ -30,6 +30,8 @@ JOBS PERFORMED:<br />
 if(listPerformedJob.size() > 0){
 for(int i=0; i < listPerformedJob.size(); i++){
 %>
+<h>JOB</h>
+<br />
 Requester: <%try{ %> <%=listUserPerformed.get(i).getName()+" "+listUserPerformed.get(i).getSurname() %>
 			<%}catch(NullPointerException e){ %>
 			<%= "User Banned" %>
@@ -73,18 +75,27 @@ No jobs performed!<br />
 <br />
 JOBS REQUESTED:<br />
 <br />
+<h>JOB</h>
+<br />
 <%
 	if(listAskedJob.size() > 0){
 for(int i=0; i < listAskedJob.size(); i++){
 %>
-Performer:	<%=listUserRequester.get(i).getName()+" "+listUserRequester.get(i).getSurname()%><br />
+Performer:	 <%try{ %> <%=listUserRequester.get(i).getName()+" "+listUserRequester.get(i).getSurname()%>
+			<%}catch(NullPointerException e){ %>
+			<%= "User Banned" %>
+			<%} %><br />
+			
 Date: <%=listAskedJob.get(i).getDate()%><br />
 Place: <%=listAskedJob.get(i).getPlace()%><br />
 <%
 	for(int j=0; j< listOfAbility.size(); j++){
 	if(listOfAbility.get(j).getId() == listAskedJob.get(i).getIdAbility()){
 %>
-Ability: <%=listOfAbility.get(j).getName() %>	
+Ability:  <%try{ %><%=listOfAbility.get(j).getName()%>	
+		<%}catch(NullPointerException e){ %>
+		<%= "Ability Deleted" %>
+		<%} %>	
 		<%
 	}
 }
