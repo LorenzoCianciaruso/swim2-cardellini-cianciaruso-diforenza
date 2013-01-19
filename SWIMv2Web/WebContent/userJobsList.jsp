@@ -4,6 +4,7 @@
 <%@ page import="it.polimi.swimv2.entities.Job" %>
 <%@ page import="it.polimi.swimv2.entities.User" %>
 <%@ page import="it.polimi.swimv2.entities.Ability" %>
+<%@ page import="it.polimi.swimv2.entities.Message" %>
 <%@ page import="java.util.List"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,6 +17,8 @@ List<Job> listAskedJob = (List<Job>) request.getAttribute("listAskedJob");
 List<User> listUserPerformed = (List<User>) request.getAttribute("listUserPerformed");
 List<User> listUserRequester = (List<User>) request.getAttribute("listUserRequester");
 List<Ability> listOfAbility = (List<Ability>) request.getAttribute("listOfAbility");
+List<Message> listMessagesRequestJob = (List<Message>) request.getAttribute("listMessagesRequestJob");
+List<Message> listMessagesPerformedJob = (List<Message>) request.getAttribute("listMessagesPerformedJob");
 %>
 <title>Jobs</title>
 </head>
@@ -30,6 +33,8 @@ JOBS YOU HAVE PERFORMED:<br />
 if(listPerformedJob.size() > 0){
 for(int i=0; i < listPerformedJob.size(); i++){
 %>
+<h>JOB</h>
+<br />
 Requester: <%try{ %> <%=listUserPerformed.get(i).getName()+" "+listUserPerformed.get(i).getSurname() %>
 			<%}catch(NullPointerException e){ %>
 			<%= "User Banned" %>
@@ -38,17 +43,55 @@ Date: <%=listPerformedJob.get(i).getDate() %><br />
 Place: <%=listPerformedJob.get(i).getPlace() %><br />
 <%
 	for(int j=0; j< listOfAbility.size(); j++){
-	if(listOfAbility.get(j).getId() == listPerformedJob.get(i).getIdAbility()){
+		if(listOfAbility.get(j).getId() == listPerformedJob.get(i).getIdAbility()){
 %>
-Ability: <%try{ %><%=listOfAbility.get(j).getName()%>	
+Ability: <%try{ %>
+		<%=listOfAbility.get(j).getName()%>	
 		<%}catch(NullPointerException e){ %>
 		<%= "Ability Deleted" %>
 		<%} %>
-		
+		<br />
+		<br />
 		<%
 				}
+	}
+	
+	for(int k=0; k < listMessagesPerformedJob.size();k++){
+		if( listMessagesPerformedJob.get(k).getIdJob()==listPerformedJob.get(i).getId() ){
+						
+			if(listPerformedJob.get(i).getIdPerformer()==listMessagesPerformedJob.get(k).getIdUser()){
+			%>
+				
+			Me :
+			<%= listMessagesPerformedJob.get(k).getMessage()%>
+			<br />
+			
+			<%
+			}else{
+				%>
+				<%= listUserPerformed.get(i).getName() %>	: 
+				<%= listMessagesPerformedJob.get(k).getMessage()%> <br />
+				<%
 				}
-			%><br />
+			
+				
+				}
+		
+			}
+		
+%>
+
+<% if(listPerformedJob.get(i).getFeedback()==0){
+	%>
+	<br />
+<form method="post" action="ServletSendMessage">
+<input type="hidden" name="idUser" value="<%=listPerformedJob.get(i).getIdPerformer() %>" />
+<input type="hidden" name="idJob" value="<%=listPerformedJob.get(i).getId() %>"	/>
+<input name="message" />
+<input type="submit" value="Send Message" />
+</form>
+<%} %>	
+
 FeedBack released: <%=listPerformedJob.get(i).getFeedback()%><br />
 <%
 	if( !(listPerformedJob.get(i).getComment() == null) ){
@@ -58,7 +101,10 @@ Comment: <%=listPerformedJob.get(i).getComment()%><br />
 	}else{
 %>
 Comment: no comment!
+
+<br />
 <%
+
 	}
 %>
 <br />
@@ -77,32 +123,82 @@ JOBS YOU HAVE REQUESTED:<br />
 	if(listAskedJob.size() > 0){
 for(int i=0; i < listAskedJob.size(); i++){
 %>
-Performer:	<%=listUserRequester.get(i).getName()+" "+listUserRequester.get(i).getSurname()%><br />
+<h>JOB</h>
+<br />
+Performer:	 <%try{ %> <%=listUserRequester.get(i).getName()+" "+listUserRequester.get(i).getSurname() %>
+			<%}catch(NullPointerException e){ %>
+			<%= "User Banned" %>
+			<%} %><br />
+		
 Date: <%=listAskedJob.get(i).getDate()%><br />
 Place: <%=listAskedJob.get(i).getPlace()%><br />
 <%
 	for(int j=0; j< listOfAbility.size(); j++){
 	if(listOfAbility.get(j).getId() == listAskedJob.get(i).getIdAbility()){
 %>
-Ability: <%=listOfAbility.get(j).getName() %>	
+Ability: <%try{ %>
+		<%=listOfAbility.get(j).getName()%>	
+		<%}catch(NullPointerException e){ %>
+		<%= "Ability Deleted" %>
+		<%} %>
+		<br />
+		<br />
 		<%
 	}
-}
-%><br />
+	}
+	for(int k=0; k < listMessagesRequestJob.size();k++){
+			if( listMessagesRequestJob.get(k).getIdJob()==listAskedJob.get(i).getId() ){
+				
+				
+				if(listAskedJob.get(i).getIdRequestor()==listMessagesRequestJob.get(k).getIdUser()){
+				%>
+				
+				Me :
+				<%= listMessagesRequestJob.get(k).getMessage()%>
+				<br />
+				
+				<%
+				}else{
+					%>
+					<%= listUserRequester.get(i).getName() %>	: 
+					<%= listMessagesRequestJob.get(k).getMessage()%> <br />
+					<%
+					}
+				
+				
+				}
+			}
+	
+
+%>
+<br />
 <%
 if( listAskedJob.get(i).getComment() == null ){
 %>
+<br />
+<form method="post" action="ServletSendMessage">
+<input type="hidden" name="idUser" value="<%=listAskedJob.get(i).getIdPerformer() %>" />
+<input type="hidden" name="idJob" value="<%=listAskedJob.get(i).getId() %>"	/>
+<input name="message" />
+<input type="submit" value="Send Message" />
+</form>
+<br />
+
 <form method="post" action="userReleaseFeedbackPage.jsp" >
 	<input type="hidden" name="jobId" value="<%=listAskedJob.get(i).getId()%>" />
 	<input type="submit" value="Set Feedback and Comment" />
 </form>	
+<br />
+
+
 <%
+	}
 }
 %>
 <br />
 <%
-}
-}else{
+
+	}else{
 %>
 You haven't asked help for any jobs!<br />
 <%
