@@ -20,9 +20,36 @@
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 <div id=text>
-<table cellpadding="50">
+<table align ="center" cellpadding="0">
 <tr>
 <td>
+	<form method="post" action="ServletFriendListPage">
+		<input type="submit" value="Friends" />
+	</form>
+</td>	
+<td>
+	<form method="post" action="ServletSkillPage">
+		<input type="submit" value="Skills" />
+	</form>
+</td>
+<td>
+	<form method="post" action="ServletJobsPage">
+		<input type="submit" value="Jobs" />
+	</form>
+</td>
+<td>
+	<form method="post" action="ServletJobRequestsPage">
+		<input type="submit" value="See job requests" />
+	</form>
+</td>
+<td>
+	<form method="post" action="ServletFriendshipPage">
+		<input type="submit" value="See friendship requests" />
+	</form>
+</td>
+</tr>
+</table>
+<br />
 	<br /> Profile of
 	<%=user.getName()+" "+user.getSurname() %>
 	<br />
@@ -57,43 +84,7 @@
 	<br />
 	
 	<br />
-	</td>
-	<td></td>
-	<td align="left">
-	<br />
-	
-	<form method="post" action="ServletFriendListPage">
-		<input type="submit" value="Friends" />
-	</form>
-	
-	<br />
-	
-	<form method="post" action="ServletSkillPage">
-		<input type="submit" value="Skills" />
-	</form>
-	
-	<br />
-
-	<form method="post" action="ServletJobsPage">
-		<input type="submit" value="Jobs" />
-	</form>
-
-	<br />
-
-	<form method="post" action="ServletJobRequestsPage">
-		<input type="submit" value="See job requests" />
-	</form>
-
-	<br />
-	
-	<form method="post" action="ServletFriendshipPage">
-		<input type="submit" value="See friendship requests" />
-	</form>
-	
-	<br />
-</td>
-</tr>
-</table>	
+		
 		</div>
 
 <div id="sidebar">
