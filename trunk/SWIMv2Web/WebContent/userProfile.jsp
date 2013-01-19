@@ -20,6 +20,9 @@
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 <div id=text>
+<table cellpadding="50">
+<tr>
+<td>
 	<br /> Profile of
 	<%=user.getName()+" "+user.getSurname() %>
 	<br />
@@ -54,9 +57,9 @@
 	<br />
 	
 	<br />
-	Manage your information:
-	
-	<br />
+	</td>
+	<td></td>
+	<td align="left">
 	<br />
 	
 	<form method="post" action="ServletFriendListPage">
@@ -88,7 +91,9 @@
 	</form>
 	
 	<br />
-	
+</td>
+</tr>
+</table>	
 		</div>
 
 <div id="sidebar">
