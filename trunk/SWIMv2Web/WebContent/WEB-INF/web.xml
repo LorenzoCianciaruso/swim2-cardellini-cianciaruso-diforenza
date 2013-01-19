@@ -364,4 +364,14 @@
     <servlet-name>ServletJobPageByOther</servlet-name>
     <url-pattern>/ServletJobPageByOther</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletSendMessage</display-name>
+    <servlet-name>ServletSendMessage</servlet-name>
+    <servlet-class>it.polimi.swimv2.controller.user.job.ServletSendMessage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletSendMessage</servlet-name>
+    <url-pattern>/ServletSendMessage</url-pattern>
+  </servlet-mapping>
 </web-app>
