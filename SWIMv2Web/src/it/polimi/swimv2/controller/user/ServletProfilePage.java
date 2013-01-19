@@ -28,34 +28,35 @@ public class ServletProfilePage extends HttpServlet {
 		IUser bean = (IUser) JNDILookupClass.doLookup("UserBean");
 
 		// retrieve the session id
-		int id = (Integer) request.getSession().getAttribute("id");
-		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilityDeclaredBean");
-		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
-
-		if (id == 0) {
-			forward(request, response, "/adminProfile.jsp");
+		if ((Integer) request.getSession().getAttribute("id") == null) {
+			response.sendRedirect(response.encodeRedirectURL("index.jsp"));
 		} else {
+			int id = (Integer) request.getSession().getAttribute("id");
+			IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass
+					.doLookup("AbilityDeclaredBean");
+			IAbility abilityBean = (IAbility) JNDILookupClass
+					.doLookup("AbilityBean");
 
-			// i look for a user that has the same id in the database
-			User user = bean.findUserById(id);
-
-			if (user == null) {
-				response.sendRedirect(response.encodeRedirectURL("index.jsp"));
+			if (id == 0) {
+				forward(request, response, "/adminProfile.jsp");
 			} else {
+
+				// i look for a user that has the same id in the database
+				User user = bean.findUserById(id);
+
 				// i build the request form with user parameter
 				request.setAttribute("user", user);
 
 				// build the list of user's abilities
 				List<AbilityDeclared> abilities = abilityDeclaredBean
 						.findByUserId(user.getId());
-				
+
 				int idAbility;
-				
-				
+
 				List<String> names = new ArrayList<String>();
 				List<Integer> posFeedbacks = new ArrayList<Integer>();
 				List<Integer> negFeedbacks = new ArrayList<Integer>();
-				
+
 				for (int i = 0; i < abilities.size(); i++) {
 					// build the list that contains abilities name
 					idAbility = abilities.get(i).getAbility();
@@ -68,12 +69,13 @@ public class ServletProfilePage extends HttpServlet {
 				request.setAttribute("names", names);
 				request.setAttribute("posFeedbacks", posFeedbacks);
 				request.setAttribute("negFeedbacks", negFeedbacks);
-				
+
 				// forward to the profile page
 				forward(request, response, "/userProfile.jsp");
 
 			}
 		}
+
 	}
 
 	// forward steps
@@ -83,5 +85,11 @@ public class ServletProfilePage extends HttpServlet {
 		ServletContext sc = getServletContext();
 		RequestDispatcher rd = sc.getRequestDispatcher(page);
 		rd.forward(request, response);
+	}
+	
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		doPost(request,	response) ; 
+
 	}
 }

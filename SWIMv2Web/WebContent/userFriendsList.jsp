@@ -15,7 +15,7 @@ List<User> friendList = (List<User>) request.getAttribute("friendList");
 </head>
 <body>
 	<div id =logo>
-	<h1>SWIMv2</h1>
+	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 <div id=text>
 FRIENDS LIST:<br />
