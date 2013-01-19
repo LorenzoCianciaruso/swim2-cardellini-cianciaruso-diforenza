@@ -61,6 +61,8 @@ public class ServletProfileSeenByOther extends HttpServlet {
 		request.setAttribute("posFeedbacks", posFeedbacks);
 		request.setAttribute("negFeedbacks", negFeedbacks);
 
+		// in case of a friendship request, we need to know if it is direct or suggested
+		request.setAttribute("direction", request.getParameter("direction"));
 
 		if ((Integer) request.getSession().getAttribute("id") == null) {
 			forward(request, response, "/profileSeenByGuest.jsp");		

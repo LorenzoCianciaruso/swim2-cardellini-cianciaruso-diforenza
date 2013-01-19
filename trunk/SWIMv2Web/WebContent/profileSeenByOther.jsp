@@ -64,6 +64,7 @@
 	
 	<form method="post" action="ServletFriendshipRequest" >
 		<input type="hidden" name="userReceiverId" value="<%=user.getId()%>" />
+		<input type="hidden" name="direction" value="<%=request.getAttribute("direction")%>" />
 		<input type="submit" value="Ask friendship to <%=user.getName()%>" />
 	</form>
 	<%

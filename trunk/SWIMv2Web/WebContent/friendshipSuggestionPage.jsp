@@ -27,6 +27,7 @@
 	<br />
 	<form method="post" action="ServletProfileSeenByOther">
 		<input type="hidden" name="userId" value="<%=listOfPossibleFriends.get(i).getId() %>" />
+		<input type="hidden" name="direction" value="1" />
 		<input type="submit" value="View Profile" />
 	</form>
 	<%
