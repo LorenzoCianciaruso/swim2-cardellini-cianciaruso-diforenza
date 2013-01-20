@@ -29,12 +29,10 @@ public class MessageBean implements IMessage {
     
     @Override
     public List<Message> searchByIdJob(int id){
-    	System.out.println("sto creando la query");
     	String q = "SELECT m FROM Message m WHERE idJob = '"+id+"'";
     	Query query = entityManager.createQuery(q);
     	try{
     		List<Message> list = (List<Message>) query.getResultList();
-    		System.out.println("lunghezza lista metodo query: "+list.size());
     		return list;	
     	}catch (NoResultException e){
     		System.out.println("ho ritornato null");
