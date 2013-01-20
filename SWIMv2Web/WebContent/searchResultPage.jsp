@@ -65,8 +65,6 @@
 	
 	<br />
 	<br />
-	<br />
-	<br />
 	
 	<form method="post" action="ServletProfilePage" >
 		<input type="submit" value="Go Back" />

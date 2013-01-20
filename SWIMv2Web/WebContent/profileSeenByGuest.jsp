@@ -71,13 +71,9 @@
 	</form>
 	<br />
 	<br />
-	<br />
-	<br />
 	<form method="post" action="index.jsp">
 		<input type="submit" value="Go Home"></input>
 	</form>
-	
-	<br />
 </div>
 
 <div id="footer">

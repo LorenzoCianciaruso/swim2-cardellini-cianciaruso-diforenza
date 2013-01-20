@@ -85,8 +85,6 @@
 	</form>
 	<br />
 	<br />
-	<br />
-	<br />
 	
 	<form method="post" action="ServletProfilePage" >
 		<input type="submit" value="Go To Your Profile" />

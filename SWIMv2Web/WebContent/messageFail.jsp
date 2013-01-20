@@ -37,10 +37,6 @@
 		<input name="search" placeholder="type ability here.."/> <input type="submit"
 			value="Search User" />
 	</form>
-	<br />
-	<br />
-	<br />
-	
 </div>
 
 <div id="footer">

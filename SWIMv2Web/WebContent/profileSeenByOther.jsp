@@ -101,8 +101,6 @@
 	</form>
 	<br />
 	<br />
-	<br />
-	<br />
 	<form method="post" action="ServletLogout">
 		<input type="submit" value="Log Out" />
 	</form>

@@ -128,8 +128,6 @@ No jobs requested!<br />
 	</form>
 	<br />
 	<br />
-	<br />
-	<br />
 	<form method="post" action="ServletLogin">
 		<input type="submit" value="Log In" />
 	</form>
