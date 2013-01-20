@@ -77,8 +77,6 @@
 	</form>
 	<br />
 	<br />
-	<br />
-	<br />
 	
 	<form method="post" action="adminProfile.jsp">
 		<input type="submit" value="Go Back"></input>
