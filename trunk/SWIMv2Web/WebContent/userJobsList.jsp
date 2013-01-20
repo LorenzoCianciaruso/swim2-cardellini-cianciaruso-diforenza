@@ -33,9 +33,7 @@ JOBS YOU HAVE PERFORMED:<br />
 if(listPerformedJob.size() > 0){
 for(int i=0; i < listPerformedJob.size(); i++){
 %>
-<h>JOB</h>
-<br />
-Requester: <%try{ %> <%=listUserPerformed.get(i).getName()+" "+listUserPerformed.get(i).getSurname() %>
+Requestor: <%try{ %> <%=listUserPerformed.get(i).getName()+" "+listUserPerformed.get(i).getSurname() %>
 			<%}catch(NullPointerException e){ %>
 			<%= "User Banned" %>
 			<%} %><br />
@@ -51,10 +49,9 @@ Ability: <%try{ %>
 		<%= "Ability Deleted" %>
 		<%} %>
 		<br />
-		<br />
 		<%
 				}
-	}
+		}
 	
 	for(int k=0; k < listMessagesPerformedJob.size();k++){
 		if( listMessagesPerformedJob.get(k).getIdJob()==listPerformedJob.get(i).getId() ){
@@ -92,7 +89,7 @@ Ability: <%try{ %>
 </form>
 <%} %>	
 
-FeedBack released: <%=listPerformedJob.get(i).getFeedback()%><br />
+Feedback: <%=listPerformedJob.get(i).getFeedback()%><br />
 <%
 	if( !(listPerformedJob.get(i).getComment() == null) ){
 %>
@@ -100,8 +97,7 @@ Comment: <%=listPerformedJob.get(i).getComment()%><br />
 <%
 	}else{
 %>
-Comment: no comment!
-
+Comment:
 <br />
 <%
 
@@ -123,8 +119,6 @@ JOBS YOU HAVE REQUESTED:<br />
 	if(listAskedJob.size() > 0){
 for(int i=0; i < listAskedJob.size(); i++){
 %>
-<h>JOB</h>
-<br />
 Performer:	 <%try{ %> <%=listUserRequester.get(i).getName()+" "+listUserRequester.get(i).getSurname() %>
 			<%}catch(NullPointerException e){ %>
 			<%= "User Banned" %>
@@ -141,7 +135,6 @@ Ability: <%try{ %>
 		<%}catch(NullPointerException e){ %>
 		<%= "Ability Deleted" %>
 		<%} %>
-		<br />
 		<br />
 		<%
 	}
@@ -208,8 +201,6 @@ You haven't asked help for any jobs!<br />
 	</div>
 
 <div id="sidebar">
-<br />
-	<br />
 	Search for an user:
 	<br />
 	<form method="post" action="ServletSearch">

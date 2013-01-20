@@ -16,7 +16,7 @@
 	</div>
 <div id =text>
 <% List<User> listOfPossibleFriends = (List<User>) request.getAttribute("listOfPossibleFriends"); %>
-	You accepted the request!<br />
+	You have accepted the request<br />
 	<br />
 	You might know these people:<br />
 	<br />
@@ -36,8 +36,6 @@
 	</div>
 	
 	<div id="sidebar">
-	<br />
-	<br />
 	Search for an user:
 	<br />
 	<form method="post" action="ServletSearch">

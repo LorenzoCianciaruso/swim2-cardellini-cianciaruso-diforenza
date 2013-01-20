@@ -18,7 +18,7 @@
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 <div id=text>
-	<br /> Profile of:
+	Profile of:
 	<%=user.getName()+" "+user.getSurname() %>
 	<br /> Birthday:
 	<%=user.getBirthday() %>
@@ -50,18 +50,16 @@
 	if(user.getId() != currentUserId){
 	%>
 	<br />
+	<br />
 	<form method="post" action="ServletAskJobToUser">
 		<input type="hidden" name="userPerformerId" value="<%=user.getId()%>" />
 		<input type="submit" value="Ask <%=user.getName()%>'s help for a job" />
 	</form>
-	<br />
-	<br />
-	
+	<br />	
 	<%
 	int isFriend = (Integer)request.getAttribute("isFriend");
 	if(isFriend == 0){
-	%>
-	
+	%>	
 	<form method="post" action="ServletFriendshipRequest" >
 		<input type="hidden" name="userReceiverId" value="<%=user.getId()%>" />
 		<input type="hidden" name="direction" value="<%=request.getAttribute("direction")%>" />
@@ -73,18 +71,14 @@
 	<%
 	}
 	%>
-	<br />		
+	<br />	
 	<form method="post" action="ServletJobPageByOther">
 		<input type="hidden" name="toShow" value=<%=user.getId()%> />
 		<input type="submit" value="See <%=user.getName()%>'s jobs" />
 	</form>	
-	<br />
-	
 	</div>
 
 <div id="sidebar">
-<br />
-	<br />
 	Search for an user:
 	<br />
 	<form method="post" action="ServletSearch">

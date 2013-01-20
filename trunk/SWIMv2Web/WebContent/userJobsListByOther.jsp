@@ -30,9 +30,7 @@ JOBS PERFORMED:<br />
 if(listPerformedJob.size() > 0){
 for(int i=0; i < listPerformedJob.size(); i++){
 %>
-<h>JOB</h>
-<br />
-Requester: <%try{ %> <%=listUserPerformed.get(i).getName()+" "+listUserPerformed.get(i).getSurname() %>
+Requestor: <%try{ %> <%=listUserPerformed.get(i).getName()+" "+listUserPerformed.get(i).getSurname() %>
 			<%}catch(NullPointerException e){ %>
 			<%= "User Banned" %>
 			<%} %><br />
@@ -51,7 +49,7 @@ Ability: <%try{ %><%=listOfAbility.get(j).getName()%>
 				}
 				}
 			%><br />
-FeedBack released: <%=listPerformedJob.get(i).getFeedback()%><br />
+Feedback: <%=listPerformedJob.get(i).getFeedback()%><br />
 <%
 	if( !(listPerformedJob.get(i).getComment() == null) ){
 %>
@@ -59,7 +57,7 @@ Comment: <%=listPerformedJob.get(i).getComment()%><br />
 <%
 	}else{
 %>
-Comment: no comment!
+Comment: 
 <%
 	}
 %>
@@ -74,8 +72,6 @@ No jobs performed!<br />
 %>
 <br />
 JOBS REQUESTED:<br />
-<br />
-<h>JOB</h>
 <br />
 <%
 	if(listAskedJob.size() > 0){
@@ -114,8 +110,6 @@ No jobs requested!<br />
 	</div>
 
 <div id="sidebar">
-<br />
-	<br />
 	Search for an user:
 	<br />
 	<form method="post" action="ServletSearch">

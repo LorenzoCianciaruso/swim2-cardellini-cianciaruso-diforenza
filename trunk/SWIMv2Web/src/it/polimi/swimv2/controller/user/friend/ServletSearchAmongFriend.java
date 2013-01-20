@@ -44,7 +44,7 @@ public class ServletSearchAmongFriend extends HttpServlet {
 		}
 		
 		for(int i=listOfFriendUser.size()-1; i >= 0; i--){
-			if( !(listOfFriendUser.get(i).getName().equals(userToSearch)) ){
+			if( !(listOfFriendUser.get(i).getName().contains(userToSearch)) ){
 				listOfFriendUser.remove(i);
 			}
 		}

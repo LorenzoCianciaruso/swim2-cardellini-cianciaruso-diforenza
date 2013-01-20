@@ -38,8 +38,6 @@ Feedback can be positive or negative:<br />
 	</div>
 
 <div id="sidebar">
-<br />
-	<br />
 	Search for an user:
 	<br />
 	<form method="post" action="ServletSearch">
@@ -56,8 +54,6 @@ Feedback can be positive or negative:<br />
 		<input name="search" placeholder="type ability here.."/> <input type="submit"
 			value="Search User" />
 	</form>
-	<br />
-	<br />
 	<br />
 	<br />
 	

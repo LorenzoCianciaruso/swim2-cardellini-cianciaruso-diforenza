@@ -28,7 +28,7 @@
 	%>
 	JOB REQUEST YOU HAVE RECEIVED.<br />
 	<%if(requestsToMe.size()>0) {%>	
-	You can accept or refuse it<br />
+	You can accept or refuse them.<br />
 	<br />
 	<%
 	for (int i = 0; i < requestsToMe.size(); i++) {
@@ -53,10 +53,10 @@
 			else{
 	%>
 	You haven't received any new job request.<br />
-	<br />
 	<%
 		}
 	%>
+	<br />
 	JOB REQUEST YOU HAVE SENT.<br />
 	<%
 		if(requestsByMe.size()>0) {
@@ -80,7 +80,6 @@
 	}
 	else{%>
 	No job request sent and still pending.<br />
-	<br />
 	<%
 		}
 	%>
@@ -90,8 +89,6 @@
 		</div>
 
 <div id="sidebar">
-<br />
-	<br />
 	Search for an user:
 	<br />
 	<form method="post" action="ServletSearch">
