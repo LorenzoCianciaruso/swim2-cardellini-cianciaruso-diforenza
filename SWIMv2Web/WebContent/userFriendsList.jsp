@@ -18,14 +18,13 @@ List<User> friendList = (List<User>) request.getAttribute("friendList");
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 <div id=text>
-FRIENDS LIST:<br />
-<br />
 <form method="post" action="ServletSearchAmongFriend" >
 	Type here to find a specific friend: 
 	<input name="userToSearch" /> 
 	<input type="submit" value="Search" />
 </form>
 <br />
+FRIENDS LIST:<br />
 <br />
 <%
 if(friendList.size() > 0){
@@ -36,13 +35,11 @@ for(int i=0; i<friendList.size();i++){
 	<input type="hidden" name ="userId" value="<%=friendList.get(i).getId()%>" />
 	<input type="submit" value="View Profile" />
 </form>
-<br />
-<br />
 <%
 }
 }else{
 %>
-Nessuno amico!
+No friends!
 <%
 }
 %>
@@ -51,8 +48,6 @@ Nessuno amico!
 	</div>
 
 <div id="sidebar">
-<br />
-	<br />
 	Search for an user:
 	<br />
 	<form method="post" action="ServletSearch">

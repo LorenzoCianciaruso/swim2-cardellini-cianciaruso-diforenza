@@ -15,10 +15,10 @@
 </head>
 <body>
 	<div id =logo>
-	<h1>SWIMv2</h1>
+	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 <div id=text>
-	<br /> Profile of:
+	Profile of:
 	<%=user.getName()+" "+user.getSurname() %>
 	<br /> Birthday:
 	<%=user.getBirthday() %>
@@ -44,19 +44,15 @@
 	 <%=negFeedbacks.get(i)%>
 	
 	<% } %>
-		<br />		
+		<br />
+		<br />	
 	<form method="post" action="ServletJobPageByOther">
 		<input type="hidden" name="toShow" value=<%=user.getId()%> />
 		<input type="submit" value="See <%=user.getName()%>'s jobs" />
 	</form>	
-	<br />
-		
 	</div>
 
 <div id="sidebar">
-	<br />
-	<br />
-	
 	Search for an user:
 	<br />
 	<form method="post" action="ServletSearch">

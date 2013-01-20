@@ -39,12 +39,12 @@
 </td>
 <td>
 	<form method="post" action="ServletJobRequestsPage">
-		<input type="submit" value="See job requests" />
+		<input type="submit" value="Job requests" />
 	</form>
 </td>
 <td>
 	<form method="post" action="ServletFriendshipPage">
-		<input type="submit" value="See friendship requests" />
+		<input type="submit" value="Friendship requests" />
 	</form>
 </td>
 </tr>
@@ -64,32 +64,27 @@
 	<br />
 
 	<br />
+	Abilities:
+	<br />
 	<%
 	List<String> names = (List<String>) request.getAttribute("names");
 	List<Integer> posFeedbacks = (List<Integer>) request.getAttribute("posFeedbacks");
 	List<Integer> negFeedbacks = (List<Integer>) request.getAttribute("negFeedbacks");
 	for (int i = 0; i < names.size(); i++) {
 	%>
-	<br /> Ability:
+	Name:
 	<%=names.get(i)%>
 	Feedback:   +
 	<%=posFeedbacks.get(i)%>
 	    -
 	<%=negFeedbacks.get(i) %>    
-	
+	<br />
 	<%	
 		}
 	%>
-
-	<br />
-	
-	<br />
-		
-		</div>
+	</div>
 
 <div id="sidebar">
-<br />
-	<br />
 	Search for an user:
 	<br />
 	<form method="post" action="ServletSearch">
@@ -105,6 +100,13 @@
 	<form method="post" action="ServletSearchByAbility">
 		<input name="search" placeholder="type ability here.."/> <input type="submit"
 			value="Search Ability" />
+	</form>
+	<br />
+	Search among friends: 
+	<br />
+	<form method="post" action="ServletSearchAmongFriend">
+		<input name="userToSearch" placeholder="type name here.."/> <input type="submit"
+			value="Search Friends" />
 	</form>
 	<br />
 	<br />

@@ -18,7 +18,7 @@
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 <div id=text>
-	<br /> Profile of:
+	Profile of:
 	<%=user.getName()+" "+user.getSurname() %>
 	<br /> Birthday:
 	<%=user.getBirthday() %>
@@ -46,21 +46,19 @@
 	<% } %>
 	
 	<br />
+	<br />	
 	<form method='post' action="ServletBanUser">
 		<input type="hidden" name="idUser" value="<%=user.getId() %>"></input >
 		<input type="submit" value="Ban User"/></input>
 		</form>
-			<br />		
+	<br />	
 	<form method="post" action="ServletJobPageByOther">
 		<input type="hidden" name="toShow" value=<%=user.getId()%> />
 		<input type="submit" value="See <%=user.getName()%>'s jobs" />
 	</form>	
-	<br />
 	</div>
 
 <div id="sidebar">
-<br />
-	<br />
 	Search for an user:
 	<br />
 	<form method="post" action="ServletSearch">

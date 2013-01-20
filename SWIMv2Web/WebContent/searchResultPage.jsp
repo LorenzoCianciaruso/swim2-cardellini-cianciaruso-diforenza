@@ -25,6 +25,8 @@
 		}else{
 		%>
 			Here are all users that matches your research:<br />
+			<br />
+			<br />
 			<%
 			for(int i = 0; i< list.size(); i++){
 				User user = list.get(i);
@@ -35,6 +37,7 @@
 		<input type="hidden" name="direction" value="0" />
 		<input type="submit" value="View Profile" />
 	</form>
+	<br />
 	<%
 			}
 		}
@@ -43,8 +46,6 @@
 	</div>
 
 <div id="sidebar">
-<br />
-	<br />
 	Search for an user:
 	<br />
 	<form method="post" action="ServletSearch">

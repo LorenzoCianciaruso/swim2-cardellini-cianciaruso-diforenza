@@ -24,7 +24,6 @@
 	%>
 	FRIENDSHIP REQUESTS RECEIVED:<br />
 	<%if(requestsToMe.size()>0) {%>
-	<br />
 	<%
 	for (int i = 0; i < requestsToMe.size(); i++) {
 	%>
@@ -45,13 +44,12 @@
 	}
 	else{%>
 	You haven't received any new friendship request.<br />
-	<br />
 	<%
 		}
 	%>
+	<br />
 	FRIENDSHIP REQUEST SENT:<br />
 	<%if(requestsByMe.size()>0) {%>	
-	<br />
 	<%
 	for (int i = 0; i < requestsByMe.size(); i++) {
 	%>
@@ -66,15 +64,12 @@
 	}
 	else{%>
 	You haven't sent any friendship request.<br />
-	<br />
 	<%
 		}
 	%>	
 	</div>
 
 <div id="sidebar">
-<br />
-	<br />
 	Search for an user:
 	<br />
 	<form method="post" action="ServletSearch">
