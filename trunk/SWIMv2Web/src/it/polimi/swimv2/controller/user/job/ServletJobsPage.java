@@ -53,18 +53,13 @@ public class ServletJobsPage extends HttpServlet {
 		}
 		
 		for(int i=0; i<listAskedJob.size();i++){
-			System.out.println("cerco se c'è messagio con id "+listAskedJob.get(i).getId());
 			listMessagesRequestJob.addAll(messageBean.searchByIdJob(listAskedJob.get(i).getId()));
 		}
 		
 		for(int i=0; i< listPerformedJob.size();i++){
-			System.out.println("cerco se c'è messagio con id "+listPerformedJob.get(i).getId());
 			listMessagesPerformedJob.addAll(messageBean.searchByIdJob(listPerformedJob.get(i).getId()));
 		}
-		System.out.println("numero lavori asked job: "+listAskedJob.size());
-		System.out.println("numero lavori performedJob: "+listPerformedJob.size()+1);
-		System.out.println("numero di messaggi per marco lavoro richiesto: "+listMessagesPerformedJob.size());
-		System.out.println("numero di messaggi per marco lavoro svolto: "+listMessagesRequestJob.size());
+		
 		
 		request.setAttribute("listUserPerformed", listUserPerformed);
 		request.setAttribute("listUserRequester", listUserRequester);
