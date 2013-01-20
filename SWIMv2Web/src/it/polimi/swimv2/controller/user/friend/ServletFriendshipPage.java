@@ -32,7 +32,7 @@ public class ServletFriendshipPage extends HttpServlet {
 		List<FriendshipRequest> requestsToMe = friendshipRequestBean.findByPerformerId(currentUserId);
 		List<FriendshipRequest> requestsByMe = friendshipRequestBean.findByRequestorId(currentUserId);
 		request.setAttribute("requestsToMe", requestsToMe);
-		request.setAttribute("requestsByMe", requestsByMe);
+		request.setAttribute("requestsByMe", requestsByMe); 
 		
 		//create the lists of users names
 		List<User> userIAsked = new ArrayList<User>();

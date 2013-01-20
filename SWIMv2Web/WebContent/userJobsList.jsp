@@ -33,6 +33,8 @@ JOBS YOU HAVE PERFORMED:<br />
 if(listPerformedJob.size() > 0){
 for(int i=0; i < listPerformedJob.size(); i++){
 %>
+<h>JOB:</h>
+<br />
 Requestor: <%try{ %> <%=listUserPerformed.get(i).getName()+" "+listUserPerformed.get(i).getSurname() %>
 			<%}catch(NullPointerException e){ %>
 			<%= "User Banned" %>
@@ -81,23 +83,21 @@ Ability: <%try{ %>
 <% if(listPerformedJob.get(i).getFeedback()==0){
 	%>
 	<br />
+	Job still not completed
+	<br />
 <form method="post" action="ServletSendMessage">
 <input type="hidden" name="idUser" value="<%=listPerformedJob.get(i).getIdPerformer() %>" />
 <input type="hidden" name="idJob" value="<%=listPerformedJob.get(i).getId() %>"	/>
 <input name="message" />
 <input type="submit" value="Send Message" />
 </form>
-<%} %>	
+<%}else{ %>	
 
 Feedback: <%=listPerformedJob.get(i).getFeedback()%><br />
-<%
-	if( !(listPerformedJob.get(i).getComment() == null) ){
-%>
+
 Comment: <%=listPerformedJob.get(i).getComment()%><br />
-<%
-	}else{
-%>
-Comment:
+
+
 <br />
 <%
 
@@ -119,6 +119,8 @@ JOBS YOU HAVE REQUESTED:<br />
 	if(listAskedJob.size() > 0){
 for(int i=0; i < listAskedJob.size(); i++){
 %>
+<h>JOB:</h>
+<br />
 Performer:	 <%try{ %> <%=listUserRequester.get(i).getName()+" "+listUserRequester.get(i).getSurname() %>
 			<%}catch(NullPointerException e){ %>
 			<%= "User Banned" %>

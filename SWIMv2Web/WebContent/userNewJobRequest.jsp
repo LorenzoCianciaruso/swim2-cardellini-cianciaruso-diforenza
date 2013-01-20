@@ -17,6 +17,9 @@
 	<div id =logo>
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
+	
+	
+	<h>New Job Request:</h><br />
 <div id=text>
 	<%
 		int idPerformer = (Integer) request.getAttribute("userPerformerId");
