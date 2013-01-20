@@ -19,4 +19,6 @@ public interface IFriendshipRequest {
 
 	void remove(int id);
 
+	boolean isRequestPending(int currentUserId, int id);
+
 }
