@@ -77,4 +77,20 @@ public class FriendshipRequestBean implements IFriendshipRequest {
 		}
 	}
 
+	@Override
+	public boolean isRequestPending(int currentUserId, int id) {
+		String q = "SELECT f FROM FriendshipRequest f WHERE (idSender = '"+currentUserId+"' AND idReceiver = '"+id+"') OR (idSender ='"+id+"' AND idReceiver = '"+currentUserId+"')";
+		Query query = entityManager.createQuery(q);
+		try{
+			FriendshipRequest f = (FriendshipRequest) query.getSingleResult();
+			if(f.equals(null)){
+				return false;
+			}else{
+				return true;
+			}
+		}catch(NoResultException e){
+			return false;
+		}
+	}
+
 }
