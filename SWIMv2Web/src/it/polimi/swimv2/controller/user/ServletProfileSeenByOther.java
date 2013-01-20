@@ -3,6 +3,7 @@ package it.polimi.swimv2.controller.user;
 import it.polimi.swimv2.business.IAbilityDeclared;
 import it.polimi.swimv2.business.IAbility;
 import it.polimi.swimv2.business.IFriendship;
+import it.polimi.swimv2.business.IFriendshipRequest;
 import it.polimi.swimv2.business.IUser;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
 import it.polimi.swimv2.entities.AbilityDeclared;
@@ -32,6 +33,7 @@ public class ServletProfileSeenByOther extends HttpServlet {
 				.doLookup("AbilityDeclaredBean");
 		IFriendship friendshipBean = (IFriendship) JNDILookupClass
 				.doLookup("FriendshipBean");
+		IFriendshipRequest friendshipRequestBean = (IFriendshipRequest) JNDILookupClass.doLookup("FriendshipRequestBean");
 
 		// i look for a user that has the same id in the database
 		User userToShow = userBean.findUserById(id);
@@ -73,7 +75,7 @@ public class ServletProfileSeenByOther extends HttpServlet {
 			// ho commentato perchè lanciava un ecc
 			// check if this user is already my friend
 			int currentUserId = (int) request.getSession().getAttribute("id");
-			if (friendshipBean.isFriend(currentUserId, id)) {
+			if (friendshipBean.isFriend(currentUserId, id) || friendshipRequestBean.isRequestPending(currentUserId, id)) {
 				request.setAttribute("isFriend", 1);
 			} else {
 				request.setAttribute("isFriend", 0);
