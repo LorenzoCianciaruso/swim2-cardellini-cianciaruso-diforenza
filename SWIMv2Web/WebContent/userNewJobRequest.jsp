@@ -17,9 +17,8 @@
 	<div id =logo>
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
-	
-	
-	<h>New Job Request:</h><br />
+	New Job Request:
+	<br />
 <div id=text>
 	<%
 		int idPerformer = (Integer) request.getAttribute("userPerformerId");
@@ -85,6 +84,13 @@
 	<form method="post" action="ServletSearchByAbility">
 		<input name="search" placeholder="type ability here.."/> <input type="submit"
 			value="Search User" />
+	</form>
+	<br />
+	Search among friends: 
+	<br />
+	<form method="post" action="ServletSearchAmongFriend">
+		<input name="userToSearch" placeholder="type name here.."/> <input type="submit"
+			value="Search Friends" />
 	</form>
 	<br />
 	<br />

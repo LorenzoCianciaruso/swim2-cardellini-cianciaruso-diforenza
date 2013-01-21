@@ -27,13 +27,13 @@ List<Message> listMessagesPerformedJob = (List<Message>) request.getAttribute("l
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 <div id=text>
-JOBS YOU HAVE PERFORMED:<br />
+JOBS YOU PERFORMED:<br />
 <br />
 <%
 if(listPerformedJob.size() > 0){
 for(int i=0; i < listPerformedJob.size(); i++){
 %>
-<h>JOB:</h>
+JOB:
 <br />
 Requestor: <%try{ %> <%=listUserPerformed.get(i).getName()+" "+listUserPerformed.get(i).getSurname() %>
 			<%}catch(NullPointerException e){ %>
@@ -113,13 +113,13 @@ You haven't performed any jobs!<br />
 	}
 %>
 <br />
-JOBS YOU HAVE REQUESTED:<br />
+JOBS YOU REQUESTED:<br />
 <br />
 <%
 	if(listAskedJob.size() > 0){
 for(int i=0; i < listAskedJob.size(); i++){
 %>
-<h>JOB:</h>
+JOB:
 <br />
 Performer:	 <%try{ %> <%=listUserRequester.get(i).getName()+" "+listUserRequester.get(i).getSurname() %>
 			<%}catch(NullPointerException e){ %>
@@ -218,6 +218,13 @@ You haven't asked help for any jobs!<br />
 	<form method="post" action="ServletSearchByAbility">
 		<input name="search" placeholder="type ability here.."/> <input type="submit"
 			value="Search User" />
+	</form>
+	<br />
+	Search among friends: 
+	<br />
+	<form method="post" action="ServletSearchAmongFriend">
+		<input name="userToSearch" placeholder="type name here.."/> <input type="submit"
+			value="Search Friends" />
 	</form>
 	<br />
 	<br />
