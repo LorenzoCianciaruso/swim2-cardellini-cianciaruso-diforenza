@@ -24,7 +24,7 @@ List<Ability> listOfAbility = (List<Ability>) request.getAttribute("listOfAbilit
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 <div id=text>
-JOBS PERFORMED:<br />
+<a>JOBS PERFORMED:</a><br />
 <br />
 <%
 if(listPerformedJob.size() > 0){
@@ -51,15 +51,14 @@ Ability: <%try{ %><%=listOfAbility.get(j).getName()%>
 				}
 				}
 			%><br />
+			<%
+	if( listPerformedJob.get(i).getComment()!= null ){%>
 Feedback: <%=listPerformedJob.get(i).getFeedback()%><br />
-<%
-	if( !(listPerformedJob.get(i).getComment() == null) ){
-%>
 Comment: <%=listPerformedJob.get(i).getComment()%><br />
 <%
 	}else{
 %>
-Comment: 
+<a>JOB NOT COMPLETED</a><br />
 <%
 	}
 %>
@@ -98,8 +97,17 @@ Ability:  <%try{ %><%=listOfAbility.get(j).getName()%>
 		<%
 	}
 }
-%><br />
-
+%><br /><%
+	if( listAskedJob.get(i).getComment() != null){%>
+Feedback: <%=listAskedJob.get(i).getFeedback()%><br />
+Comment: <%=listAskedJob.get(i).getComment()%><br />
+<%
+	}else{
+%>
+JOB NOT COMPLETED<br />
+<%
+	}
+%>
 <br />
 <%
 }

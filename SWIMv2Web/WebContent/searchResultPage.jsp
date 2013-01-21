@@ -26,7 +26,6 @@
 		%>
 			Here are all users that matches your research:<br />
 			<br />
-			<br />
 			<%
 			for(int i = 0; i< list.size(); i++){
 				User user = list.get(i);
@@ -68,8 +67,7 @@
 	
 	<form method="post" action="ServletProfilePage" >
 		<input type="submit" value="Go Back" />
-	</form>
-	
+	</form>	
 </div>
 
 <div id="footer">

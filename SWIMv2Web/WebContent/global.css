@@ -4,8 +4,10 @@ body { font-size: medium;
 	font-family: "Calibri", Times, serif;
 }
 
-ul li {
-	list-style: square;
+a {
+	text-transform: uppercase;
+	font-weight:bold;
+	color: Green;
 }
 
 #text { 

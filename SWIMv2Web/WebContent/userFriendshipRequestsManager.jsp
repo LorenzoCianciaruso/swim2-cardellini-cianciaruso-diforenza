@@ -22,7 +22,7 @@
 	List<User> userIAsked = (List<User>) request.getAttribute("userIAsked");
 	List<User> userAskedToMe = (List<User>) request.getAttribute("userAskedToMe");
 	%>
-	FRIENDSHIP REQUESTS RECEIVED:<br />
+	<a>FRIENDSHIP REQUESTS RECEIVED:</a><br />
 	<%if(requestsToMe.size()>0) {%>
 	<%
 	for (int i = 0; i < requestsToMe.size(); i++) {
@@ -48,7 +48,7 @@
 		}
 	%>
 	<br />
-	FRIENDSHIP REQUEST SENT:<br />
+	<a>FRIENDSHIP REQUEST SENT:</a><br />
 	<%if(requestsByMe.size()>0) {%>	
 	<%
 	for (int i = 0; i < requestsByMe.size(); i++) {

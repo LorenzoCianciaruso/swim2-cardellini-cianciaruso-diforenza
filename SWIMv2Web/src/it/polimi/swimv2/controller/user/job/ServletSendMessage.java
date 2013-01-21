@@ -28,7 +28,7 @@ public class ServletSendMessage extends HttpServlet {
 		Message message = new Message();
 		
 		message.setIdJob(Integer.parseInt(request.getParameter("idJob")));
-		message.setIdUser(Integer.parseInt(request.getParameter("idUser")));
+		message.setIdUser((Integer) request.getSession().getAttribute("id"));
 		message.setMessage(request.getParameter("message"));
 		
 		messageBean.save(message);
