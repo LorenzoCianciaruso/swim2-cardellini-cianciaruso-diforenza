@@ -4,8 +4,6 @@
 <%@ page import="java.util.List"%>
 <%@ page import="it.polimi.swimv2.entities.AbilityDeclared"%>
 <%@ page import="it.polimi.swimv2.entities.User"%>
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -25,8 +23,6 @@
 		List<String> names = (List<String>) request.getAttribute("names");
 		List<Integer> idAbilities = (List<Integer>) request
 				.getAttribute("idAbilities");
-		List<Integer> feedbacks = (List<Integer>) request
-				.getAttribute("feedbacks");
 	%>
 
 <script>
@@ -55,7 +51,7 @@
 			for (int i = 0; i < names.size(); i++) {
 		%>
 		<option value = <%=idAbilities.get(i) %>>
-		<%=names.get(i)%> <%=feedbacks.get(i)%>
+		<%=names.get(i)%>
 		</option>		
 		<%
 			}

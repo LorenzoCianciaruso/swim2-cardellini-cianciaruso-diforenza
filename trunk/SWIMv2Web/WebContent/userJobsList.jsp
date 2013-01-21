@@ -19,6 +19,7 @@ List<User> listUserRequester = (List<User>) request.getAttribute("listUserReques
 List<Ability> listOfAbility = (List<Ability>) request.getAttribute("listOfAbility");
 List<Message> listMessagesRequestJob = (List<Message>) request.getAttribute("listMessagesRequestJob");
 List<Message> listMessagesPerformedJob = (List<Message>) request.getAttribute("listMessagesPerformedJob");
+int current =  (Integer)request.getAttribute("user");
 %>
 <title>Jobs</title>
 </head>
@@ -27,7 +28,7 @@ List<Message> listMessagesPerformedJob = (List<Message>) request.getAttribute("l
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 <div id=text>
-JOBS YOU PERFORMED:<br />
+<a>JOBS YOU PERFORMED:</a><br />
 <br />
 <%
 if(listPerformedJob.size() > 0){
@@ -54,11 +55,12 @@ Ability: <%try{ %>
 		<%
 				}
 		}
-	
+if(listPerformedJob.get(i).getFeedback()==0){%>
+<br/>Job still open you can send messages. <br/><%
 	for(int k=0; k < listMessagesPerformedJob.size();k++){
 		if( listMessagesPerformedJob.get(k).getIdJob()==listPerformedJob.get(i).getId() ){
 						
-			if(listPerformedJob.get(i).getIdPerformer()==listMessagesPerformedJob.get(k).getIdUser()){
+			if(listMessagesPerformedJob.get(k).getIdUser()==current){
 			%>
 				
 			Me :
@@ -71,20 +73,10 @@ Ability: <%try{ %>
 				<%= listUserPerformed.get(i).getName() %>	: 
 				<%= listMessagesPerformedJob.get(k).getMessage()%> <br />
 				<%
-				}
-			
-				
-				}
-		
-			}
-		
-%>
-
-<% if(listPerformedJob.get(i).getFeedback()==0){
-	%>
-	<br />
-	Job still not completed
-	<br />
+				}				
+				}	
+			}	
+%>	
 <form method="post" action="ServletSendMessage">
 <input type="hidden" name="idUser" value="<%=listPerformedJob.get(i).getIdPerformer() %>" />
 <input type="hidden" name="idJob" value="<%=listPerformedJob.get(i).getId() %>"	/>
@@ -92,28 +84,22 @@ Ability: <%try{ %>
 <input type="submit" value="Send Message" />
 </form>
 <%}else{ %>	
-
 Feedback: <%=listPerformedJob.get(i).getFeedback()%><br />
-
 Comment: <%=listPerformedJob.get(i).getComment()%><br />
-
-
-<br />
-<%
+<br /><%
 
 	}
+}
 %>
 <br />
 <%
-	}
 }else{
 %>
 You haven't performed any jobs!<br />
 <%
 	}
 %>
-<br />
-JOBS YOU REQUESTED:<br />
+<a>JOBS YOU ASKED:</a><br />
 <br />
 <%
 	if(listAskedJob.size() > 0){
@@ -141,13 +127,12 @@ Ability: <%try{ %>
 		<%
 	}
 	}
+if( listAskedJob.get(i).getComment() == null ){%>
+	 <br/>Job still open you can send messages or set feedback. <br/><%
 	for(int k=0; k < listMessagesRequestJob.size();k++){
 			if( listMessagesRequestJob.get(k).getIdJob()==listAskedJob.get(i).getId() ){
-				
-				
-				if(listAskedJob.get(i).getIdRequestor()==listMessagesRequestJob.get(k).getIdUser()){
+				if(listMessagesRequestJob.get(k).getIdUser()==current){
 				%>
-				
 				Me :
 				<%= listMessagesRequestJob.get(k).getMessage()%>
 				<br />
@@ -158,35 +143,26 @@ Ability: <%try{ %>
 					<%= listUserRequester.get(i).getName() %>	: 
 					<%= listMessagesRequestJob.get(k).getMessage()%> <br />
 					<%
-					}
-				
-				
+					}				
 				}
 			}
-	
-
 %>
-<br />
-<%
-if( listAskedJob.get(i).getComment() == null ){
-%>
-<br />
 <form method="post" action="ServletSendMessage">
 <input type="hidden" name="idUser" value="<%=listAskedJob.get(i).getIdPerformer() %>" />
 <input type="hidden" name="idJob" value="<%=listAskedJob.get(i).getId() %>"	/>
 <input name="message" />
 <input type="submit" value="Send Message" />
 </form>
-<br />
-
 <form method="post" action="userReleaseFeedbackPage.jsp" >
 	<input type="hidden" name="jobId" value="<%=listAskedJob.get(i).getId()%>" />
 	<input type="submit" value="Set Feedback and Comment" />
 </form>	
 <br />
+<%}else{ %>	
+Feedback: <%=listAskedJob.get(i).getFeedback()%><br />
+Comment: <%=listAskedJob.get(i).getComment()%><br />
+<br /><%
 
-
-<%
 	}
 }
 %>

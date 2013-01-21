@@ -38,6 +38,7 @@ public class ServletJobsPage extends HttpServlet {
 		List<Job> listPerformedJob = jobBean.findByPerformerId(currentUserId);
 		List<Job> listAskedJob = jobBean.findByRequestorId(currentUserId);
 		List<Ability> listOfAbility = abilityBean.allAbilities();
+		int idUser = (Integer)request.getSession().getAttribute("id");
 		
 		List<User> listUserPerformed = new ArrayList<User>();
 		List<User> listUserRequester = new ArrayList<User>();
@@ -68,6 +69,8 @@ public class ServletJobsPage extends HttpServlet {
 		request.setAttribute("listOfAbility", listOfAbility);
 		request.setAttribute("listMessagesRequestJob", listMessagesRequestJob);
 		request.setAttribute("listMessagesPerformedJob", listMessagesPerformedJob);
+		request.setAttribute("user", idUser);
+
 		
 		//forward to jsp
 		ServletContext sc = getServletContext();

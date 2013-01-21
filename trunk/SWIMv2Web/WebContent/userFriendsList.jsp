@@ -24,7 +24,7 @@ List<User> friendList = (List<User>) request.getAttribute("friendList");
 	<input type="submit" value="Search" />
 </form>
 <br />
-FRIENDS LIST:<br />
+<a>FRIENDS LIST:</a><br />
 <br />
 <%
 if(friendList.size() > 0){

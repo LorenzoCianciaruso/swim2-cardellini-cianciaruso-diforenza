@@ -30,7 +30,6 @@ public class ServletAskJobToUser extends HttpServlet {
 						.findByUserId(idPerformer);
 
 				List<String> names = new ArrayList<String>();
-				List<Integer> feedbacks = new ArrayList<Integer>();
 				List<Integer> idAbilities = new ArrayList<Integer>();
 				int idAbility;
 				IAbility abilityBean = (IAbility) JNDILookupClass
@@ -41,15 +40,9 @@ public class ServletAskJobToUser extends HttpServlet {
 					idAbility = abilities.get(i).getAbility();
 					idAbilities.add(idAbility);
 					// build the list that contains abilities name
-					names.add(abilityBean.findById(idAbility).getName());
-					// build the list that contains abilities feedback
-					feedbacks.add(abilities.get(i).getPositiveFeedback());
-					idAbilities.add(idAbility);
-
-					
+					names.add(abilityBean.findById(idAbility).getName());					
 				}
-				request.setAttribute("names", names);
-				request.setAttribute("feedbacks", feedbacks);
+				request.setAttribute("names", names);				
 				request.setAttribute("idAbilities", idAbilities);
 				
 				ServletContext sc = getServletContext();

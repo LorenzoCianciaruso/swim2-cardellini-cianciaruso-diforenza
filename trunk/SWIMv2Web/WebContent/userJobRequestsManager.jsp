@@ -26,7 +26,7 @@
 		List<User> userIAsked = (List<User>) request.getAttribute("userIAsked");
 		List<User> userAskedToMe = (List<User>) request.getAttribute("userAskedToMe");
 	%>
-	JOB REQUEST YOU HAVE RECEIVED.<br />
+	<a>JOB REQUEST YOU HAVE RECEIVED.</a><br />
 	<%if(requestsToMe.size()>0) {%>	
 	You can accept or refuse them.<br />
 	<br />
@@ -57,7 +57,7 @@
 		}
 	%>
 	<br />
-	JOB REQUEST YOU HAVE SENT.<br />
+	<a>JOB REQUEST YOU HAVE SENT.</a><br />
 	<%
 		if(requestsByMe.size()>0) {
 	%>
