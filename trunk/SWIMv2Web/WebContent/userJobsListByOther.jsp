@@ -30,7 +30,7 @@ JOBS PERFORMED:<br />
 if(listPerformedJob.size() > 0){
 for(int i=0; i < listPerformedJob.size(); i++){
 %>
-<h>JOB:</h>
+JOB:
 <br />
 Requestor: <%try{ %> <%=listUserPerformed.get(i).getName()+" "+listUserPerformed.get(i).getSurname() %>
 			<%}catch(NullPointerException e){ %>
@@ -75,12 +75,11 @@ No jobs performed!<br />
 <br />
 JOBS REQUESTED:<br />
 <br />
-<h>JOB:</h>
-<br />
 <%
 	if(listAskedJob.size() > 0){
 for(int i=0; i < listAskedJob.size(); i++){
 %>
+JOB:<br />
 Performer:	 <%try{ %> <%=listUserRequester.get(i).getName()+" "+listUserRequester.get(i).getSurname()%>
 			<%}catch(NullPointerException e){ %>
 			<%= "User Banned" %>

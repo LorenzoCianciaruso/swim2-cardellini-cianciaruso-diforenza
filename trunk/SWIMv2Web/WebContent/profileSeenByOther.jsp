@@ -100,6 +100,13 @@
 		<input type="submit" value="Go Back To Your Profile" />
 	</form>
 	<br />
+	Search among friends: 
+	<br />
+	<form method="post" action="ServletSearchAmongFriend">
+		<input name="userToSearch" placeholder="type name here.."/> <input type="submit"
+			value="Search Friends" />
+	</form>
+	<br />
 	<br />
 	<form method="post" action="ServletLogout">
 		<input type="submit" value="Log Out" />
