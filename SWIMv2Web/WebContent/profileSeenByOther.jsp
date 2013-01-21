@@ -18,6 +18,45 @@
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 <div id=text>
+<table align ="center" cellpadding="0">
+<tr>
+<td>
+	<%
+	int currentUserId = (Integer) session.getAttribute("id");
+	if(user.getId() != currentUserId){
+	%>
+	<form method="post" action="ServletAskJobToUser">
+		<input type="hidden" name="userPerformerId" value="<%=user.getId()%>" />
+		<input type="submit" value="Ask <%=user.getName()%>'s help for a job" />
+	</form>
+</td>
+<td>
+	<%
+	int isFriend = (Integer)request.getAttribute("isFriend");
+	if(isFriend == 0){
+	%>	
+	<form method="post" action="ServletFriendshipRequest" >
+		<input type="hidden" name="userReceiverId" value="<%=user.getId()%>" />
+		<input type="hidden" name="direction" value="<%=request.getAttribute("direction")%>" />
+		<input type="submit" value="Ask friendship to <%=user.getName()%>" />
+	</form>
+	<%
+	}
+	%>
+	<%
+	}
+	%>
+</td>
+<td>
+	<form method="post" action="ServletJobPageByOther">
+		<input type="hidden" name="toShow" value=<%=user.getId()%> />
+		<input type="submit" value="See <%=user.getName()%>'s jobs" />
+	</form>	
+</td>
+</tr>
+</table>
+	<br />
+	<br />
 	Profile of:
 	<%=user.getName()+" "+user.getSurname() %>
 	<br /> Birthday:
@@ -41,39 +80,7 @@
 	<%	
 	}
 	%>
-	
-	<%
-	int currentUserId = (Integer) session.getAttribute("id");
-	if(user.getId() != currentUserId){
-	%>
-	<br />
-	<br />
-	<form method="post" action="ServletAskJobToUser">
-		<input type="hidden" name="userPerformerId" value="<%=user.getId()%>" />
-		<input type="submit" value="Ask <%=user.getName()%>'s help for a job" />
-	</form>
-	<br />	
-	<%
-	int isFriend = (Integer)request.getAttribute("isFriend");
-	if(isFriend == 0){
-	%>	
-	<form method="post" action="ServletFriendshipRequest" >
-		<input type="hidden" name="userReceiverId" value="<%=user.getId()%>" />
-		<input type="hidden" name="direction" value="<%=request.getAttribute("direction")%>" />
-		<input type="submit" value="Ask friendship to <%=user.getName()%>" />
-	</form>
-	<%
-	}
-	%>
-	<%
-	}
-	%>
-	<br />	
-	<form method="post" action="ServletJobPageByOther">
-		<input type="hidden" name="toShow" value=<%=user.getId()%> />
-		<input type="submit" value="See <%=user.getName()%>'s jobs" />
-	</form>	
-	</div>
+</div>
 
 <div id="sidebar">
 	Search for an user:

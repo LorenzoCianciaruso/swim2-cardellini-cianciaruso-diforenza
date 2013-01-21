@@ -18,6 +18,24 @@
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 <div id=text>
+<table align ="center" cellpadding="0">
+<tr>
+<td>
+	<form method='post' action="ServletBanUser">
+		<input type="hidden" name="idUser" value="<%=user.getId() %>"></input >
+		<input type="submit" value="Ban User"/></input>
+	</form>
+</td>
+<td>
+	<form method="post" action="ServletJobPageByOther">
+		<input type="hidden" name="toShow" value=<%=user.getId()%> />
+		<input type="submit" value="See <%=user.getName()%>'s jobs" />
+	</form>	
+</td>
+</tr>
+</table>
+<br />
+<br />
 	Profile of:
 	<%=user.getName()+" "+user.getSurname() %>
 	<br /> Birthday:
@@ -41,19 +59,7 @@
 	Feedback:   <g> +<%=posFeedbacks.get(i)%></g>  <r>-<%=negFeedbacks.get(i) %></r>
 	
 	<% } %>
-	
-	<br />
-	<br />	
-	<form method='post' action="ServletBanUser">
-		<input type="hidden" name="idUser" value="<%=user.getId() %>"></input >
-		<input type="submit" value="Ban User"/></input>
-		</form>
-	<br />	
-	<form method="post" action="ServletJobPageByOther">
-		<input type="hidden" name="toShow" value=<%=user.getId()%> />
-		<input type="submit" value="See <%=user.getName()%>'s jobs" />
-	</form>	
-	</div>
+</div>
 
 <div id="sidebar">
 	Search for an user:
