@@ -74,7 +74,7 @@
 	%>
 	Name:
 	<%=names.get(i)%>
-	Feedback:   +<%=posFeedbacks.get(i)%>  -<%=negFeedbacks.get(i) %>    
+	Feedback:  <g> +<%=posFeedbacks.get(i)%></g>  <r>-<%=negFeedbacks.get(i) %></r>   
 	<br />
 	<%	
 		}

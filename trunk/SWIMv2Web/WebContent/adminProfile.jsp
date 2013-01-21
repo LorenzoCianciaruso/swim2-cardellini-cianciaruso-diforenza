@@ -13,7 +13,7 @@
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 	<div id="text">
-	Welcome Administrator!
+	<a>Welcome Administrator</a>
 	
 	<br />
 	

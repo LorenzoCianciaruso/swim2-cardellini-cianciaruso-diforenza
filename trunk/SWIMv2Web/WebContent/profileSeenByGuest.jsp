@@ -38,7 +38,7 @@
 	%>
 	<br /> Ability:
 	<%=names.get(i)%>
-	Feedback:   +<%=posFeedbacks.get(i)%>  -<%=negFeedbacks.get(i)%>
+	Feedback:   <g> +<%=posFeedbacks.get(i)%></g>  <r>-<%=negFeedbacks.get(i) %></r>
 	
 	<% } %>
 		<br />
@@ -69,7 +69,7 @@
 	<br />
 	<br />
 	<form method="post" action="index.jsp">
-		<input type="submit" value="Go Home"></input>
+		<input type="submit" value="Login"></input>
 	</form>
 </div>
 

@@ -48,7 +48,7 @@
 		}
 	%>
 	<br />
-	<a>FRIENDSHIP REQUEST SENT:</a><br />
+	<a>FRIENDSHIP REQUESTS SENT:</a><br />
 	<%if(requestsByMe.size()>0) {%>	
 	<%
 	for (int i = 0; i < requestsByMe.size(); i++) {

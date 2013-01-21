@@ -79,7 +79,7 @@
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 	<div id="text">
-	Login
+	<g>Login</g>
 	<br />	
 		<form name="login" action="ServletLogin"
 			onsubmit="return validateLogin()" method="post">
@@ -87,7 +87,7 @@
 			<input type="password" name="password" placeholder="Password">
 			<input type="submit" value="Login">
 		</form>
-	or register new profile
+	<g>or register new profile</g>
 	<form name="registration" action="ServletRegistration"
 		onsubmit="return validateRegistration()" method="post">
 		<input name="name" placeholder="First name"/> <br />

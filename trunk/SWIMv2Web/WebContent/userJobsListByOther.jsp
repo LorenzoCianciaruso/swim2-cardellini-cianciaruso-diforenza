@@ -58,7 +58,7 @@ Comment: <%=listPerformedJob.get(i).getComment()%><br />
 <%
 	}else{
 %>
-<a>JOB NOT COMPLETED</a><br />
+JOB NOT COMPLETED<br />
 <%
 	}
 %>
@@ -72,7 +72,7 @@ No jobs performed!<br />
 	}
 %>
 <br />
-JOBS REQUESTED:<br />
+<a>JOBS REQUESTED:</a><br />
 <br />
 <%
 	if(listAskedJob.size() > 0){
