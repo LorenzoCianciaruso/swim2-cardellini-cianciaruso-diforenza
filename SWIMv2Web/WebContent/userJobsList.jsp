@@ -28,7 +28,7 @@ int current =  (Integer)request.getAttribute("user");
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 <div id=text>
-<a>JOBS YOU PERFORMED:</a><br />
+<a>JOBS PERFORMED:</a><br />
 <br />
 <%
 if(listPerformedJob.size() > 0){
@@ -99,7 +99,7 @@ You haven't performed any jobs!<br />
 <%
 	}
 %>
-<a>JOBS YOU ASKED:</a><br />
+<a>JOBS REQUESTED:</a><br />
 <br />
 <%
 	if(listAskedJob.size() > 0){

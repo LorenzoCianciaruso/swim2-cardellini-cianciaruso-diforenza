@@ -5,10 +5,22 @@ body { font-size: medium;
 }
 
 a {
+	font-size: large;
 	text-transform: uppercase;
 	font-weight:bold;
 	color: Green;
 }
+
+r {
+	font-weight:bold;
+	color: Red;
+}
+
+g {
+	font-weight:bold;
+	color: Green;
+}
+
 
 #text { 
 	font-size: medium;

@@ -18,7 +18,7 @@
 	</div>
 	<div id=text>
 	<form method="post" action="ServletAbilityDeclared">
-		<h2>Manage your abilities</h2>
+		<a>Manage your abilities</a>
 		<br />
 		If you want to add new abilities, choose them from the list below:<br />
 		<br />
@@ -46,7 +46,7 @@
 	<br />
 	
 	<form method="post" action="ServletAbilityDeleted">
-		If you want to delete an ability from your profile check them:<br />
+		If you want to delete abilities from your profile, choose them from the list below::<br />
 		<br />
 		<%
 			for(int i=0; i<listOwned.size(); i++){

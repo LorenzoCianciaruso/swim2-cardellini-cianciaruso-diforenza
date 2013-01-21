@@ -17,7 +17,6 @@
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
 <div id=text>
-	<br />
 	<%
 		List<JobRequest> requestsToMe = (List<JobRequest>) request.getAttribute("requestsToMe");
 		List<JobRequest> requestsByMe = (List<JobRequest>) request.getAttribute("requestsByMe");
@@ -26,7 +25,7 @@
 		List<User> userIAsked = (List<User>) request.getAttribute("userIAsked");
 		List<User> userAskedToMe = (List<User>) request.getAttribute("userAskedToMe");
 	%>
-	<a>JOB REQUEST YOU HAVE RECEIVED.</a><br />
+	<a>JOB REQUEST RECEIVED:</a><br />
 	<%if(requestsToMe.size()>0) {%>	
 	You can accept or refuse them.<br />
 	<br />
@@ -57,7 +56,7 @@
 		}
 	%>
 	<br />
-	<a>JOB REQUEST YOU HAVE SENT.</a><br />
+	<a>JOB REQUEST SENT:</a><br />
 	<%
 		if(requestsByMe.size()>0) {
 	%>
