@@ -44,8 +44,8 @@
 		<br /> Create new ability.
 		<form name="newAbility" action="ServletAcceptAbilityRequest"
 			onsubmit="return validateNewAbility()" method="post">
-			<input name="name" placeholder="Name" /> <br /> <input type="submit"
-				value="Create ability">
+			<input name="name" placeholder="Name" /> <br /> <input
+				type="submit" value="Create ability">
 		</form>
 	</div>
 

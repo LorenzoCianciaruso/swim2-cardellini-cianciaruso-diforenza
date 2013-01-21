@@ -12,6 +12,7 @@
 	<div id =logo>
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
+	<div id="text">
 	Welcome Administrator!
 	
 	<br />
@@ -25,8 +26,8 @@
 	<form method="post" action="ServletAdminAbilityList" >
 	<input type="submit" value="Ability List"></input> 
 	</form>
-	
-	
+	</div>
+
 
 	<div id="sidebar">
 	Search for an user:
