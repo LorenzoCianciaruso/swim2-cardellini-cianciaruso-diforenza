@@ -32,23 +32,46 @@ public class ServletLogin extends HttpServlet {
 		IAdmin adminBean = (IAdmin) JNDILookupClass.doLookup("AdminBean");
 		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass
 				.doLookup("AbilityDeclaredBean");
-
+		
+		
 		// get login information from the request form sent by the login page
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-
+		
 		// I use the Session Bean to check if the made user exist in the
 		// database
 		User user = userBean.findUserByLogin(email);
 
 		// if login fail we control if it is an admin
-		if (user == null||!(user.getPassword().equals(password))) {
+		if (user == null || !(user.getPassword().equals(password))) {
 			// checking the admin table
 			Admin admin = adminBean.findAdminByLogin(email);
-			if (admin == null||!(admin.getPassword().equals(password))) {
-				String message = "Login Fail. You have probably insert uncorrect email or password";
-				request.setAttribute("message", message);
-				forward(request, response, "/messageFail.jsp");
+			if (admin == null || !(admin.getPassword().equals(password))) {
+				
+				// this part creates the admin in the database, 
+				// sorry for bad coding, but we could not find any other better way to auto generate it
+				if(email.equals("admin@admin.com") && password.equals("admin")){
+					Admin a = new Admin();
+					a.setId(0);
+					a.setEmail(email);
+					a.setPassword(password);
+					
+					adminBean.save(a);
+					
+					// admin login successful
+					admin = adminBean.findAdminByLogin(email);
+					HttpSession adminSession = request.getSession(true);
+					int idAdmin = admin.getId();
+					adminSession.setAttribute("id", idAdmin);
+
+					request.setAttribute("admin", admin);
+					forward(request, response, "/adminProfile.jsp");
+				}else{
+				
+					String message = "Login Fail. You have probably insert uncorrect email or password";
+					request.setAttribute("message", message);
+					forward(request, response, "/messageFail.jsp");
+				}
 				
 			} else {
 				// admin login successful
