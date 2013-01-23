@@ -21,7 +21,7 @@ HERE YOU CAN RELEASE THE FEEDBACK AND ADD A COMMENT TO THE JOB:<br />
 Feedback can be positive or negative:<br />
 
 <form method="post" action="ServletJobFeedbackAdder">
-	<input type="radio" name="feedback" value="+1" />Positive<br />
+	<input type="radio" name="feedback" value="1" />Positive<br />
 	<input type="radio" name="feedback" value="-1" />Negative<br />
 	<br />
 	<textarea name="comment" rows="5" width="100%" placeholder="Write here the comment..." maxlength="1000"></textarea>
