@@ -9,4 +9,6 @@ public interface IAdmin {
 
 	Admin findAdminByLogin(String email);
 
+	void save(Admin a);
+
 }
