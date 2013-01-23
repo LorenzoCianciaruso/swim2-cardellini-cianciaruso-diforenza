@@ -84,7 +84,12 @@ if(listPerformedJob.get(i).getFeedback()==0){%>
 <input type="submit" value="Send Message" />
 </form>
 <%}else{ %>	
-Feedback: <%=listPerformedJob.get(i).getFeedback()%><br />
+Feedback: <%if(listPerformedJob.get(i).getFeedback()==1){
+	%>
+		<g>+ <%=listPerformedJob.get(i).getFeedback()%></g>
+	<%}else{ %>
+	<r><%=listPerformedJob.get(i).getFeedback() %></r>
+	<%} %><br />
 Comment: <%=listPerformedJob.get(i).getComment()%><br />
 <br /><%
 
@@ -159,7 +164,12 @@ if( listAskedJob.get(i).getComment() == null ){%>
 </form>	
 <br />
 <%}else{ %>	
-Feedback: <%=listAskedJob.get(i).getFeedback()%><br />
+Feedback: <%if(listPerformedJob.get(i).getFeedback()==1){
+	%>
+		<g>+<%=listPerformedJob.get(i).getFeedback()%></g>
+	<%}else{ %>
+	<r><%=listPerformedJob.get(i).getFeedback() %></r>
+	<%} %><br />
 Comment: <%=listAskedJob.get(i).getComment()%><br />
 <br /><%
 

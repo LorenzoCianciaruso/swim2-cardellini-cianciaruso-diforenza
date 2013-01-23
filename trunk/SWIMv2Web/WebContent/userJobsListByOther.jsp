@@ -53,7 +53,12 @@ Ability: <%try{ %><%=listOfAbility.get(j).getName()%>
 			%><br />
 			<%
 	if( listPerformedJob.get(i).getComment()!= null ){%>
-Feedback: <%=listPerformedJob.get(i).getFeedback()%><br />
+Feedback: <%if(listPerformedJob.get(i).getFeedback()==1){
+	%>
+		<g>+<%=listPerformedJob.get(i).getFeedback()%></g>
+	<%}else{ %>
+	<r><%=listPerformedJob.get(i).getFeedback() %></r>
+	<%} %><br />
 Comment: <%=listPerformedJob.get(i).getComment()%><br />
 <%
 	}else{
@@ -99,7 +104,12 @@ Ability:  <%try{ %><%=listOfAbility.get(j).getName()%>
 }
 %><br /><%
 	if( listAskedJob.get(i).getComment() != null){%>
-Feedback: <%=listAskedJob.get(i).getFeedback()%><br />
+Feedback: <%if(listPerformedJob.get(i).getFeedback()==1){
+	%>
+		<g>+<%=listPerformedJob.get(i).getFeedback()%></g>
+	<%}else{ %>
+	<r><%=listPerformedJob.get(i).getFeedback() %></r>
+	<%} %><br />
 Comment: <%=listAskedJob.get(i).getComment()%><br />
 <%
 	}else{
@@ -139,7 +149,7 @@ No jobs requested!<br />
 	</form>
 	<br />
 	<br />
-	<form method="post" action="ServletLogin">
+	<form method="post" action="index.jsp">
 		<input type="submit" value="Log In" />
 	</form>
 </div>
