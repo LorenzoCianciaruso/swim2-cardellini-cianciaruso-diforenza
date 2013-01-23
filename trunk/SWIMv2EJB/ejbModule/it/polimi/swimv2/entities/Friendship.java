@@ -3,6 +3,7 @@ package it.polimi.swimv2.entities;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 
@@ -13,6 +14,7 @@ public class Friendship implements Serializable {
 
 	
 	@Id
+	@GeneratedValue
 	private int id;
 	private int idUser1;
 	private int idUser2;
