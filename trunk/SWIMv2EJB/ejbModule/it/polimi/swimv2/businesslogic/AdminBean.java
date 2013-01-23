@@ -33,4 +33,9 @@ public class AdminBean implements IAdmin {
 		}
 	}
 
+	@Override
+	public void save(Admin a) {	
+		entityManager.persist(a);
+	}
+
 }
