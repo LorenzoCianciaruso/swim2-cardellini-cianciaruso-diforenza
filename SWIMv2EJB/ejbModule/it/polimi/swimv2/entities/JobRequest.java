@@ -3,6 +3,7 @@ package it.polimi.swimv2.entities;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity (name = "JobRequest")
@@ -12,6 +13,7 @@ public class JobRequest implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	@GeneratedValue
 	private int id;
 	private int idPerformer;
 	private int idRequestor;

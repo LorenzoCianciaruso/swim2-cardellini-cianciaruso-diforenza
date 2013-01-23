@@ -2,6 +2,8 @@ package it.polimi.swimv2.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import javax.persistence.Entity;
@@ -15,6 +17,7 @@ public class User implements Serializable {
 	public User(){};
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private String surname;
