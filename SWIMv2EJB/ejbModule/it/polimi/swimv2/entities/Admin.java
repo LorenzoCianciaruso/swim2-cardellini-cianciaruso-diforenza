@@ -2,9 +2,12 @@ package it.polimi.swimv2.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import org.jboss.managed.api.annotation.DefaultValueBuilderFactory;
 
 
 @Entity(name = "Admin")
@@ -16,7 +19,6 @@ public class Admin implements Serializable {
 	
 	//attributes
 	@Id
-	@GeneratedValue
 	private int id;
 	private String email;
 	private String password;
