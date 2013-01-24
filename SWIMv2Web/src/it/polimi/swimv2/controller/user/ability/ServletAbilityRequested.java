@@ -1,7 +1,9 @@
 package it.polimi.swimv2.controller.user.ability;
 
+import it.polimi.swimv2.business.IAbility;
 import it.polimi.swimv2.business.IAbilityRequest;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
+import it.polimi.swimv2.entities.Ability;
 import it.polimi.swimv2.entities.AbilityRequest;
 
 import java.io.IOException;
@@ -22,14 +24,30 @@ public class ServletAbilityRequested extends HttpServlet {
 		//get parameter
 		String newAbilityString = request.getParameter("abilityAdded");		
 		IAbilityRequest newAbilityBean = (IAbilityRequest) JNDILookupClass.doLookup("AbilityRequestBean");
-		
+		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
 		List<AbilityRequest> list = newAbilityBean.allAbilityRequests();
 		
 		//search for the same ability in AbilityRequest
 		for(int i=0; i<list.size(); i++){
-			//if it is already requested, no more
-			if(list.get(i).getName() == newAbilityString){
-				response.sendRedirect(response.encodeRedirectURL("messageDone.jsp"));
+			//if it is already requested
+			if(list.get(i).getName().equals(newAbilityString)){
+				ServletContext sc = getServletContext(); 
+				request.setAttribute("next", "ServletSkillPage");
+				RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp"); 
+				rd.forward(request,response);
+			}
+		}
+		
+		List<Ability> listAbilities = abilityBean.allAbilities();
+		
+		//search for the same ability in Ability
+		for(int i=0; i<listAbilities.size(); i++){
+			//if it is already exist
+			if(list.get(i).getName().equals(newAbilityString)){
+				request.setAttribute("message", "The ability aready exists try to look better");
+				ServletContext sc = getServletContext();
+				RequestDispatcher rd = sc.getRequestDispatcher("/messageFail.jsp");
+				rd.forward(request, response);
 			}
 		}
 		

@@ -53,7 +53,6 @@ public class ServletRegistration extends HttpServlet {
 			ServletContext sc = getServletContext();
 			RequestDispatcher rd = sc.getRequestDispatcher("/messageFail.jsp");
 			rd.forward(request, response);
-			//response.sendRedirect(response.encodeRedirectURL("loginFail.jsp"));
 
 		} else {
 
