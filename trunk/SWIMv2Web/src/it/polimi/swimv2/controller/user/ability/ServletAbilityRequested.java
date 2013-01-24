@@ -19,49 +19,56 @@ import javax.servlet.http.HttpServletResponse;
 public class ServletAbilityRequested extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//get parameter
-		String newAbilityString = request.getParameter("abilityAdded");		
-		IAbilityRequest newAbilityBean = (IAbilityRequest) JNDILookupClass.doLookup("AbilityRequestBean");
-		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		// get parameter
+		String newAbilityString = request.getParameter("abilityAdded");
+		IAbilityRequest newAbilityBean = (IAbilityRequest) JNDILookupClass
+				.doLookup("AbilityRequestBean");
+		IAbility abilityBean = (IAbility) JNDILookupClass
+				.doLookup("AbilityBean");
 		List<AbilityRequest> list = newAbilityBean.allAbilityRequests();
-		
-		//search for the same ability in AbilityRequest
-		for(int i=0; i<list.size(); i++){
-			//if it is already requested
-			if(list.get(i).getName().equals(newAbilityString)){
-				ServletContext sc = getServletContext(); 
-				request.setAttribute("next", "ServletSkillPage");
-				RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp"); 
-				rd.forward(request,response);
-			}
-		}
-		
-		List<Ability> listAbilities = abilityBean.allAbilities();
-		
-		//search for the same ability in Ability
-		for(int i=0; i<listAbilities.size(); i++){
-			//if it is already exist
-			if(list.get(i).getName().equals(newAbilityString)){
-				request.setAttribute("message", "The ability aready exists try to look better");
+
+		// search for the same ability in AbilityRequest
+		for (int i = 0; i < list.size(); i++) {
+			// if it is already requested
+			if (list.get(i).getName().equals(newAbilityString)) {
 				ServletContext sc = getServletContext();
-				RequestDispatcher rd = sc.getRequestDispatcher("/messageFail.jsp");
+				request.setAttribute("next", "ServletSkillPage");
+				RequestDispatcher rd = sc
+						.getRequestDispatcher("/messageDone.jsp");
 				rd.forward(request, response);
+				return;
 			}
 		}
-		
+
+		List<Ability> listAbilities = abilityBean.allAbilities();
+
+		// search for the same ability in Ability
+		for (int j = 0; j < listAbilities.size(); j++) {
+			// if it is already exist
+			if (listAbilities.get(j).getName().equals(newAbilityString)) {
+				request.setAttribute("message",
+						"The ability aready exists try to look better");
+				ServletContext sc = getServletContext();
+				RequestDispatcher rd = sc
+						.getRequestDispatcher("/messageFail.jsp");
+				rd.forward(request, response);
+				return;
+			}
+		}
+
 		AbilityRequest abilityReq = new AbilityRequest();
 		abilityReq.setName(newAbilityString);
-		abilityReq.setUser((int)request.getSession().getAttribute("id"));
-		
+		abilityReq.setUser((int) request.getSession().getAttribute("id"));
+
 		newAbilityBean.save(abilityReq);
-		
-		ServletContext sc = getServletContext(); 
+
+		ServletContext sc = getServletContext();
 		request.setAttribute("next", "ServletSkillPage");
-		RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp"); 
-		rd.forward(request,response);
-		
+		RequestDispatcher rd = sc.getRequestDispatcher("/messageDone.jsp");
+		rd.forward(request, response);
+		return;
 	}
 
 }
