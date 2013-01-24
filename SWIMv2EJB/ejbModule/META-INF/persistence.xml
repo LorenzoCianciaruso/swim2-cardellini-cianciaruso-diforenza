@@ -4,8 +4,9 @@
         <jta-data-source>java:/MySQLDS</jta-data-source>
         <properties>
             <property name="showSql" value="true"/>
-             <property name="hibernate.dialect"
+            <property name="hibernate.dialect"
                 value="org.hibernate.dialect.MySQLDialect" />
+            <property name="hibernate.hbm2ddl.auto" value="update" /> 
         </properties>
     </persistence-unit>
 </persistence>
