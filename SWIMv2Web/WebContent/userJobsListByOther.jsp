@@ -147,11 +147,12 @@ No jobs requested!<br />
 		<input name="search" placeholder="type ability here.."/> <input type="submit"
 			value="Search User" />
 	</form>
+	<form method="post" action="ServletProfilePage" >
+		<input type="submit" value="Go Back" />
+	</form>	
 	<br />
 	<br />
-	<form method="post" action="index.jsp">
-		<input type="submit" value="Log In" />
-	</form>
+	
 </div>
 
 <div id="footer">
