@@ -56,7 +56,7 @@ Ability: <%try{ %>
 				}
 		}
 if(listPerformedJob.get(i).getFeedback()==0){%>
-<br/>Job still open you can send messages. <br/><%
+<br/>Job still open you can send messages. <br/><% 
 	for(int k=0; k < listMessagesPerformedJob.size();k++){
 		if( listMessagesPerformedJob.get(k).getIdJob()==listPerformedJob.get(i).getId() ){
 						
@@ -69,8 +69,10 @@ if(listPerformedJob.get(i).getFeedback()==0){%>
 			
 			<%
 			}else{
-				%>
-				<%= listUserPerformed.get(i).getName() %>	: 
+				try{ %> <%=listUserPerformed.get(i).getName() %>
+					<%}catch(NullPointerException e){ %>
+						<%= "User Banned" %>
+					<%} %>	: 
 				<%= listMessagesPerformedJob.get(k).getMessage()%> <br />
 				<%
 				}				
@@ -107,14 +109,14 @@ You haven't performed any jobs!<br />
 <a>JOBS REQUESTED:</a><br />
 <br />
 <%
-	if(listAskedJob.size() > 0){
+if(listAskedJob.size() > 0){
 for(int i=0; i < listAskedJob.size(); i++){
 %>
 JOB:
 <br />
 Performer:	 <%try{ %> <%=listUserRequester.get(i).getName()+" "+listUserRequester.get(i).getSurname() %>
 			<%}catch(NullPointerException e){ %>
-			<%= "User Banned" %>
+				<%= "User Banned" %>
 			<%} %><br />
 		
 Date: <%=listAskedJob.get(i).getDate()%><br />
@@ -144,8 +146,10 @@ if( listAskedJob.get(i).getComment() == null ){%>
 				
 				<%
 				}else{
-					%>
-					<%= listUserRequester.get(i).getName() %>	: 
+					try{ %> <%=listUserRequester.get(i).getName() %>
+					<%}catch(NullPointerException e){ %>
+						<%= "User Banned" %>
+					<%} %>	: 
 					<%= listMessagesRequestJob.get(k).getMessage()%> <br />
 					<%
 					}				
