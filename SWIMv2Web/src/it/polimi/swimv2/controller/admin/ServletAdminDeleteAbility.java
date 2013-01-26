@@ -52,14 +52,6 @@ public class ServletAdminDeleteAbility extends HttpServlet {
 			jobRequestBean.remove(jobRequestList.get(i).getId());
 		}
 		
-		//removes all job opened for that ability
-		List<Job> jobList = jobBean.findByAbility(id);
-		
-		for(int i=0; i < jobList.size();i++){
-			if(jobList.get(i).getComment()==null){
-					jobBean.remove(jobList.get(i).getId());
-			}
-		}
 
 		ServletContext sc = getServletContext();
 		request.setAttribute("next", "ServletAdminAbilityList");
