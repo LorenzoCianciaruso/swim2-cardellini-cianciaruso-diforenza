@@ -32,8 +32,7 @@ public class ServletAskJobToUser extends HttpServlet {
 				List<String> names = new ArrayList<String>();
 				List<Integer> idAbilities = new ArrayList<Integer>();
 				int idAbility;
-				IAbility abilityBean = (IAbility) JNDILookupClass
-						.doLookup("AbilityBean");
+				IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
 
 				for (int i = 0; i < abilities.size(); i++) {
 					// build the list that contains abilities id

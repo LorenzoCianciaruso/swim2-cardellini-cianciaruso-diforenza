@@ -2,9 +2,11 @@ package it.polimi.swimv2.controller.admin;
 
 import it.polimi.swimv2.business.IAbilityDeclared;
 import it.polimi.swimv2.business.IAbility;
+import it.polimi.swimv2.business.IJob;
 import it.polimi.swimv2.business.IJobRequest;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
 import it.polimi.swimv2.entities.AbilityDeclared;
+import it.polimi.swimv2.entities.Job;
 import it.polimi.swimv2.entities.JobRequest;
 
 import java.io.IOException;
@@ -26,6 +28,7 @@ public class ServletAdminDeleteAbility extends HttpServlet {
 		IAbility abilityBean = (IAbility) JNDILookupClass.doLookup("AbilityBean");
 		IAbilityDeclared abilityDeclaredBean = (IAbilityDeclared) JNDILookupClass.doLookup("AbilityDeclaredBean");
 		IJobRequest jobRequestBean = (IJobRequest) JNDILookupClass.doLookup("JobRequestBean");
+		IJob jobBean = (IJob) JNDILookupClass.doLookup("JobBean");
 		
 		//receives the id of the ability to delete
 		String string = request.getParameter("abilityId");
@@ -49,6 +52,14 @@ public class ServletAdminDeleteAbility extends HttpServlet {
 			jobRequestBean.remove(jobRequestList.get(i).getId());
 		}
 		
+		//removes all job opened for that ability
+		List<Job> jobList = jobBean.findByAbility(id);
+		
+		for(int i=0; i < jobList.size();i++){
+			if(jobList.get(i).getComment()==null){
+					jobBean.remove(jobList.get(i).getId());
+			}
+		}
 
 		ServletContext sc = getServletContext();
 		request.setAttribute("next", "ServletAdminAbilityList");

@@ -21,8 +21,7 @@
 	<%
 		int idPerformer = (Integer) request.getAttribute("userPerformerId");
 		List<String> names = (List<String>) request.getAttribute("names");
-		List<Integer> idAbilities = (List<Integer>) request
-				.getAttribute("idAbilities");
+		List<Integer> idAbilities = (List<Integer>) request.getAttribute("idAbilities");
 	%>
 
 <script>
@@ -33,8 +32,7 @@
 				alert("Field must be filled out");
 				return false;
 			}
-			if (!x
-						.match("(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/(19|20)[0-9][0-9]")) {
+			if (!x.match("(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/(19|20)[0-9][0-9]")) {
 					alert("Invalid date format");
 				return false;
 			
