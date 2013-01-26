@@ -4,6 +4,7 @@ import java.util.List;
 
 import it.polimi.swimv2.business.IJob;
 import it.polimi.swimv2.entities.Job;
+import it.polimi.swimv2.entities.User;
 
 
 import javax.ejb.Remote;
@@ -81,6 +82,30 @@ public class JobBean implements IJob {
 			String q = "UPDATE Job j SET feedback = '"+feedback+"' WHERE id = '"+jobId+"'";
 			Query query = entityManager.createQuery(q);
 			query.executeUpdate();
+		}
+		
+		@Override
+		public List<Job> findByAbility(int id){
+			String q = "SELECT j FROM Job j WHERE idAbility = '"+id+"'";
+			Query query = entityManager.createQuery(q);
+			try{
+				List<Job> list = (List<Job>) query.getResultList();
+				return list;
+			}catch(NoResultException e){
+				return null;
+			}
+		}
+		
+		@Override
+		public void remove(int id){
+			String q = "SELECT j FROM Job j WHERE id ='"+id+"'";
+			Query query = entityManager.createQuery(q);
+			try{
+				Job job = (Job) query.getSingleResult();
+				entityManager.remove(job);
+			}catch(NoResultException e){
+				
+			}
 		}
 	
 }
