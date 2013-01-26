@@ -22,4 +22,8 @@ public interface IJob {
 	void setCommentById(int jobId, String comment);
 
 	void setFeedbackById(int jobId, int feedback);
+	
+	void remove(int id);
+	
+	List<Job> findByAbility(int id);
 }
