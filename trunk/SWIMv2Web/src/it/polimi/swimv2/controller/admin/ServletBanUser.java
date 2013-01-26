@@ -4,6 +4,7 @@ import it.polimi.swimv2.business.IAbilityDeclared;
 import it.polimi.swimv2.business.IAbilityRequest;
 import it.polimi.swimv2.business.IFriendship;
 import it.polimi.swimv2.business.IFriendshipRequest;
+import it.polimi.swimv2.business.IJob;
 import it.polimi.swimv2.business.IJobRequest;
 import it.polimi.swimv2.business.IUser;
 import it.polimi.swimv2.clientutility.JNDILookupClass;
@@ -11,6 +12,7 @@ import it.polimi.swimv2.entities.AbilityDeclared;
 import it.polimi.swimv2.entities.AbilityRequest;
 import it.polimi.swimv2.entities.Friendship;
 import it.polimi.swimv2.entities.FriendshipRequest;
+import it.polimi.swimv2.entities.Job;
 import it.polimi.swimv2.entities.JobRequest;
 
 import java.io.IOException;
@@ -34,6 +36,7 @@ public class ServletBanUser extends HttpServlet {
 		IFriendshipRequest friendshipRequestBean = (IFriendshipRequest) JNDILookupClass.doLookup("FriendshipRequestBean");
 		IAbilityRequest abilityRequestBean = (IAbilityRequest) JNDILookupClass.doLookup("AbilityRequestBean");
 		IJobRequest jobRequestBean = (IJobRequest) JNDILookupClass.doLookup("JobRequestBean");
+		IJob jobBean= (IJob) JNDILookupClass.doLookup("JobBean");
 		
 		int idUser = Integer.parseInt(request.getParameter("idUser"));
 		
@@ -81,6 +84,24 @@ public class ServletBanUser extends HttpServlet {
 		for(int i = 0; i < abDeclList.size(); i++){
 			abilityDeclaredBean.remove(abDeclList.get(i).getId());
 		}
+		
+		//removes jobs open
+		List<Job> jobPerformed = jobBean.findByPerformerId(idUser);
+		List<Job> jobRequested = jobBean.findByRequestorId(idUser);
+		
+		
+		for(int i=0; i < jobPerformed.size();i++){
+			if(jobPerformed.get(i).getComment()==null){
+				jobBean.remove(jobPerformed.get(i).getId());
+			}
+		}
+		
+		for(int i=0; i < jobRequested.size();i++){
+			if(jobRequested.get(i).getComment()==null){
+				jobBean.remove(jobRequested.get(i).getId());
+			}
+		}
+		
 		
 		//removes user
 		userBean.remove(idUser);
