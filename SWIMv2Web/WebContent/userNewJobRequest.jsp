@@ -15,9 +15,10 @@
 	<div id =logo>
 	<a href="ServletProfilePage"><img src="logo.jpg" /></a>
 	</div>
-	New Job Request:
-	<br />
+	
 <div id=text>
+<a>New Job Request:</a>
+	<br />
 	<%
 		int idPerformer = (Integer) request.getAttribute("userPerformerId");
 		List<String> names = (List<String>) request.getAttribute("names");
