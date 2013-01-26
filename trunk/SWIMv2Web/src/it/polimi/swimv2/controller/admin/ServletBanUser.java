@@ -85,22 +85,6 @@ public class ServletBanUser extends HttpServlet {
 			abilityDeclaredBean.remove(abDeclList.get(i).getId());
 		}
 		
-		//removes jobs open
-		List<Job> jobPerformed = jobBean.findByPerformerId(idUser);
-		List<Job> jobRequested = jobBean.findByRequestorId(idUser);
-		
-		
-		for(int i=0; i < jobPerformed.size();i++){
-			if(jobPerformed.get(i).getComment()==null){
-				jobBean.remove(jobPerformed.get(i).getId());
-			}
-		}
-		
-		for(int i=0; i < jobRequested.size();i++){
-			if(jobRequested.get(i).getComment()==null){
-				jobBean.remove(jobRequested.get(i).getId());
-			}
-		}
 		
 		
 		//removes user
